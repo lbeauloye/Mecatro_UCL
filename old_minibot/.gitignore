@@ -1,0 +1,6 @@
+back/node_modules/
+wwwminibot/build/
+wwwminibot/src/config.json
+main
+redAlert
+back/database.sqlite
