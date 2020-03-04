@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -std=c++11  -rdynamic CMakeFiles/server.dir/server.cpp.o CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o  -o server /usr/local/lib/libuavcan.a -lrt 
