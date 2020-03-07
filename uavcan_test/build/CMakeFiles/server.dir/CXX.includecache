@@ -34,11 +34,11 @@ uavcan/node/global_data_type_registry.hpp
 uavcan/marshal/types.hpp
 -
 
-/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
+/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp
 uavcan_linux/uavcan_linux.hpp
 -
 
-/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/server.cpp
+/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/server.cpp
 iostream
 -
 cstdlib

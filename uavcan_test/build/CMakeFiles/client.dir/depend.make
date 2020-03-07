@@ -6,5 +6,5 @@ CMakeFiles/client.dir/client.cpp.o: ../dsdlc_generated/sirius_cybernetics_corpor
 CMakeFiles/client.dir/client.cpp.o: ../dsdlc_generated/sirius_cybernetics_corporation/PointXY.hpp
 CMakeFiles/client.dir/client.cpp.o: ../client.cpp
 
-CMakeFiles/client.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o: /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
+CMakeFiles/client.dir/platform_linux.cpp.o: ../platform_linux.cpp
 

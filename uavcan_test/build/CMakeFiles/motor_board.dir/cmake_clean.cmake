@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/motor_board.dir/motor_board.cpp.o"
-  "CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o"
+  "CMakeFiles/motor_board.dir/platform_linux.cpp.o"
   "motor_board.pdb"
   "motor_board"
 )

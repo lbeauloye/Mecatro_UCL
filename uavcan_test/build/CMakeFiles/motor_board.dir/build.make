@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C
+CMAKE_SOURCE_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build
+CMAKE_BINARY_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/motor_board.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/motor_board.dir/flags.make
 
 CMakeFiles/motor_board.dir/motor_board.cpp.o: CMakeFiles/motor_board.dir/flags.make
 CMakeFiles/motor_board.dir/motor_board.cpp.o: ../motor_board.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/motor_board.dir/motor_board.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motor_board.dir/motor_board.cpp.o -c /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/motor_board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/motor_board.dir/motor_board.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motor_board.dir/motor_board.cpp.o -c /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/motor_board.cpp
 
 CMakeFiles/motor_board.dir/motor_board.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motor_board.dir/motor_board.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/motor_board.cpp > CMakeFiles/motor_board.dir/motor_board.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/motor_board.cpp > CMakeFiles/motor_board.dir/motor_board.cpp.i
 
 CMakeFiles/motor_board.dir/motor_board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motor_board.dir/motor_board.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/motor_board.cpp -o CMakeFiles/motor_board.dir/motor_board.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/motor_board.cpp -o CMakeFiles/motor_board.dir/motor_board.cpp.s
 
 CMakeFiles/motor_board.dir/motor_board.cpp.o.requires:
 
@@ -81,44 +81,44 @@ CMakeFiles/motor_board.dir/motor_board.cpp.o.provides: CMakeFiles/motor_board.di
 CMakeFiles/motor_board.dir/motor_board.cpp.o.provides.build: CMakeFiles/motor_board.dir/motor_board.cpp.o
 
 
-CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o: CMakeFiles/motor_board.dir/flags.make
-CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o: /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o -c /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
+CMakeFiles/motor_board.dir/platform_linux.cpp.o: CMakeFiles/motor_board.dir/flags.make
+CMakeFiles/motor_board.dir/platform_linux.cpp.o: ../platform_linux.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/motor_board.dir/platform_linux.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/motor_board.dir/platform_linux.cpp.o -c /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp
 
-CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp > CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.i
+CMakeFiles/motor_board.dir/platform_linux.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motor_board.dir/platform_linux.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp > CMakeFiles/motor_board.dir/platform_linux.cpp.i
 
-CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp -o CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.s
+CMakeFiles/motor_board.dir/platform_linux.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motor_board.dir/platform_linux.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp -o CMakeFiles/motor_board.dir/platform_linux.cpp.s
 
-CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires:
+CMakeFiles/motor_board.dir/platform_linux.cpp.o.requires:
 
-.PHONY : CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires
+.PHONY : CMakeFiles/motor_board.dir/platform_linux.cpp.o.requires
 
-CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides: CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires
-	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides.build
-.PHONY : CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides
+CMakeFiles/motor_board.dir/platform_linux.cpp.o.provides: CMakeFiles/motor_board.dir/platform_linux.cpp.o.requires
+	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/platform_linux.cpp.o.provides.build
+.PHONY : CMakeFiles/motor_board.dir/platform_linux.cpp.o.provides
 
-CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides.build: CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o
+CMakeFiles/motor_board.dir/platform_linux.cpp.o.provides.build: CMakeFiles/motor_board.dir/platform_linux.cpp.o
 
 
 # Object files for target motor_board
 motor_board_OBJECTS = \
 "CMakeFiles/motor_board.dir/motor_board.cpp.o" \
-"CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o"
+"CMakeFiles/motor_board.dir/platform_linux.cpp.o"
 
 # External object files for target motor_board
 motor_board_EXTERNAL_OBJECTS =
 
 motor_board: CMakeFiles/motor_board.dir/motor_board.cpp.o
-motor_board: CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o
+motor_board: CMakeFiles/motor_board.dir/platform_linux.cpp.o
 motor_board: CMakeFiles/motor_board.dir/build.make
 motor_board: /usr/local/lib/libuavcan.a
 motor_board: CMakeFiles/motor_board.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable motor_board"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable motor_board"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/motor_board.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,7 +127,7 @@ CMakeFiles/motor_board.dir/build: motor_board
 .PHONY : CMakeFiles/motor_board.dir/build
 
 CMakeFiles/motor_board.dir/requires: CMakeFiles/motor_board.dir/motor_board.cpp.o.requires
-CMakeFiles/motor_board.dir/requires: CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires
+CMakeFiles/motor_board.dir/requires: CMakeFiles/motor_board.dir/platform_linux.cpp.o.requires
 
 .PHONY : CMakeFiles/motor_board.dir/requires
 
@@ -136,6 +136,6 @@ CMakeFiles/motor_board.dir/clean:
 .PHONY : CMakeFiles/motor_board.dir/clean
 
 CMakeFiles/motor_board.dir/depend:
-	cd /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles/motor_board.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jyl/Documents/GitHub/MotorBoard/uavcan_test /home/jyl/Documents/GitHub/MotorBoard/uavcan_test /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles/motor_board.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/motor_board.dir/depend
 

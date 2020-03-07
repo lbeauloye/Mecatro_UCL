@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -Wextra -std=c++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/dsdlc_generated -I/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/motor_dsdlc 
+CXX_INCLUDES = -I/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/dsdlc_generated -I/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/motor_dsdlc 
 

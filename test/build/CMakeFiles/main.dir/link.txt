@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -pedantic -std=c++11  -rdynamic CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/platform_linux.cpp.o CMakeFiles/main.dir/src/motor_driver.cpp.o  -o main /usr/local/lib/libuavcan.a -lrt 

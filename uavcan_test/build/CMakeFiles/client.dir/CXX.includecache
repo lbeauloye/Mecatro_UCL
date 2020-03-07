@@ -34,11 +34,7 @@ uavcan/node/global_data_type_registry.hpp
 uavcan/marshal/types.hpp
 -
 
-/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
-uavcan_linux/uavcan_linux.hpp
--
-
-/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/client.cpp
+/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/client.cpp
 cstdlib
 -
 iostream
@@ -50,5 +46,9 @@ uavcan/uavcan.hpp
 sirius_cybernetics_corporation/GetCurrentTime.hpp
 -
 sirius_cybernetics_corporation/PerformLinearLeastSquaresFit.hpp
+-
+
+/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp
+uavcan_linux/uavcan_linux.hpp
 -
 

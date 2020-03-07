@@ -54,40 +54,82 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C
+CMAKE_SOURCE_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build
+CMAKE_BINARY_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/mtr_dsdlc.dir
+# Target rules for target CMakeFiles/motor_board.dir
 
 # All Build rule for target.
-CMakeFiles/mtr_dsdlc.dir/all:
-	$(MAKE) -f CMakeFiles/mtr_dsdlc.dir/build.make CMakeFiles/mtr_dsdlc.dir/depend
-	$(MAKE) -f CMakeFiles/mtr_dsdlc.dir/build.make CMakeFiles/mtr_dsdlc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num= "Built target mtr_dsdlc"
-.PHONY : CMakeFiles/mtr_dsdlc.dir/all
+CMakeFiles/motor_board.dir/all:
+	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/depend
+	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=4,5,6 "Built target motor_board"
+.PHONY : CMakeFiles/motor_board.dir/all
+
+# Include target in all.
+all: CMakeFiles/motor_board.dir/all
+
+.PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/mtr_dsdlc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mtr_dsdlc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 0
-.PHONY : CMakeFiles/mtr_dsdlc.dir/rule
+CMakeFiles/motor_board.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/motor_board.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 0
+.PHONY : CMakeFiles/motor_board.dir/rule
 
 # Convenience name for target.
-mtr_dsdlc: CMakeFiles/mtr_dsdlc.dir/rule
+motor_board: CMakeFiles/motor_board.dir/rule
 
-.PHONY : mtr_dsdlc
-
-# clean rule for target.
-CMakeFiles/mtr_dsdlc.dir/clean:
-	$(MAKE) -f CMakeFiles/mtr_dsdlc.dir/build.make CMakeFiles/mtr_dsdlc.dir/clean
-.PHONY : CMakeFiles/mtr_dsdlc.dir/clean
+.PHONY : motor_board
 
 # clean rule for target.
-clean: CMakeFiles/mtr_dsdlc.dir/clean
+CMakeFiles/motor_board.dir/clean:
+	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/clean
+.PHONY : CMakeFiles/motor_board.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/motor_board.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/client.dir
+
+# All Build rule for target.
+CMakeFiles/client.dir/all: CMakeFiles/dsdlc.dir/all
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=1,2,3 "Built target client"
+.PHONY : CMakeFiles/client.dir/all
+
+# Include target in all.
+all: CMakeFiles/client.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 0
+.PHONY : CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# clean rule for target.
+CMakeFiles/client.dir/clean:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
+.PHONY : CMakeFiles/client.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/client.dir/clean
 
 .PHONY : clean
 
@@ -98,14 +140,14 @@ clean: CMakeFiles/mtr_dsdlc.dir/clean
 CMakeFiles/dsdlc.dir/all:
 	$(MAKE) -f CMakeFiles/dsdlc.dir/build.make CMakeFiles/dsdlc.dir/depend
 	$(MAKE) -f CMakeFiles/dsdlc.dir/build.make CMakeFiles/dsdlc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num= "Built target dsdlc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num= "Built target dsdlc"
 .PHONY : CMakeFiles/dsdlc.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dsdlc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dsdlc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 0
 .PHONY : CMakeFiles/dsdlc.dir/rule
 
 # Convenience name for target.
@@ -130,7 +172,7 @@ clean: CMakeFiles/dsdlc.dir/clean
 CMakeFiles/server.dir/all: CMakeFiles/dsdlc.dir/all
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=7,8,9 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=7,8,9 "Built target server"
 .PHONY : CMakeFiles/server.dir/all
 
 # Include target in all.
@@ -140,9 +182,9 @@ all: CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles 0
 .PHONY : CMakeFiles/server.dir/rule
 
 # Convenience name for target.
@@ -157,80 +199,6 @@ CMakeFiles/server.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/server.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/client.dir
-
-# All Build rule for target.
-CMakeFiles/client.dir/all: CMakeFiles/dsdlc.dir/all
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=1,2,3 "Built target client"
-.PHONY : CMakeFiles/client.dir/all
-
-# Include target in all.
-all: CMakeFiles/client.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 0
-.PHONY : CMakeFiles/client.dir/rule
-
-# Convenience name for target.
-client: CMakeFiles/client.dir/rule
-
-.PHONY : client
-
-# clean rule for target.
-CMakeFiles/client.dir/clean:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
-.PHONY : CMakeFiles/client.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/client.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/motor_board.dir
-
-# All Build rule for target.
-CMakeFiles/motor_board.dir/all: CMakeFiles/mtr_dsdlc.dir/all
-	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/depend
-	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=4,5,6 "Built target motor_board"
-.PHONY : CMakeFiles/motor_board.dir/all
-
-# Include target in all.
-all: CMakeFiles/motor_board.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/motor_board.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/motor_board.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles 0
-.PHONY : CMakeFiles/motor_board.dir/rule
-
-# Convenience name for target.
-motor_board: CMakeFiles/motor_board.dir/rule
-
-.PHONY : motor_board
-
-# clean rule for target.
-CMakeFiles/motor_board.dir/clean:
-	$(MAKE) -f CMakeFiles/motor_board.dir/build.make CMakeFiles/motor_board.dir/clean
-.PHONY : CMakeFiles/motor_board.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/motor_board.dir/clean
 
 .PHONY : clean
 
