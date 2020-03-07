@@ -9,7 +9,7 @@ class motor_card{
     ~motor_card();
     void set_voltage(int volt);
     void ctrl_motor(int state);
-    void get_speed();
+    void set_speed(int speed);
 
 
     private:
