@@ -2,12 +2,13 @@
 #include <stdlib.h> 
 #include <iostream>
 #include <string.h>
+#include <unistd.h>
 #include <wiringPiSPI.h>
 #include "IO/COM/CAN/CAN.hh"
 #include "IO/COM/SPI/Specific/SPI_CAN.hh"
 #include "IO/COM/SPI/SPI.hh"
 #include "IO/beacon.hh"
-#include <unistd.h>
+
 
 
 #define CAN_BR 125e3
