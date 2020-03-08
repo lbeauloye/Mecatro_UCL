@@ -38,7 +38,7 @@ void pid_cascade_control(struct pid_cascade_s* ctrl, float transmission)
     // Current control
     float current_setpt = filter_limit_sym(current_setpt, ctrl->current_limit);
     ctrl->current_setpoint = current_setpt;
-    ctrl->current_error = ctrl->current - current_setpt;
+    ctrl->current_error = current_setpt - ctrl->current;
     ctrl->motor_voltage = pid_process(&ctrl->current_pid, ctrl->current_error);
 
     // Back-emf compensation
