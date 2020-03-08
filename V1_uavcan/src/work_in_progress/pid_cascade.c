@@ -14,31 +14,20 @@ float periodic_error(float err)
     return err;
 }
 
-void pid_cascade_control(struct pid_cascade_s* ctrl)
+void pid_cascade_control(struct pid_cascade_s* ctrl, float transmission)
 {
     // position control
-    float pos_ctrl_vel;
-    if (ctrl->setpts.position_control_enabled) {
-        ctrl->position_setpoint = ctrl->setpts.position_setpt;
-        float position_error = ctrl->position - ctrl->setpts.position_setpt;
-        if (ctrl->periodic_actuator) {
-            position_error = periodic_error(position_error);
-        }
-        ctrl->position_error = position_error;
-        pos_ctrl_vel = pid_process(&ctrl->position_pid, ctrl->position_error);
-        ctrl->position_ctrl_out = pos_ctrl_vel;
-    } else {
-        pid_reset_integral(&ctrl->position_pid);
-        pos_ctrl_vel = 0;
-    }
+    // We cannot do position control anymore, since the position is given in
+    // terms of output shaft position instead of the motor's shaft position.
+    // Our controller (at UCLouvain) works for the motor's shaft position/velocity.
 
     // velocity control
     float vel_ctrl_current;
     if (ctrl->setpts.velocity_control_enabled) {
-        float velocity_setpt = ctrl->setpts.velocity_setpt + pos_ctrl_vel;
-        velocity_setpt = filter_limit_sym(velocity_setpt, ctrl->velocity_limit);
+        float velocity_setpt = ctrl->setpts.velocity_setpt;
         ctrl->velocity_setpoint = velocity_setpt;
-        ctrl->velocity_error = ctrl->velocity - velocity_setpt;
+        ctrl->velocity_error = (velocity_setpt - ctrl->velocity) / transmission;
+            // We want the motor's shaft velocity.
         vel_ctrl_current = pid_process(&ctrl->velocity_pid, ctrl->velocity_error);
         ctrl->velocity_ctrl_out = vel_ctrl_current;
     } else {
@@ -53,11 +42,10 @@ void pid_cascade_control(struct pid_cascade_s* ctrl)
     ctrl->motor_voltage = pid_process(&ctrl->current_pid, ctrl->current_error);
 
     // Back-emf compensation
-    ctrl->motor_voltage += ctrl->motor_current_constant * ctrl->velocity;
-        // Je me pose la question a propos de ctrl->velocity..
-        // Est-ce que c'est la vitesse de l'axe du moteur ou de l'axe de sortie ?
-        // Cela change d'un rapport de transmission à rajouter ou pas...
-        // Autre question: quid du gain des power electronics ? J'ai supposé
-        // que ça valait un, ce qui me semble cohérent avec ce que j'ai vu
-        // dans le reste du code, mais sans trop de certitudes...
+    ctrl->motor_voltage += ctrl->motor_current_constant * ctrl->velocity / transmission;
+        // We want the motor's shaft velocity.
+
+    // In the program, everything is expressed in terms of output shaft's speed.
+    // However, our controller is designed to work with the motor's shaft speed,
+    // therefore we must do the necessary computations to make it work.
 }
