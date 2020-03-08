@@ -11,6 +11,7 @@ class motor_card{
     void set_voltage(double volt);
     void ctrl_motor(int state);
     void set_speed(double speed);
+    void set_old_speed(double speed);
 
 
     private:

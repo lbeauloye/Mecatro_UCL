@@ -4,13 +4,18 @@
 #include <string.h>
 #include <unistd.h>
 #include "can.hpp"
-#include "motor_card.hpp"
+#include "mid_level.hpp"
+
+// Garbage collection
 
 int main(int argc, char *argv[])
 {
-    printf("hello\n");
-    send_message("408", "1E4040");
-    motor_card *test = new motor_card("408", 1);
-    test->ctrl_motor(1);
-    test->set_voltage(50);
+
+    motor_card **motors =(motor_card**) calloc(4,sizeof(motor_card));
+    motors[0] = new motor_card("408",1);
+    motors[1] = new motor_card("408",2);
+    motors[2] = new motor_card("408",1);
+    motors[3] = new motor_card("708",2);
+    mid_level_ctrl *ctrl = new mid_level_ctrl(10,10,3,0,motors);
+    ctrl->set_wheel_speed(5,0,0,0);
 }

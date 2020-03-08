@@ -6,6 +6,7 @@ motor_card::motor_card(string id, int type){
     this->type = type;
 }
 
+
 motor_card::~motor_card(){
 
 }
@@ -59,6 +60,10 @@ void motor_card::init(){
 
     this->error_integ = 0;
     this->saturation = 0;
+}
+
+void motor_card::set_old_speed(double speed){
+    this->wheel_speed = speed;
 }
 
 void motor_card::set_speed(double speed){
