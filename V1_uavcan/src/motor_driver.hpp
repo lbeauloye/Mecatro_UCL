@@ -8,6 +8,8 @@
 #include <motor/control/Velocity.hpp>
 #include <motor/feedback/MotorPosition.hpp>
 
+#include "pi.hpp"
+
 typedef enum {NO_CONTROL, VELOCITY_CONTROL, VOLTAGE_CONTROL} ControlMode;
 
 
@@ -27,9 +29,9 @@ public:
     void set_velocity(double velocity);
     void set_voltage(double voltage);
     void send_command();
-};
 
-// Function declaration
-void feedback_handler_init(uavcan::INode& node);
+    // PI Controller for the motor
+    PIController *ctrl;
+};
 
 #endif

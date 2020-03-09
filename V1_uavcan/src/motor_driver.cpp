@@ -1,6 +1,5 @@
 #include "motor_driver.hpp"
 
-
 /*
  * Class constructor
  * id: CAN bus node id
@@ -8,31 +7,34 @@
  * correction: calibration/correction factor
  */
 Motor::Motor(uavcan::INode& node, int id, int direction, float correction) {
-    node_id = id;
-    control_mode = NO_CONTROL;
-    direction_factor = direction;
-    correction_factor = correction;
+    this->node_id = id;
+    this->control_mode = NO_CONTROL;
+    this->direction_factor = direction;
+    this->correction_factor = correction;
 
     // Initialize the publishers
     int res;
 
-    velocity_pub = new uavcan::Publisher<motor::control::Velocity>(node);
+    this->velocity_pub = new uavcan::Publisher<motor::control::Velocity>(node);
     res = velocity_pub->init();
     if (res < 0) {
         printf("Failed to init the velocity publisher.\n");
         exit(EXIT_FAILURE);
     }
-    velocity_setpoint.node_id = node_id;
-    velocity_setpoint.velocity = 0.0;
+    this->velocity_setpoint.node_id = node_id;
+    this->velocity_setpoint.velocity = 0.0;
 
-    voltage_pub = new uavcan::Publisher<motor::control::Voltage>(node);
+    this->voltage_pub = new uavcan::Publisher<motor::control::Voltage>(node);
     res = voltage_pub->init();
     if (res < 0) {
         printf("Failed to init the voltage controller.\n");
         exit(EXIT_FAILURE);
     }
-    voltage_setpoint.node_id = node_id;
-    voltage_setpoint.voltage = 0.0;
+    this->voltage_setpoint.node_id = node_id;
+    this->voltage_setpoint.voltage = 0.0;
+
+    // PI controller for this motor
+    this->ctrl = new PIController();
 }
 
 /*
@@ -71,35 +73,5 @@ void Motor::send_command() {
         default:
             printf("Unknown control mode\n");
             // Do nothing...
-    }
-}
-
-/*
- *  Feedback handler for the motors
- *  Handles velocity & position data streams
- *  NOTE: the stream/motor_pos parameter must be non-zero for a stream to exist.
- */
- static void callback(const uavcan::ReceivedDataStructure<motor::feedback::MotorPosition>& msg) {
-
-     // We get the source of the message
-     int id = msg.getSrcNodeID().get();
-
-     // Print data
-     printf("Motor no.%d velocity: %f\n", id, msg.velocity);
-
-     // We save the data
-     // FILE *fp = fopen("speed_data.txt", "a");    // Add an "ID" distinction
-     // fprintf(fp, "%f, %f\n", msg.velocity, msg.position);
- }
-
-void feedback_handler_init(uavcan::INode& node) {
-    int res;
-
-    // Velocity feedback
-    static uavcan::Subscriber<motor::feedback::MotorPosition> position_sub(node);
-    res = position_sub.start(callback);
-    if (res < 0) {
-        printf("Failed to init motor feedback !\n");
-        exit(EXIT_FAILURE);
     }
 }

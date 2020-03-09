@@ -33,29 +33,38 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
+    // Initialize the motor
+    Motor motor = Motor(node, 122, -1, 1);
+    // motor.set_voltage(3);
+
     // Velocity Subscriber
-    feedback_handler_init(node);
+    static uavcan::Subscriber<motor::feedback::MotorPosition> position_sub(node);
+    res = position_sub.start(
+        [&](const uavcan::ReceivedDataStructure<motor::feedback::MotorPosition>& msg) {
+            // Get message info
+            int id = msg.getSrcNodeID().get();
+            double w_mes = msg.velocity;
 
-    // Initialize motor
-    Motor motor = Motor(node, 82, -1, 1);
-    // motor.set_voltage(6.32);
-    motor.set_velocity(100.0);
+            // Command the motor
+            double voltage = motor.ctrl->pi_process(20, w_mes);
+            // printf("Applied command: %f [V]\n", voltage);
+            motor.set_voltage(voltage);
+            motor.send_command();
 
-    // Enable Publisher
-    // uavcan::ServiceClient<motor::config::EnableMotor> client_en_motor(node);
-    // client_en_motor.setCallback([](const uavcan::ServiceCallResult<motor::config::EnableMotor>& res)
-    // {
-    //     std::cout << res << std::endl;
-    // });
-    // motor::config::EnableMotor::Request en_motor = motor::config::EnableMotor::Request();
-    // en_motor.enable = true;
+            // Print data
+            printf("Motor no.%d velocity: %f\n", id, w_mes);
+        }
+    );
+    if (res < 0) {
+        printf("Failed to init motor feedback !\n");
+        exit(EXIT_FAILURE);
+    }
 
     // Initialization finished !
     node.setModeOperational();
 
     // Infinite loop
     while(true) {
-
         // If there is nothing to do...
         res = node.spin(uavcan::MonotonicDuration::fromMSec(100));
         if (res < 0) {
@@ -63,7 +72,6 @@ int main() {
             exit(EXIT_FAILURE);
         }
 
-        // Send command
-        motor.send_command();
+        // motor.send_command();
     }
 }
