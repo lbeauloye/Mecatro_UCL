@@ -36,15 +36,15 @@ void pid_cascade_control(struct pid_cascade_s* ctrl, float transmission)
     }
 
     // Current control
-    float current_setpt = filter_limit_sym(current_setpt, ctrl->torque_limit);
-        // Here, torque_limite is actually current_limit (so we can directly
+    float current_setpt = filter_limit_sym(vel_ctrl_current, ctrl->torque_limit);
+        // Here, torque_limit is actually current_limit (so we can directly
         // specify its value thro the parameters)
     ctrl->current_setpoint = current_setpt;
     ctrl->current_error = ctrl->current - current_setpt;
     ctrl->motor_voltage = pid_process(&ctrl->current_pid, ctrl->current_error);
 
     // Back-emf compensation
-    ctrl->motor_voltage += ctrl->motor_current_constant * ctrl->velocity / transmission;
+    ctrl->motor_voltage += ctrl->torque_cst * ctrl->velocity / transmission;
         // We want the motor's shaft velocity.
 
     // In the program, everything is expressed in terms of output shaft's speed.
