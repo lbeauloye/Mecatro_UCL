@@ -26,7 +26,7 @@ void pid_cascade_control(struct pid_cascade_s* ctrl, float transmission)
     if (ctrl->setpts.velocity_control_enabled) {
         float velocity_setpt = ctrl->setpts.velocity_setpt;
         ctrl->velocity_setpoint = velocity_setpt;
-        ctrl->velocity_error = (velocity_setpt - ctrl->velocity) / transmission;
+        ctrl->velocity_error = (ctrl->velocity - velocity_setpt) / transmission;
             // We want the motor's shaft velocity.
         vel_ctrl_current = pid_process(&ctrl->velocity_pid, ctrl->velocity_error);
         ctrl->velocity_ctrl_out = vel_ctrl_current;
@@ -36,9 +36,11 @@ void pid_cascade_control(struct pid_cascade_s* ctrl, float transmission)
     }
 
     // Current control
-    float current_setpt = filter_limit_sym(current_setpt, ctrl->current_limit);
+    float current_setpt = filter_limit_sym(current_setpt, ctrl->torque_limit);
+        // Here, torque_limite is actually current_limit (so we can directly
+        // specify its value thro the parameters)
     ctrl->current_setpoint = current_setpt;
-    ctrl->current_error = current_setpt - ctrl->current;
+    ctrl->current_error = ctrl->current - current_setpt;
     ctrl->motor_voltage = pid_process(&ctrl->current_pid, ctrl->current_error);
 
     // Back-emf compensation
