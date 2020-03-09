@@ -2,6 +2,7 @@ using namespace std;
 #include <string>
 
 double limit(double val, double limit);
+string int_to_hex(int a);
 
 class motor_card{
     public:
