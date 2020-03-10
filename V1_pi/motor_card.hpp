@@ -13,6 +13,8 @@ class motor_card{
     void ctrl_motor(int state);
     void set_speed(double speed);
     void set_old_speed(double speed);
+    void set_kp(double kp);
+    void set_ki(double ki);
 
 
     private:

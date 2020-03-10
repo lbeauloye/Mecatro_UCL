@@ -43,7 +43,7 @@ with open('speed_robot.txt', 'w+') as f:
 
         ToSPI = [0x01, 0xFF, 0xFF, 0xFF, 0xFF]
         FromSPI = MySPI_FPGA.xfer2(ToSPI)
-        (speed_FR, speed_RR)= get_speed(FromSPI)
+        (speed_FR, speed_RR) = get_speed(FromSPI)
         f.seek(0)
         f.write(str(speed_FL) + ' ' + str(speed_RL) + ' ' + str(speed_FR) + ' ' + str(speed_RR))
         f.truncate()

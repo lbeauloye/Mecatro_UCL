@@ -11,6 +11,14 @@ motor_card::~motor_card(){
 
 }
 
+void motor_card::set_kp(double kp){
+    this->kp = kp;
+}
+
+void motor_card::set_ki(double ki){
+    this->ki = ki;
+}
+
 void motor_card::ctrl_motor(int state){
     if(this->type == 0){
 
@@ -25,11 +33,7 @@ void motor_card::set_voltage(double v){
 
     uint8_t volt = 128 + 128*limit(v, 99.0)/100.0;
     
-    printf("Volt: %f %d",v,volt);
-    printf(" -- volt: %f",limit(v, 100.0));
     volt = volt >> 2;
-    printf(int_to_hex(volt).c_str());
-    printf("\n");
 
     if(this->type == 0){
         
@@ -53,13 +57,13 @@ void motor_card::init(){
         send_message(this->id, "1E2000");
     }
 
-    this->kp = 0.02;
-    this->ki = 15.0;
-    this->alpha = 0.3;
+    this->kp = 0.06337;
+    this->ki = 0.622;
+    this->alpha = 0.0;
 
-    this->khpi = 0.00027;
+    this->khpi = 0.037;
     this->deltaT = 0.04;
-    this->limitI = 7.1*0.78;
+    this->limitI = 5.84 *100;
     this->limitV = 0.97*24;
     this->gearbox = 14;
 
@@ -87,7 +91,7 @@ void motor_card::set_speed(double speed){
     this->saturation = - v;
 
     // Limit on current + adding back emf
-    v = limit(v, this->limitI) + this->khpi * this->wheel_speed*this->gearbox;
+    v = limit(v, this->limitI) + this->khpi * this->wheel_speed;
 
     // Compute saturation
     this->saturation += v;
