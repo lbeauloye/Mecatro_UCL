@@ -34,8 +34,13 @@ int main() {
     }
 
     // Initialize the motor
-    Motor motor = Motor(node, 122, -1, 1);
-    // motor.set_voltage(3);
+    Motor motor_back_left = Motor(node, 122, 1, 1);
+    Motor motor_back_right = Motor(node, 83, -1, 1);
+    Motor motor_front_right = Motor(node, 82, -1, 1);
+    Motor motor_front_left = Motor(node, 121, 1, 1);
+
+    // Initialize timer
+    int t = 0;
 
     // Velocity Subscriber
     static uavcan::Subscriber<motor::feedback::MotorPosition> position_sub(node);
@@ -44,12 +49,46 @@ int main() {
             // Get message info
             int id = msg.getSrcNodeID().get();
             double w_mes = msg.velocity;
+            t += 1;
 
-            // Command the motor
-            double voltage = motor.ctrl->pi_process(20, w_mes);
-            // printf("Applied command: %f [V]\n", voltage);
-            motor.set_voltage(voltage);
-            motor.send_command();
+            // Fetch velocity ref
+            double w_ref = 0;
+            if (t > 15e2 * 4) {
+                w_ref = 0;
+            } else if (t > 10e2 * 4) {
+                w_ref = -3;
+            } else {
+                w_ref = 3;
+            }
+
+            // Command the motors
+            double voltage;
+
+            switch (id) {
+                case 82:    // FRONT RIGHT (-1)
+                    voltage = motor_front_right.ctrl->pi_process(-w_ref, w_mes);
+                    motor_front_right.set_voltage(voltage);
+                    motor_front_right.send_command();
+                    break;
+
+                case 83:    // BACK RIGHT (-1)
+                    voltage = motor_back_right.ctrl->pi_process(-w_ref, w_mes);
+                    motor_back_right.set_voltage(voltage);
+                    motor_back_right.send_command();
+                    break;
+
+                case 121:   // FRONT LEFT (1)
+                    voltage = motor_front_left.ctrl->pi_process(w_ref, w_mes);
+                    motor_front_left.set_voltage(voltage);
+                    motor_front_left.send_command();
+                    break;
+
+                case 122:   // BACK LEFT (1)
+                    voltage = motor_back_left.ctrl->pi_process(w_ref, w_mes);
+                    motor_back_left.set_voltage(voltage);
+                    motor_back_left.send_command();
+                    break;
+            }
 
             // Print data
             printf("Motor no.%d velocity: %f\n", id, w_mes);
@@ -63,6 +102,7 @@ int main() {
     // Initialization finished !
     node.setModeOperational();
 
+
     // Infinite loop
     while(true) {
         // If there is nothing to do...
@@ -71,7 +111,5 @@ int main() {
             printf("Spin fail.\n");
             exit(EXIT_FAILURE);
         }
-
-        // motor.send_command();
     }
 }
