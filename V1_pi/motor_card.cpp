@@ -57,8 +57,8 @@ void motor_card::init(){
         send_message(this->id, "1E2000");
     }
 
-    this->kp = 0.0010337;
-    this->ki = 1.002;
+    this->kp = 0.009;
+    this->ki = 1.102;
     this->alpha = 0.2;
 
     this->khpi = 0.037;
