@@ -57,9 +57,9 @@ void motor_card::init(){
         send_message(this->id, "1E2000");
     }
 
-    this->kp = 0.06337;
-    this->ki = 0.622;
-    this->alpha = 0.0;
+    this->kp = 0.0010337;
+    this->ki = 1.002;
+    this->alpha = 0.2;
 
     this->khpi = 0.037;
     this->deltaT = 0.04;
@@ -76,6 +76,7 @@ void motor_card::set_old_speed(double speed){
 }
 
 void motor_card::set_speed(double speed){
+    printf("%f \n", speed);
     // Error on speed
     double err_w = (speed - this->wheel_speed)* this->gearbox;
 

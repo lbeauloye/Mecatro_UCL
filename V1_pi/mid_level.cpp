@@ -26,39 +26,37 @@ mid_level_ctrl::~mid_level_ctrl(){
 
 
 
-void mid_level_ctrl::set_wheel_speed(double x_dot, double y_dot, double theta_dot, double theta){
+void mid_level_ctrl::set_wheel_speed(double theta_dot, double y_dot, double x_dot, double theta){
     
     double a = this->length/2;
     double b = this->width/2;
     double l = sqrt(a*a + b*b);
-    double r_wheel = this->r_wheel;
+    double r = this->r_wheel;
     double gamma = this->gamma;
-    double alpha0 = atan(a/b);
-    double alpha1 = M_PI-atan(a/b);
-    double alpha2 = atan(a/b)-M_PI;
-    double alpha3 = -atan(a/b);
+    double alpha1 = atan(a/b);
+    double alpha2 = M_PI-atan(a/b);
+    double alpha3 = atan(a/b)-M_PI;
+    double alpha4 = -atan(a/b);
     
-    double beta0 = alpha0;
     double beta1 = alpha1;
     double beta2 = alpha2;
     double beta3 = alpha3;
+    double beta4 = alpha4;
 
-    std::fstream myfile("./data_robot.txt", std::ios_base::in);
+    std::fstream myfile("../speed_robot.txt", std::ios_base::in);
     double FL, RL, FR, RR;
     myfile >> FL >> RL >> FR >> RR;
     myfile.close();
-
+    
     this->wheel[0]->set_old_speed(FL);
-    this->wheel[0]->set_speed((x_dot*cos(theta)*sin(alpha0 + beta0 + gamma) + sin(theta)*cos(alpha0 + beta0 + gamma)- y_dot*cos(theta)*cos(alpha0 + beta0 + gamma) - sin(theta)*sin(alpha0 + beta0 + gamma) - l*theta_dot*cos(beta0 + gamma))/(r_wheel*cos(gamma))) ;
+    this->wheel[0]->set_speed(x_dot*((cos(theta)*sin(alpha1 + beta1 + gamma))/(r*cos(gamma)) + (sin(theta)*cos(alpha1 + beta1 + gamma))/(r*cos(gamma))) - y_dot*((cos(theta)*cos(alpha1 + beta1 + gamma))/(r*cos(gamma)) - (sin(theta)*sin(alpha1 + beta1 + gamma))/(r*cos(gamma))) - (l*theta_dot*cos(beta1 + gamma))/(r*cos(gamma))) ;
     
     this->wheel[1]->set_old_speed(RL);
-    this->wheel[1]->set_speed((x_dot*cos(theta)*sin(alpha2 + beta2 + gamma) + sin(theta)*cos(alpha2 + beta2 + gamma)- y_dot*cos(theta)*cos(alpha2 + beta2 + gamma) - sin(theta)*sin(alpha2 + beta2 + gamma) - l*theta_dot*cos(beta2 + gamma))/(r_wheel*cos(gamma))) ;
+    this->wheel[1]->set_speed( x_dot*((cos(theta)*sin(alpha3 + beta3 + gamma))/(r*cos(gamma)) + (sin(theta)*cos(alpha3 + beta3 + gamma))/(r*cos(gamma))) - y_dot*((cos(theta)*cos(alpha3 + beta3 + gamma))/(r*cos(gamma)) - (sin(theta)*sin(alpha3 + beta3 + gamma))/(r*cos(gamma))) - (l*theta_dot*cos(beta3 + gamma))/(r*cos(gamma))) ;
     
     this->wheel[2]->set_old_speed(FR);
-    this->wheel[2]->set_speed((x_dot*cos(alpha1 + beta1 - gamma)*sin(theta) + sin(alpha1 + beta1 - gamma)*cos(theta) - y_dot*cos(alpha1 + beta1 - gamma)*cos(theta) - sin(alpha1 + beta1 - gamma)*sin(theta) - l*theta_dot*cos(beta1 - gamma))/(r_wheel*cos(gamma)));
+    this->wheel[2]->set_speed( x_dot*((cos(alpha2 + beta2 - gamma)*sin(theta))/(r*cos(gamma)) + (sin(alpha2 + beta2 - gamma)*cos(theta))/(r*cos(gamma))) - y_dot*((cos(alpha2 + beta2 - gamma)*cos(theta))/(r*cos(gamma)) - (sin(alpha2 + beta2 - gamma)*sin(theta))/(r*cos(gamma))) - (l*theta_dot*cos(beta2 - gamma))/(r*cos(gamma)));
 
     this->wheel[3]->set_old_speed(RR);
-    this->wheel[3]->set_speed((x_dot*cos(alpha3 + beta3 - gamma)*sin(theta) + sin(alpha3 + beta3 - gamma)*cos(theta) - y_dot*cos(alpha3 + beta1 - gamma)*cos(theta) - sin(alpha3 + beta3 - gamma)*sin(theta) - l*theta_dot*cos(beta3 - gamma))/(r_wheel*cos(gamma)));
-    
-    
+    this->wheel[3]->set_speed( x_dot*((cos(alpha4 + beta4 - gamma)*sin(theta))/(r*cos(gamma)) + (sin(alpha4 + beta4 - gamma)*cos(theta))/(r*cos(gamma))) - y_dot*((cos(alpha4 + beta4 - gamma)*cos(theta))/(r*cos(gamma)) - (sin(alpha4 + beta4 - gamma)*sin(theta))/(r*cos(gamma))) - (l*theta_dot*cos(beta4 - gamma))/(r*cos(gamma)));
 }
