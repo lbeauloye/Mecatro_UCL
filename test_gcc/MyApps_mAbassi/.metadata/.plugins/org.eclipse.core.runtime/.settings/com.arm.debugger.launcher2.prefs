@@ -1,0 +1,6 @@
+config_db_path=/home/westornd/intelFPGA_lite/18.1/embedded/ds-5/sw/debugger/configdb\:
+config_db_path0_defaultid=com.arm.ds\:0
+config_db_path0_enabled=true
+eclipse.preferences.version=1
+enabled_config_db_path=/home/westornd/intelFPGA_lite/18.1/embedded/ds-5/sw/debugger/configdb\:
+last_connection_browser_settings=<?xml version\="1.0" encoding\="UTF-8"?>\n<section name\="prefs">\n\t<item value\="875" key\="DIALOG_WIDTH"/>\n\t<item value\="1|Sans|10.0|0|GTK|1|" key\="DIALOG_FONT_NAME"/>\n\t<item value\="450" key\="DIALOG_HEIGHT"/>\n\t<item value\="166" key\="DIALOG_X_ORIGIN"/>\n\t<item value\="153" key\="DIALOG_Y_ORIGIN"/>\n</section>\n

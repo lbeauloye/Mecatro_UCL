@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;MyApp_DMA/MyApp_mAbassi_GCC.make&apos; to &apos;MyApp_DMA_GCC.make&apos;" description="Rename resource &apos;MyApp_mAbassi_GCC.make&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MyApp_mAbassi_GCC.make" name="MyApp_DMA_GCC.make" stamp="1552750975428" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;MyApp_DMA/src/MyApp_mAbassi.c&apos; to &apos;MyApp_DMA.c&apos;" description="Rename resource &apos;MyApp_mAbassi.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/MyApp_mAbassi.c" name="MyApp_DMA.c" stamp="1552751060709" updateReferences="true"/>
+</session>

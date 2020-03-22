@@ -1,0 +1,1607 @@
+Archive member included to satisfy reference by file (symbol)
+
+../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                              arm_pl330.o (Abassi)
+../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o)
+                              (_vector_table)
+../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(ARMv7_SMP_L1_L2_GCC_AR5_CY5.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o) (COREcacheON)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o)
+                              (__cs3_start_c)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3unhosted.a(unhosted-start.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o) (_start)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivsi3.o)
+                              arm_pl330.o (__aeabi_uidiv)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_divsi3.o)
+                              Demo_50_CORTEXA9.o (__aeabi_idiv)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_dvmd_tls.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-calloc.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o) (calloc)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-callocr.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-calloc.o) (_calloc_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-getreent.o)
+                              Demo_50_CORTEXA9.o (__getreent)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-impure.o)
+                              SysCall_noFS.o (_impure_ptr)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-init.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o) (__libc_init_array)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-malloc.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o) (malloc)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mallocr.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-callocr.o) (_malloc_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcmp.o)
+                              Demo_50_CORTEXA9.o (memcmp)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memmove.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o) (memmove)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memset.o)
+                              Demo_50_CORTEXA9.o (memset)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mallocr.o) (__malloc_lock)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-printf.o)
+                              Demo_50_CORTEXA9.o (printf)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o)
+                              Demo_50_CORTEXA9.o (puts)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o)
+                              Demo_50_CORTEXA9.o (setvbuf)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcmp.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o) (strcmp)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcpy.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o) (strcpy)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strlen-stub.o)
+                              ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o) (strlen)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-printf.o) (_vfprintf_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wsetup.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (__swsetup_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (_dtoa_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fflush.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o) (_fflush_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o) (__sinit)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-freer.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-malloc.o) (_free_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fvwrite.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o) (__sfvwrite_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fwalk.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o) (_fwalk)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-localeconv.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (_localeconv_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-makebuf.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o) (__swhatbuf_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memchr-stub.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (memchr)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o) (memcpy)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mprec.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o) (_Balloc)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-reallocr.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fvwrite.o) (_realloc_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-stdio.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o) (__sread)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (__sprint_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fclose.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o) (_fclose_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o) (_fputwc_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o) (__locale_mb_cur_max)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mbtowc_r.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o) (__ascii_mbtowc)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wbuf.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o) (__swbuf_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wcrtomb.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o) (_wcrtomb_r)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wctomb_r.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o) (__ascii_wctomb)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-ctype_.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o) (_ctype_)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_addsubdf3.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o) (__aeabi_dsub)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_muldivdf3.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o) (__aeabi_dmul)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_cmpdf2.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (__aeabi_dcmpeq)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_unorddf2.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (__aeabi_dcmpun)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_fixdfsi.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o) (__aeabi_d2iz)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_aeabi_uldivmod.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o) (__aeabi_uldivmod)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_aeabi_uldivmod.o) (__udivmoddi4)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(gthr-generic.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o) (__generic_gxx_recursive_mutex_init_function)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzdi2.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o) (__clzdi2)
+c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzsi2.o)
+                              c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzdi2.o) (__clzsi2)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o
+ .data          0x00000000        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ .text          0x00000000        0x0 Demo_50_CORTEXA9.o
+ .data          0x00000000        0x0 Demo_50_CORTEXA9.o
+ .bss           0x00000000        0x0 Demo_50_CORTEXA9.o
+ .text          0x00000000        0x0 SysCall_noFS.o
+ .data          0x00000000        0x0 SysCall_noFS.o
+ .bss           0x00000000        0x0 SysCall_noFS.o
+ .text._close   0x00000000       0x1c SysCall_noFS.o
+ .text._fstat   0x00000000       0x1c SysCall_noFS.o
+ .text._isatty  0x00000000       0x10 SysCall_noFS.o
+ .text._lseek   0x00000000       0x1c SysCall_noFS.o
+ .text.mkdir    0x00000000       0x1c SysCall_noFS.o
+ .text._open    0x00000000       0x1c SysCall_noFS.o
+ .text._read    0x00000000       0x88 SysCall_noFS.o
+ .text.rename   0x00000000       0x1c SysCall_noFS.o
+ .text._stat    0x00000000       0x1c SysCall_noFS.o
+ .text._unlink  0x00000000       0x1c SysCall_noFS.o
+ .text._write   0x00000000       0x88 SysCall_noFS.o
+ .text._open_r  0x00000000       0x10 SysCall_noFS.o
+ .text._rename_r
+                0x00000000       0x10 SysCall_noFS.o
+ .text._unlink_r
+                0x00000000       0x10 SysCall_noFS.o
+ .text.dup      0x00000000       0x1c SysCall_noFS.o
+ .text.getcwd   0x00000000       0x1c SysCall_noFS.o
+ .text.chdir    0x00000000       0x1c SysCall_noFS.o
+ .text._mkdir_r
+                0x00000000       0x10 SysCall_noFS.o
+ .text._stat_r  0x00000000       0x10 SysCall_noFS.o
+ .text.fstatfs  0x00000000       0x1c SysCall_noFS.o
+ .text.statfs   0x00000000       0x1c SysCall_noFS.o
+ .text.chown    0x00000000        0x8 SysCall_noFS.o
+ .text.umask    0x00000000       0x1c SysCall_noFS.o
+ .text.chmod    0x00000000       0x1c SysCall_noFS.o
+ .text.mount    0x00000000       0x1c SysCall_noFS.o
+ .text.unmount  0x00000000       0x1c SysCall_noFS.o
+ .text.mkfs     0x00000000       0x1c SysCall_noFS.o
+ .text.opendir  0x00000000       0x1c SysCall_noFS.o
+ .text.closedir
+                0x00000000       0x1c SysCall_noFS.o
+ .text.readdir  0x00000000       0x1c SysCall_noFS.o
+ .text.telldir  0x00000000       0x1c SysCall_noFS.o
+ .text.seekdir  0x00000000        0x4 SysCall_noFS.o
+ .text.rewinddir
+                0x00000000        0x4 SysCall_noFS.o
+ .text.devctl   0x00000000        0x8 SysCall_noFS.o
+ .text.GetKey   0x00000000       0x3c SysCall_noFS.o
+ .text          0x00000000        0x0 TIMERinit.o
+ .data          0x00000000        0x0 TIMERinit.o
+ .bss           0x00000000        0x0 TIMERinit.o
+ .text          0x00000000        0x0 arm_acp.o
+ .data          0x00000000        0x0 arm_acp.o
+ .bss           0x00000000        0x0 arm_acp.o
+ .text          0x00000000        0x0 arm_pl330.o
+ .data          0x00000000        0x0 arm_pl330.o
+ .bss           0x00000000        0x0 arm_pl330.o
+ .text.dma_kill_X
+                0x00000000      0x1a4 arm_pl330.o
+ .text.dma_event
+                0x00000000      0x104 arm_pl330.o
+ .text.dma_kill
+                0x00000000      0x188 arm_pl330.o
+ .text.dma_pend_trig
+                0x00000000      0x214 arm_pl330.o
+ .text.dma_release
+                0x00000000       0xf0 arm_pl330.o
+ .text.dma_start
+                0x00000000      0x1bc arm_pl330.o
+ .text.dma_state
+                0x00000000      0x1bc arm_pl330.o
+ .text.DMAintHndl
+                0x00000000      0x1a0 arm_pl330.o
+ .rodata.dma_event.str1.4
+                0x00000000       0x26 arm_pl330.o
+ .rodata.dma_kill.str1.4
+                0x00000000       0x25 arm_pl330.o
+ .rodata.dma_kill_X.str1.4
+                0x00000000       0x58 arm_pl330.o
+ .rodata.dma_pend_trig.str1.4
+                0x00000000       0xd9 arm_pl330.o
+ .rodata.dma_release.str1.4
+                0x00000000       0x59 arm_pl330.o
+ .rodata.dma_state.str1.4
+                0x00000000      0x11a arm_pl330.o
+ .text          0x00000000        0x0 dw_uart.o
+ .data          0x00000000        0x0 dw_uart.o
+ .bss           0x00000000        0x0 dw_uart.o
+ .text.uart_filt
+                0x00000000       0x90 dw_uart.o
+ .text          0x00000000        0x0 mAbassiCfgA9.o
+ .data          0x00000000        0x0 mAbassiCfgA9.o
+ .bss           0x00000000        0x0 mAbassiCfgA9.o
+ .text          0x00000000        0x0 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .data          0x00000000        0x0 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss           0x00000000        0x0 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.TSKgetID
+                0x00000000       0x60 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.TSKstkChk
+                0x00000000       0x60 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.MBX__open
+                0x00000000      0x154 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.MBXget   0x00000000      0x128 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.TIMopen  0x00000000      0x11c ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.MBLK__open
+                0x00000000      0x198 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.MBLKalloc
+                0x00000000       0x7c ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.GroupAdd
+                0x00000000       0xf8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.GroupRm  0x00000000       0xb4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.GRPwait  0x00000000       0xa0 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .text.OSalloc  0x00000000       0x68 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_MblkList
+                0x00000000        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_MboxList
+                0x00000000        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_TimerList
+                0x00000000        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .rodata.g_OSidleFct
+                0x00000000        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .data          0x00000000        0x0 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(ARMv7_SMP_L1_L2_GCC_AR5_CY5.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o)
+ .text          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3unhosted.a(unhosted-start.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3unhosted.a(unhosted-start.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3unhosted.a(unhosted-start.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_divsi3.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_divsi3.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-calloc.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-calloc.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-callocr.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-callocr.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-getreent.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-getreent.o)
+ .text          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-malloc.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-malloc.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcmp.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcmp.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memmove.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memmove.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-printf.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-printf.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcmp.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcmp.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcpy.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcpy.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strlen-stub.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strlen-stub.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wsetup.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wsetup.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fflush.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fflush.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-freer.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-freer.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fvwrite.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fvwrite.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fwalk.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fwalk.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-localeconv.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-localeconv.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-makebuf.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-makebuf.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memchr-stub.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memchr-stub.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mprec.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mprec.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-reallocr.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-reallocr.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-stdio.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-stdio.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fclose.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fclose.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o)
+ .bss           0x00000000        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mbtowc_r.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mbtowc_r.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wbuf.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wbuf.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wcrtomb.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wcrtomb.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wctomb_r.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wctomb_r.o)
+ .text          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-ctype_.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-ctype_.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-ctype_.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_unorddf2.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_unorddf2.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_fixdfsi.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+ .ARM.extab     0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(gthr-generic.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(gthr-generic.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzdi2.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzdi2.o)
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzsi2.o)
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzsi2.o)
+ .text          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+ .text          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o
+ .data          0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o
+ .bss           0x00000000        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x02000000         0x1e000000         xrw
+uram             0xffff0000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+LOAD Demo_50_CORTEXA9.o
+LOAD SysCall_noFS.o
+LOAD TIMERinit.o
+LOAD arm_acp.o
+LOAD arm_pl330.o
+LOAD dw_uart.o
+LOAD mAbassiCfgA9.o
+LOAD ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3unhosted.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3arm.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libstdc++.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libm.a
+START GROUP
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a
+END GROUP
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+LOAD c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o
+                0x00002000                _STACK_SIZE = DEFINED (_STACK_SIZE)?_STACK_SIZE:0x2000
+                0x10000000                _MDRV_SIZE = DEFINED (_MDRV_SIZE)?_MDRV_SIZE:0x10000000
+                0x00000800                _SUPERVISOR_STACK_SIZE = DEFINED (_SUPERVISOR_STACK_SIZE)?_SUPERVISOR_STACK_SIZE:0x800
+                0x00000800                _ABORT_STACK_SIZE = DEFINED (_ABORT_STACK_SIZE)?_ABORT_STACK_SIZE:0x800
+                0x00000800                _FIQ_STACK_SIZE = DEFINED (_FIQ_STACK_SIZE)?_FIQ_STACK_SIZE:0x800
+                0x00002000                _IRQ_STACK_SIZE = DEFINED (_IRQ_STACK_SIZE)?_IRQ_STACK_SIZE:0x2000
+                0x00000800                _UNDEF_STACK_SIZE = DEFINED (_UNDEF_STACK_SIZE)?_UNDEF_STACK_SIZE:0x800
+                0x00000001                PROVIDE (__cs3_region_num, ((__cs3_regions_end - __cs3_regions) / 0x14))
+                0x02015594                __libc_fini = _fini
+
+.text           0x02000000    0x149f8
+ CREATE_OBJECT_SYMBOLS
+                0x02000000                __cs3_region_start_ram = .
+                0x02000000                _ftext = .
+ *(.cs3.region-head.ram)
+                0x00000001                ASSERT ((. == __cs3_region_start_ram), .cs3.region-head.ram not permitted)
+                0x02000000                __cs3_interrupt_vector = __cs3_interrupt_vector_arm
+ *(.cs3.interrupt_vector)
+ .cs3.interrupt_vector
+                0x02000000       0x3c ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o)
+                0x02000000                Vectors
+                0x02000000                __cs3_interrupt_vector_arm
+                0x02000000                _vector_table
+ *(.vectors)
+                0x02009258                PROVIDE (__cs3_reset, __cs3_reset_generic)
+ *(.cs3.reset)
+                [0x020000d0]                _start = DEFINED (__cs3_start_asm)?__cs3_start_asm:_start
+ *(.text.cs3.init)
+ .text.cs3.init
+                0x0200003c       0x94 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o)
+                0x0200003c                __cs3_start_c
+ .text.cs3.init
+                0x020000d0        0xc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3unhosted.a(unhosted-start.o)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x020000dc      0x108 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ .text.startup.main
+                0x020001e4      0x884 Demo_50_CORTEXA9.o
+                0x020001e4                main
+ .text.TIMcallBack
+                0x02000a68        0x4 Demo_50_CORTEXA9.o
+                0x02000a68                TIMcallBack
+ .text.SysCallInit
+                0x02000a6c        0x4 SysCall_noFS.o
+                0x02000a6c                SysCallInit
+ .text._close_r
+                0x02000a70       0x10 SysCall_noFS.o
+                0x02000a70                _close_r
+ .text._read_r  0x02000a80       0x88 SysCall_noFS.o
+                0x02000a80                _read_r
+ .text._write_r
+                0x02000b08       0x88 SysCall_noFS.o
+                0x02000b08                _write_r
+ .text._lseek_r
+                0x02000b90       0x10 SysCall_noFS.o
+                0x02000b90                _lseek_r
+ .text._fstat_r
+                0x02000ba0       0x10 SysCall_noFS.o
+                0x02000ba0                _fstat_r
+ .text._isatty_r
+                0x02000bb0       0x10 SysCall_noFS.o
+                0x02000bb0                _isatty_r
+ .text.TIMERinit
+                0x02000bc0       0x28 TIMERinit.o
+                0x02000bc0                TIMERinit
+ .text.acp_enable
+                0x02000be8      0x134 arm_acp.o
+                0x02000be8                acp_enable
+ .text.DMAasm   0x02000d1c      0x288 arm_pl330.o
+ .text.dma_start_X.constprop.9
+                0x02000fa4      0x1ec arm_pl330.o
+ .text.dma_cleanup.part.0.constprop.10
+                0x02001190      0x554 arm_pl330.o
+ .text.dma_done
+                0x020016e4      0x134 arm_pl330.o
+                0x020016e4                dma_done
+ .text.dma_wait
+                0x02001818      0x37c arm_pl330.o
+                0x02001818                dma_wait
+ .text.dma_xfer
+                0x02001b94     0x1d28 arm_pl330.o
+                0x02001b94                dma_xfer
+ *fill*         0x020038bc        0x4 
+ .text.dma_init
+                0x020038c0      0x340 arm_pl330.o
+                0x020038c0                dma_init
+ .text.DMAintHndl_0
+                0x02003c00      0x140 arm_pl330.o
+                0x02003c00                DMAintHndl_0
+ .text.DMAintHndl_1
+                0x02003d40      0x148 arm_pl330.o
+                0x02003d40                DMAintHndl_1
+ .text.DMAintHndl_2
+                0x02003e88      0x148 arm_pl330.o
+                0x02003e88                DMAintHndl_2
+ .text.DMAintHndl_3
+                0x02003fd0      0x14c arm_pl330.o
+                0x02003fd0                DMAintHndl_3
+ .text.DMAintHndl_4
+                0x0200411c      0x148 arm_pl330.o
+                0x0200411c                DMAintHndl_4
+ .text.DMAintHndl_5
+                0x02004264      0x14c arm_pl330.o
+                0x02004264                DMAintHndl_5
+ .text.DMAintHndl_6
+                0x020043b0      0x148 arm_pl330.o
+                0x020043b0                DMAintHndl_6
+ .text.DMAintHndl_7
+                0x020044f8      0x14c arm_pl330.o
+                0x020044f8                DMAintHndl_7
+ .text.uart_send
+                0x02004644      0x86c dw_uart.o
+                0x02004644                uart_send
+ .text.uart_recv
+                0x02004eb0      0x768 dw_uart.o
+                0x02004eb0                uart_recv
+ .text.uart_init
+                0x02005618      0x3d4 dw_uart.o
+                0x02005618                uart_init
+ .text.UARTintHndl_0
+                0x020059ec      0x198 dw_uart.o
+                0x020059ec                UARTintHndl_0
+ .text.UARTintHndl_1
+                0x02005b84      0x198 dw_uart.o
+                0x02005b84                UARTintHndl_1
+ .text.TSKcreate.constprop.0
+                0x02005d1c       0xf0 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ *fill*         0x02005e0c        0x4 
+ .text.Abassi   0x02005e10     0x2850 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02005e10                Abassi
+ .text.TSKcreate
+                0x02008660      0x350 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02008660                TSKcreate
+ .text.OSstart  0x020089b0      0x17c ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x020089b0                OSstart
+ .text.TSKstart
+                0x02008b2c       0x60 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02008b2c                TSKstart
+ .text.SEM__open
+                0x02008b8c      0x144 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02008b8c                SEM__open
+ .text.MBXput   0x02008cd0       0xd8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02008cd0                MBXput
+ .text.TIMtick  0x02008da8      0x4a0 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02008da8                TIMtick
+ .text          0x02009248      0xb48 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o)
+                0x02009258                __cs3_reset_generic
+                0x02009258                Reset_Handler
+                0x02009258                boot
+                0x02009258                _prestart
+                0x02009600                _exit
+                0x02009608                _sbrk_r
+                0x02009640                OStrap
+                0x02009658                __cs3_isr_swi
+                0x02009658                mySWI
+                0x020096a0                SWI_Handler
+                0x020096a4                OScontext
+                0x020096c4                CoreContext
+                0x020096d8                OSstack
+                0x02009734                OSintCtrl
+                0x02009754                OSintBack
+                0x02009764                OSintOff
+                0x02009770                OSintOn
+                0x02009778                OSisrInfo
+                0x02009788                __cs3_isr_irq
+                0x02009788                ISRdispatch
+                0x020098bc                OSinvalidISR
+                0x020098c4                COREgetPeriph
+                0x020098cc                COREgetID
+                0x020098d8                GICinit
+                0x0200997c                GICenable
+                0x02009abc                COREstart1
+                0x02009ac8                COREstart2
+                0x02009ad4                COREstart3
+                0x02009ae0                COREstart0
+                0x02009aec                CoreIdle
+                0x02009b1c                COREsafeGetID
+                0x02009b40                COREsendISR
+                0x02009b74                COREwakeISR
+                0x02009ba0                COREisInISR
+                0x02009bb4                COREtaskNow
+                0x02009bd8                COREchkRedo
+                0x02009c38                CORElock
+                0x02009c68                COREunlock
+                0x02009c7c                SPINlock
+                0x02009c8c                SPINtrylock
+                0x02009c9c                SPIN_lock
+                0x02009d24                SPINunlock
+ .text          0x02009d90      0x798 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(ARMv7_SMP_L1_L2_GCC_AR5_CY5.o)
+                0x02009d90                COREcacheON
+                0x0200a21c                DCacheInvalRange
+                0x0200a330                DCacheFlushRange
+                0x0200a444                MMUlog2Phy
+                0x0200a4a4                MMUphy2Log
+ .text          0x0200a528       0x4c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o)
+                0x0200a528                __cs3_premain
+ .text          0x0200a574      0x114 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivsi3.o)
+                0x0200a574                __aeabi_uidiv
+                0x0200a574                __udivsi3
+                0x0200a668                __aeabi_uidivmod
+ .text          0x0200a688      0x148 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_divsi3.o)
+                0x0200a688                __divsi3
+                0x0200a688                __aeabi_idiv
+                0x0200a7b0                __aeabi_idivmod
+ .text          0x0200a7d0        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_dvmd_tls.o)
+                0x0200a7d0                __aeabi_idiv0
+                0x0200a7d0                __aeabi_ldiv0
+ .text          0x0200a7d4       0x24 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-calloc.o)
+                0x0200a7d4                calloc
+ .text          0x0200a7f8       0x98 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-callocr.o)
+                0x0200a7f8                _calloc_r
+ .text          0x0200a890       0x10 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-getreent.o)
+                0x0200a890                __getreent
+ .text          0x0200a8a0       0x80 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-init.o)
+                0x0200a8a0                __libc_init_array
+ .text          0x0200a920       0x38 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-malloc.o)
+                0x0200a920                malloc
+                0x0200a93c                free
+ .text          0x0200a958      0x750 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mallocr.o)
+                0x0200a958                _malloc_r
+ .text          0x0200b0a8       0xf0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcmp.o)
+                0x0200b0a8                memcmp
+ .text          0x0200b198      0x148 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memmove.o)
+                0x0200b198                memmove
+ .text          0x0200b2e0      0x114 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memset.o)
+                0x0200b2e0                memset
+ .text          0x0200b3f4       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+                0x0200b3f4                __malloc_lock
+                0x0200b40c                __malloc_unlock
+ .text.startup  0x0200b424       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+ .text          0x0200b43c       0x6c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-printf.o)
+                0x0200b43c                _printf_r
+                0x0200b470                printf
+ .text          0x0200b4a8      0x12c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o)
+                0x0200b4a8                _puts_r
+                0x0200b5bc                puts
+ .text          0x0200b5d4      0x258 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o)
+                0x0200b5d4                setvbuf
+ .text          0x0200b82c      0x224 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcmp.o)
+                0x0200b82c                strcmp
+ .text          0x0200ba50       0xf0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcpy.o)
+                0x0200ba50                strcpy
+ .text          0x0200bb40       0x60 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strlen-stub.o)
+                0x0200bb40                strlen
+ .text          0x0200bba0     0x22ec c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+                0x0200bba0                _vfprintf_r
+                0x0200dd94                vfprintf
+ .text          0x0200de8c      0x158 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wsetup.o)
+                0x0200de8c                __swsetup_r
+ *fill*         0x0200dfe4        0x4 
+ .text          0x0200dfe8     0x181c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o)
+                0x0200e1c8                _dtoa_r
+ .text          0x0200f804      0x314 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fflush.o)
+                0x0200f804                __sflush_r
+                0x0200fa40                _fflush_r
+                0x0200fadc                fflush
+ .text          0x0200fb18      0x3e4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+                0x0200fb18                _cleanup_r
+                0x0200fc24                __sfmoreglue
+                0x0200fc74                _cleanup
+                0x0200fc98                __sinit
+                0x0200fd2c                __sfp
+                0x0200fe4c                __sfp_lock_acquire
+                0x0200fe64                __sfp_lock_release
+                0x0200fe7c                __sinit_lock_acquire
+                0x0200fe94                __sinit_lock_release
+                0x0200feac                __fp_lock_all
+                0x0200fed4                __fp_unlock_all
+ .text.startup  0x0200fefc       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+ .text          0x0200ff2c      0x3e0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-freer.o)
+                0x0200ff2c                _malloc_trim_r
+                0x0201002c                _free_r
+ .text          0x0201030c      0x4dc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fvwrite.o)
+                0x0201030c                __sfvwrite_r
+ .text          0x020107e8      0x110 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fwalk.o)
+                0x020107e8                _fwalk
+                0x0201086c                _fwalk_reent
+ .text          0x020108f8       0x58 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-localeconv.o)
+                0x020108f8                __localeconv_l
+                0x02010900                _localeconv_r
+                0x02010928                localeconv
+ .text          0x02010950      0x18c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-makebuf.o)
+                0x02010950                __swhatbuf_r
+                0x020109f0                __smakebuf_r
+ .text          0x02010adc      0x110 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memchr-stub.o)
+                0x02010adc                memchr
+ .text          0x02010bec      0x114 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                0x02010bec                memcpy
+ .text          0x02010d00      0xd98 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mprec.o)
+                0x02010d00                _Balloc
+                0x02010d8c                _Bfree
+                0x02010da8                __multadd
+                0x02010e84                __s2b
+                0x02010f74                __hi0bits
+                0x02010fcc                __lo0bits
+                0x0201106c                __i2b
+                0x02011090                __multiply
+                0x02011260                __pow5mult
+                0x02011364                __lshift
+                0x0201144c                __mcmp
+                0x020114ac                __mdiff
+                0x02011654                __ulp
+                0x020116bc                __b2d
+                0x020117a8                __d2b
+                0x020118b8                __ratio
+                0x02011948                _mprec_log10
+                0x020119a8                __copybits
+                0x02011a18                __any_on
+ .text          0x02011a98      0x4d4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-reallocr.o)
+                0x02011a98                _realloc_r
+ .text          0x02011f6c       0xd8 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-stdio.o)
+                0x02011f6c                __sread
+                0x02011fa0                __seofread
+                0x02011fa8                __swrite
+                0x02012000                __sseek
+                0x02012030                __sclose
+ .text          0x02012044     0x14c4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+                0x020120f4                __sprint_r
+                0x0201210c                _vfiprintf_r
+                0x02013410                vfiprintf
+ .text          0x02013508      0x180 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fclose.o)
+                0x02013508                _fclose_r
+                0x02013670                fclose
+ .text          0x02013688      0x204 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o)
+                0x02013688                __fputwc
+                0x02013798                _fputwc_r
+                0x02013854                fputwc
+ .text          0x0201388c       0xf4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o)
+                0x020138b0                _setlocale_r
+                0x02013918                __locale_mb_cur_max
+                0x02013940                __locale_ctype_ptr_l
+                0x02013948                __locale_ctype_ptr
+                0x02013960                setlocale
+ .text          0x02013980       0xa0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mbtowc_r.o)
+                0x02013980                _mbtowc_r
+                0x020139d4                __ascii_mbtowc
+ .text          0x02013a20      0x154 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wbuf.o)
+                0x02013a20                __swbuf_r
+                0x02013b54                __swbuf
+ .text          0x02013b74      0x150 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wcrtomb.o)
+                0x02013b74                _wcrtomb_r
+                0x02013c18                wcrtomb
+ .text          0x02013cc4       0x74 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wctomb_r.o)
+                0x02013cc4                _wctomb_r
+                0x02013d10                __ascii_wctomb
+ .text          0x02013d38      0x41c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_addsubdf3.o)
+                0x02013d38                __aeabi_drsub
+                0x02013d40                __aeabi_dsub
+                0x02013d40                __subdf3
+                0x02013d44                __aeabi_dadd
+                0x02013d44                __adddf3
+                0x02014054                __floatunsidf
+                0x02014054                __aeabi_ui2d
+                0x02014078                __floatsidf
+                0x02014078                __aeabi_i2d
+                0x020140a0                __aeabi_f2d
+                0x020140a0                __extendsfdf2
+                0x020140e0                __floatundidf
+                0x020140e0                __aeabi_ul2d
+                0x020140f4                __floatdidf
+                0x020140f4                __aeabi_l2d
+ .text          0x02014154      0x49c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_muldivdf3.o)
+                0x02014154                __aeabi_dmul
+                0x02014154                __muldf3
+                0x020143e4                __divdf3
+                0x020143e4                __aeabi_ddiv
+ .text          0x020145f0      0x144 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_cmpdf2.o)
+                0x020145f0                __gtdf2
+                0x020145f0                __gedf2
+                0x020145f8                __ltdf2
+                0x020145f8                __ledf2
+                0x02014600                __nedf2
+                0x02014600                __eqdf2
+                0x02014600                __cmpdf2
+                0x02014688                __aeabi_cdrcmple
+                0x020146a4                __aeabi_cdcmpeq
+                0x020146a4                __aeabi_cdcmple
+                0x020146bc                __aeabi_dcmpeq
+                0x020146d4                __aeabi_dcmplt
+                0x020146ec                __aeabi_dcmple
+                0x02014704                __aeabi_dcmpge
+                0x0201471c                __aeabi_dcmpgt
+ .text          0x02014734       0x38 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_unorddf2.o)
+                0x02014734                __unorddf2
+                0x02014734                __aeabi_dcmpun
+ .text          0x0201476c       0x5c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_fixdfsi.o)
+                0x0201476c                __aeabi_d2iz
+                0x0201476c                __fixdfsi
+ .text          0x020147c8       0x3c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_aeabi_uldivmod.o)
+                0x020147c8                __aeabi_uldivmod
+ .text          0x02014804      0x12c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+                0x02014804                __udivmoddi4
+ .text          0x02014930       0x58 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(gthr-generic.o)
+                0x02014930                __generic_gxx_active_p
+                0x02014938                __generic_gxx_key_create
+                0x02014940                __generic_gxx_once
+                0x02014944                __generic_gxx_key_delete
+                0x0201494c                __generic_gxx_getspecific
+                0x02014954                __generic_gxx_setspecific
+                0x0201495c                __generic_gxx_recursive_mutex_init_function
+                0x02014960                __generic_gxx_mutex_init_function
+                0x02014964                __generic_gxx_recursive_mutex_destroy
+                0x0201496c                __generic_gxx_recursive_mutex_unlock
+                0x02014970                __generic_gxx_recursive_mutex_trylock
+                0x02014974                __generic_gxx_recursive_mutex_lock
+                0x02014978                __generic_gxx_mutex_unlock
+                0x0201497c                __generic_gxx_mutex_trylock
+                0x02014980                __generic_gxx_mutex_lock
+                0x02014984                __generic_gxx_mutex_destroy
+ .text          0x02014988       0x28 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzdi2.o)
+                0x02014988                __clzdi2
+ .text          0x020149b0       0x48 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzsi2.o)
+                0x020149b0                __clzsi2
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x020149f8        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x020149f8        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x020149f8        0x0 linker stubs
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x020149f8        0x0
+ .v4_bx         0x020149f8        0x0 linker stubs
+
+.iplt           0x020149f8        0x0
+ .iplt          0x020149f8        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x020149f8        0x4
+ *(.eh_frame)
+ .eh_frame      0x020149f8        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ .eh_frame      0x020149f8        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+ *(.eh_frame.*)
+                [!provide]                PROVIDE (__exidx_start, .)
+
+.ARM.exidx      0x020149fc        0x8
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx     0x020149fc        0x8 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+                [!provide]                PROVIDE (__exidx_end, .)
+
+.rel.dyn        0x02014a04        0x0
+ .rel.iplt      0x02014a04        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+
+.rodata         0x02014a08      0xbc0
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.G_MMUnonCachedTbl
+                0x02014a08        0xc Demo_50_CORTEXA9.o
+                0x02014a08                G_MMUnonCachedTbl
+ *fill*         0x02014a14        0x4 
+ .rodata.G_MMUnonCprivTbl
+                0x02014a18        0x8 Demo_50_CORTEXA9.o
+                0x02014a18                G_MMUnonCprivTbl
+ .rodata.G_MMUprivateTbl
+                0x02014a20        0x8 Demo_50_CORTEXA9.o
+                0x02014a20                G_MMUprivateTbl
+ .rodata.G_MMUsharedTbl
+                0x02014a28        0xc Demo_50_CORTEXA9.o
+                0x02014a28                G_MMUsharedTbl
+ .rodata.main.str1.4
+                0x02014a34      0x3dc Demo_50_CORTEXA9.o
+ .rodata.dma_cleanup.part.0.constprop.10.str1.4
+                0x02014e10       0x28 arm_pl330.o
+ .rodata.dma_done.str1.4
+                0x02014e38       0x25 arm_pl330.o
+ *fill*         0x02014e5d        0x3 
+ .rodata.dma_init.str1.4
+                0x02014e60        0x4 arm_pl330.o
+ .rodata.dma_start_X.constprop.9.str1.4
+                0x02014e64       0x26 arm_pl330.o
+ *fill*         0x02014e8a        0x2 
+ .rodata.dma_wait.str1.4
+                0x02014e8c       0x25 arm_pl330.o
+ *fill*         0x02014eb1        0x3 
+ .rodata.dma_xfer.str1.4
+                0x02014eb4      0x302 arm_pl330.o
+ *fill*         0x020151b6        0x2 
+ .rodata.g_DmaNames
+                0x020151b8        0x5 arm_pl330.o
+ *fill*         0x020151bd        0x3 
+ .rodata.g_SemNames
+                0x020151c0       0x38 arm_pl330.o
+ .rodata.BSecho.7309
+                0x020151f8        0x2 dw_uart.o
+ *fill*         0x020151fa        0x6 
+ .rodata.g_DevReMap
+                0x02015200        0x8 dw_uart.o
+ .rodata.g_HWaddr
+                0x02015208        0x8 dw_uart.o
+ .rodata.g_Names
+                0x02015210       0x40 dw_uart.o
+ .rodata.G_ABORTstackSize
+                0x02015250        0x4 mAbassiCfgA9.o
+                0x02015250                G_ABORTstackSize
+ .rodata.G_FIQstackSize
+                0x02015254        0x4 mAbassiCfgA9.o
+                0x02015254                G_FIQstackSize
+ .rodata.G_IRQstackSize
+                0x02015258        0x4 mAbassiCfgA9.o
+                0x02015258                G_IRQstackSize
+ .rodata.G_SUPERstackSize
+                0x0201525c        0x4 mAbassiCfgA9.o
+                0x0201525c                G_SUPERstackSize
+ .rodata.G_UNDEFstackSize
+                0x02015260        0x4 mAbassiCfgA9.o
+                0x02015260                G_UNDEFstackSize
+ *fill*         0x02015264        0x4 
+ .rodata.G_OSnoName
+                0x02015268        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02015268                G_OSnoName
+ *fill*         0x0201526c        0x4 
+ .rodata.G_OSprivName
+                0x02015270        0x5 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02015270                G_OSprivName
+ *fill*         0x02015275        0x3 
+ .rodata.OSstart.str1.4
+                0x02015278       0x14 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ *fill*         0x0201528c        0x4 
+ .rodata.g_OSMutexName
+                0x02015290        0x6 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x02015290                g_OSMutexName
+ *fill*         0x02015296        0x2 
+ .rodata        0x02015298        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-impure.o)
+                0x02015298                _global_impure_ptr
+ .rodata.str1.4
+                0x0201529c       0x14 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o)
+                                  0x2 (size before relaxing)
+ .rodata        0x0201529c       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+ .rodata.str1.4
+                0x020152bc       0x42 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+ *fill*         0x020152fe        0x2 
+ .rodata.str1.4
+                0x02015300       0x10 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o)
+                                 0x12 (size before relaxing)
+ .rodata        0x02015310      0x128 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mprec.o)
+                0x02015320                __mprec_tens
+                0x020153e8                __mprec_tinytens
+                0x02015410                __mprec_bigtens
+ .rodata        0x02015438       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+ .rodata.str1.4
+                0x02015458       0x2f c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+ .rodata.str1.4
+                0x02015458       0x10 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o)
+                                 0x12 (size before relaxing)
+ .rodata        0x02015468      0x101 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-ctype_.o)
+                0x02015468                _ctype_
+                0x0201556c                . = ALIGN (0x4)
+ *fill*         0x02015569        0x3 
+ *(.init)
+ .init          0x0201556c        0xc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o
+                0x0201556c                _init
+ .init          0x02015578        0xc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o
+                0x02015584                . = ALIGN (0x4)
+                0x02015584                __preinit_array_start = .
+ *(.preinit_array)
+                0x02015584                __preinit_array_end = .
+                0x02015584                . = ALIGN (0x4)
+                0x02015584                __init_array_start = .
+ *(SORT(.init_array.*))
+ .init_array.00000
+                0x02015584        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+ .init_array.00000
+                0x02015588        0x8 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+ *(.init_array)
+ .init_array    0x02015590        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+                0x02015594                __init_array_end = .
+                0x02015594                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x02015594        0xc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o
+                0x02015594                _fini
+ .fini          0x020155a0        0xc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o
+                0x020155ac                . = ALIGN (0x4)
+                0x020155ac                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x020155ac        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x020155b0                __fini_array_end = .
+                0x020155b0                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+ *(.ctors)
+                0x020155b0                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+ *(.dtors)
+                0x020155b0                . = ALIGN (0x4)
+                0x020155b0                __cs3_regions = .
+                0x020155b0        0x4 LONG 0x0
+                0x020155b4        0x4 LONG 0x2000000 __cs3_region_init_ram
+                0x020155b8        0x4 LONG 0x2000000 __cs3_region_start_ram
+                0x020155bc        0x4 LONG 0x15fc8 __cs3_region_init_size_ram
+                0x020155c0        0x4 LONG 0x1802ff80 __cs3_region_zero_size_ram
+                0x020155c4                __cs3_regions_end = .
+                0x020155c8                . = ALIGN (0x8)
+ *fill*         0x020155c4        0x4 
+                0x020155c8                _etext = .
+                0x00000001                ASSERT (! ((__cs3_region_init_ram & 0x7)), __cs3_region_init_ram not aligned)
+                0x00000001                ASSERT (! ((__cs3_region_start_ram & 0x7)), __cs3_region_start_ram not aligned)
+                0x00000001                ASSERT (! ((__cs3_region_init_size_ram & 0x7)), __cs3_region_init_size_ram not aligned)
+                0x00000001                ASSERT (! ((__cs3_region_zero_size_ram & 0x7)), __cs3_region_zero_size_ram not aligned)
+                0x020155c8                __etext = .
+
+.data           0x020155c8      0xa00
+                0x020155c8                _fdata = .
+                0x020155c8                __data_start__ = .
+ *(vtable)
+ *(.data*)
+ .data.ExpiryCnt.7521
+                0x020155c8        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .data.ExpiryPrv.7522
+                0x020155d0        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .data          0x020155d8       0x3c ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o)
+                0x020155dc                DATAabort_Handler
+                0x020155dc                __cs3_isr_dabort
+                0x020155f0                FIQ_Handler
+                0x020155f0                __cs3_isr_fiq
+                0x020155f4                __cs3_isr_pabort
+                0x020155f4                PFabort_Handler
+                0x02015604                __cs3_isr_undef
+                0x02015604                Undef_Handler
+ *fill*         0x02015614        0x4 
+ .data          0x02015618      0x430 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-impure.o)
+                0x02015618                _impure_ptr
+ .data          0x02015a48      0x410 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mallocr.o)
+                0x02015a48                __malloc_av_
+                0x02015e50                __malloc_sbrk_base
+                0x02015e54                __malloc_trim_threshold
+ .data          0x02015e58      0x16c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o)
+                0x02015e58                __global_locale
+ *(.jcr*)
+ .jcr           0x02015fc4        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ .jcr           0x02015fc4        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+                0x02015fc8                . = ALIGN (0x8)
+                0x02015fc8                __data_end__ = .
+                0x02015fc8                _edata = .
+
+.tm_clone_table
+                0x02015fc8        0x0
+ .tm_clone_table
+                0x02015fc8        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ .tm_clone_table
+                0x02015fc8        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+
+.igot.plt       0x02015fc8        0x0
+ .igot.plt      0x02015fc8        0x0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+
+.bss            0x02016000  0x802ff48
+                0x02016000                _fbss = .
+                0x02016000                __bss_start__ = .
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x02016000       0x1c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ *fill*         0x0201601c        0x4 
+ .bss.G_Dst     0x02016020  0x4000200 Demo_50_CORTEXA9.o
+                0x02016020                G_Dst
+ .bss.G_Src     0x06016220  0x4000200 Demo_50_CORTEXA9.o
+                0x06016220                G_Src
+ .bss.G_UartDevErr
+                0x0a016420        0x4 Demo_50_CORTEXA9.o
+                0x0a016420                G_UartDevErr
+ .bss.G_UartDevIn
+                0x0a016424        0x4 Demo_50_CORTEXA9.o
+                0x0a016424                G_UartDevIn
+ .bss.G_UartDevOut
+                0x0a016428        0x4 Demo_50_CORTEXA9.o
+                0x0a016428                G_UartDevOut
+ .bss.g_CfgIsInit
+                0x0a01642c        0x4 arm_pl330.o
+ .bss.g_DMAcfg  0x0a016430     0x46a0 arm_pl330.o
+                0x0a016430                g_DMAcfg
+ .bss.g_MyMutex
+                0x0a01aad0        0x4 arm_pl330.o
+                0x0a01aad0                g_MyMutex
+ .bss.g_CfgIsInit
+                0x0a01aad4        0x4 dw_uart.o
+ .bss.g_UARTcfg
+                0x0a01aad8      0x888 dw_uart.o
+ .bss.G_ABORTstack
+                0x0a01b360      0x800 mAbassiCfgA9.o
+                0x0a01b360                G_ABORTstack
+ .bss.G_FIQstack
+                0x0a01bb60      0x800 mAbassiCfgA9.o
+                0x0a01bb60                G_FIQstack
+ .bss.G_IRQstack
+                0x0a01c360     0x8000 mAbassiCfgA9.o
+                0x0a01c360                G_IRQstack
+ .bss.G_SUPERstack
+                0x0a024360     0x8000 mAbassiCfgA9.o
+                0x0a024360                G_SUPERstack
+ .bss.G_UNDEFstack
+                0x0a02c360      0x800 mAbassiCfgA9.o
+                0x0a02c360                G_UNDEFstack
+ .bss.ExpiryZap.7523
+                0x0a02cb60        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ *fill*         0x0a02cb64        0x4 
+ .bss.G_CoreIdleDone
+                0x0a02cb68        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02cb68                G_CoreIdleDone
+ .bss.G_OSisrQrd
+                0x0a02cb70        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02cb70                G_OSisrQrd
+ .bss.G_OSisrQwrt
+                0x0a02cb78        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02cb78                G_OSisrQwrt
+ .bss.G_OSisrState
+                0x0a02cb80       0x38 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02cb80                G_OSisrState
+ .bss.G_OSisrTbl
+                0x0a02cbb8     0x1000 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02cbb8                G_OSisrTbl
+ .bss.G_OSmutex
+                0x0a02dbb8        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02dbb8                G_OSmutex
+ .bss.G_OSstate
+                0x0a02dbbc        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02dbbc                G_OSstate
+ .bss.G_OStaskNow
+                0x0a02dbc0        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02dbc0                G_OStaskNow
+ .bss.G_OStimCnt
+                0x0a02dbc8        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02dbc8                G_OStimCnt
+ *fill*         0x0a02dbcc        0x4 
+ .bss.LoadBal.7508
+                0x0a02dbd0        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_CoreInInit
+                0x0a02dbd8        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_GrpList
+                0x0a02dbdc        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02dbdc                g_GrpList
+ .bss.g_KrnlReent
+                0x0a02dbe0        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02dbe0                g_KrnlReent
+ .bss.g_MutexList
+                0x0a02dbe8        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a02dbe8                g_MutexList
+ *fill*         0x0a02dbec        0x4 
+ .bss.g_OStimCore
+                0x0a02dbf0        0x8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_OStimSpin
+                0x0a02dbf8        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_PostQueue
+                0x0a02dbfc    0x18000 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .bss.g_SemaList
+                0x0a045bfc        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045bfc                g_SemaList
+ .bss.g_StrvHoldCnt
+                0x0a045c00        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c00                g_StrvHoldCnt
+ .bss.g_StrvList
+                0x0a045c04        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c04                g_StrvList
+ .bss.g_StrvPreEmptCnt
+                0x0a045c08        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c08                g_StrvPreEmptCnt
+ .bss.g_StrvRunCnt
+                0x0a045c0c        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c0c                g_StrvRunCnt
+ .bss.g_StrvTick
+                0x0a045c10        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c10                g_StrvTick
+ .bss.g_TaskList
+                0x0a045c14        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c14                g_TaskList
+ .bss.g_TaskRdy
+                0x0a045c18       0x84 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c18                g_TaskRdy
+ .bss.g_TimSrvChkBusy
+                0x0a045c9c        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045c9c                g_TimSrvChkBusy
+ .bss.g_TimSrvList
+                0x0a045ca0        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045ca0                g_TimSrvList
+ .bss.g_TimeOutChkBusy
+                0x0a045ca4        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045ca4                g_TimeOutChkBusy
+ .bss.g_TimeOutList
+                0x0a045ca8        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+                0x0a045ca8                g_TimeOutList
+ .bss.g__OSmutex
+                0x0a045cac       0x20 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ *fill*         0x0a045ccc       0x34 
+ .bss           0x0a045d00      0x200 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o)
+ .bss           0x0a045f00        0x4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(ARMv7_SMP_L1_L2_GCC_AR5_CY5.o)
+ .bss           0x0a045f04       0x34 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mallocr.o)
+                0x0a045f04                __malloc_top_pad
+                0x0a045f08                __malloc_current_mallinfo
+                0x0a045f30                __malloc_max_sbrked_mem
+                0x0a045f34                __malloc_max_total_mem
+ .bss           0x0a045f38        0x4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+ .bss           0x0a045f3c        0x8 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+ *(COMMON)
+                0x0a045f48                . = ALIGN (0x8)
+ *fill*         0x0a045f44        0x4 
+ *(.ram.b .bss.ram)
+                0x0a045f48                . = ALIGN (0x8)
+                0x0a045f48                __bss_end__ = .
+                0x0a045f48                _ebss = .
+
+.memdrive       0x0a045f48 0x10000000
+                0x0a045f48                . = ALIGN (0x8)
+                0x0a045f48                G_MemDrvBase = .
+                0x1a045f48                . = (. + _MDRV_SIZE)
+ *fill*         0x0a045f48 0x10000000 
+                0x1a045f48                G_MemDrvEnd = .
+
+.stack_dummy
+ *(.stack*)
+
+.heap           0x1a045f48  0x5fb40b8
+                0x1a045f48                _end = .
+                0x1a045f48                __end = .
+                0x1a045f48                __end__ = .
+                [!provide]                PROVIDE (end, .)
+                0x1a045f48                PROVIDE (__cs3_heap_start, .)
+ *(.heap*)
+                0x1fffa000                . = (((((((__cs3_region_start_ram + LENGTH (ram)) - ((_SUPERVISOR_STACK_SIZE + 0x7) & 0xfffffff8)) - ((_ABORT_STACK_SIZE + 0x7) & 0xfffffff8)) - ((_FIQ_STACK_SIZE + 0x7) & 0xfffffff8)) - ((_IRQ_STACK_SIZE + 0x7) & 0xfffffff8)) - ((_UNDEF_STACK_SIZE + 0x7) & 0xfffffff8)) - ((_STACK_SIZE + 0x7) & 0xfffffff8))
+ *fill*         0x1a045f48  0x5fb40b8 
+                0x1fffa000                __HeapLimit = .
+                0x1fffa000                PROVIDE (__cs3_heap_end, .)
+
+.stack          0x1fffa000     0x6000
+                0x1fffa800                . = (. + _SUPERVISOR_STACK_SIZE)
+ *fill*         0x1fffa000      0x800 
+                0x1fffa800                . = ALIGN (0x8)
+                0x1fffa800                __supervisor_stack = .
+                0x1fffb000                . = (. + _ABORT_STACK_SIZE)
+ *fill*         0x1fffa800      0x800 
+                0x1fffb000                . = ALIGN (0x8)
+                0x1fffb000                __abort_stack = .
+                0x1fffb800                . = (. + _FIQ_STACK_SIZE)
+ *fill*         0x1fffb000      0x800 
+                0x1fffb800                . = ALIGN (0x8)
+                0x1fffb800                __fiq_stack = .
+                0x1fffd800                . = (. + _IRQ_STACK_SIZE)
+ *fill*         0x1fffb800     0x2000 
+                0x1fffd800                . = ALIGN (0x8)
+                0x1fffd800                __irq_stack = .
+                0x1fffe000                . = (. + _UNDEF_STACK_SIZE)
+ *fill*         0x1fffd800      0x800 
+                0x1fffe000                . = ALIGN (0x8)
+                0x1fffe000                __undef_stack = .
+                0x20000000                . = (. + _STACK_SIZE)
+ *fill*         0x1fffe000     0x2000 
+                0x20000000                __cs3_region_end_ram = (__cs3_region_start_ram + LENGTH (ram))
+                0x1e000000                __cs3_region_size_ram = LENGTH (ram)
+                0x02000000                __cs3_region_init_ram = LOADADDR (.text)
+                0x00015fc8                __cs3_region_init_size_ram = (_edata - ADDR (.text))
+                0x1802ff80                __cs3_region_zero_size_ram = (_end - _edata)
+                0x20000000                __StackTop = (ORIGIN (ram) + LENGTH (ram))
+                0x1fffa000                __StackLimit = (__StackTop - SIZEOF (.stack))
+                [!provide]                PROVIDE (__stack, __StackTop)
+                0x20000000                PROVIDE (__cs3_stack, __StackTop)
+
+.uncached       0xffff0000     0x8000
+ *(.uncached)
+ .uncached      0xffff0000     0x8000 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(ARMv7_SMP_L1_L2_GCC_AR5_CY5.o)
+                0xffff0000                L1PageTbl
+ *(.uncached.*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x2d0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 Demo_50_CORTEXA9.o
+ .debug_aranges
+                0x00000028      0x138 SysCall_noFS.o
+ .debug_aranges
+                0x00000160       0x20 TIMERinit.o
+ .debug_aranges
+                0x00000180       0x20 arm_acp.o
+ .debug_aranges
+                0x000001a0       0xd0 arm_pl330.o
+ .debug_aranges
+                0x00000270       0x48 dw_uart.o
+ .debug_aranges
+                0x000002b8       0x18 mAbassiCfgA9.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0xc382
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000     0x176a Demo_50_CORTEXA9.o
+ .debug_info    0x0000176a     0x1e1e SysCall_noFS.o
+ .debug_info    0x00003588      0xde5 TIMERinit.o
+ .debug_info    0x0000436d      0x11a arm_acp.o
+ .debug_info    0x00004487     0x4b3c arm_pl330.o
+ .debug_info    0x00008fc3     0x2562 dw_uart.o
+ .debug_info    0x0000b525      0xe5d mAbassiCfgA9.o
+
+.debug_abbrev   0x00000000     0x124f
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x292 Demo_50_CORTEXA9.o
+ .debug_abbrev  0x00000292      0x374 SysCall_noFS.o
+ .debug_abbrev  0x00000606      0x1f3 TIMERinit.o
+ .debug_abbrev  0x000007f9       0xac arm_acp.o
+ .debug_abbrev  0x000008a5      0x477 arm_pl330.o
+ .debug_abbrev  0x00000d1c      0x387 dw_uart.o
+ .debug_abbrev  0x000010a3      0x1ac mAbassiCfgA9.o
+
+.debug_line     0x00000000     0x2955
+ *(.debug_line)
+ .debug_line    0x00000000      0x4e9 Demo_50_CORTEXA9.o
+ .debug_line    0x000004e9      0x62d SysCall_noFS.o
+ .debug_line    0x00000b16      0x25f TIMERinit.o
+ .debug_line    0x00000d75      0x187 arm_acp.o
+ .debug_line    0x00000efc     0x10ad arm_pl330.o
+ .debug_line    0x00001fa9      0x75e dw_uart.o
+ .debug_line    0x00002707      0x24e mAbassiCfgA9.o
+
+.debug_frame    0x00000000     0x2398
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x4c Demo_50_CORTEXA9.o
+ .debug_frame   0x0000004c      0x2e0 SysCall_noFS.o
+ .debug_frame   0x0000032c       0x28 TIMERinit.o
+ .debug_frame   0x00000354       0x28 arm_acp.o
+ .debug_frame   0x0000037c      0x3bc arm_pl330.o
+ .debug_frame   0x00000738      0x120 dw_uart.o
+ .debug_frame   0x00000858      0x2d4 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o)
+ .debug_frame   0x00000b2c       0xa8 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(ARMv7_SMP_L1_L2_GCC_AR5_CY5.o)
+ .debug_frame   0x00000bd4       0x40 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o)
+ .debug_frame   0x00000c14       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000c34       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_divsi3.o)
+ .debug_frame   0x00000c54       0x34 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-calloc.o)
+ .debug_frame   0x00000c88       0x34 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-callocr.o)
+ .debug_frame   0x00000cbc       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-getreent.o)
+ .debug_frame   0x00000cdc       0x34 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-init.o)
+ .debug_frame   0x00000d10       0x48 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-malloc.o)
+ .debug_frame   0x00000d58       0x7c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00000dd4       0x3c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00000e10       0x40 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memmove.o)
+ .debug_frame   0x00000e50       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memset.o)
+ .debug_frame   0x00000e80       0x64 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+ .debug_frame   0x00000ee4       0x74 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-printf.o)
+ .debug_frame   0x00000f58       0x64 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o)
+ .debug_frame   0x00000fbc       0x58 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o)
+ .debug_frame   0x00001014       0x40 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcmp.o)
+ .debug_frame   0x00001054       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcpy.o)
+ .debug_frame   0x00001074       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strlen-stub.o)
+ .debug_frame   0x00001094       0xcc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+ .debug_frame   0x00001160       0x40 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wsetup.o)
+ .debug_frame   0x000011a0       0xac c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o)
+ .debug_frame   0x0000124c       0xac c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fflush.o)
+ .debug_frame   0x000012f8      0x1f0 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+ .debug_frame   0x000014e8       0x70 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-freer.o)
+ .debug_frame   0x00001558       0x80 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fvwrite.o)
+ .debug_frame   0x000015d8       0x80 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fwalk.o)
+ .debug_frame   0x00001658       0x58 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-localeconv.o)
+ .debug_frame   0x000016b0       0x8c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-makebuf.o)
+ .debug_frame   0x0000173c       0x38 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memchr-stub.o)
+ .debug_frame   0x00001774       0x44 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000017b8      0x304 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mprec.o)
+ .debug_frame   0x00001abc       0x60 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-reallocr.o)
+ .debug_frame   0x00001b1c       0x9c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-stdio.o)
+ .debug_frame   0x00001bb8      0x104 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+ .debug_frame   0x00001cbc       0x70 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fclose.o)
+ .debug_frame   0x00001d2c       0xbc c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o)
+ .debug_frame   0x00001de8       0xb8 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o)
+ .debug_frame   0x00001ea0       0x58 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mbtowc_r.o)
+ .debug_frame   0x00001ef8       0x60 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wbuf.o)
+ .debug_frame   0x00001f58       0x70 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wcrtomb.o)
+ .debug_frame   0x00001fc8       0x48 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wctomb_r.o)
+ .debug_frame   0x00002010       0xac c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x000020bc       0x50 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x0000210c       0xc4 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x000021d0       0x20 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x000021f0       0x24 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x00002214       0x2c c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00002240       0x48 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00002288      0x110 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(gthr-generic.o)
+
+.debug_str      0x00000000     0x14db
+ *(.debug_str)
+ .debug_str     0x00000000      0x9fd Demo_50_CORTEXA9.o
+                                0xadf (size before relaxing)
+ .debug_str     0x000009fd      0x301 SysCall_noFS.o
+                                0xca6 (size before relaxing)
+ .debug_str     0x00000cfe       0x40 TIMERinit.o
+                                0x8ba (size before relaxing)
+ .debug_str     0x00000d3e       0x36 arm_acp.o
+                                0x1e0 (size before relaxing)
+ .debug_str     0x00000d74      0x4f7 arm_pl330.o
+                                0xe1f (size before relaxing)
+ .debug_str     0x0000126b      0x1b8 dw_uart.o
+                                0xaef (size before relaxing)
+ .debug_str     0x00001423       0xb8 mAbassiCfgA9.o
+                                0x928 (size before relaxing)
+
+.debug_loc      0x00000000     0x879f
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x60f Demo_50_CORTEXA9.o
+ .debug_loc     0x0000060f      0xf5f SysCall_noFS.o
+ .debug_loc     0x0000156e       0x1e TIMERinit.o
+ .debug_loc     0x0000158c      0x207 arm_acp.o
+ .debug_loc     0x00001793     0x525b arm_pl330.o
+ .debug_loc     0x000069ee     0x1db1 dw_uart.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x810
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x18 Demo_50_CORTEXA9.o
+ .debug_ranges  0x00000018      0x1c0 SysCall_noFS.o
+ .debug_ranges  0x000001d8       0x10 TIMERinit.o
+ .debug_ranges  0x000001e8       0x10 arm_acp.o
+ .debug_ranges  0x000001f8      0x488 arm_pl330.o
+ .debug_ranges  0x00000680      0x190 dw_uart.o
+
+.comment        0x00000000       0x30
+ .comment       0x00000000       0x30 Demo_50_CORTEXA9.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000030       0x31 SysCall_noFS.o
+ .comment       0x00000030       0x31 TIMERinit.o
+ .comment       0x00000030       0x31 arm_acp.o
+ .comment       0x00000030       0x31 arm_pl330.o
+ .comment       0x00000030       0x31 dw_uart.o
+ .comment       0x00000030       0x31 mAbassiCfgA9.o
+ .comment       0x00000030       0x31 ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x37
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x16 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o
+ .ARM.attributes
+                0x00000016       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o
+ .ARM.attributes
+                0x00000046       0x3b Demo_50_CORTEXA9.o
+ .ARM.attributes
+                0x00000081       0x3b SysCall_noFS.o
+ .ARM.attributes
+                0x000000bc       0x3b TIMERinit.o
+ .ARM.attributes
+                0x000000f7       0x3b arm_acp.o
+ .ARM.attributes
+                0x00000132       0x3b arm_pl330.o
+ .ARM.attributes
+                0x0000016d       0x3b dw_uart.o
+ .ARM.attributes
+                0x000001a8       0x3b mAbassiCfgA9.o
+ .ARM.attributes
+                0x000001e3       0x3b ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_A9_GCC_2_NR.o)
+ .ARM.attributes
+                0x0000021e       0x2b ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(mAbassi_EVAL_GCC_AR5_CY5_NR.o)
+ .ARM.attributes
+                0x00000249       0x2b ../../mAbassi/Platform/lib\lib_mAbassi_EVAL_GCC_AR5_CY5.a(ARMv7_SMP_L1_L2_GCC_AR5_CY5.o)
+ .ARM.attributes
+                0x00000274       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3.a(start_c.o)
+ .ARM.attributes
+                0x000002a4       0x14 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libcs3unhosted.a(unhosted-start.o)
+ .ARM.attributes
+                0x000002b8       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000002d0       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000002e8       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000300       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-calloc.o)
+ .ARM.attributes
+                0x00000330       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-callocr.o)
+ .ARM.attributes
+                0x00000360       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-getreent.o)
+ .ARM.attributes
+                0x00000390       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000003c0       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x000003f0       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x00000420       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x00000450       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcmp.o)
+ .ARM.attributes
+                0x00000480       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x000004b0       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000004e0       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x00000510       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-printf.o)
+ .ARM.attributes
+                0x00000540       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-puts.o)
+ .ARM.attributes
+                0x00000570       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-setvbuf.o)
+ .ARM.attributes
+                0x000005a0       0x16 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x000005b6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strcpy.o)
+ .ARM.attributes
+                0x000005e6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-strlen-stub.o)
+ .ARM.attributes
+                0x00000616       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfprintf.o)
+ .ARM.attributes
+                0x00000646       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wsetup.o)
+ .ARM.attributes
+                0x00000676       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-dtoa.o)
+ .ARM.attributes
+                0x000006a6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fflush.o)
+ .ARM.attributes
+                0x000006d6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-findfp.o)
+ .ARM.attributes
+                0x00000706       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x00000736       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fvwrite.o)
+ .ARM.attributes
+                0x00000766       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fwalk.o)
+ .ARM.attributes
+                0x00000796       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-localeconv.o)
+ .ARM.attributes
+                0x000007c6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-makebuf.o)
+ .ARM.attributes
+                0x000007f6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memchr-stub.o)
+ .ARM.attributes
+                0x00000826       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000856       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mprec.o)
+ .ARM.attributes
+                0x00000886       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-reallocr.o)
+ .ARM.attributes
+                0x000008b6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-stdio.o)
+ .ARM.attributes
+                0x000008e6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-vfiprintf.o)
+ .ARM.attributes
+                0x00000916       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fclose.o)
+ .ARM.attributes
+                0x00000946       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-fputwc.o)
+ .ARM.attributes
+                0x00000976       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-locale.o)
+ .ARM.attributes
+                0x000009a6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-mbtowc_r.o)
+ .ARM.attributes
+                0x000009d6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wbuf.o)
+ .ARM.attributes
+                0x00000a06       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wcrtomb.o)
+ .ARM.attributes
+                0x00000a36       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-wctomb_r.o)
+ .ARM.attributes
+                0x00000a66       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib\libc.a(lib_a-ctype_.o)
+ .ARM.attributes
+                0x00000a96       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00000aae       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x00000ac6       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x00000ade       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_unorddf2.o)
+ .ARM.attributes
+                0x00000af6       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x00000b0e       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x00000b26       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x00000b56       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(gthr-generic.o)
+ .ARM.attributes
+                0x00000b86       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzdi2.o)
+ .ARM.attributes
+                0x00000b9e       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0\libgcc.a(_clzsi2.o)
+ .ARM.attributes
+                0x00000bb6       0x30 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o
+ .ARM.attributes
+                0x00000be6       0x18 c:/intelfpga/18.0/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram overflowed with stack)
+OUTPUT(Demo_50_SMP_DE0NANOSOC_A9_GCC.axf elf32-littlearm)
