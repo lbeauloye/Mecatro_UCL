@@ -2220,3 +2220,36 @@ Asynchronously called from thread pool-35-thread-1
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+!SESSION 2020-03-22 20:19:16.317 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.arm.ds.default
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.arm.ds.default
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-03-22 20:19:29.419
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2020-03-23 10:08:58.797 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.arm.ds.default
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.arm.ds.default
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-03-23 10:09:04.917
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2020-03-23 14:44:55.062 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.arm.ds.default
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.arm.ds.default
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-23 14:48:56.736
+!MESSAGE Indexed 'Youpitou' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-23 15:38:06.176
+!MESSAGE Indexed 'test_gcc' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

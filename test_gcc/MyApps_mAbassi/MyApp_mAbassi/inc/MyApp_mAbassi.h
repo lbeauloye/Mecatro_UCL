@@ -18,7 +18,7 @@
 /* ------------------------------------------------------------------------------------------------ */
 /* Define                                                                                           */
 
-#define assert(e) ((e) ? (void)0 : printf("Error in %s, Line : %d\r\n", __FILE__, __LINE__))
+#define assert(e) ((e) ? (void)0 : (void) printf("Error in %s, Line : %d\r\n", __FILE__, __LINE__))
 
 // |=============|==========|==============|==========|
 // | Signal Name | HPS GPIO | Register/bit | Function |

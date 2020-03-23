@@ -58,6 +58,7 @@ endif
 CFLAGS  += -std=gnu99
 CFLAGS  += -mfpu=neon
 CFLAGS  += -march=armv7-a
+CFLAGS  += -mthumb
 CFLAGS  += -mtune=cortex-a9
 CFLAGS  += -mcpu=cortex-a9
 CFLAGS  += -mfloat-abi=softfp
@@ -326,15 +327,15 @@ $(OBJ): %.o: %.c  Makefile ../Common_GCC.make ../$(MAKE_NAME) $(C_INC)
 	$(CC) $(CFLAGS) -c $< -o $(notdir $(basename $<)).o
 
 $(OBJCPP): %.o: %.cpp  Makefile ../Common_GCC.make ../$(MAKE_NAME) $(CPP_INC)
-	$(LD) $(CFLAGS) -c $< -o $(notdir $(basename $<)).o
+	$(CC) $(CFLAGS) -c $< -o $(notdir $(basename $<)).o -fpermissive
 
 $(SOBJ): %.o: %.s Makefile ../Common_GCC.make ../$(MAKE_NAME)
 	$(AS) $(AFLAGS) $< -o $(notdir $(basename $<)).o
 
-$(ELF): $(SOBJ) $(OBJCPP) $(OBJ) $(O_SRC) Makefile ../Common_GCC.make ../$(MAKE_NAME) $(LDEP) ../$(LNK_SCRIPT)
-	$(LD) -Wl,--gc-sections $(LFLAGS) -Xlinker -Map -Xlinker $(notdir $(basename $@)).map 			\
-	      -T ../$(LNK_SCRIPT) $(notdir $(SOBJ)) $(notdir $(OBJ))  $(notdir $(OBJCPP)) $(O_SRC) $(LIBS)					\
-          -Wl,-lgcc -Wl,-lc -o $(notdir $@)
+$(ELF): $(SOBJ) $(OBJ) $(OBJCPP)  $(O_SRC) Makefile ../Common_GCC.make ../$(MAKE_NAME) $(LDEP) ../$(LNK_SCRIPT)
+	$(LD) -lstdc++ -Wl,--gc-sections $(LFLAGS) -Xlinker -Map -Xlinker $(notdir $(basename $@)).map 			\
+	      -T ../$(LNK_SCRIPT) $(notdir $(SOBJ))  $(notdir $(OBJCPP)) $(notdir $(OBJ)) $(O_SRC) -lc -lgcc $(LIBS) -lstdc++ /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/arm-altera-eabi/lib/libc.a 					\
+          -Wl,-lgcc -Wl,-lstdc++ -o $(notdir $@) -v
 	$(NM) $(notdir $@) > $(notdir $@).map
 
 $(BIN): $(ELF)
