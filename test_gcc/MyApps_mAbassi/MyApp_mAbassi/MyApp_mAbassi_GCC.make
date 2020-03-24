@@ -19,9 +19,13 @@ CPP_SRC   += MyApp_mAbassi.cpp
 C_SRC   += SysCall_noFS.c
 C_SRC   += TIMERinit.c
 C_SRC   += dw_uart.c
+C_SRC   += alt_gpio.c
+C_SRC   += dw_spi.c
 C_SRC   += alt_generalpurpose_io.c
 
+
 CPP_SRC += test.cpp
+CPP_SRC   += MyDriver_CAN.cpp
 
 											# Assembly files
 S_SRC   :=
@@ -43,6 +47,7 @@ C_INC   += ../../mAbassi/Platform/inc/Platform.h
 C_INC   += ../../mAbassi/Platform/inc/HWinfo.h
 C_INC   += ../../mAbassi/Platform/inc/AbassiLib.h
 C_INC   += ../../mAbassi/Drivers/inc/dw_uart.h
+C_INC   += ../../mAbassi/Drivers/inc/dw_spi.h
 
 CPP_INC   += ../inc/hps_0.h
 

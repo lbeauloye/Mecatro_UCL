@@ -20,6 +20,7 @@ int G_UartDevErr = UART_DEV;						/* Needed by the system call layer if used		*/
 extern void Task_HPS_Led(void);
 extern void Task_FPGA_Led(void);
 extern void Task_FPGA_Button(void);
+extern void Task_CAN(void);
 
 /* ------------------------------------------------------------------------------------------------ */
 
@@ -73,6 +74,11 @@ TSK_t *Task;
 	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
 	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
     
+	Task = TSKcreate("App CAN", 4, 8192, &Task_CAN, 0);
+    TSKsetCore(Task, 1);
+    TSKresume(Task);
+
+
 #if defined(USE_SHELL)
     TSKcreate("Shell", OX_PRIO_MIN, 16384, OSshell, 1);
     TSKsleep(OS_MS_TO_TICK(100));                   /* Make sure Shell Task initialization if over  */

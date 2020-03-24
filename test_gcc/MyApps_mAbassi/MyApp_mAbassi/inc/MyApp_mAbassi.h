@@ -18,7 +18,7 @@
 /* ------------------------------------------------------------------------------------------------ */
 /* Define                                                                                           */
 
-#define assert(e) ((e) ? (void)0 : (void) printf("Error in %s, Line : %d\r\n", __FILE__, __LINE__))
+#define assert(e) ((e) ? (void)0 :(void) printf("Error in %s, Line : %d\r\n", __FILE__, __LINE__))
 
 // |=============|==========|==============|==========|
 // | Signal Name | HPS GPIO | Register/bit | Function |
@@ -82,7 +82,7 @@
 /* ------------------------------------------------------------------------------------------------ */
 /* Global variables                                                                                 */
 
-#ifdef MYAPP
+#ifdef   MYAPP
     void *fpga_leds = ALT_LWFPGASLVS_ADDR + LED_PIO_BASE;
     void *fpga_buttons = ALT_LWFPGASLVS_ADDR + BUTTON_PIO_BASE;
     void *fpga_spi = ALT_LWFPGASLVS_ADDR + SPI_RASPBERRYPI_BASE;
@@ -98,6 +98,7 @@
 void Task_HPS_Led(void);
 void Task_FPGA_Led(void);
 void Task_FPGA_Button(void);
+void Task_CAN(void);
 
 void spi_CallbackInterrupt (uint32_t icciar, void *context);
 void button_CallbackInterrupt (uint32_t icciar, void *context);

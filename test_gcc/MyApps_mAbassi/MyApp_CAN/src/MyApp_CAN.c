@@ -28,12 +28,18 @@ void Task_CAN(void)
     CAN_init();
     //CAN_debug();
     
-    tx_Identifier = 0xabc;
+    tx_Identifier = 0x20;
     tx_Length     = 8;
     tx_FrameType  = MCP2515_TX_STD_FRAME;
     
     for(i=0; i<tx_Length; i++)
         tx_Data[i] = i;
+
+     MTXLOCK_STDIO();
+    printf("youpitou maboi\n");
+    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+    MTXUNLOCK_STDIO();
+
     
     for( ;; )
     {
@@ -175,10 +181,6 @@ void setup_Interrupt( void )
     // Enable interruptmask and edgecapture of PIO core for buttons 0 and 1
     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
     alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
-    
-    // IRQ from SPI slave connected to the RaspberryPI
-    OSisrInstall(GPT_SPI_IRQ, (void *) &spi_CallbackInterrupt);
-    GICenable(GPT_SPI_IRQ, 128, 1);
     
     // Initialize TXDATA to something (for testing purpose)
     alt_write_word(fpga_spi + SPI_TXDATA, 0x0103070F);

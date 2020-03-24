@@ -334,7 +334,7 @@ $(SOBJ): %.o: %.s Makefile ../Common_GCC.make ../$(MAKE_NAME)
 
 $(ELF): $(SOBJ) $(OBJ) $(OBJCPP)  $(O_SRC) Makefile ../Common_GCC.make ../$(MAKE_NAME) $(LDEP) ../$(LNK_SCRIPT)
 	$(LD) -lstdc++ -Wl,--gc-sections $(LFLAGS) -Xlinker -Map -Xlinker $(notdir $(basename $@)).map 			\
-	      -T ../$(LNK_SCRIPT) $(notdir $(SOBJ))  $(notdir $(OBJCPP)) $(notdir $(OBJ)) $(O_SRC) -lc -lgcc $(LIBS) -lstdc++ /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/arm-altera-eabi/lib/libc.a 					\
+	      -T ../$(LNK_SCRIPT) $(notdir $(SOBJ))  $(notdir $(OBJCPP)) $(notdir $(OBJ)) $(O_SRC) -lc -lgcc $(LIBS) -lstdc++ \
           -Wl,-lgcc -Wl,-lstdc++ -o $(notdir $@) -v
 	$(NM) $(notdir $@) > $(notdir $@).map
 

@@ -2,11 +2,13 @@
 
 #define MYAPP
 
+#include "MyDriver_CAN.h"
 #include "MyApp_mAbassi.h"
 
 #include "mAbassi.h"          /* MUST include "SAL.H" and not uAbassi.h        */
 #include "Platform.h"         /* Everything about the target platform is here  */
 #include "HWinfo.h"           /* Everything about the target hardware is here  */
+#include "alt_gpio.h"
 
 #include "test.h"
 
@@ -17,9 +19,11 @@ void Task_HPS_Led(void)
 {
     MBX_t    *PrtMbx;
     intptr_t PtrMsg;
+    SEM_t    *PtrSem = SEMopen("SemSetup");
     
     setup_hps_gpio();               // This is the Adam&Eve Task and we have first to setup everything
     setup_Interrupt();
+    SEMpost(PtrSem);
     
     MTXLOCK_STDIO();
     printf("\n\nDE10-Nano - MyApp_mAbassi\n\n");
@@ -169,3 +173,51 @@ void toogle_hps_led()
 
 /* ------------------------------------------------------------------------------------------------ */
 
+void Task_CAN(void)
+{
+    uint32_t tx_Identifier, rx_Identifier;
+    uint8_t  tx_Data[8],    rx_Data[8];
+    uint8_t  tx_Length,     rx_Length;
+    uint8_t  tx_FrameType;
+    
+    int i;
+    
+
+    SEMwait(SEMopen("SemSetup"), -1);
+
+    DE0_SELECT_LT_SPI();
+
+    CAN_init();
+
+    CAN_debug();
+
+    
+    tx_Identifier = 0xabc;
+    tx_Length     = 8;
+    tx_FrameType  = MCP2515_TX_STD_FRAME;
+    
+    for(i=0; i<tx_Length; i++)
+        tx_Data[i] = i;
+
+    MTXLOCK_STDIO();
+    printf("youpitou maboi\n");
+    MTXUNLOCK_STDIO();
+
+    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+    
+    for( ;; )
+    {
+        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
+            MTXLOCK_STDIO();
+            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
+            for(i=0; i<rx_Length; i++) printf("%02x ", rx_Data[i]);
+            printf("\n");
+            MTXUNLOCK_STDIO();
+            
+            // Send a response
+            for(i=0; i<tx_Length; i++)
+                tx_Data[i]++;
+            CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+        }
+    }
+}
