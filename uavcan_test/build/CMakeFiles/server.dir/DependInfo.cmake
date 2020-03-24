@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp" "/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o"
-  "/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/server.cpp" "/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles/server.dir/server.cpp.o"
+  "/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp" "/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles/server.dir/platform_linux.cpp.o"
+  "/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/server.cpp" "/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles/server.dir/server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

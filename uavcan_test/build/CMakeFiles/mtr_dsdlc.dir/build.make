@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C
+CMAKE_SOURCE_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build
+CMAKE_BINARY_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build
 
 # Utility rule file for mtr_dsdlc.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build
 include CMakeFiles/mtr_dsdlc.dir/progress.make
 
 CMakeFiles/mtr_dsdlc:
-	cd /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C && libuavcan_dsdlc ./motor -I/usr/local/share/uavcan/dsdl/uavcan
+	cd /home/jyl/Documents/GitHub/MotorBoard/uavcan_test && libuavcan_dsdlc ./motor -I/usr/local/share/uavcan/dsdl/uavcan
 
 mtr_dsdlc: CMakeFiles/mtr_dsdlc
 mtr_dsdlc: CMakeFiles/mtr_dsdlc.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/mtr_dsdlc.dir/clean:
 .PHONY : CMakeFiles/mtr_dsdlc.dir/clean
 
 CMakeFiles/mtr_dsdlc.dir/depend:
-	cd /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles/mtr_dsdlc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jyl/Documents/GitHub/MotorBoard/uavcan_test /home/jyl/Documents/GitHub/MotorBoard/uavcan_test /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles/mtr_dsdlc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mtr_dsdlc.dir/depend
 

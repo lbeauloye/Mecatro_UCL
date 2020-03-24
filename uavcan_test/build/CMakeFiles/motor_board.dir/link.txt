@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -std=c++11  -rdynamic CMakeFiles/motor_board.dir/motor_board.cpp.o CMakeFiles/motor_board.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o  -o motor_board /usr/local/lib/libuavcan.a -lrt 
+/usr/bin/c++  -Wall -Wextra -std=c++11  -rdynamic CMakeFiles/motor_board.dir/motor_board.cpp.o CMakeFiles/motor_board.dir/platform_linux.cpp.o  -o motor_board /usr/local/lib/libuavcan.a -lrt 

@@ -30,11 +30,7 @@ uavcan/node/global_data_type_registry.hpp
 uavcan/marshal/types.hpp
 -
 
-/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
-uavcan_linux/uavcan_linux.hpp
--
-
-/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/motor_board.cpp
+/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/motor_board.cpp
 iostream
 -
 cstdlib
@@ -50,5 +46,9 @@ motor/control/Voltage.hpp
 motor/control/Velocity.hpp
 -
 motor/config/EnableMotor.hpp
+-
+
+/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp
+uavcan_linux/uavcan_linux.hpp
 -
 

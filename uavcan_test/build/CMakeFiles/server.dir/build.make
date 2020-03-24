@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C
+CMAKE_SOURCE_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build
+CMAKE_BINARY_DIR = /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/server.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/server.dir/flags.make
 
 CMakeFiles/server.dir/server.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server.cpp.o: ../server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/server.cpp.o -c /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/server.cpp.o -c /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/server.cpp
 
 CMakeFiles/server.dir/server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/server.cpp > CMakeFiles/server.dir/server.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/server.cpp > CMakeFiles/server.dir/server.cpp.i
 
 CMakeFiles/server.dir/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/server.cpp -o CMakeFiles/server.dir/server.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/server.cpp -o CMakeFiles/server.dir/server.cpp.s
 
 CMakeFiles/server.dir/server.cpp.o.requires:
 
@@ -81,44 +81,44 @@ CMakeFiles/server.dir/server.cpp.o.provides: CMakeFiles/server.dir/server.cpp.o.
 CMakeFiles/server.dir/server.cpp.o.provides.build: CMakeFiles/server.dir/server.cpp.o
 
 
-CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o: /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o -c /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp
+CMakeFiles/server.dir/platform_linux.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/platform_linux.cpp.o: ../platform_linux.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/platform_linux.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/platform_linux.cpp.o -c /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp
 
-CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp > CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.i
+CMakeFiles/server.dir/platform_linux.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/platform_linux.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp > CMakeFiles/server.dir/platform_linux.cpp.i
 
-CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp -o CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.s
+CMakeFiles/server.dir/platform_linux.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/platform_linux.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/platform_linux.cpp -o CMakeFiles/server.dir/platform_linux.cpp.s
 
-CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires:
+CMakeFiles/server.dir/platform_linux.cpp.o.requires:
 
-.PHONY : CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires
+.PHONY : CMakeFiles/server.dir/platform_linux.cpp.o.requires
 
-CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides: CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides.build
-.PHONY : CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides
+CMakeFiles/server.dir/platform_linux.cpp.o.provides: CMakeFiles/server.dir/platform_linux.cpp.o.requires
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/platform_linux.cpp.o.provides.build
+.PHONY : CMakeFiles/server.dir/platform_linux.cpp.o.provides
 
-CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.provides.build: CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o
+CMakeFiles/server.dir/platform_linux.cpp.o.provides.build: CMakeFiles/server.dir/platform_linux.cpp.o
 
 
 # Object files for target server
 server_OBJECTS = \
 "CMakeFiles/server.dir/server.cpp.o" \
-"CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o"
+"CMakeFiles/server.dir/platform_linux.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
 server: CMakeFiles/server.dir/server.cpp.o
-server: CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o
+server: CMakeFiles/server.dir/platform_linux.cpp.o
 server: CMakeFiles/server.dir/build.make
 server: /usr/local/lib/libuavcan.a
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,7 +127,7 @@ CMakeFiles/server.dir/build: server
 .PHONY : CMakeFiles/server.dir/build
 
 CMakeFiles/server.dir/requires: CMakeFiles/server.dir/server.cpp.o.requires
-CMakeFiles/server.dir/requires: CMakeFiles/server.dir/home/westornd/Documents/UCL/Q7/ELME2002/CVRA/2._Node_initialization_and_startup/platform_linux.cpp.o.requires
+CMakeFiles/server.dir/requires: CMakeFiles/server.dir/platform_linux.cpp.o.requires
 
 .PHONY : CMakeFiles/server.dir/requires
 
@@ -136,6 +136,6 @@ CMakeFiles/server.dir/clean:
 .PHONY : CMakeFiles/server.dir/clean
 
 CMakeFiles/server.dir/depend:
-	cd /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build /home/westornd/Documents/UCL/Q7/ELME2002/CVRA/C/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jyl/Documents/GitHub/MotorBoard/uavcan_test /home/jyl/Documents/GitHub/MotorBoard/uavcan_test /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build /home/jyl/Documents/GitHub/MotorBoard/uavcan_test/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/server.dir/depend
 
