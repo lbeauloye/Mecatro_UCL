@@ -11,7 +11,22 @@
 #include "alt_gpio.h"
 
 #include "test.h"
+#include "libcanard/canard.h"
+#include "o1heap/o1heap.h"
 
+/*
+static void* memAllocate(CanardInstance* const ins, const size_t amount)
+{
+    (void) ins;
+    return o1heapAllocate(malloc, amount);
+}
+
+static void memFree(CanardInstance* const ins, void* const pointer)
+{
+    (void) ins;
+    o1heapFree(free, pointer);
+}
+*/
 /* ------------------------------------------------------------------------------------------------ */
 
 
@@ -191,7 +206,11 @@ void Task_CAN(void)
 
     CAN_debug();
 
-    
+    CanardInstance ins = canardInit(&malloc, &free);
+    ins.mtu_bytes = CANARD_MTU_CAN_CLASSIC;  // Defaults to 64 (CAN FD); here we select Classic CAN.
+    ins.node_id   = 42;                      // Defaults to anonymous; can be set up later at any point.
+
+
     tx_Identifier = 0xabc;
     tx_Length     = 8;
     tx_FrameType  = MCP2515_TX_STD_FRAME;
@@ -204,20 +223,35 @@ void Task_CAN(void)
     MTXUNLOCK_STDIO();
 
     CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+
+    static uint8_t my_message_transfer_id;  // Must be static or heap-allocated to retain state between calls.
+    const CanardTransfer transfer = {
+        .timestamp_usec = 0,      // Zero if transmission deadline is not limited.
+        .priority       = CanardPriorityNominal,
+        .transfer_kind  = CanardTransferKindMessage,
+        .port_id        = 1234,                       // This is the subject-ID.
+        .remote_node_id = CANARD_NODE_ID_UNSET,       // Messages cannot be unicast, so use UNSET.
+        .transfer_id    = my_message_transfer_id,
+        .payload_size   = 47,
+        .payload        = "\x2D\x00" "Sancho, it strikes me thou art in great fear.",
+    };
+    ++my_message_transfer_id;  // The transfer-ID shall be incremented after every transmission on this subject.
+    int32_t result = canardTxPush(&ins, &transfer);
+    if (result < 0)
+    {
+        // An error has occurred: either an argument is invalid or we've ran out of memory.
+        // It is possible to statically prove that an out-of-memory will never occur for a given application if the
+        // heap is sized correctly; for background, refer to the Robson's Proof and the documentation for O1Heap.
+        abort();
+    }
     
     for( ;; )
     {
-        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
-            MTXLOCK_STDIO();
-            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
-            for(i=0; i<rx_Length; i++) printf("%02x ", rx_Data[i]);
-            printf("\n");
-            MTXUNLOCK_STDIO();
-            
-            // Send a response
-            for(i=0; i<tx_Length; i++)
-                tx_Data[i]++;
-            CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+        for (const CanardFrame* txf = NULL; (txf = canardTxPeek(&ins)) != NULL;)  // Look at the top of the TX queue.
+        {
+            CAN_sendMsg(txf->extended_can_id, txf->payload, txf->payload_size, tx_FrameType);
+            canardTxPop(&ins);                         // Remove the frame from the queue after it's transmitted.
+            ins.memory_free(&ins, (CanardFrame*)txf);  // Deallocate the dynamic memory afterwards.
         }
     }
 }

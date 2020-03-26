@@ -3,7 +3,9 @@
 MAKE_NAME := ${MyAPP}_GCC.make		        # For full re-build if I'm modified
 
 											# The path order of in VPATH is important
-VPATH   := ../src	        				# This is due to multiple file with same names
+VPATH   := ../src
+VPATH   += :../inc/libcanard	
+VPATH   += :../inc/o1heap        				# This is due to multiple file with same names
 VPATH   += :../hwlib
 VPATH   += :../../mAbassi/Abassi
 VPATH   += :../../mAbassi/Platform/src
@@ -22,6 +24,8 @@ C_SRC   += dw_uart.c
 C_SRC   += alt_gpio.c
 C_SRC   += dw_spi.c
 C_SRC   += alt_generalpurpose_io.c
+C_SRC   += canard.c
+C_SRC   += o1heap.c
 
 
 CPP_SRC += test.cpp
@@ -48,6 +52,8 @@ C_INC   += ../../mAbassi/Platform/inc/HWinfo.h
 C_INC   += ../../mAbassi/Platform/inc/AbassiLib.h
 C_INC   += ../../mAbassi/Drivers/inc/dw_uart.h
 C_INC   += ../../mAbassi/Drivers/inc/dw_spi.h
+CPP_INC   += ../inc/libcanard/canard.h
+CPP_INC += ../inc/o1heap/o1heap.h
 
 CPP_INC   += ../inc/hps_0.h
 
