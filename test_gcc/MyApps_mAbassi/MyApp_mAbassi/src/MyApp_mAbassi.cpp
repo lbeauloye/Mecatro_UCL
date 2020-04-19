@@ -211,12 +211,25 @@ void Task_CAN(void)
 //    ins.node_id   = 42;                      // Defaults to anonymous; can be set up later at any point.
 
 
-    tx_Identifier = 0xabc;
-    tx_Length     = 8;
+    tx_Identifier = 0x708;//0xabc;
+    tx_Length     = 3;//8;
     tx_FrameType  = MCP2515_TX_STD_FRAME;
-    
-    for(i=0; i<tx_Length; i++)
-        tx_Data[i] = i;
+    tx_Data[0] = 0x1E;
+    tx_Data[1] = 0x30;
+    tx_Data[2] = 0x00;
+    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+
+    tx_Identifier = 0x708;//0xabc;
+    tx_Length     = 3;//8;
+    tx_FrameType  = MCP2515_TX_STD_FRAME;
+    tx_Data[0] = 0x25;
+    tx_Data[1] = 0xFF;
+    tx_Data[2] = (128*20/100 + 128) >> 2;
+    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+
+
+    //for(i=0; i<tx_Length; i++)
+    //    tx_Data[i] = i;
 
 //    MTXLOCK_STDIO();
 //    printf("youpitou maboi\n");
@@ -255,6 +268,11 @@ void Task_CAN(void)
 //        }
 //    }
 
+
+
+
+
+
     for( ;; )
     {
         if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
@@ -265,9 +283,10 @@ void Task_CAN(void)
             MTXUNLOCK_STDIO();
 
             // Send a response
-            for(i=0; i<tx_Length; i++)
-                tx_Data[i]++;
-            CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+            //for(i=0; i<tx_Length; i++)
+            //    tx_Data[i]++;
+            //CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
         }
     }
+
 }
