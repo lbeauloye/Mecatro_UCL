@@ -204,7 +204,7 @@ void Task_CAN(void)
 
     CAN_init();
 
-    CAN_debug();
+   // CAN_debug();
 
 //    CanardInstance ins = canardInit(&malloc, &free);
 //    ins.mtu_bytes = CANARD_MTU_CAN_CLASSIC;  // Defaults to 64 (CAN FD); here we select Classic CAN.

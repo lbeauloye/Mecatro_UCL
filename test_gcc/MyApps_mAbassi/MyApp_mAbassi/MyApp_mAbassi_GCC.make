@@ -2,6 +2,8 @@
 
 MAKE_NAME := ${MyAPP}_GCC.make		        # For full re-build if I'm modified
 
+SOCEDS_DEST_ROOT := C:/intelFPGA/18.1/embedded
+
 											# The path order of in VPATH is important
 VPATH   := ../src
 VPATH   += :../inc/libcanard	
