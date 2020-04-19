@@ -1,0 +1,268 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate E:\ELEC2103\MyApp_MTL2\MyApp_MTL_hw\MyApp_MTL_hw_restored\soc_system.qsys --block-symbol-file --output-directory=E:\ELEC2103\MyApp_MTL2\MyApp_MTL_hw\MyApp_MTL_hw_restored\soc_system --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading MyApp_MTL_hw_restored/soc_system.qsys
+Progress: Reading input file
+Progress: Adding ILC [interrupt_latency_counter 18.0]
+Progress: Parameterizing module ILC
+Progress: Adding TOUCH [TERASIC_MULTI_TOUCH 1.0]
+Warning: TERASIC_MULTI_TOUCH: add_file: E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/ip/TERASIC_MULTI_TOUCH/i2c_touch_config.v is encrypted; it cannot be used for simulation
+Progress: Parameterizing module TOUCH
+Progress: Adding alt_vip_itc_0 [alt_vip_itc 14.0]
+Progress: Parameterizing module alt_vip_itc_0
+Progress: Adding alt_vip_vfr_0 [alt_vip_vfr 14.0]
+Progress: Parameterizing module alt_vip_vfr_0
+Progress: Adding button_pio [altera_avalon_pio 18.0]
+Progress: Parameterizing module button_pio
+Progress: Adding clk_0 [clock_source 18.0]
+Progress: Parameterizing module clk_0
+Progress: Adding clock_bridge_fpga [altera_clock_bridge 18.0]
+Progress: Parameterizing module clock_bridge_fpga
+Progress: Adding dipsw_pio [altera_avalon_pio 18.0]
+Progress: Parameterizing module dipsw_pio
+Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 18.0]
+Progress: Parameterizing module f2sdram_only_master
+Progress: Adding fpga_only_master [altera_jtag_avalon_master 18.0]
+Progress: Parameterizing module fpga_only_master
+Progress: Adding hps_0 [altera_hps 18.0]
+Progress: Parameterizing module hps_0
+Progress: Adding hps_only_master [altera_jtag_avalon_master 18.0]
+Progress: Parameterizing module hps_only_master
+Progress: Adding i2c_opencores_0 [i2c_opencores 12.0]
+Progress: Parameterizing module i2c_opencores_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding lcd_touch_int [altera_avalon_pio 18.0]
+Progress: Parameterizing module lcd_touch_int
+Progress: Adding led_pio [altera_avalon_pio 18.0]
+Progress: Parameterizing module led_pio
+Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.0]
+Progress: Parameterizing module mm_bridge_0
+Progress: Adding mm_bridge_1 [altera_avalon_mm_bridge 18.0]
+Progress: Parameterizing module mm_bridge_1
+Progress: Adding mm_bridge_fpga [altera_avalon_mm_bridge 18.0]
+Progress: Parameterizing module mm_bridge_fpga
+Progress: Adding spi_raspberrypi [altera_avalon_spi 18.0]
+Progress: Parameterizing module spi_raspberrypi
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 18.0]
+Progress: Parameterizing module sysid_qsys
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: soc_system.TERASIC_MULTI_TOUCH: add_file: E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/ip/TERASIC_MULTI_TOUCH/i2c_touch_config.v is encrypted; it cannot be used for simulation
+Warning: soc_system.alt_vip_vfr_0: The module properties SIMULATION_MODEL_IN_VERILOG and SIMULATION_MODEL_IN_VHDL can not both be set when using the SIMULATION file property: src_hdl/alt_vipvfr131_vfr.v, src_hdl/alt_vipvfr131_vfr_controller.v, src_hdl/alt_vipvfr131_vfr_control_packet_encoder.v, src_hdl/alt_vipvfr131_prc.v, src_hdl/alt_vipvfr131_prc_core.v, src_hdl/alt_vipvfr131_prc_read_master.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_package.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_avalon_mm_bursting_master_fifo.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_avalon_mm_master.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_unpack_data.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_avalon_mm_slave.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_stream_output.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_pulling_width_adapter.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_general_fifo.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_fifo_usedw_calculator.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_gray_clock_crosser.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_std_logic_vector_delay.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_one_bit_delay.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_logic_fifo.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_ram_fifo.vhd
+Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.lcd_touch_int: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Warning: soc_system.TOUCH: Interrupt sender TOUCH.interrupt_sender is not connected to an interrupt receiver
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate E:\ELEC2103\MyApp_MTL2\MyApp_MTL_hw\MyApp_MTL_hw_restored\soc_system.qsys --synthesis=VERILOG --output-directory=E:\ELEC2103\MyApp_MTL2\MyApp_MTL_hw\MyApp_MTL_hw_restored\soc_system\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading MyApp_MTL_hw_restored/soc_system.qsys
+Progress: Reading input file
+Progress: Adding ILC [interrupt_latency_counter 18.0]
+Progress: Parameterizing module ILC
+Progress: Adding TOUCH [TERASIC_MULTI_TOUCH 1.0]
+Progress: Parameterizing module TOUCH
+Progress: Adding alt_vip_itc_0 [alt_vip_itc 14.0]
+Progress: Parameterizing module alt_vip_itc_0
+Progress: Adding alt_vip_vfr_0 [alt_vip_vfr 14.0]
+Progress: Parameterizing module alt_vip_vfr_0
+Progress: Adding button_pio [altera_avalon_pio 18.0]
+Progress: Parameterizing module button_pio
+Progress: Adding clk_0 [clock_source 18.0]
+Progress: Parameterizing module clk_0
+Progress: Adding clock_bridge_fpga [altera_clock_bridge 18.0]
+Progress: Parameterizing module clock_bridge_fpga
+Progress: Adding dipsw_pio [altera_avalon_pio 18.0]
+Progress: Parameterizing module dipsw_pio
+Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 18.0]
+Progress: Parameterizing module f2sdram_only_master
+Progress: Adding fpga_only_master [altera_jtag_avalon_master 18.0]
+Progress: Parameterizing module fpga_only_master
+Progress: Adding hps_0 [altera_hps 18.0]
+Progress: Parameterizing module hps_0
+Progress: Adding hps_only_master [altera_jtag_avalon_master 18.0]
+Progress: Parameterizing module hps_only_master
+Progress: Adding i2c_opencores_0 [i2c_opencores 12.0]
+Progress: Parameterizing module i2c_opencores_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding lcd_touch_int [altera_avalon_pio 18.0]
+Progress: Parameterizing module lcd_touch_int
+Progress: Adding led_pio [altera_avalon_pio 18.0]
+Progress: Parameterizing module led_pio
+Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.0]
+Progress: Parameterizing module mm_bridge_0
+Progress: Adding mm_bridge_1 [altera_avalon_mm_bridge 18.0]
+Progress: Parameterizing module mm_bridge_1
+Progress: Adding mm_bridge_fpga [altera_avalon_mm_bridge 18.0]
+Progress: Parameterizing module mm_bridge_fpga
+Progress: Adding spi_raspberrypi [altera_avalon_spi 18.0]
+Progress: Parameterizing module spi_raspberrypi
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 18.0]
+Progress: Parameterizing module sysid_qsys
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: soc_system.TERASIC_MULTI_TOUCH: add_file: E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/ip/TERASIC_MULTI_TOUCH/i2c_touch_config.v is encrypted; it cannot be used for simulation
+Warning: soc_system.alt_vip_vfr_0: The module properties SIMULATION_MODEL_IN_VERILOG and SIMULATION_MODEL_IN_VHDL can not both be set when using the SIMULATION file property: src_hdl/alt_vipvfr131_vfr.v, src_hdl/alt_vipvfr131_vfr_controller.v, src_hdl/alt_vipvfr131_vfr_control_packet_encoder.v, src_hdl/alt_vipvfr131_prc.v, src_hdl/alt_vipvfr131_prc_core.v, src_hdl/alt_vipvfr131_prc_read_master.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_package.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_avalon_mm_bursting_master_fifo.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_avalon_mm_master.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_unpack_data.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_avalon_mm_slave.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_stream_output.v, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_pulling_width_adapter.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_general_fifo.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_fifo_usedw_calculator.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_gray_clock_crosser.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_std_logic_vector_delay.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_one_bit_delay.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_logic_fifo.vhd, E:/intelfpga/18.0/ip/altera/frame_reader/common_hdl/alt_vipvfr131_common_ram_fifo.vhd
+Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.lcd_touch_int: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Warning: soc_system.TOUCH: Interrupt sender TOUCH.interrupt_sender is not connected to an interrupt receiver
+Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master alt_vip_vfr_0.avalon_master and slave mm_bridge_1.s0 because the master has burstcount signal 6 bit wide, but the slave is 5 bit wide.
+Info: Interconnect is inserted between master alt_vip_vfr_0.avalon_master and slave mm_bridge_1.s0 because the master has readdata signal 32 bit wide, but the slave is 256 bit wide.
+Info: Interconnect is inserted between master hps_0.h2f_lw_axi_master and slave mm_bridge_0.s0 because the master is of type axi and the slave is of type avalon.
+Info: Interconnect is inserted between master hps_only_master.master and slave hps_0.f2h_axi_slave because the master is of type avalon and the slave is of type axi.
+Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper_001.sender
+Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper_001.sender
+Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_002.sender
+Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_002.sender
+Info: ILC: "soc_system" instantiated interrupt_latency_counter "ILC"
+Info: TOUCH: "soc_system" instantiated TERASIC_MULTI_TOUCH "TOUCH"
+Info: alt_vip_itc_0: "soc_system" instantiated alt_vip_itc "alt_vip_itc_0"
+Info: alt_vip_vfr_0: "soc_system" instantiated alt_vip_vfr "alt_vip_vfr_0"
+Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
+Info: button_pio:   Generation command is [exec E:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga/18.0/quartus/bin64/perl/lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I E:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0488_button_pio_gen/ --quartus_dir=E:/intelfpga/18.0/quartus --verilog --config=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0488_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
+Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
+Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
+Info: dipsw_pio:   Generation command is [exec E:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga/18.0/quartus/bin64/perl/lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I E:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0489_dipsw_pio_gen/ --quartus_dir=E:/intelfpga/18.0/quartus --verilog --config=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0489_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: dipsw_pio: Done RTL generation for module 'soc_system_dipsw_pio'
+Info: dipsw_pio: "soc_system" instantiated altera_avalon_pio "dipsw_pio"
+Info: f2sdram_only_master: "soc_system" instantiated altera_jtag_avalon_master "f2sdram_only_master"
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
+Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
+Info: jtag_uart:   Generation command is [exec E:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga/18.0/quartus/bin64/perl/lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I E:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0490_jtag_uart_gen/ --quartus_dir=E:/intelfpga/18.0/quartus --verilog --config=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0490_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
+Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: lcd_touch_int: Starting RTL generation for module 'soc_system_lcd_touch_int'
+Info: lcd_touch_int:   Generation command is [exec E:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga/18.0/quartus/bin64/perl/lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I E:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_lcd_touch_int --dir=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0491_lcd_touch_int_gen/ --quartus_dir=E:/intelfpga/18.0/quartus --verilog --config=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0491_lcd_touch_int_gen//soc_system_lcd_touch_int_component_configuration.pl  --do_build_sim=0  ]
+Info: lcd_touch_int: Done RTL generation for module 'soc_system_lcd_touch_int'
+Info: lcd_touch_int: "soc_system" instantiated altera_avalon_pio "lcd_touch_int"
+Info: led_pio: Starting RTL generation for module 'soc_system_led_pio'
+Info: led_pio:   Generation command is [exec E:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga/18.0/quartus/bin64/perl/lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I E:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0492_led_pio_gen/ --quartus_dir=E:/intelfpga/18.0/quartus --verilog --config=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0492_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio: Done RTL generation for module 'soc_system_led_pio'
+Info: led_pio: "soc_system" instantiated altera_avalon_pio "led_pio"
+Info: mm_bridge_0: "soc_system" instantiated altera_avalon_mm_bridge "mm_bridge_0"
+Info: spi_raspberrypi: Starting RTL generation for module 'soc_system_spi_raspberrypi'
+Info: spi_raspberrypi:   Generation command is [exec E:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga/18.0/quartus/bin64/perl/lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I E:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga/18.0/quartus/sopc_builder/bin -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- E:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=soc_system_spi_raspberrypi --dir=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0494_spi_raspberrypi_gen/ --quartus_dir=E:/intelfpga/18.0/quartus --verilog --config=C:/Users/Lud/AppData/Local/Temp/alt7959_1760744413179633840.dir/0494_spi_raspberrypi_gen//soc_system_spi_raspberrypi_component_configuration.pl  --do_build_sim=0  ]
+Info: spi_raspberrypi: Done RTL generation for module 'soc_system_spi_raspberrypi'
+Info: spi_raspberrypi: "soc_system" instantiated altera_avalon_spi "spi_raspberrypi"
+Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_2: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_2"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_3: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_3"
+Info: mm_interconnect_4: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_4"
+Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
+Info: irq_mapper_002: "soc_system" instantiated altera_irq_mapper "irq_mapper_002"
+Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: jtag_phy_embedded_in_jtag_master: "f2sdram_only_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: timing_adt: "f2sdram_only_master" instantiated timing_adapter "timing_adt"
+Info: fifo: "f2sdram_only_master" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "f2sdram_only_master" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "f2sdram_only_master" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "f2sdram_only_master" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "f2sdram_only_master" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "f2sdram_only_master" instantiated channel_adapter "p2b_adapter"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: alt_vip_vfr_0_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "alt_vip_vfr_0_avalon_master_translator"
+Info: mm_bridge_1_s0_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "mm_bridge_1_s0_translator"
+Info: alt_vip_vfr_0_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "alt_vip_vfr_0_avalon_master_agent"
+Info: mm_bridge_1_s0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "mm_bridge_1_s0_agent"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: mm_bridge_1_s0_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "mm_bridge_1_s0_cmd_width_adapter"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_1" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: mm_bridge_0_s0_burst_adapter: "mm_interconnect_1" instantiated altera_merlin_burst_adapter "mm_bridge_0_s0_burst_adapter"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_2" instantiated altera_merlin_router "router_002"
+Info: mm_bridge_0_m0_limiter: "mm_interconnect_2" instantiated altera_merlin_traffic_limiter "mm_bridge_0_m0_limiter"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: router: "mm_interconnect_3" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_3" instantiated altera_merlin_router "router_001"
+Info: router_003: "mm_interconnect_3" instantiated altera_merlin_router "router_003"
+Info: cmd_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: hps_0_f2h_axi_slave_agent: "mm_interconnect_4" instantiated altera_merlin_axi_slave_ni "hps_0_f2h_axi_slave_agent"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: router: "mm_interconnect_4" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_4" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_4" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_4" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_4" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_4" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file E:/ELEC2103/MyApp_MTL2/MyApp_MTL_hw/MyApp_MTL_hw_restored/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: soc_system: Done "soc_system" with 78 modules, 182 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

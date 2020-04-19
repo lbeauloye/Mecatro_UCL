@@ -1,0 +1,573 @@
+IP Upgrade report for DE10_NANO_SoC_GHRD
+Thu May 24 22:22:56 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. IP Upgrade Summary
+  3. Successfully Upgraded IP Components
+  4. IP Upgrade Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; IP Upgrade Summary                                                             ;
++------------------------------+-------------------------------------------------+
+; IP Components Upgrade Status ; Passed - Thu May 24 22:22:56 2018               ;
+; Quartus Prime Version        ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
+; Revision Name                ; DE10_NANO_SoC_GHRD                              ;
+; Top-level Entity Name        ; DE10_NANO_SoC_GHRD                              ;
+; Family                       ; Cyclone V                                       ;
++------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Successfully Upgraded IP Components                                                                                                                                         ;
++-------------+------------------------------+---------+-------------------------------------+--------------------------------+-------------------------------------+---------+
+; Entity Name ; Component Name               ; Version ; Original Source File                ; Generation File Path           ; New Source File                     ; Message ;
++-------------+------------------------------+---------+-------------------------------------+--------------------------------+-------------------------------------+---------+
+; hps_reset   ; In-System Sources and Probes ; 17.1    ; ip/altsource_probe/hps_reset.qip    ; ip/altsource_probe/hps_reset.v ; ip/altsource_probe/hps_reset.qip    ;         ;
+; soc_system  ; Qsys                         ; 17.1    ; soc_system/synthesis/soc_system.qip ; soc_system.qsys                ; soc_system/synthesis/soc_system.qip ;         ;
++-------------+------------------------------+---------+-------------------------------------+--------------------------------+-------------------------------------+---------+
+
+
++---------------------+
+; IP Upgrade Messages ;
++---------------------+
+Info (11902): Backing up file "ip/altsource_probe/hps_reset.v" to "ip/altsource_probe/hps_reset.BAK.v"
+Info (11837): Started upgrading IP component In-System Sources and Probes with file "ip/altsource_probe/hps_reset.v"
+Info (11902): Backing up file "soc_system.qsys" to "soc_system.BAK.qsys"
+Info (11902): Backing up file "soc_system/synthesis/soc_system.v" to "soc_system.BAK.v"
+Info (11837): Started upgrading IP component Qsys with file "soc_system.qsys"
+Info: 2018.05.24.22:17:48 Info: Starting to upgrade the IP cores in the Platform Designer system
+Info: 2018.05.24.22:17:48 Info: Finished upgrading the ip cores
+Info: 2018.05.24.22:18:22 Info: Saving generation log to W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system
+Info: 2018.05.24.22:18:22 Info: Starting: Create simulation model
+Info: 2018.05.24.22:18:22 Info: qsys-generate W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system\simulation --family="Cyclone V" --part=5CSEBA6U23I7
+Info: 2018.05.24.22:18:22 Info: Loading MyLT24_Hardware
+Info: 2018.05.24.22:18:22 Info: Reading input file
+Info: 2018.05.24.22:18:22 Info: Adding ILC [interrupt_latency_counter 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module ILC
+Info: 2018.05.24.22:18:22 Info: Adding LT24_ADC_BUSY [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module LT24_ADC_BUSY
+Info: 2018.05.24.22:18:22 Info: Adding LT24_ADC_IRQ_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module LT24_ADC_IRQ_N
+Info: 2018.05.24.22:18:22 Info: Adding LT24_ADC_SPI [altera_avalon_spi 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module LT24_ADC_SPI
+Info: 2018.05.24.22:18:22 Info: Adding LT24_D [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module LT24_D
+Info: 2018.05.24.22:18:22 Info: Adding LT24_RESET_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module LT24_RESET_N
+Info: 2018.05.24.22:18:22 Info: Adding LT24_RS [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module LT24_RS
+Info: 2018.05.24.22:18:22 Info: Adding LT24_WR_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module LT24_WR_N
+Info: 2018.05.24.22:18:22 Info: Adding button_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module button_pio
+Info: 2018.05.24.22:18:22 Info: Adding clk_0 [clock_source 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module clk_0
+Info: 2018.05.24.22:18:22 Info: Adding dipsw_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module dipsw_pio
+Info: 2018.05.24.22:18:22 Info: Adding f2sdram_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module f2sdram_only_master
+Info: 2018.05.24.22:18:22 Info: Adding fpga_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:18:22 Info: Parameterizing module fpga_only_master
+Info: 2018.05.24.22:18:23 Info: Adding hps_0 [altera_hps 18.0]
+Info: 2018.05.24.22:18:23 Info: Parameterizing module hps_0
+Info: 2018.05.24.22:18:23 Info: Adding hps_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:18:23 Info: Parameterizing module hps_only_master
+Info: 2018.05.24.22:18:23 Info: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
+Info: 2018.05.24.22:18:23 Info: Parameterizing module jtag_uart
+Info: 2018.05.24.22:18:23 Info: Adding led_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:18:23 Info: Parameterizing module led_pio
+Info: 2018.05.24.22:18:23 Info: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.0]
+Info: 2018.05.24.22:18:23 Info: Parameterizing module mm_bridge_0
+Info: 2018.05.24.22:18:23 Info: Adding sysid_qsys [altera_avalon_sysid_qsys 18.0]
+Info: 2018.05.24.22:18:23 Info: Parameterizing module sysid_qsys
+Info: 2018.05.24.22:18:23 Info: Building connections
+Info: 2018.05.24.22:18:23 Info: Parameterizing connections
+Info: 2018.05.24.22:18:23 Info: Validating
+Info: 2018.05.24.22:18:33 Info: Done reading input file
+Info: 2018.05.24.22:18:37 Info: soc_system.LT24_ADC_BUSY: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:18:37 Info: soc_system.LT24_ADC_IRQ_N: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:18:37 Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:18:37 Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:18:37 Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: 2018.05.24.22:18:37 Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: 2018.05.24.22:18:37 Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: 2018.05.24.22:18:37 Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: 2018.05.24.22:18:37 Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Warning: 2018.05.24.22:18:37 Warning: soc_system.LT24_ADC_SPI: Interrupt sender LT24_ADC_SPI.irq is not connected to an interrupt receiver
+Info: 2018.05.24.22:18:40 Info: soc_system: Generating soc_system "soc_system" for SIM_VERILOG
+Info: 2018.05.24.22:18:45 Info: Interconnect is inserted between master hps_0.h2f_lw_axi_master and slave mm_bridge_0.s0 because the master is of type axi and the slave is of type avalon.
+Info: 2018.05.24.22:18:49 Info: Interconnect is inserted between master hps_only_master.master and slave hps_0.f2h_axi_slave because the master is of type avalon and the slave is of type axi.
+Info: 2018.05.24.22:18:50 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 27 bit wide.
+Info: 2018.05.24.22:18:50 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has readdata signal 32 bit wide, but the slave is 256 bit wide.
+Info: 2018.05.24.22:18:50 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has writedata signal 32 bit wide, but the slave is 256 bit wide.
+Info: 2018.05.24.22:18:50 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has byteenable signal 4 bit wide, but the slave is 32 bit wide.
+Warning: 2018.05.24.22:18:50 Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper_001.sender
+Warning: 2018.05.24.22:18:50 Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper_001.sender
+Warning: 2018.05.24.22:18:50 Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_002.sender
+Warning: 2018.05.24.22:18:50 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_002.sender
+Info: 2018.05.24.22:18:58 Info: ILC: "soc_system" instantiated interrupt_latency_counter "ILC"
+Info: 2018.05.24.22:18:58 Info: LT24_ADC_BUSY: Starting RTL generation for module 'soc_system_LT24_ADC_BUSY'
+Info: 2018.05.24.22:18:58 Info: LT24_ADC_BUSY:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LT24_ADC_BUSY --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0003_LT24_ADC_BUSY_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0003_LT24_ADC_BUSY_gen//soc_system_LT24_ADC_BUSY_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0003_LT24_ADC_BUSY_gen
+Info: 2018.05.24.22:19:00 Info: LT24_ADC_BUSY: Done RTL generation for module 'soc_system_LT24_ADC_BUSY'
+Info: 2018.05.24.22:19:00 Info: LT24_ADC_BUSY: "soc_system" instantiated altera_avalon_pio "LT24_ADC_BUSY"
+Info: 2018.05.24.22:19:01 Info: LT24_ADC_SPI: Starting RTL generation for module 'soc_system_LT24_ADC_SPI'
+Info: 2018.05.24.22:19:01 Info: LT24_ADC_SPI:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=soc_system_LT24_ADC_SPI --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0004_LT24_ADC_SPI_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0004_LT24_ADC_SPI_gen//soc_system_LT24_ADC_SPI_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0004_LT24_ADC_SPI_gen
+Info: 2018.05.24.22:19:02 Info: LT24_ADC_SPI: Done RTL generation for module 'soc_system_LT24_ADC_SPI'
+Info: 2018.05.24.22:19:02 Info: LT24_ADC_SPI: "soc_system" instantiated altera_avalon_spi "LT24_ADC_SPI"
+Info: 2018.05.24.22:19:02 Info: LT24_D: Starting RTL generation for module 'soc_system_LT24_D'
+Info: 2018.05.24.22:19:02 Info: LT24_D:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LT24_D --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0005_LT24_D_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0005_LT24_D_gen//soc_system_LT24_D_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0005_LT24_D_gen
+Info: 2018.05.24.22:19:02 Info: LT24_D: Done RTL generation for module 'soc_system_LT24_D'
+Info: 2018.05.24.22:19:02 Info: LT24_D: "soc_system" instantiated altera_avalon_pio "LT24_D"
+Info: 2018.05.24.22:19:02 Info: LT24_RESET_N: Starting RTL generation for module 'soc_system_LT24_RESET_N'
+Info: 2018.05.24.22:19:02 Info: LT24_RESET_N:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LT24_RESET_N --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0006_LT24_RESET_N_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0006_LT24_RESET_N_gen//soc_system_LT24_RESET_N_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0006_LT24_RESET_N_gen
+Info: 2018.05.24.22:19:02 Info: LT24_RESET_N: Done RTL generation for module 'soc_system_LT24_RESET_N'
+Info: 2018.05.24.22:19:02 Info: LT24_RESET_N: "soc_system" instantiated altera_avalon_pio "LT24_RESET_N"
+Info: 2018.05.24.22:19:03 Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
+Info: 2018.05.24.22:19:03 Info: button_pio:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0007_button_pio_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0007_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0007_button_pio_gen
+Info: 2018.05.24.22:19:03 Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
+Info: 2018.05.24.22:19:03 Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
+Info: 2018.05.24.22:19:03 Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
+Info: 2018.05.24.22:19:03 Info: dipsw_pio:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0008_dipsw_pio_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0008_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0008_dipsw_pio_gen
+Info: 2018.05.24.22:19:04 Info: dipsw_pio: Done RTL generation for module 'soc_system_dipsw_pio'
+Info: 2018.05.24.22:19:04 Info: dipsw_pio: "soc_system" instantiated altera_avalon_pio "dipsw_pio"
+Info: 2018.05.24.22:19:04 Info: f2sdram_only_master: "soc_system" instantiated altera_jtag_avalon_master "f2sdram_only_master"
+Info: 2018.05.24.22:19:04 Info: hps_0: "Running  for module: hps_0"
+Info: 2018.05.24.22:19:05 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: 2018.05.24.22:19:05 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: 2018.05.24.22:19:07 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
+Info: 2018.05.24.22:19:07 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
+Info: 2018.05.24.22:19:07 Info: jtag_uart:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0009_jtag_uart_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0009_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0009_jtag_uart_gen
+Info: 2018.05.24.22:19:08 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
+Info: 2018.05.24.22:19:08 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: 2018.05.24.22:19:08 Info: led_pio: Starting RTL generation for module 'soc_system_led_pio'
+Info: 2018.05.24.22:19:08 Info: led_pio:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0010_led_pio_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0010_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0010_led_pio_gen
+Info: 2018.05.24.22:19:08 Info: led_pio: Done RTL generation for module 'soc_system_led_pio'
+Info: 2018.05.24.22:19:08 Info: led_pio: "soc_system" instantiated altera_avalon_pio "led_pio"
+Info: 2018.05.24.22:19:08 Info: mm_bridge_0: "soc_system" instantiated altera_avalon_mm_bridge "mm_bridge_0"
+Info: 2018.05.24.22:19:08 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
+Info: 2018.05.24.22:19:08 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:09 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: 2018.05.24.22:19:11 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:11 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:11 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:11 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:11 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:11 Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:11 Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:12 Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:12 Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:12 Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:12 Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:12 Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:12 Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:14 Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: 2018.05.24.22:19:14 Info: mm_interconnect_2: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_2"
+Info: 2018.05.24.22:19:14 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:19:15 Info: mm_interconnect_3: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_3"
+Info: 2018.05.24.22:19:15 Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: 2018.05.24.22:19:15 Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
+Info: 2018.05.24.22:19:15 Info: irq_mapper_002: "soc_system" instantiated altera_irq_mapper "irq_mapper_002"
+Info: 2018.05.24.22:19:15 Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: 2018.05.24.22:19:15 Info: jtag_phy_embedded_in_jtag_master: "f2sdram_only_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: 2018.05.24.22:19:15 Info: timing_adt: "f2sdram_only_master" instantiated timing_adapter "timing_adt"
+Info: 2018.05.24.22:19:15 Info: fifo: "f2sdram_only_master" instantiated altera_avalon_sc_fifo "fifo"
+Info: 2018.05.24.22:19:15 Info: b2p: "f2sdram_only_master" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: 2018.05.24.22:19:15 Info: p2b: "f2sdram_only_master" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: 2018.05.24.22:19:15 Info: transacto: "f2sdram_only_master" instantiated altera_avalon_packets_to_master "transacto"
+Info: 2018.05.24.22:19:15 Info: b2p_adapter: "f2sdram_only_master" instantiated channel_adapter "b2p_adapter"
+Info: 2018.05.24.22:19:15 Info: p2b_adapter: "f2sdram_only_master" instantiated channel_adapter "p2b_adapter"
+Info: 2018.05.24.22:20:53 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: 2018.05.24.22:20:53 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:53 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:53 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: 2018.05.24.22:20:54 Info: mm_bridge_0_s0_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "mm_bridge_0_s0_translator"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: mm_bridge_0_s0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "mm_bridge_0_s0_agent"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:20:54 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: 2018.05.24.22:20:54 Info: mm_bridge_0_s0_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "mm_bridge_0_s0_burst_adapter"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:20:54 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: 2018.05.24.22:20:54 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: 2018.05.24.22:20:54 Info: mm_bridge_0_m0_translator: "mm_interconnect_1" instantiated altera_merlin_master_translator "mm_bridge_0_m0_translator"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: mm_bridge_0_m0_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "mm_bridge_0_m0_agent"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:20:54 Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: 2018.05.24.22:20:54 Info: mm_bridge_0_m0_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "mm_bridge_0_m0_limiter"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:20:54 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: 2018.05.24.22:20:54 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:20:54 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:54 Info: hps_0_f2h_axi_slave_agent: "mm_interconnect_2" instantiated altera_merlin_axi_slave_ni "hps_0_f2h_axi_slave_agent"
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:20:55 Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
+Info: 2018.05.24.22:20:55 Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:20:55 Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: 2018.05.24.22:20:55 Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: hps_0_f2h_axi_slave_wr_cmd_width_adapter: "mm_interconnect_2" instantiated altera_merlin_width_adapter "hps_0_f2h_axi_slave_wr_cmd_width_adapter"
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: router: "mm_interconnect_3" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:20:55 Info: router_001: "mm_interconnect_3" instantiated altera_merlin_router "router_001"
+Info: 2018.05.24.22:20:55 Info: cmd_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:20:55 Info: cmd_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: rsp_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: avalon_st_adapter: "mm_interconnect_3" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: 2018.05.24.22:20:55 Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation/submodules
+Info: 2018.05.24.22:20:55 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: 2018.05.24.22:20:55 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: 2018.05.24.22:20:55 Info: soc_system: Done "soc_system" with 69 modules, 196 files
+Info: 2018.05.24.22:20:55 Info: qsys-generate succeeded.
+Info: 2018.05.24.22:20:55 Info: Finished: Create simulation model
+Info: 2018.05.24.22:20:55 Info: Starting: Create Modelsim Project.
+Info: 2018.05.24.22:20:55 Info: sim-script-gen --spd=W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system\soc_system.spd --output-directory=W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:20:55 Info: Doing: ip-make-simscript --spd=W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system\soc_system.spd --output-directory=W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:20:59 Info: Generating the following file(s) for MODELSIM simulator in W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:20:59 Info:     mentor
+Info: 2018.05.24.22:20:59 Info: Generating the following file(s) for VCS simulator in W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:20:59 Info:     synopsys/vcs
+Info: 2018.05.24.22:20:59 Info: Generating the following file(s) for VCSMX simulator in W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:20:59 Info:     synopsys/vcsmx
+Info: 2018.05.24.22:20:59 Info:     synopsys/vcsmx
+Info: 2018.05.24.22:21:00 Info: Generating the following file(s) for NCSIM simulator in W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:21:00 Info:     cadence
+Info: 2018.05.24.22:21:00 Info:     cadence
+Info: 2018.05.24.22:21:00 Info:     cadence
+Info: 2018.05.24.22:21:00 Info:     51 .cds.lib files in cadence/cds_libs
+Info: 2018.05.24.22:21:00 Info: Generating the following file(s) for RIVIERA simulator in W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:21:00 Info:     aldec
+Info: 2018.05.24.22:21:00 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/simulation
+Info: 2018.05.24.22:21:00 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: 2018.05.24.22:21:00 Info: Finished: Create Modelsim Project.
+Info: 2018.05.24.22:21:00 Info: Starting: Create block symbol file (.bsf)
+Info: 2018.05.24.22:21:00 Info: qsys-generate W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system.qsys --block-symbol-file --output-directory=W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system --family="Cyclone V" --part=5CSEBA6U23I7
+Info: 2018.05.24.22:21:00 Info: Loading MyLT24_Hardware
+Info: 2018.05.24.22:21:00 Info: Reading input file
+Info: 2018.05.24.22:21:00 Info: Adding ILC [interrupt_latency_counter 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module ILC
+Info: 2018.05.24.22:21:00 Info: Adding LT24_ADC_BUSY [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module LT24_ADC_BUSY
+Info: 2018.05.24.22:21:00 Info: Adding LT24_ADC_IRQ_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module LT24_ADC_IRQ_N
+Info: 2018.05.24.22:21:00 Info: Adding LT24_ADC_SPI [altera_avalon_spi 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module LT24_ADC_SPI
+Info: 2018.05.24.22:21:00 Info: Adding LT24_D [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module LT24_D
+Info: 2018.05.24.22:21:00 Info: Adding LT24_RESET_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module LT24_RESET_N
+Info: 2018.05.24.22:21:00 Info: Adding LT24_RS [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module LT24_RS
+Info: 2018.05.24.22:21:00 Info: Adding LT24_WR_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module LT24_WR_N
+Info: 2018.05.24.22:21:00 Info: Adding button_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module button_pio
+Info: 2018.05.24.22:21:00 Info: Adding clk_0 [clock_source 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module clk_0
+Info: 2018.05.24.22:21:00 Info: Adding dipsw_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module dipsw_pio
+Info: 2018.05.24.22:21:00 Info: Adding f2sdram_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module f2sdram_only_master
+Info: 2018.05.24.22:21:00 Info: Adding fpga_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module fpga_only_master
+Info: 2018.05.24.22:21:00 Info: Adding hps_0 [altera_hps 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module hps_0
+Info: 2018.05.24.22:21:00 Info: Adding hps_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module hps_only_master
+Info: 2018.05.24.22:21:00 Info: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module jtag_uart
+Info: 2018.05.24.22:21:00 Info: Adding led_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module led_pio
+Info: 2018.05.24.22:21:00 Info: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module mm_bridge_0
+Info: 2018.05.24.22:21:00 Info: Adding sysid_qsys [altera_avalon_sysid_qsys 18.0]
+Info: 2018.05.24.22:21:00 Info: Parameterizing module sysid_qsys
+Info: 2018.05.24.22:21:00 Info: Building connections
+Info: 2018.05.24.22:21:00 Info: Parameterizing connections
+Info: 2018.05.24.22:21:00 Info: Validating
+Info: 2018.05.24.22:21:11 Info: Done reading input file
+Info: 2018.05.24.22:21:14 Info: soc_system.LT24_ADC_BUSY: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:14 Info: soc_system.LT24_ADC_IRQ_N: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:14 Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:14 Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:14 Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: 2018.05.24.22:21:14 Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: 2018.05.24.22:21:14 Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: 2018.05.24.22:21:14 Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: 2018.05.24.22:21:14 Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Warning: 2018.05.24.22:21:14 Warning: soc_system.LT24_ADC_SPI: Interrupt sender LT24_ADC_SPI.irq is not connected to an interrupt receiver
+Info: 2018.05.24.22:21:15 Info: qsys-generate succeeded.
+Info: 2018.05.24.22:21:15 Info: Finished: Create block symbol file (.bsf)
+Info: 2018.05.24.22:21:15 Info:
+Info: 2018.05.24.22:21:15 Info: Starting: Create HDL design files for synthesis
+Info: 2018.05.24.22:21:15 Info: qsys-generate W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system.qsys --synthesis=VERILOG --output-directory=W:\MesProjets\DE10-Nano\MyApps\MyLT24\MyLT24_Hardware\soc_system\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Info: 2018.05.24.22:21:15 Info: Loading MyLT24_Hardware
+Info: 2018.05.24.22:21:15 Info: Reading input file
+Info: 2018.05.24.22:21:15 Info: Adding ILC [interrupt_latency_counter 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module ILC
+Info: 2018.05.24.22:21:15 Info: Adding LT24_ADC_BUSY [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module LT24_ADC_BUSY
+Info: 2018.05.24.22:21:15 Info: Adding LT24_ADC_IRQ_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module LT24_ADC_IRQ_N
+Info: 2018.05.24.22:21:15 Info: Adding LT24_ADC_SPI [altera_avalon_spi 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module LT24_ADC_SPI
+Info: 2018.05.24.22:21:15 Info: Adding LT24_D [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module LT24_D
+Info: 2018.05.24.22:21:15 Info: Adding LT24_RESET_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module LT24_RESET_N
+Info: 2018.05.24.22:21:15 Info: Adding LT24_RS [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module LT24_RS
+Info: 2018.05.24.22:21:15 Info: Adding LT24_WR_N [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module LT24_WR_N
+Info: 2018.05.24.22:21:15 Info: Adding button_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module button_pio
+Info: 2018.05.24.22:21:15 Info: Adding clk_0 [clock_source 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module clk_0
+Info: 2018.05.24.22:21:15 Info: Adding dipsw_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module dipsw_pio
+Info: 2018.05.24.22:21:15 Info: Adding f2sdram_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module f2sdram_only_master
+Info: 2018.05.24.22:21:15 Info: Adding fpga_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module fpga_only_master
+Info: 2018.05.24.22:21:15 Info: Adding hps_0 [altera_hps 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module hps_0
+Info: 2018.05.24.22:21:15 Info: Adding hps_only_master [altera_jtag_avalon_master 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module hps_only_master
+Info: 2018.05.24.22:21:15 Info: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module jtag_uart
+Info: 2018.05.24.22:21:15 Info: Adding led_pio [altera_avalon_pio 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module led_pio
+Info: 2018.05.24.22:21:15 Info: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module mm_bridge_0
+Info: 2018.05.24.22:21:15 Info: Adding sysid_qsys [altera_avalon_sysid_qsys 18.0]
+Info: 2018.05.24.22:21:15 Info: Parameterizing module sysid_qsys
+Info: 2018.05.24.22:21:15 Info: Building connections
+Info: 2018.05.24.22:21:15 Info: Parameterizing connections
+Info: 2018.05.24.22:21:15 Info: Validating
+Info: 2018.05.24.22:21:25 Info: Done reading input file
+Info: 2018.05.24.22:21:28 Info: soc_system.LT24_ADC_BUSY: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:28 Info: soc_system.LT24_ADC_IRQ_N: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:28 Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:28 Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: 2018.05.24.22:21:28 Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: 2018.05.24.22:21:28 Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: 2018.05.24.22:21:28 Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: 2018.05.24.22:21:28 Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: 2018.05.24.22:21:28 Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Warning: 2018.05.24.22:21:28 Warning: soc_system.LT24_ADC_SPI: Interrupt sender LT24_ADC_SPI.irq is not connected to an interrupt receiver
+Info: 2018.05.24.22:21:34 Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
+Info: 2018.05.24.22:21:38 Info: Interconnect is inserted between master hps_0.h2f_lw_axi_master and slave mm_bridge_0.s0 because the master is of type axi and the slave is of type avalon.
+Info: 2018.05.24.22:21:40 Info: Interconnect is inserted between master hps_only_master.master and slave hps_0.f2h_axi_slave because the master is of type avalon and the slave is of type axi.
+Info: 2018.05.24.22:21:41 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 27 bit wide.
+Info: 2018.05.24.22:21:41 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has readdata signal 32 bit wide, but the slave is 256 bit wide.
+Info: 2018.05.24.22:21:41 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has writedata signal 32 bit wide, but the slave is 256 bit wide.
+Info: 2018.05.24.22:21:41 Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has byteenable signal 4 bit wide, but the slave is 32 bit wide.
+Warning: 2018.05.24.22:21:41 Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper_001.sender
+Warning: 2018.05.24.22:21:41 Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper_001.sender
+Warning: 2018.05.24.22:21:41 Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_002.sender
+Warning: 2018.05.24.22:21:41 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_002.sender
+Info: 2018.05.24.22:21:45 Info: ILC: "soc_system" instantiated interrupt_latency_counter "ILC"
+Info: 2018.05.24.22:21:45 Info: LT24_ADC_BUSY: Starting RTL generation for module 'soc_system_LT24_ADC_BUSY'
+Info: 2018.05.24.22:21:45 Info: LT24_ADC_BUSY:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LT24_ADC_BUSY --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0063_LT24_ADC_BUSY_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0063_LT24_ADC_BUSY_gen/
+Info: 2018.05.24.22:21:46 Info: LT24_ADC_BUSY: Done RTL generation for module 'soc_system_LT24_ADC_BUSY'
+Info: 2018.05.24.22:21:46 Info: LT24_ADC_BUSY: "soc_system" instantiated altera_avalon_pio "LT24_ADC_BUSY"
+Info: 2018.05.24.22:21:46 Info: LT24_ADC_SPI: Starting RTL generation for module 'soc_system_LT24_ADC_SPI'
+Info: 2018.05.24.22:21:46 Info: LT24_ADC_SPI:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=soc_system_LT24_ADC_SPI --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0064_LT24_ADC_SPI_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0064_LT24_ADC_SPI_gen/
+Info: 2018.05.24.22:21:47 Info: LT24_ADC_SPI: Done RTL generation for module 'soc_system_LT24_ADC_SPI'
+Info: 2018.05.24.22:21:47 Info: LT24_ADC_SPI: "soc_system" instantiated altera_avalon_spi "LT24_ADC_SPI"
+Info: 2018.05.24.22:21:47 Info: LT24_D: Starting RTL generation for module 'soc_system_LT24_D'
+Info: 2018.05.24.22:21:47 Info: LT24_D:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LT24_D --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0065_LT24_D_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0065_LT24_D_gen/
+Info: 2018.05.24.22:21:47 Info: LT24_D: Done RTL generation for module 'soc_system_LT24_D'
+Info: 2018.05.24.22:21:47 Info: LT24_D: "soc_system" instantiated altera_avalon_pio "LT24_D"
+Info: 2018.05.24.22:21:47 Info: LT24_RESET_N: Starting RTL generation for module 'soc_system_LT24_RESET_N'
+Info: 2018.05.24.22:21:47 Info: LT24_RESET_N:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_LT24_RESET_N --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0066_LT24_RESET_N_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0066_LT24_RESET_N_gen/
+Info: 2018.05.24.22:21:47 Info: LT24_RESET_N: Done RTL generation for module 'soc_system_LT24_RESET_N'
+Info: 2018.05.24.22:21:47 Info: LT24_RESET_N: "soc_system" instantiated altera_avalon_pio "LT24_RESET_N"
+Info: 2018.05.24.22:21:47 Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
+Info: 2018.05.24.22:21:47 Info: button_pio:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0067_button_pio_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0067_button_pio_gen/
+Info: 2018.05.24.22:21:48 Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
+Info: 2018.05.24.22:21:48 Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
+Info: 2018.05.24.22:21:48 Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
+Info: 2018.05.24.22:21:48 Info: dipsw_pio:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0068_dipsw_pio_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0068_dipsw_pio_gen/
+Info: 2018.05.24.22:21:48 Info: dipsw_pio: Done RTL generation for module 'soc_system_dipsw_pio'
+Info: 2018.05.24.22:21:48 Info: dipsw_pio: "soc_system" instantiated altera_avalon_pio "dipsw_pio"
+Info: 2018.05.24.22:21:48 Info: f2sdram_only_master: "soc_system" instantiated altera_jtag_avalon_master "f2sdram_only_master"
+Info: 2018.05.24.22:21:48 Info: hps_0: "Running  for module: hps_0"
+Info: 2018.05.24.22:21:49 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: 2018.05.24.22:21:50 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: 2018.05.24.22:21:50 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
+Info: 2018.05.24.22:21:51 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
+Info: 2018.05.24.22:21:51 Info: jtag_uart:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0069_jtag_uart_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0069_jtag_uart_gen/
+Info: 2018.05.24.22:21:51 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
+Info: 2018.05.24.22:21:51 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: 2018.05.24.22:21:51 Info: led_pio: Starting RTL generation for module 'soc_system_led_pio'
+Info: 2018.05.24.22:21:51 Info: led_pio:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0070_led_pio_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/JEANDI~1/AppData/Local/Temp/alt7675_1065450746618891029.dir/0070_led_pio_gen/
+Info: 2018.05.24.22:21:51 Info: led_pio: Done RTL generation for module 'soc_system_led_pio'
+Info: 2018.05.24.22:21:51 Info: led_pio: "soc_system" instantiated altera_avalon_pio "led_pio"
+Info: 2018.05.24.22:21:51 Info: mm_bridge_0: "soc_system" instantiated altera_avalon_mm_bridge "mm_bridge_0"
+Info: 2018.05.24.22:21:51 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
+Info: 2018.05.24.22:21:51 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:52 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: 2018.05.24.22:21:53 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:53 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:53 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:54 Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:55 Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:55 Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:56 Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: 2018.05.24.22:21:56 Info: mm_interconnect_2: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_2"
+Info: 2018.05.24.22:21:57 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: 2018.05.24.22:21:57 Info: mm_interconnect_3: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_3"
+Info: 2018.05.24.22:21:57 Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: 2018.05.24.22:21:57 Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
+Info: 2018.05.24.22:21:57 Info: irq_mapper_002: "soc_system" instantiated altera_irq_mapper "irq_mapper_002"
+Info: 2018.05.24.22:21:57 Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: 2018.05.24.22:21:57 Info: jtag_phy_embedded_in_jtag_master: "f2sdram_only_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: 2018.05.24.22:21:57 Info: timing_adt: "f2sdram_only_master" instantiated timing_adapter "timing_adt"
+Info: 2018.05.24.22:21:57 Info: fifo: "f2sdram_only_master" instantiated altera_avalon_sc_fifo "fifo"
+Info: 2018.05.24.22:21:57 Info: b2p: "f2sdram_only_master" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: 2018.05.24.22:21:57 Info: p2b: "f2sdram_only_master" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: 2018.05.24.22:21:57 Info: transacto: "f2sdram_only_master" instantiated altera_avalon_packets_to_master "transacto"
+Info: 2018.05.24.22:21:57 Info: b2p_adapter: "f2sdram_only_master" instantiated channel_adapter "b2p_adapter"
+Info: 2018.05.24.22:21:57 Info: p2b_adapter: "f2sdram_only_master" instantiated channel_adapter "p2b_adapter"
+Info: 2018.05.24.22:21:57 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: 2018.05.24.22:21:58 Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: 2018.05.24.22:21:58 Info: mm_bridge_0_s0_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "mm_bridge_0_s0_translator"
+Info: 2018.05.24.22:21:58 Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: 2018.05.24.22:21:58 Info: mm_bridge_0_s0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "mm_bridge_0_s0_agent"
+Info: 2018.05.24.22:21:58 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:21:58 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: 2018.05.24.22:21:58 Info: mm_bridge_0_s0_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "mm_bridge_0_s0_burst_adapter"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:21:58 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:21:58 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: 2018.05.24.22:21:58 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: 2018.05.24.22:21:58 Info: mm_bridge_0_m0_translator: "mm_interconnect_1" instantiated altera_merlin_master_translator "mm_bridge_0_m0_translator"
+Info: 2018.05.24.22:21:58 Info: mm_bridge_0_m0_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "mm_bridge_0_m0_agent"
+Info: 2018.05.24.22:21:58 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:21:58 Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: 2018.05.24.22:21:58 Info: mm_bridge_0_m0_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "mm_bridge_0_m0_limiter"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:21:58 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: 2018.05.24.22:21:58 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: hps_0_f2h_axi_slave_agent: "mm_interconnect_2" instantiated altera_merlin_axi_slave_ni "hps_0_f2h_axi_slave_agent"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:21:58 Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
+Info: 2018.05.24.22:21:58 Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:21:58 Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: 2018.05.24.22:21:58 Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: hps_0_f2h_axi_slave_wr_cmd_width_adapter: "mm_interconnect_2" instantiated altera_merlin_width_adapter "hps_0_f2h_axi_slave_wr_cmd_width_adapter"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: router: "mm_interconnect_3" instantiated altera_merlin_router "router"
+Info: 2018.05.24.22:21:58 Info: router_001: "mm_interconnect_3" instantiated altera_merlin_router "router_001"
+Info: 2018.05.24.22:21:58 Info: cmd_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: 2018.05.24.22:21:58 Info: cmd_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: rsp_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: 2018.05.24.22:21:58 Info: Reusing file W:/MesProjets/DE10-Nano/MyApps/MyLT24/MyLT24_Hardware/soc_system/synthesis/submodules
+Info: 2018.05.24.22:21:58 Info: avalon_st_adapter: "mm_interconnect_3" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: 2018.05.24.22:22:42 Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: 2018.05.24.22:22:42 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: 2018.05.24.22:22:42 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: 2018.05.24.22:22:42 Info: soc_system: Done "soc_system" with 69 modules, 137 files
+Info: 2018.05.24.22:22:43 Info: qsys-generate succeeded.
+Info: 2018.05.24.22:22:43 Info: Finished: Create HDL design files for synthesis
+Info (11131): Completed upgrading IP component In-System Sources and Probes with file "ip/altsource_probe/hps_reset.v"
+Info (11131): Completed upgrading IP component Qsys with file "soc_system.qsys"
+Info (23030): Evaluation of Tcl script c:/intelfpga/18.0/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 794 megabytes
+    Info: Processing ended: Thu May 24 22:23:09 2018
+    Info: Elapsed time: 00:06:18
+    Info: Total CPU time (on all processors): 00:09:11
+
+
