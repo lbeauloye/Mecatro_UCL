@@ -11,6 +11,7 @@
 #include "alt_gpio.h"
 
 #include "test.h"
+
 #include "libcanard/canard.h"
 #include "o1heap/o1heap.h"
 
@@ -32,6 +33,11 @@ static void memFree(CanardInstance* const ins, void* const pointer)
 
 void Task_HPS_Led(void)
 {
+
+
+	motors[0] = new motor_card(708,1);
+
+
     MBX_t    *PrtMbx;
     intptr_t PtrMsg;
     SEM_t    *PtrSem = SEMopen("SemSetup");
@@ -40,11 +46,16 @@ void Task_HPS_Led(void)
     setup_Interrupt();
     SEMpost(PtrSem);
     
+    motors[0]->init();
+
     MTXLOCK_STDIO();
     printf("\n\nDE10-Nano - MyApp_mAbassi\n\n");
     printf("Task_HPS_Led running on core #%d\n\n", COREgetID());
 
     printf("salut salut %d\n",Test_func(5));
+
+    motors[0]->set_voltage(10);
+
     MTXUNLOCK_STDIO();
     
     PrtMbx = MBXopen("MyMailbox", 128);
@@ -67,7 +78,7 @@ void Task_HPS_Led(void)
 void Task_FPGA_Led(void)
 {
     uint32_t leds_mask;
-    
+
     alt_write_word(fpga_leds, 0x01);
 
 	for( ;; )
@@ -80,6 +91,7 @@ void Task_FPGA_Led(void)
             // reset leds
             leds_mask = 0x1;
         }
+        motors[0]->set_voltage(20);
         alt_write_word(fpga_leds, leds_mask);
         
         TSKsleep(OS_MS_TO_TICK(250));

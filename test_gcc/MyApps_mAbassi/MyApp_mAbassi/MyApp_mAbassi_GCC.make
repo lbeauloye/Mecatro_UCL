@@ -8,6 +8,7 @@ SOCEDS_DEST_ROOT := C:/intelFPGA/18.1/embedded
 VPATH   := ../src
 VPATH   += :../inc/libcanard	
 VPATH   += :../inc/o1heap        				# This is due to multiple file with same names
+VPATH   += :../inc/motor
 VPATH   += :../hwlib
 VPATH   += :../../mAbassi/Abassi
 VPATH   += :../../mAbassi/Platform/src
@@ -28,6 +29,9 @@ C_SRC   += dw_spi.c
 C_SRC   += alt_generalpurpose_io.c
 C_SRC   += canard.c
 C_SRC   += o1heap.c
+
+
+CPP_SRC   += motor_card.cpp
 
 
 CPP_SRC += test.cpp
@@ -59,7 +63,12 @@ CPP_INC += ../inc/o1heap/o1heap.h
 
 CPP_INC   += ../inc/hps_0.h
 
+CPP_INC += ../inc/motor/motor_card.h
+
 CPP_INC += ../inc/test.h
+
+
+
 CPP_INC   += ../inc/MyApp_mAbassi.h
 											# Compiler command line options. The -I order is important
 CFLAGS  += -g -O3 -Wall
