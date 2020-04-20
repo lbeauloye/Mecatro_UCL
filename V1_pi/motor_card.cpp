@@ -20,13 +20,14 @@ void motor_card::set_ki(double ki){
 }
 
 void motor_card::ctrl_motor(int state){
-    if(this->type == 0){
+    //if(this->type == 0){
 
-    } else if(this->type == 1){
-        send_message(this->id, "1E01" + state? "00": "FF");
-    } else if(this->type == 2){
-        send_message(this->id, "1E02" + state? "00": "FF");
-    }
+    //} else if(this->type == 1){
+    //    send_message(this->id, "1E01" + state? "00": "FF"); //1E01" + state? "00": "FF");
+    //} else if(this->type == 2){
+    //    send_message(this->id, "1E02" + state? "00": "FF");
+    //}
+	//send_message(this->id,"1E3000");
 }
 
 void motor_card::set_voltage(double v){
@@ -57,27 +58,30 @@ void motor_card::init(){
         send_message(this->id, "1E2000");
     }
 
-    this->kp = 0.009;
-    this->ki = 1.102;
-    this->alpha = 0.2;
+    this->kp = 0.1;
+    this->ki = 0.0;
+    this->alpha = 0.0;
 
-    this->khpi = 0.037;
+    this->khpi = 0.0234;
     this->deltaT = 0.04;
-    this->limitI = 5.84 *100;
+    this->limitI = 2.82 * 100;
     this->limitV = 0.97*24;
-    this->gearbox = 14;
+    this->gearbox = 5.8;
 
     this->error_integ = 0;
     this->saturation = 0;
 }
 
 void motor_card::set_old_speed(double speed){
-    this->wheel_speed = speed;
+    this->wheel_speed = speed; 
+    printf("Previous speed = %f \n",speed);
 }
 
 void motor_card::set_speed(double speed){
-    printf("%f \n", speed);
     // Error on speed
+	printf("wheel speed : %f \n",this->wheel_speed);
+	printf("speed : %f \n",speed);
+
     double err_w = (speed - this->wheel_speed)* this->gearbox;
 
     // Kp
@@ -92,16 +96,15 @@ void motor_card::set_speed(double speed){
     this->saturation = - v;
 
     // Limit on current + adding back emf
-    v = limit(v, this->limitI) + this->khpi * this->wheel_speed;
-
+    v = limit(v, this->limitI) + this->khpi * this->wheel_speed * this->gearbox; // ajout this->gearbox
     // Compute saturation
     this->saturation += v;
 
     // Limit on Voltage
     v = limit(v, this->limitV);
 
+    printf("Voltage sent %f \n", v);
     this->set_voltage(100 * v / this->limitV);
-
 }
 
 
@@ -109,10 +112,11 @@ void motor_card::set_speed(double speed){
 
 double limit(double val, double limit){
 	if(val > limit){
+        printf("saturated %f and limit is %f \n", val, limit);
 		return limit;
 	}
 	if(val < - limit){
-		return - limit;
+		return -limit;
 	}
 	return val;
 }
