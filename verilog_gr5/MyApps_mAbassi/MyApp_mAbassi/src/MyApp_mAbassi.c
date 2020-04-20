@@ -7,7 +7,7 @@
 #include "mAbassi.h"          /* MUST include "SAL.H" and not uAbassi.h        */
 #include "Platform.h"         /* Everything about the target platform is here  */
 #include "HWinfo.h"           /* Everything about the target hardware is here  */
-
+#include <math.h>
 
 /* ------------------------------------------------------------------------------------------------ */
 
@@ -44,22 +44,24 @@ void Task_HPS_Led(void)
 
 void Task_FPGA_Led(void)
 {
-    uint32_t leds_mask;
-    
-    alt_write_word(fpga_leds, 0x01);
+    //uint32_t leds_mask;
+    uint32_t pio0;
+    //alt_write_word(fpga_leds, 0x01);
 
 	for( ;; )
 	{
-        leds_mask = alt_read_word(fpga_leds);
-        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
-            // rotate leds
-            leds_mask <<= 1;
-        } else {
-            // reset leds
-            leds_mask = 0x1;
-        }
-        alt_write_word(fpga_leds, leds_mask);
-        
+		//printf("coucou LED \n");
+		pio0 = alt_read_word(fpga_pio_0);
+//        leds_mask = alt_read_word(fpga_leds);
+//        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
+//            // rotate leds
+//            leds_mask <<= 1;
+//        } else {
+//            // reset leds
+//            leds_mask = 0x1;
+//        }
+//        alt_write_word(fpga_leds, leds_mask);
+		alt_write_word(fpga_leds, pio0);
         TSKsleep(OS_MS_TO_TICK(250));
 	}
 }
@@ -172,11 +174,23 @@ void toogle_hps_led()
 
 void task_print_PIO() {
 	uint32_t PIO_0, PIO_1, PIO_2, PIO_3;
+	double speed_FL, speed_FR, speed_RL, speed_RR;
+	double ratio = 5.8 * 4;
+	double T = 1.0/2000;
+	double max = 2048;
+
     for( ;; ){
     	PIO_0 = alt_read_word(fpga_pio_0);
-    	PIO_1 = alt_read_word(fpga_pio_0);
-    	PIO_2 = alt_read_word(fpga_pio_0);
-    	PIO_3 = alt_read_word(fpga_pio_0);
-    	printf("PIO_0 : %d\t,PIO_1 : %d\t,PIO_ : %d\t,PIO_0 : %d\t,\n",PIO_0,PIO_1,PIO_2,PIO_3);
+    	PIO_1 = alt_read_word(fpga_pio_1);
+    	PIO_2 = alt_read_word(fpga_pio_2);
+    	PIO_3 = alt_read_word(fpga_pio_3);
+    	printf("PIO_0 : %d\t,PIO_1 : %d\t,PIO_2 : %d\t,PIO_3 : %d\n",PIO_0,PIO_1,PIO_2,PIO_3);
+
+    	speed_FL = 2*M_PI*PIO_0/(max*T*ratio);
+    	speed_FR = 2*M_PI*PIO_1/(max*T*ratio);
+    	speed_RL = 2*M_PI*PIO_2/(max*T*ratio);
+    	speed_RR = 2*M_PI*PIO_3/(max*T*ratio);
+    	printf("speed_FL : %f\t,speed_FR : %f\t,speed_RL : %f\t,speed_RR : %f\n",speed_FL,speed_FR,speed_RL,speed_RR);
+    	TSKsleep(OS_MS_TO_TICK(250));
     }
 }
