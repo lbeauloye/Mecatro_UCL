@@ -6,6 +6,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #include "socal/alt_gpio.h"
 #include "socal/hps.h"
@@ -14,9 +15,17 @@
 #include "alt_generalpurpose_io.h"
 #include "alt_interrupt.h"
 #include "hps_0.h"
+#include "motor/motor_card.h"
 
 /* ------------------------------------------------------------------------------------------------ */
 /* Define                                                                                           */
+
+
+
+//#ifdef __cplusplus
+//extern "C"
+//{
+//#endif
 
 #define assert(e) ((e) ? (void)0 :(void) printf("Error in %s, Line : %d\r\n", __FILE__, __LINE__))
 
@@ -73,7 +82,7 @@
 #define SPI_CONTROL_ITOE  0x10
 #define SPI_CONTROL_IROE  0x08
 
-// To protect non- multithread-safe functions in the standard “C” libraries
+// To protect non- multithread-safe functions in the standard libraries
 #define MTXLOCK_ALLOC()		MTXlock(G_OSmutex, -1)
 #define MTXUNLOCK_ALLOC()	MTXunlock(G_OSmutex)
 #define MTXLOCK_STDIO()		MTXlock(G_OSmutex, -1)
@@ -105,5 +114,18 @@ void button_CallbackInterrupt (uint32_t icciar, void *context);
 void setup_Interrupt( void );
 void setup_hps_gpio( void );
 void toogle_hps_led( void );
+
+//#ifdef __cplusplus
+//}
+//#endif
+
+
+
+#ifdef __cplusplus
+
+static motor_card **motors = (motor_card **) calloc(2, sizeof(motor_card));
+//static motor_card motors [4];
+
+#endif
 
 #endif

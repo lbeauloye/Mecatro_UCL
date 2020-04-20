@@ -3,6 +3,9 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <string>
+using namespace std;
 
 #include "socal/alt_gpio.h"
 #include "socal/hps.h"
@@ -25,5 +28,11 @@ int Test_func(int a);
 }
 #endif
 
-
+class test_1 {
+	public :
+	test_1(int a);
+	int addi(int a, int b);
+	private:
+	int d;
+};
 #endif
