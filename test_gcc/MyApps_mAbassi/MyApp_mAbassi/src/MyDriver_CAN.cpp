@@ -8,6 +8,9 @@
 #include "HWinfo.h" 
 #include "dw_spi.h"
 
+
+#include <unistd.h>
+
 /* ------------------------------------------------------------------------------------------------ */
 
 void    CAN_writeCommand(uint8_t theCommand)
@@ -214,7 +217,7 @@ void    CAN_sendMsg(uint32_t theIdentifier, uint8_t *theData, uint8_t theLength,
 
     // Wait for end of transmission
     while ((CAN_readReg(MCP2515_TXB0CTRL) & 0x80) != 0x00);         // TXREQ (bit 8) = 0
-    
+
 }
 
 /* ------------------------------------------------------------------------------------------------ */

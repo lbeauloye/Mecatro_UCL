@@ -46,6 +46,8 @@ class motor_card{
     void set_kp(double kp);
     void set_ki(double ki);
     void set_brake(int state);
+    void set_deltaT(double deltaT);
+
 
 
     private:

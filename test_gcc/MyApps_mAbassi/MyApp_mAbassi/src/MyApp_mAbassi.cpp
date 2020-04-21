@@ -16,6 +16,7 @@
 #include "o1heap/o1heap.h"
 
 #include <math.h>
+#include <unistd.h>
 
 
 /*
@@ -241,27 +242,49 @@ void Task_LOW_LEVEL(void)
 //    tx_Data[1] = 0xFF;
 //    tx_Data[2] = (128*20/100 + 128) >> 2;
 //    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-//    for(i = 0; i<4 ; i++){
-//    	motors[i]->ctrl_motor(1);
-//    	motors[i]->set_command(10);
-//    }
+    for(i = 0; i<4 ; i++){
+    	motors[i]->set_command(10);
+    }
+
+    motors[1]->ctrl_motor(0);
+    motors[0]->ctrl_motor(0);
 
     motors[1]->ctrl_motor(1);
     motors[0]->ctrl_motor(1);
+//  motors[0]->set_brake(0);
+    motors[1]->set_brake(0);
+//  motors[2]->set_brake(0);
+//  motors[3]->set_brake(0);
     printf("coucou \n");
-   double speed;
-   	motors[1]->set_voltage(60);
-	motors[0]->set_voltage(0);
-	motors[2]->set_voltage(0);
-	motors[3]->set_voltage(0);
+    double speed;
+// 	motors[1]->set_voltage(30);
+//	motors[0]->set_voltage(0);
+//	motors[2]->set_voltage(10);
+//	motors[3]->set_voltage(20);
 
-
+    motors[1]->set_kp(0.02);
+    motors[1]->set_ki(0.01);
+    double time;
+    double Tick = G_OStimCnt;
 
     for( ;; )
     {
+    	motors[1]->set_old_speed(get_speed(1));
+    	printf("speed_0 : %f,\tspeed_1 : %f,\tspeed_2 : %f,\tspeed_3 : %f,\t \n", get_speed(0),get_speed(1),get_speed(2),get_speed(3));
+    	time = (OS_TIMER_US*(G_OStimCnt-Tick))/1000000;
+    	motors[1]->set_deltaT(time);
+    	printf("time : %f\n",time);
+    	motors[1]->set_speed();
+    	Tick = G_OStimCnt;
 
-    	speed = get_speed(1);
-    	printf("speed : %f \n", speed);
+//    	TSKsleep(OS_MS_TO_TICK(4));
+//    	motors[0]->set_speed();
+//    	TSKsleep(OS_MS_TO_TICK(4));
+//    	motors[2]->set_speed();
+//    	TSKsleep(OS_MS_TO_TICK(4));
+//    	motors[3]->set_speed();
+
+
 
 //    	for(i = 0; i<4 ; i++){
 //    		speed = get_speed(i);
@@ -271,7 +294,7 @@ void Task_LOW_LEVEL(void)
 //    	for(i = 0; i<4 ; i++)
 //    	    	motors[i]->set_speed();
 
-    	TSKsleep(OS_SEC_TO_TICK(1));
+    	TSKsleep(OS_MS_TO_TICK(10));
 //        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
 //            MTXLOCK_STDIO();
 //            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
@@ -385,7 +408,7 @@ void Task_CAN(void)
 
     for( ;; )
     {
-    	tx_Identifier = 0x708;//0xabc;
+    	tx_Identifier = 0x408;//0xabc;
 		tx_Length     = 3;//8;
 		tx_FrameType  = MCP2515_TX_STD_FRAME;
 		tx_Data[0] = 0x1E;
@@ -393,7 +416,7 @@ void Task_CAN(void)
 		tx_Data[2] = 0x40;
 		CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
     	TSKsleep(OS_SEC_TO_TICK(1));
-    	tx_Identifier = 0x708;//0xabc;
+    	tx_Identifier = 0x408;//0xabc;
 		tx_Length     = 3;//8;
 		tx_FrameType  = MCP2515_TX_STD_FRAME;
 		tx_Data[0] = 0x1E;
