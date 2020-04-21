@@ -16,6 +16,7 @@
 #include "alt_interrupt.h"
 #include "hps_0.h"
 #include "motor/motor_card.h"
+#include "motor/middle_level.h"
 
 /* ------------------------------------------------------------------------------------------------ */
 /* Define                                                                                           */
@@ -118,6 +119,7 @@ void Task_FPGA_Led(void);
 void Task_FPGA_Button(void);
 void Task_CAN(void);
 void Task_LOW_LEVEL(void);
+void Task_MID_LEVEL(void);
 
 void spi_CallbackInterrupt (uint32_t icciar, void *context);
 void button_CallbackInterrupt (uint32_t icciar, void *context);

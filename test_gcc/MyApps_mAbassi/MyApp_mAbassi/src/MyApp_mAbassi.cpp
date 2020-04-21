@@ -312,6 +312,26 @@ void Task_LOW_LEVEL(void)
 
 }
 
+void Task_MID_LEVEL(void){
+
+
+	double xsi_in[3] = {1.0, 0.0, 0.0};
+	double speed[4];
+	double xsi[3];
+	int i;
+
+
+	for( ;; )
+	{
+		compute_local_velocities(xsi_in, 0.0 , xsi);
+		compute_motor_velocities(xsi, speed);
+		for(i = 0; i<4 ; i++){
+		   motors[i]->set_command(speed[i]);
+		}
+		TSKsleep(OS_MS_TO_TICK(100));
+	}
+
+}
 
 void Task_CAN(void)
 {

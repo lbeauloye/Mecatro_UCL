@@ -23,6 +23,7 @@ extern void Task_FPGA_Led(void);
 extern void Task_FPGA_Button(void);
 extern void Task_CAN(void);
 extern void Task_LOW_LEVEL(void);
+extern void Task_MID_LEVEL(void);
 
 /* ------------------------------------------------------------------------------------------------ */
 
@@ -79,6 +80,10 @@ TSK_t *Task;
 	Task = TSKcreate("App CAN", 0, 8192, &Task_LOW_LEVEL, 0);
     TSKsetCore(Task, 1);
     TSKresume(Task);
+
+    Task = TSKcreate("Task Mid level", 0, 8192, &Task_MID_LEVEL, 0);
+	TSKsetCore(Task, 1);
+	TSKresume(Task);
 
 
 #if defined(USE_SHELL)
