@@ -68,17 +68,17 @@ TSK_t *Task;
 /* ------------------------------------------------ */
 /* Application set-up								*/
     
-	Task = TSKcreate("Task FPGA Led", 0, 8192, &Task_FPGA_Led, 0);
+	Task = TSKcreate("Task FPGA Led", 3, 8192, &Task_FPGA_Led, 0);
 	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
 	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
 
-	Task = TSKcreate("Task FPGA Button", 0, 8192, &Task_FPGA_Button, 0);
+	Task = TSKcreate("Task FPGA Button", 3, 8192, &Task_FPGA_Button, 0);
 	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
 	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
     
-//	Task = TSKcreate("App CAN", 4, 8192, &Task_CAN, 0);
-//    TSKsetCore(Task, 1);
-//    TSKresume(Task);
+	Task = TSKcreate("App CAN", 0, 8192, &Task_LOW_LEVEL, 0);
+    TSKsetCore(Task, 1);
+    TSKresume(Task);
 
 
 #if defined(USE_SHELL)

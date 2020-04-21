@@ -1,242 +1,256 @@
-16:55:48 **** Incremental Build of configuration Default for project MyApp_mAbassi ****
+13:21:44 **** Incremental Build of configuration Default for project MyApp_mAbassi ****
 make all 
-"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I /home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I /home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DUART_FULL_PROTECT=1 -D soc_cv_av -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mthumb -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../src/MyApp_mAbassi.cpp -o MyApp_mAbassi.o -fpermissive
-cc1plus: warning: command line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
-cc1plus: warning: command line option '-std=gnu99' is valid for C/ObjC but not for C++
-In file included from ../inc/MyApp_mAbassi.h:16:0,
+"arm-altera-eabi-gcc"  -g -O3 -Wall -I ../inc -I../../mAbassi/Abassi -I../../mAbassi/Platform/inc -I../../mAbassi/Drivers/inc -I../../mAbassi/Share/inc -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av -I C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include -DOS_START_STACK=8192 -DUART_FULL_PROTECT=1 -D soc_cv_av -DOS_DEMO=-100 -DUART_Q_SIZE_RX=1 -DUART_Q_SIZE_TX=1 -DUART_CIRC_BUF_RX=2048 -DUART_CIRC_BUF_TX=2048 -std=gnu99 -mfpu=neon -march=armv7-a -mthumb -mtune=cortex-a9 -mcpu=cortex-a9 -mfloat-abi=softfp -mno-unaligned-access -ffunction-sections -fdata-sections -Wstrict-prototypes -DOS_PLATFORM=0x0100AAC5 -DOS_N_CORE=2 -DOS_NEWLIB_REENT=0 -DUSE_SHELL=1 -DSHELL_LOGIN=0 -DSHELL_HISTORY=64 -c ../src/MyApp_mAbassi.cpp -o MyApp_mAbassi.o -fpermissive
+cc1plus.exe: warning: command line option '-Wstrict-prototypes' is valid for C/ObjC but not for C++
+cc1plus.exe: warning: command line option '-std=gnu99' is valid for C/ObjC but not for C++
+In file included from ../inc/MyApp_mAbassi.h:17:0,
                  from ../src/MyApp_mAbassi.cpp:6:
 ../inc/hps_0.h:59:22: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define LED_PIO_BASE 0x3000
                       ^
-../inc/MyApp_mAbassi.h:86:45: note: in expansion of macro 'LED_PIO_BASE'
+../inc/MyApp_mAbassi.h:95:45: note: in expansion of macro 'LED_PIO_BASE'
      void *fpga_leds = ALT_LWFPGASLVS_ADDR + LED_PIO_BASE;
                                              ^~~~~~~~~~~~
 ../inc/hps_0.h:108:25: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define BUTTON_PIO_BASE 0x5000
                          ^
-../inc/MyApp_mAbassi.h:87:48: note: in expansion of macro 'BUTTON_PIO_BASE'
+../inc/MyApp_mAbassi.h:96:48: note: in expansion of macro 'BUTTON_PIO_BASE'
      void *fpga_buttons = ALT_LWFPGASLVS_ADDR + BUTTON_PIO_BASE;
                                                 ^~~~~~~~~~~~~~~
 ../inc/hps_0.h:133:30: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_RASPBERRYPI_BASE 0x6000
                               ^
-../inc/MyApp_mAbassi.h:88:44: note: in expansion of macro 'SPI_RASPBERRYPI_BASE'
+../inc/MyApp_mAbassi.h:97:44: note: in expansion of macro 'SPI_RASPBERRYPI_BASE'
      void *fpga_spi = ALT_LWFPGASLVS_ADDR + SPI_RASPBERRYPI_BASE;
                                             ^~~~~~~~~~~~~~~~~~~~
-In file included from ../inc/MyApp_mAbassi.h:12:0,
+../inc/hps_0.h:162:20: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+ #define PIO_0_BASE 0x11000
+                    ^
+../inc/MyApp_mAbassi.h:98:46: note: in expansion of macro 'PIO_0_BASE'
+     void *fpga_pio_0 = ALT_LWFPGASLVS_ADDR + PIO_0_BASE;
+                                              ^~~~~~~~~~
+../inc/hps_0.h:186:20: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+ #define PIO_1_BASE 0x12000
+                    ^
+../inc/MyApp_mAbassi.h:99:46: note: in expansion of macro 'PIO_1_BASE'
+     void *fpga_pio_1 = ALT_LWFPGASLVS_ADDR + PIO_1_BASE;
+                                              ^~~~~~~~~~
+../inc/hps_0.h:210:20: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+ #define PIO_2_BASE 0x13000
+                    ^
+../inc/MyApp_mAbassi.h:100:46: note: in expansion of macro 'PIO_2_BASE'
+     void *fpga_pio_2 = ALT_LWFPGASLVS_ADDR + PIO_2_BASE;
+                                              ^~~~~~~~~~
+../inc/hps_0.h:234:20: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+ #define PIO_3_BASE 0x14000
+                    ^
+../inc/MyApp_mAbassi.h:101:46: note: in expansion of macro 'PIO_3_BASE'
+     void *fpga_pio_3 = ALT_LWFPGASLVS_ADDR + PIO_3_BASE;
+                                              ^~~~~~~~~~
+In file included from ../inc/MyApp_mAbassi.h:13:0,
                  from ../src/MyApp_mAbassi.cpp:6:
 ../src/MyApp_mAbassi.cpp: In function 'void spi_CallbackInterrupt(uint32_t, void*)':
-../inc/MyApp_mAbassi.h:55:24: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:64:24: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_RXDATA     0
                         ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:119:24: note: in expansion of macro 'alt_read_word'
+../src/MyApp_mAbassi.cpp:133:24: note: in expansion of macro 'alt_read_word'
          (unsigned int) alt_read_word(fpga_spi + SPI_RXDATA),
                         ^~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:119:49: note: in expansion of macro 'SPI_RXDATA'
+../src/MyApp_mAbassi.cpp:133:49: note: in expansion of macro 'SPI_RXDATA'
          (unsigned int) alt_read_word(fpga_spi + SPI_RXDATA),
                                                  ^~~~~~~~~~
-../inc/MyApp_mAbassi.h:57:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:66:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_STATUS     2*4
                           ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:120:24: note: in expansion of macro 'alt_read_word'
+../src/MyApp_mAbassi.cpp:134:24: note: in expansion of macro 'alt_read_word'
          (unsigned int) alt_read_word(fpga_spi + SPI_STATUS));
                         ^~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:120:49: note: in expansion of macro 'SPI_STATUS'
+../src/MyApp_mAbassi.cpp:134:49: note: in expansion of macro 'SPI_STATUS'
          (unsigned int) alt_read_word(fpga_spi + SPI_STATUS));
                                                  ^~~~~~~~~~
-../inc/MyApp_mAbassi.h:56:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:65:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_TXDATA     1*4
                           ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:122:5: note: in expansion of macro 'alt_write_word'
+../src/MyApp_mAbassi.cpp:136:5: note: in expansion of macro 'alt_write_word'
      alt_write_word(fpga_spi + SPI_TXDATA, 0x113377FF);
      ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:122:31: note: in expansion of macro 'SPI_TXDATA'
+../src/MyApp_mAbassi.cpp:136:31: note: in expansion of macro 'SPI_TXDATA'
      alt_write_word(fpga_spi + SPI_TXDATA, 0x113377FF);
                                ^~~~~~~~~~
-../inc/MyApp_mAbassi.h:57:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:66:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_STATUS     2*4
                           ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
- #define ALT_CAST(type, ptr)  ((type) (ptr))
-                                       ^~~
-../src/MyApp_mAbassi.cpp:125:5: note: in expansion of macro 'alt_write_word'
-     alt_write_word(fpga_spi + SPI_STATUS, 0x00);
-     ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:125:31: note: in expansion of macro 'SPI_STATUS'
-     alt_write_word(fpga_spi + SPI_STATUS, 0x00);
-                               ^~~~~~~~~~
-../src/MyApp_mAbassi.cpp: In function 'void button_CallbackInterrupt(uint32_t, void*)':
-../inc/MyApp_mAbassi.h:49:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
- #define PIOinterruptmask    2*4
-                               ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
- #define ALT_CAST(type, ptr)  ((type) (ptr))
-                                       ^~~
-../src/MyApp_mAbassi.cpp:135:5: note: in expansion of macro 'alt_write_word'
-     alt_write_word(fpga_buttons + PIOinterruptmask, 0x0);
-     ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:135:35: note: in expansion of macro 'PIOinterruptmask'
-     alt_write_word(fpga_buttons + PIOinterruptmask, 0x0);
-                                   ^~~~~~~~~~~~~~~~
-../inc/MyApp_mAbassi.h:49:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
- #define PIOinterruptmask    2*4
-                               ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
- #define ALT_CAST(type, ptr)  ((type) (ptr))
-                                       ^~~
-../src/MyApp_mAbassi.cpp:138:5: note: in expansion of macro 'alt_write_word'
-     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
-     ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:138:35: note: in expansion of macro 'PIOinterruptmask'
-     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
-                                   ^~~~~~~~~~~~~~~~
-../inc/MyApp_mAbassi.h:50:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
- #define PIOedgecapture      3*4
-                               ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
 ../src/MyApp_mAbassi.cpp:139:5: note: in expansion of macro 'alt_write_word'
+     alt_write_word(fpga_spi + SPI_STATUS, 0x00);
+     ^~~~~~~~~~~~~~
+../src/MyApp_mAbassi.cpp:139:31: note: in expansion of macro 'SPI_STATUS'
+     alt_write_word(fpga_spi + SPI_STATUS, 0x00);
+                               ^~~~~~~~~~
+../src/MyApp_mAbassi.cpp: In function 'void button_CallbackInterrupt(uint32_t, void*)':
+../inc/MyApp_mAbassi.h:58:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+ #define PIOinterruptmask    2*4
+                               ^
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+ #define ALT_CAST(type, ptr)  ((type) (ptr))
+                                       ^~~
+../src/MyApp_mAbassi.cpp:149:5: note: in expansion of macro 'alt_write_word'
+     alt_write_word(fpga_buttons + PIOinterruptmask, 0x0);
+     ^~~~~~~~~~~~~~
+../src/MyApp_mAbassi.cpp:149:35: note: in expansion of macro 'PIOinterruptmask'
+     alt_write_word(fpga_buttons + PIOinterruptmask, 0x0);
+                                   ^~~~~~~~~~~~~~~~
+../inc/MyApp_mAbassi.h:58:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+ #define PIOinterruptmask    2*4
+                               ^
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+ #define ALT_CAST(type, ptr)  ((type) (ptr))
+                                       ^~~
+../src/MyApp_mAbassi.cpp:152:5: note: in expansion of macro 'alt_write_word'
+     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
+     ^~~~~~~~~~~~~~
+../src/MyApp_mAbassi.cpp:152:35: note: in expansion of macro 'PIOinterruptmask'
+     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
+                                   ^~~~~~~~~~~~~~~~
+../inc/MyApp_mAbassi.h:59:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+ #define PIOedgecapture      3*4
+                               ^
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+ #define ALT_CAST(type, ptr)  ((type) (ptr))
+                                       ^~~
+../src/MyApp_mAbassi.cpp:153:5: note: in expansion of macro 'alt_write_word'
      alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
      ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:139:35: note: in expansion of macro 'PIOedgecapture'
+../src/MyApp_mAbassi.cpp:153:35: note: in expansion of macro 'PIOedgecapture'
      alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
                                    ^~~~~~~~~~~~~~
 In file included from ../src/MyApp_mAbassi.cpp:8:0:
 ../src/MyApp_mAbassi.cpp: In function 'void setup_Interrupt()':
-../src/MyApp_mAbassi.cpp:150:34: warning: invalid conversion from 'void*' to 'void (*)()' [-fpermissive]
+../src/MyApp_mAbassi.cpp:164:34: warning: invalid conversion from 'void*' to 'void (*)()' [-fpermissive]
      OSisrInstall(GPT_BUTTON_IRQ, (void *) &button_CallbackInterrupt);
                                    
 ../../mAbassi/Abassi/mAbassi.h:3790:74: note: in definition of macro 'OSisrInstall'
    #define OSisrInstall(Nmb, Fct) (G_OSisrTbl[(Nmb)+(OX_ISR_TBL_OFFSET)]=(Fct))
                                                                           ^~~
-In file included from ../inc/MyApp_mAbassi.h:12:0,
+In file included from ../inc/MyApp_mAbassi.h:13:0,
                  from ../src/MyApp_mAbassi.cpp:6:
-../inc/MyApp_mAbassi.h:49:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:58:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define PIOinterruptmask    2*4
                                ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:154:5: note: in expansion of macro 'alt_write_word'
+../src/MyApp_mAbassi.cpp:168:5: note: in expansion of macro 'alt_write_word'
      alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
      ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:154:35: note: in expansion of macro 'PIOinterruptmask'
+../src/MyApp_mAbassi.cpp:168:35: note: in expansion of macro 'PIOinterruptmask'
      alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
                                    ^~~~~~~~~~~~~~~~
-../inc/MyApp_mAbassi.h:50:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:59:31: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define PIOedgecapture      3*4
                                ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:155:5: note: in expansion of macro 'alt_write_word'
+../src/MyApp_mAbassi.cpp:169:5: note: in expansion of macro 'alt_write_word'
      alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
      ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:155:35: note: in expansion of macro 'PIOedgecapture'
+../src/MyApp_mAbassi.cpp:169:35: note: in expansion of macro 'PIOedgecapture'
      alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
                                    ^~~~~~~~~~~~~~
-../inc/MyApp_mAbassi.h:56:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:65:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_TXDATA     1*4
                           ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:158:5: note: in expansion of macro 'alt_write_word'
+../src/MyApp_mAbassi.cpp:172:5: note: in expansion of macro 'alt_write_word'
      alt_write_word(fpga_spi + SPI_TXDATA, 0x0103070F);
      ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:158:31: note: in expansion of macro 'SPI_TXDATA'
+../src/MyApp_mAbassi.cpp:172:31: note: in expansion of macro 'SPI_TXDATA'
      alt_write_word(fpga_spi + SPI_TXDATA, 0x0103070F);
                                ^~~~~~~~~~
-../inc/MyApp_mAbassi.h:59:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:68:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_EOP_VALUE  6*4
                           ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:159:5: note: in expansion of macro 'alt_write_word'
+../src/MyApp_mAbassi.cpp:173:5: note: in expansion of macro 'alt_write_word'
      alt_write_word(fpga_spi + SPI_EOP_VALUE, 0x55AA55AA);
      ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:159:31: note: in expansion of macro 'SPI_EOP_VALUE'
+../src/MyApp_mAbassi.cpp:173:31: note: in expansion of macro 'SPI_EOP_VALUE'
      alt_write_word(fpga_spi + SPI_EOP_VALUE, 0x55AA55AA);
                                ^~~~~~~~~~~~~
-../inc/MyApp_mAbassi.h:58:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+../inc/MyApp_mAbassi.h:67:26: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
  #define SPI_CONTROL    3*4
                           ^
-/home/westornd/intelFPGA_lite/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
+C:/intelFPGA/18.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h:77:39: note: in definition of macro 'ALT_CAST'
  #define ALT_CAST(type, ptr)  ((type) (ptr))
                                        ^~~
-../src/MyApp_mAbassi.cpp:161:5: note: in expansion of macro 'alt_write_word'
+../src/MyApp_mAbassi.cpp:175:5: note: in expansion of macro 'alt_write_word'
      alt_write_word(fpga_spi + SPI_CONTROL, SPI_CONTROL_IRRDY + SPI_CONTROL_IE);
      ^~~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:161:31: note: in expansion of macro 'SPI_CONTROL'
+../src/MyApp_mAbassi.cpp:175:31: note: in expansion of macro 'SPI_CONTROL'
      alt_write_word(fpga_spi + SPI_CONTROL, SPI_CONTROL_IRRDY + SPI_CONTROL_IE);
                                ^~~~~~~~~~~
 ../src/MyApp_mAbassi.cpp: In function 'void setup_hps_gpio()':
-../src/MyApp_mAbassi.cpp:172:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_TYPE_t {aka ALT_GPIO_PIN_TYPE_e}' [-fpermissive]
+../src/MyApp_mAbassi.cpp:186:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_TYPE_t {aka ALT_GPIO_PIN_TYPE_e}' [-fpermissive]
      };
      ^
-../src/MyApp_mAbassi.cpp:172:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_POL_t {aka ALT_GPIO_PIN_POL_e}' [-fpermissive]
-../src/MyApp_mAbassi.cpp:172:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_TYPE_t {aka ALT_GPIO_PIN_TYPE_e}' [-fpermissive]
-../src/MyApp_mAbassi.cpp:172:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_POL_t {aka ALT_GPIO_PIN_POL_e}' [-fpermissive]
+../src/MyApp_mAbassi.cpp:186:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_POL_t {aka ALT_GPIO_PIN_POL_e}' [-fpermissive]
+../src/MyApp_mAbassi.cpp:186:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_TYPE_t {aka ALT_GPIO_PIN_TYPE_e}' [-fpermissive]
+../src/MyApp_mAbassi.cpp:186:5: warning: invalid conversion from 'int' to 'ALT_GPIO_PIN_POL_t {aka ALT_GPIO_PIN_POL_e}' [-fpermissive]
+../src/MyApp_mAbassi.cpp: In function 'void Task_LOW_LEVEL()':
+../src/MyApp_mAbassi.cpp:213:9: warning: unused variable 'i' [-Wunused-variable]
+     int i;
+         ^
 ../src/MyApp_mAbassi.cpp: In function 'void Task_CAN()':
-../src/MyApp_mAbassi.cpp:209:37: warning: invalid conversion from 'void* (*)(size_t) {aka void* (*)(unsigned int)}' to 'CanardMemoryAllocate {aka void* (*)(CanardInstance*, unsigned int)}' [-fpermissive]
-     CanardInstance ins = canardInit(&malloc, &free);
-                                     ^~~~~~~
-In file included from ../src/MyApp_mAbassi.cpp:14:0:
-../inc/libcanard/canard.h:364:16: note:   initializing argument 1 of 'CanardInstance canardInit(CanardMemoryAllocate, CanardMemoryFree)'
- CanardInstance canardInit(const CanardMemoryAllocate memory_allocate, const CanardMemoryFree memory_free);
-                ^~~~~~~~~~
-../src/MyApp_mAbassi.cpp:209:46: warning: invalid conversion from 'void (*)(void*)' to 'CanardMemoryFree {aka void (*)(CanardInstance*, void*)}' [-fpermissive]
-     CanardInstance ins = canardInit(&malloc, &free);
-                                              ^~~~~
-In file included from ../src/MyApp_mAbassi.cpp:14:0:
-../inc/libcanard/canard.h:364:16: note:   initializing argument 2 of 'CanardInstance canardInit(CanardMemoryAllocate, CanardMemoryFree)'
- CanardInstance canardInit(const CanardMemoryAllocate memory_allocate, const CanardMemoryFree memory_free);
-                ^~~~~~~~~~
-../src/MyApp_mAbassi.cpp:252:52: warning: invalid conversion from 'const void*' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
-             CAN_sendMsg(txf->extended_can_id, txf->payload, txf->payload_size, tx_FrameType);
-                                               ~~~~~^~~~~~~
-In file included from ../src/MyApp_mAbassi.cpp:5:0:
-../inc/MyDriver_CAN.h:172:9: note:   initializing argument 2 of 'void CAN_sendMsg(uint32_t, uint8_t*, uint8_t, uint8_t)'
- void    CAN_sendMsg(uint32_t theIdentifier, uint8_t *theData, uint8_t theLength, uint8_t theFrameType);
-         ^~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:193:29: warning: unused variable 'rx_Identifier' [-Wunused-variable]
+../src/MyApp_mAbassi.cpp:295:29: warning: unused variable 'rx_Identifier' [-Wunused-variable]
      uint32_t tx_Identifier, rx_Identifier;
                              ^~~~~~~~~~~~~
-../src/MyApp_mAbassi.cpp:194:29: warning: unused variable 'rx_Data' [-Wunused-variable]
+../src/MyApp_mAbassi.cpp:296:29: warning: unused variable 'rx_Data' [-Wunused-variable]
      uint8_t  tx_Data[8],    rx_Data[8];
                              ^~~~~~~
-../src/MyApp_mAbassi.cpp:195:29: warning: unused variable 'rx_Length' [-Wunused-variable]
+../src/MyApp_mAbassi.cpp:297:29: warning: unused variable 'rx_Length' [-Wunused-variable]
      uint8_t  tx_Length,     rx_Length;
                              ^~~~~~~~~
+../src/MyApp_mAbassi.cpp:300:9: warning: unused variable 'i' [-Wunused-variable]
+     int i;
+         ^
+../src/MyApp_mAbassi.cpp: In function 'double get_speed(int)':
+../src/MyApp_mAbassi.cpp:443:8: warning: 'PIO' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  if(PIO/4294967296.0>=0.5){
+     ~~~^~~~~~~~~~~~~
 "arm-altera-eabi-g++" -lstdc++ -Wl,--gc-sections  -Wl,-L../../mAbassi/Platform/lib -Xlinker -Map -Xlinker MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.map 			\
-      -T ../../mAbassi/AR5_CY5.ld   Main_mAbassi.o MyApp_mAbassi.o test.o MyDriver_CAN.o SysCall_noFS.o TIMERinit.o dw_uart.o alt_gpio.o dw_spi.o alt_generalpurpose_io.o canard.o o1heap.o mAbassiCfgA9.o Shell.o SubShell.o  -lc -lgcc  -Wl,-l_mAbassi_EVAL_GCC_AR5_CY5 -Wl,-lcs3 -Wl,-lcs3unhosted -Wl,-lcs3arm -lstdc++ \
-Using built-in specs.
+      -T ../../mAbassi/AR5_CY5.ld   Main_mAbassi.o MyApp_mAbassi.o motor_card.o test.o MyDriver_CAN.o SysCall_noFS.o TIMERinit.o dw_uart.o alt_gpio.o dw_spi.o alt_generalpurpose_io.o canard.o o1heap.o mAbassiCfgA9.o Shell.o SubShell.o  -lc -lgcc  -Wl,-l_mAbassi_EVAL_GCC_AR5_CY5 -Wl,-lcs3 -Wl,-lcs3unhosted -Wl,-lcs3arm -lstdc++ \
           -Wl,-lgcc -Wl,-lstdc++ -o MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf -v
+Using built-in specs.
 COLLECT_GCC=arm-altera-eabi-g++
-COLLECT_LTO_WRAPPER=/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/lto-wrapper
+COLLECT_LTO_WRAPPER=c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/lto-wrapper.exe
 Target: arm-altera-eabi
-Configured with: /scratch/sandra/arm-altera-respin/src/gcc-6-2016.11/configure --build=i686-pc-linux-gnu --host=i686-pc-linux-gnu --target=arm-altera-eabi --enable-threads --disable-libmudflap --disable-libstdcxx-pch --enable-threads=generic --with-gnu-as --with-gnu-ld --with-specs='-D__NEWLIB_GTHR_GENERIC -D__CS_SOURCERYGXX_MAJ__=2016 -D__CS_SOURCERYGXX_MIN__=11 -D__CS_SOURCERYGXX_REV__=88 %{!fcommon:%{!fno-common:-fno-common}}' --enable-languages=c,c++ --enable-shared --enable-lto --with-newlib --with-pkgversion='Sourcery CodeBench Lite 2016.11-88' --with-bugurl=https://sourcery.mentor.com/GNUToolchain/ --disable-nls --prefix=/opt/codesourcery --with-headers=yes --with-sysroot=/opt/codesourcery/arm-altera-eabi --with-build-sysroot=/scratch/sandra/arm-altera-respin/install/opt/codesourcery/arm-altera-eabi --with-gmp=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-pc-linux-gnu/usr --with-mpfr=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-pc-linux-gnu/usr --with-mpc=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-pc-linux-gnu/usr --with-isl=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-pc-linux-gnu/usr --disable-libgomp --disable-libitm --disable-libatomic --disable-libssp --disable-libcc1 --enable-poison-system-directories --with-python-dir=arm-altera-eabi/share/gdb/python --with-build-time-tools=/scratch/sandra/arm-altera-respin/install/opt/codesourcery/arm-altera-eabi/bin --with-build-time-tools=/scratch/sandra/arm-altera-respin/install/opt/codesourcery/arm-altera-eabi/bin SED=sed
+Configured with: /scratch/sandra/arm-altera-respin/src/gcc-6-2016.11/configure --build=i686-pc-linux-gnu --host=i686-mingw32 --target=arm-altera-eabi --enable-threads --disable-libmudflap --disable-libstdcxx-pch --enable-threads=generic --with-gnu-as --with-gnu-ld --with-specs='-D__NEWLIB_GTHR_GENERIC -D__CS_SOURCERYGXX_MAJ__=2016 -D__CS_SOURCERYGXX_MIN__=11 -D__CS_SOURCERYGXX_REV__=88 %{!fcommon:%{!fno-common:-fno-common}}' --enable-languages=c,c++ --enable-shared --enable-lto --with-newlib --with-pkgversion='Sourcery CodeBench Lite 2016.11-88' --with-bugurl=https://sourcery.mentor.com/GNUToolchain/ --disable-nls --prefix=/opt/codesourcery --with-headers=yes --with-sysroot=/opt/codesourcery/arm-altera-eabi --with-build-sysroot=/scratch/sandra/arm-altera-respin/install/host-i686-mingw32/opt/codesourcery/arm-altera-eabi --with-libiconv-prefix=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-mingw32/usr --with-gmp=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-mingw32/usr --with-mpfr=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-mingw32/usr --with-mpc=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-mingw32/usr --with-isl=/scratch/sandra/arm-altera-respin/obj/pkg-2016.11-88-arm-altera-eabi/sourceryg++-2016.11-88-arm-altera-eabi.extras/host-libs-i686-mingw32/usr --disable-libgomp --disable-libitm --disable-libatomic --disable-libssp --disable-libcc1 --enable-poison-system-directories --with-python-dir=arm-altera-eabi/share/gdb/python --with-build-time-tools=/scratch/sandra/arm-altera-respin/obj/tools-i686-pc-linux-gnu-2016.11-88-arm-altera-eabi-i686-mingw32/arm-altera-eabi/bin --with-build-time-tools=/scratch/sandra/arm-altera-respin/obj/tools-i686-pc-linux-gnu-2016.11-88-arm-altera-eabi-i686-mingw32/arm-altera-eabi/bin SED=sed
 Thread model: generic
 gcc version 6.2.0 (Sourcery CodeBench Lite 2016.11-88) 
-COMPILER_PATH=/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/:/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/:/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/bin/
-LIBRARY_PATH=/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/:/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/:/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib/:/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../arm-altera-eabi/lib/
+COMPILER_PATH=c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/;c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/;c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/bin/
+LIBRARY_PATH=c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/;c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/;c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib/;c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../arm-altera-eabi/lib/
 COLLECT_GCC_OPTIONS='-T' '../../mAbassi/AR5_CY5.ld' '-o' 'MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf' '-v' '-D' '__NEWLIB_GTHR_GENERIC' '-D' '__CS_SOURCERYGXX_MAJ__=2016' '-D' '__CS_SOURCERYGXX_MIN__=11' '-D' '__CS_SOURCERYGXX_REV__=88' '-fno-common'
- /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/collect2 -plugin /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/liblto_plugin.so -plugin-opt=/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTTREmj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc --sysroot=/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../arm-altera-eabi -X -o MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o -L/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0 -L/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc -L/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib -L/home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../arm-altera-eabi/lib -lstdc++ --gc-sections -L../../mAbassi/Platform/lib -Map MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.map Main_mAbassi.o MyApp_mAbassi.o test.o MyDriver_CAN.o SysCall_noFS.o TIMERinit.o dw_uart.o alt_gpio.o dw_spi.o alt_generalpurpose_io.o canard.o o1heap.o mAbassiCfgA9.o Shell.o SubShell.o -lgcc -l_mAbassi_EVAL_GCC_AR5_CY5 -lcs3 -lcs3unhosted -lcs3arm -lstdc++ -lgcc -lstdc++ -lstdc++ -lm -lc --start-group -lgcc -lc --end-group /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o /home/westornd/intelFPGA_lite/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o -T ../../mAbassi/AR5_CY5.ld
+ c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/collect2.exe -plugin c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/liblto_plugin-0.dll -plugin-opt=c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../libexec/gcc/arm-altera-eabi/6.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Tanguy\AppData\Local\Temp\cchpo0Z0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc --sysroot=c:\intelfpga_pro\18.1\embedded\host_tools\mentor\gnu\arm\baremetal\bin\../arm-altera-eabi -X -o MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crti.o c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtbegin.o -Lc:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0 -Lc:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc -Lc:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/../../../../arm-altera-eabi/lib -Lc:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../arm-altera-eabi/lib -lstdc++ --gc-sections -L../../mAbassi/Platform/lib -Map MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.map Main_mAbassi.o MyApp_mAbassi.o motor_card.o test.o MyDriver_CAN.o SysCall_noFS.o TIMERinit.o dw_uart.o alt_gpio.o dw_spi.o alt_generalpurpose_io.o canard.o o1heap.o mAbassiCfgA9.o Shell.o SubShell.o -lgcc -l_mAbassi_EVAL_GCC_AR5_CY5 -lcs3 -lcs3unhosted -lcs3arm -lstdc++ -lgcc -lstdc++ -lstdc++ -lm -lc --start-group -lgcc -lc --end-group c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtend.o c:/intelfpga_pro/18.1/embedded/host_tools/mentor/gnu/arm/baremetal/bin/../lib/gcc/arm-altera-eabi/6.2.0/crtn.o -T ../../mAbassi/AR5_CY5.ld
 COLLECT_GCC_OPTIONS='-T' '../../mAbassi/AR5_CY5.ld' '-o' 'MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf' '-v' '-D' '__NEWLIB_GTHR_GENERIC' '-D' '__CS_SOURCERYGXX_MAJ__=2016' '-D' '__CS_SOURCERYGXX_MIN__=11' '-D' '__CS_SOURCERYGXX_REV__=88' '-fno-common'
 "arm-altera-eabi-nm" MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf > MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf.map
 "arm-altera-eabi-objcopy" MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.axf -j vectors -j .rodata -j .text -j .data -j .bss --output-target=binary MyApp_mAbassi_SMP_DE0NANOSOC_A9_GCC.bin
-Done
+"Done"
 
-16:55:49 Build Finished (took 528ms)
+13:21:45 Build Finished (took 1s.12ms)
 

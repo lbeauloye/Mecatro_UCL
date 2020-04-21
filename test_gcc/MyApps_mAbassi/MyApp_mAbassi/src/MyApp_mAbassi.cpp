@@ -15,6 +15,9 @@
 #include "libcanard/canard.h"
 #include "o1heap/o1heap.h"
 
+#include <math.h>
+
+
 /*
 static void* memAllocate(CanardInstance* const ins, const size_t amount)
 {
@@ -33,10 +36,10 @@ static void memFree(CanardInstance* const ins, void* const pointer)
 
 void Task_HPS_Led(void)
 {
-
-
-	motors[0] = new motor_card(708,1);
-
+	motors[1] = new motor_card(0x708,1);//FR
+	motors[3] = new motor_card(0x708,2);//RR
+	motors[2] = new motor_card(0x408,1);//RL
+	motors[0] = new motor_card(0x408,2);//FL
 
     MBX_t    *PrtMbx;
     intptr_t PtrMsg;
@@ -91,7 +94,6 @@ void Task_FPGA_Led(void)
             // reset leds
             leds_mask = 0x1;
         }
-        motors[0]->set_voltage(20);
         alt_write_word(fpga_leds, leds_mask);
         
         TSKsleep(OS_MS_TO_TICK(250));
@@ -239,22 +241,37 @@ void Task_LOW_LEVEL(void)
 //    tx_Data[1] = 0xFF;
 //    tx_Data[2] = (128*20/100 + 128) >> 2;
 //    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-    for(i = 0; i<4 ; i++){
-    	motors[i]->ctrl_motor(1);
-    	motors[i]->set_command(10);
-    }
+//    for(i = 0; i<4 ; i++){
+//    	motors[i]->ctrl_motor(1);
+//    	motors[i]->set_command(10);
+//    }
+
+    motors[1]->ctrl_motor(1);
+    motors[0]->ctrl_motor(1);
+    printf("coucou \n");
+   double speed;
+   	motors[1]->set_voltage(60);
+	motors[0]->set_voltage(0);
+	motors[2]->set_voltage(0);
+	motors[3]->set_voltage(0);
+
 
 
     for( ;; )
     {
 
-    	for(i = 0; i<4 ; i++)
-    	    	motors[i]->set_old_speed(10);
+    	speed = get_speed(1);
+    	printf("speed : %f \n", speed);
 
-    	for(i = 0; i<4 ; i++)
-    	    	motors[i]->set_speed();
+//    	for(i = 0; i<4 ; i++){
+//    		speed = get_speed(i);
+//    		printf("speed" )
+//    	    motors[i]->set_old_speed(speed);
+//    	}
+//    	for(i = 0; i<4 ; i++)
+//    	    	motors[i]->set_speed();
 
-    	TSKsleep(OS_MS_TO_TICK(40));
+    	TSKsleep(OS_SEC_TO_TICK(1));
 //        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
 //            MTXLOCK_STDIO();
 //            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
@@ -297,20 +314,28 @@ void Task_CAN(void)
 
 
     tx_Identifier = 0x708;//0xabc;
-    tx_Length     = 3;//8;
-    tx_FrameType  = MCP2515_TX_STD_FRAME;
-    tx_Data[0] = 0x1E;
-    tx_Data[1] = 0x30;
-    tx_Data[2] = 0x00;
-    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+	tx_Length     = 3;//8;
+	tx_FrameType  = MCP2515_TX_STD_FRAME;
+	tx_Data[0] = 0x1E;
+	tx_Data[1] = 0x40;
+	tx_Data[2] = 0x40;
+	CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
 
-    tx_Identifier = 0x708;//0xabc;
-    tx_Length     = 3;//8;
-    tx_FrameType  = MCP2515_TX_STD_FRAME;
-    tx_Data[0] = 0x25;
-    tx_Data[1] = 0xFF;
-    tx_Data[2] = (128*20/100 + 128) >> 2;
-    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+//    tx_Identifier = 0x708;//0xabc;
+//    tx_Length     = 3;//8;
+//    tx_FrameType  = MCP2515_TX_STD_FRAME;
+//    tx_Data[0] = 0x1E;
+//    tx_Data[1] = 0x30;
+//    tx_Data[2] = 0x00;
+//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+//
+//    tx_Identifier = 0x708;//0xabc;
+//    tx_Length     = 3;//8;
+//    tx_FrameType  = MCP2515_TX_STD_FRAME;
+//    tx_Data[0] = 0x25;
+//    tx_Data[1] = 0xFF;
+//    tx_Data[2] = (128*20/100 + 128) >> 2;
+//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
 
 
     //for(i=0; i<tx_Length; i++)
@@ -360,18 +385,66 @@ void Task_CAN(void)
 
     for( ;; )
     {
-        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
-            MTXLOCK_STDIO();
-            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
-            for(i=0; i<rx_Length; i++) printf("%02x ", rx_Data[i]);
-            printf("\n");
-            MTXUNLOCK_STDIO();
+    	tx_Identifier = 0x708;//0xabc;
+		tx_Length     = 3;//8;
+		tx_FrameType  = MCP2515_TX_STD_FRAME;
+		tx_Data[0] = 0x1E;
+		tx_Data[1] = 0x40;
+		tx_Data[2] = 0x40;
+		CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+    	TSKsleep(OS_SEC_TO_TICK(1));
+    	tx_Identifier = 0x708;//0xabc;
+		tx_Length     = 3;//8;
+		tx_FrameType  = MCP2515_TX_STD_FRAME;
+		tx_Data[0] = 0x1E;
+		tx_Data[1] = 0x40;
+		tx_Data[2] = 0x00;
+		CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+    	TSKsleep(OS_SEC_TO_TICK(1));
 
-            // Send a response
-            //for(i=0; i<tx_Length; i++)
-            //    tx_Data[i]++;
-            //CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-        }
+//        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
+//            MTXLOCK_STDIO();
+//            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
+//            for(i=0; i<rx_Length; i++) printf("%02x ", rx_Data[i]);
+//            printf("\n");
+//            MTXUNLOCK_STDIO();
+//
+//            // Send a response
+//            //for(i=0; i<tx_Length; i++)
+//            //    tx_Data[i]++;
+//            //CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+//        }
     }
 
+}
+
+
+double get_speed(int choice){
+	uint32_t PIO;
+	double pio_double;
+	double speed;
+	double ratio = 5.8 * 4;
+	double T = 1.0/2000;
+	double max = 2048;
+	switch (choice) {
+		case 0:
+			PIO = alt_read_word(fpga_pio_0);
+			break;
+		case 1:
+			PIO = alt_read_word(fpga_pio_1);
+			break;
+		case 2:
+			PIO = alt_read_word(fpga_pio_2);
+			break;
+		case 3:
+			PIO = alt_read_word(fpga_pio_3);
+			break;
+	}
+	if(PIO/4294967296.0>=0.5){
+		pio_double = -(4294967296.0 - PIO + 1);
+	} else {
+		pio_double = PIO;
+	}
+	speed = 2*M_PI*pio_double/(max*T*ratio);
+	return speed;
 }

@@ -31,7 +31,7 @@
 #define SYSID_QSYS_SPAN 8
 #define SYSID_QSYS_END 0x1007
 #define SYSID_QSYS_ID 2899645186
-#define SYSID_QSYS_TIMESTAMP 1545465813
+#define SYSID_QSYS_TIMESTAMP 1587308934
 
 /*
  * Macros for device 'jtag_uart', class 'altera_avalon_jtag_uart'
@@ -151,6 +151,102 @@
 #define SPI_RASPBERRYPI_SYNC_REG_DEPTH 2
 #define SPI_RASPBERRYPI_TARGETCLOCK 128000
 #define SPI_RASPBERRYPI_TARGETSSDELAY "0.0"
+
+/*
+ * Macros for device 'pio_0', class 'altera_avalon_pio'
+ * The macros are prefixed with 'PIO_0_'.
+ * The prefix is the slave descriptor.
+ */
+#define PIO_0_COMPONENT_TYPE altera_avalon_pio
+#define PIO_0_COMPONENT_NAME pio_0
+#define PIO_0_BASE 0x11000
+#define PIO_0_SPAN 16
+#define PIO_0_END 0x1100f
+#define PIO_0_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_0_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_0_CAPTURE 0
+#define PIO_0_DATA_WIDTH 32
+#define PIO_0_DO_TEST_BENCH_WIRING 0
+#define PIO_0_DRIVEN_SIM_VALUE 0
+#define PIO_0_EDGE_TYPE NONE
+#define PIO_0_FREQ 50000000
+#define PIO_0_HAS_IN 1
+#define PIO_0_HAS_OUT 0
+#define PIO_0_HAS_TRI 0
+#define PIO_0_IRQ_TYPE NONE
+#define PIO_0_RESET_VALUE 0
+
+/*
+ * Macros for device 'pio_1', class 'altera_avalon_pio'
+ * The macros are prefixed with 'PIO_1_'.
+ * The prefix is the slave descriptor.
+ */
+#define PIO_1_COMPONENT_TYPE altera_avalon_pio
+#define PIO_1_COMPONENT_NAME pio_1
+#define PIO_1_BASE 0x12000
+#define PIO_1_SPAN 16
+#define PIO_1_END 0x1200f
+#define PIO_1_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_1_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_1_CAPTURE 0
+#define PIO_1_DATA_WIDTH 32
+#define PIO_1_DO_TEST_BENCH_WIRING 0
+#define PIO_1_DRIVEN_SIM_VALUE 0
+#define PIO_1_EDGE_TYPE NONE
+#define PIO_1_FREQ 50000000
+#define PIO_1_HAS_IN 1
+#define PIO_1_HAS_OUT 0
+#define PIO_1_HAS_TRI 0
+#define PIO_1_IRQ_TYPE NONE
+#define PIO_1_RESET_VALUE 0
+
+/*
+ * Macros for device 'pio_2', class 'altera_avalon_pio'
+ * The macros are prefixed with 'PIO_2_'.
+ * The prefix is the slave descriptor.
+ */
+#define PIO_2_COMPONENT_TYPE altera_avalon_pio
+#define PIO_2_COMPONENT_NAME pio_2
+#define PIO_2_BASE 0x13000
+#define PIO_2_SPAN 16
+#define PIO_2_END 0x1300f
+#define PIO_2_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_2_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_2_CAPTURE 0
+#define PIO_2_DATA_WIDTH 32
+#define PIO_2_DO_TEST_BENCH_WIRING 0
+#define PIO_2_DRIVEN_SIM_VALUE 0
+#define PIO_2_EDGE_TYPE NONE
+#define PIO_2_FREQ 50000000
+#define PIO_2_HAS_IN 1
+#define PIO_2_HAS_OUT 0
+#define PIO_2_HAS_TRI 0
+#define PIO_2_IRQ_TYPE NONE
+#define PIO_2_RESET_VALUE 0
+
+/*
+ * Macros for device 'pio_3', class 'altera_avalon_pio'
+ * The macros are prefixed with 'PIO_3_'.
+ * The prefix is the slave descriptor.
+ */
+#define PIO_3_COMPONENT_TYPE altera_avalon_pio
+#define PIO_3_COMPONENT_NAME pio_3
+#define PIO_3_BASE 0x14000
+#define PIO_3_SPAN 16
+#define PIO_3_END 0x1400f
+#define PIO_3_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_3_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_3_CAPTURE 0
+#define PIO_3_DATA_WIDTH 32
+#define PIO_3_DO_TEST_BENCH_WIRING 0
+#define PIO_3_DRIVEN_SIM_VALUE 0
+#define PIO_3_EDGE_TYPE NONE
+#define PIO_3_FREQ 50000000
+#define PIO_3_HAS_IN 1
+#define PIO_3_HAS_OUT 0
+#define PIO_3_HAS_TRI 0
+#define PIO_3_IRQ_TYPE NONE
+#define PIO_3_RESET_VALUE 0
 
 /*
  * Macros for device 'ILC', class 'interrupt_latency_counter'

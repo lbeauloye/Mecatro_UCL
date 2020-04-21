@@ -91,14 +91,23 @@
 /* ------------------------------------------------------------------------------------------------ */
 /* Global variables                                                                                 */
 
-#ifdef   MYAPP
+#ifdef MYAPP
     void *fpga_leds = ALT_LWFPGASLVS_ADDR + LED_PIO_BASE;
     void *fpga_buttons = ALT_LWFPGASLVS_ADDR + BUTTON_PIO_BASE;
     void *fpga_spi = ALT_LWFPGASLVS_ADDR + SPI_RASPBERRYPI_BASE;
+    void *fpga_pio_0 = ALT_LWFPGASLVS_ADDR + PIO_0_BASE;
+    void *fpga_pio_1 = ALT_LWFPGASLVS_ADDR + PIO_1_BASE;
+    void *fpga_pio_2 = ALT_LWFPGASLVS_ADDR + PIO_2_BASE;
+    void *fpga_pio_3 = ALT_LWFPGASLVS_ADDR + PIO_3_BASE;
+
 #else
     extern void *fpga_leds;
     extern void *fpga_buttons;
     extern void *fpga_spi;
+    extern void *fpga_pio_0;
+    extern void *fpga_pio_1;
+    extern void *fpga_pio_2;
+    extern void *fpga_pio_3;
 #endif
 
 /* ------------------------------------------------------------------------------------------------ */
@@ -116,6 +125,8 @@ void setup_Interrupt( void );
 void setup_hps_gpio( void );
 void toogle_hps_led( void );
 
+double get_speed(int choice);
+
 //#ifdef __cplusplus
 //}
 //#endif
@@ -124,7 +135,7 @@ void toogle_hps_led( void );
 
 #ifdef __cplusplus
 
-static motor_card **motors = (motor_card **) calloc(2, sizeof(motor_card));
+static motor_card **motors = (motor_card **) calloc(4, sizeof(motor_card));
 //static motor_card motors [4];
 
 #endif
