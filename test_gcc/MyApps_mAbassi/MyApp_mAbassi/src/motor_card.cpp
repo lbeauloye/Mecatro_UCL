@@ -42,7 +42,7 @@ void motor_card::set_voltage(double v){
 
     uint8_t volt = 128 + 128*limit(v, 99.0)/100.0;
     uint8_t command = volt >> 2;
-    printf("Command : %d\n", command);
+    //printf("Command : %d\n", command);
 
     uint8_t  tx_Data[3];
     tx_Data[1] = 0xFF;
@@ -56,7 +56,7 @@ void motor_card::set_voltage(double v){
     	CAN_sendMsg(this->id, tx_Data, 3,  MCP2515_TX_STD_FRAME);
     	tx_Data[0] = 0x21;
     	tx_Data[2] = (volt & 0b11) + 0b10000000;
-    	printf("txData2 : %u \n", tx_Data[2]);
+    	//printf("txData2 : %u \n", tx_Data[2]);
     	CAN_sendMsg(this->id, tx_Data, 3,  MCP2515_TX_STD_FRAME);
     	tx_Data[0] = 0x23;
 		tx_Data[2] = 0x3F;
@@ -64,11 +64,11 @@ void motor_card::set_voltage(double v){
 
     } else if(this->type == 2){
     	tx_Data[0] = 0x26;
-    	printf("id %X\n", this->id);
+    	//printf("id %X\n", this->id);
     	CAN_sendMsg(this->id, tx_Data, 3,  MCP2515_TX_STD_FRAME);
     	tx_Data[0] = 0x22;
 		tx_Data[2] = (volt & 0b11) + 0b10000000;
-		printf("txData2 : %u \n", tx_Data[2]);
+		//printf("txData2 : %u \n", tx_Data[2]);
 		CAN_sendMsg(this->id, tx_Data, 3,  MCP2515_TX_STD_FRAME);
 		tx_Data[0] = 0x24;
 		tx_Data[2] = 0x3F;
@@ -142,8 +142,8 @@ void motor_card::set_deltaT(double deltaT){
 
 void motor_card::set_speed(){
     // Error on speed
-	printf("wheel speed : %f \n",this->wheel_speed);
-	printf("speed : %f \n",this->speed_command);
+//	printf("wheel speed : %f \n",this->wheel_speed);
+//	printf("speed : %f \n",this->speed_command);
 
     double err_w = (this->speed_command - this->wheel_speed)* this->gearbox;
 

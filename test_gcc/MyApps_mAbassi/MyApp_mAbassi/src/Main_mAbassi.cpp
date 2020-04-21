@@ -81,9 +81,9 @@ TSK_t *Task;
     TSKsetCore(Task, 1);
     TSKresume(Task);
 
-    Task = TSKcreate("Task Mid level", 0, 8192, &Task_MID_LEVEL, 0);
-	TSKsetCore(Task, 1);
-	TSKresume(Task);
+//    Task = TSKcreate("Task Mid level", 0, 8192, &Task_MID_LEVEL, 0);
+//	TSKsetCore(Task, 1);
+//	TSKresume(Task);
 
 
 #if defined(USE_SHELL)

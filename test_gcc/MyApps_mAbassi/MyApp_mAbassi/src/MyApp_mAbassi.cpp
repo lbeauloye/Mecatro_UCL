@@ -242,49 +242,84 @@ void Task_LOW_LEVEL(void)
 //    tx_Data[1] = 0xFF;
 //    tx_Data[2] = (128*20/100 + 128) >> 2;
 //    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-    for(i = 0; i<4 ; i++){
-    	motors[i]->set_command(10);
-    }
+//    for(i = 0; i<4 ; i++){
+//    	motors[i]->set_command(30);
+//    }
+    double xsi_in[3] = {0.0, 0.0, 2.0};
+	double speed[4];
+	double xsi[3];
+	compute_local_velocities(xsi_in, 0.0 , xsi);
+	compute_motor_velocities(xsi, speed);
+	for(i = 0; i<4 ; i++){
+//		printf("speed [%d]: %f\t",i,speed[i]);
+	    motors[i]->set_command(speed[i]);
+	}
+//	printf("\n");
 
     motors[1]->ctrl_motor(0);
     motors[0]->ctrl_motor(0);
 
     motors[1]->ctrl_motor(1);
     motors[0]->ctrl_motor(1);
-//  motors[0]->set_brake(0);
+    motors[0]->set_brake(0);
     motors[1]->set_brake(0);
-//  motors[2]->set_brake(0);
-//  motors[3]->set_brake(0);
-    printf("coucou \n");
-    double speed;
+    motors[2]->set_brake(0);
+    motors[3]->set_brake(0);
+//    printf("coucou \n");
+//    double speed;
 // 	motors[1]->set_voltage(30);
 //	motors[0]->set_voltage(0);
 //	motors[2]->set_voltage(10);
 //	motors[3]->set_voltage(20);
 
-    motors[1]->set_kp(0.02);
-    motors[1]->set_ki(0.01);
+    double kp = 0.03; //0.035;
+    double ki = 0.01;
+
+    motors[0]->set_kp(kp);
+    motors[0]->set_ki(ki);
+    motors[1]->set_kp(kp);
+    motors[1]->set_ki(ki);
+    motors[2]->set_kp(kp);
+    motors[2]->set_ki(ki);
+    motors[3]->set_kp(kp);
+    motors[3]->set_ki(ki);
     double time;
-    double Tick = G_OStimCnt;
+    double Tick0 = G_OStimCnt;
+    double Tick1 = G_OStimCnt;
+    double Tick2 = G_OStimCnt;
+    double Tick3 = G_OStimCnt;
 
     for( ;; )
     {
-    	motors[1]->set_old_speed(get_speed(1));
     	printf("speed_0 : %f,\tspeed_1 : %f,\tspeed_2 : %f,\tspeed_3 : %f,\t \n", get_speed(0),get_speed(1),get_speed(2),get_speed(3));
-    	time = (OS_TIMER_US*(G_OStimCnt-Tick))/1000000;
+
+    	motors[0]->set_old_speed(get_speed(0));
+		time = (OS_TIMER_US*(G_OStimCnt-Tick0))/1000000;
+		motors[0]->set_deltaT(time);
+		motors[0]->set_speed();
+		Tick0 = G_OStimCnt;
+		TSKsleep(OS_MS_TO_TICK(4));
+
+    	motors[1]->set_old_speed(get_speed(1));
+    	time = (OS_TIMER_US*(G_OStimCnt-Tick1))/1000000;
     	motors[1]->set_deltaT(time);
-    	printf("time : %f\n",time);
     	motors[1]->set_speed();
-    	Tick = G_OStimCnt;
-
-//    	TSKsleep(OS_MS_TO_TICK(4));
-//    	motors[0]->set_speed();
-//    	TSKsleep(OS_MS_TO_TICK(4));
-//    	motors[2]->set_speed();
-//    	TSKsleep(OS_MS_TO_TICK(4));
-//    	motors[3]->set_speed();
+    	Tick1 = G_OStimCnt;
+		TSKsleep(OS_MS_TO_TICK(4));
 
 
+    	motors[2]->set_old_speed(get_speed(2));
+		time = (OS_TIMER_US*(G_OStimCnt-Tick2))/1000000;
+		motors[2]->set_deltaT(time);
+		motors[2]->set_speed();
+		Tick2 = G_OStimCnt;
+		TSKsleep(OS_MS_TO_TICK(4));
+
+		motors[3]->set_old_speed(get_speed(3));
+		time = (OS_TIMER_US*(G_OStimCnt-Tick3))/1000000;
+		motors[3]->set_deltaT(time);
+		motors[3]->set_speed();
+		Tick3 = G_OStimCnt;
 
 //    	for(i = 0; i<4 ; i++){
 //    		speed = get_speed(i);
