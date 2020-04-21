@@ -108,6 +108,7 @@ void Task_HPS_Led(void);
 void Task_FPGA_Led(void);
 void Task_FPGA_Button(void);
 void Task_CAN(void);
+void Task_LOW_LEVEL(void);
 
 void spi_CallbackInterrupt (uint32_t icciar, void *context);
 void button_CallbackInterrupt (uint32_t icciar, void *context);

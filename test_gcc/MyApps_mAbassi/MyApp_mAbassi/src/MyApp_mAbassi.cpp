@@ -42,11 +42,12 @@ void Task_HPS_Led(void)
     intptr_t PtrMsg;
     SEM_t    *PtrSem = SEMopen("SemSetup");
     
+    for(int i = 0; i<4 ; i++)
+        	motors[i]->init();
     setup_hps_gpio();               // This is the Adam&Eve Task and we have first to setup everything
     setup_Interrupt();
     SEMpost(PtrSem);
     
-    motors[0]->init();
 
     MTXLOCK_STDIO();
     printf("\n\nDE10-Nano - MyApp_mAbassi\n\n");
@@ -54,7 +55,6 @@ void Task_HPS_Led(void)
 
     printf("salut salut %d\n",Test_func(5));
 
-    motors[0]->set_voltage(10);
 
     MTXUNLOCK_STDIO();
     
@@ -199,6 +199,79 @@ void toogle_hps_led()
 }
 
 /* ------------------------------------------------------------------------------------------------ */
+
+
+void Task_LOW_LEVEL(void)
+{
+//    uint32_t tx_Identifier, rx_Identifier;
+//    uint8_t  tx_Data[8],    rx_Data[8];
+//    uint8_t  tx_Length ,     rx_Length;
+//    uint8_t  tx_FrameType;
+
+    int i;
+
+
+    SEMwait(SEMopen("SemSetup"), -1);
+
+    DE0_SELECT_LT_SPI();
+
+    CAN_init();
+
+   // CAN_debug();
+
+//    CanardInstance ins = canardInit(&malloc, &free);
+//    ins.mtu_bytes = CANARD_MTU_CAN_CLASSIC;  // Defaults to 64 (CAN FD); here we select Classic CAN.
+//    ins.node_id   = 42;                      // Defaults to anonymous; can be set up later at any point.
+
+
+//    tx_Identifier = 0x708;//0xabc;
+//    tx_Length     = 3;//8;
+//    tx_FrameType  = MCP2515_TX_STD_FRAME;
+//    tx_Data[0] = 0x1E;
+//    tx_Data[1] = 0x30;
+//    tx_Data[2] = 0x00;
+//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+//
+//    tx_Identifier = 0x708;//0xabc;
+//    tx_Length     = 3;//8;
+//    tx_FrameType  = MCP2515_TX_STD_FRAME;
+//    tx_Data[0] = 0x25;
+//    tx_Data[1] = 0xFF;
+//    tx_Data[2] = (128*20/100 + 128) >> 2;
+//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+    for(i = 0; i<4 ; i++){
+    	motors[i]->ctrl_motor(1);
+    	motors[i]->set_command(10);
+    }
+
+
+    for( ;; )
+    {
+
+    	for(i = 0; i<4 ; i++)
+    	    	motors[i]->set_old_speed(10);
+
+    	for(i = 0; i<4 ; i++)
+    	    	motors[i]->set_speed();
+
+    	TSKsleep(OS_MS_TO_TICK(40));
+//        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
+//            MTXLOCK_STDIO();
+//            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
+//            for(i=0; i<rx_Length; i++) printf("%02x ", rx_Data[i]);
+//            printf("\n");
+//            MTXUNLOCK_STDIO();
+//
+//            // Send a response
+//            //for(i=0; i<tx_Length; i++)
+//            //    tx_Data[i]++;
+//            //CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
+//        }
+
+    }
+
+}
+
 
 void Task_CAN(void)
 {

@@ -22,6 +22,7 @@ extern void Task_HPS_Led(void);
 extern void Task_FPGA_Led(void);
 extern void Task_FPGA_Button(void);
 extern void Task_CAN(void);
+extern void Task_LOW_LEVEL(void);
 
 /* ------------------------------------------------------------------------------------------------ */
 
