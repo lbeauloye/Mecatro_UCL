@@ -51,7 +51,7 @@ void Task_FPGA_Led(void)
 	for( ;; )
 	{
 		//printf("coucou LED \n");
-		pio0 = alt_read_word(fpga_pio_0);
+		pio0 = alt_read_word(fpga_pio_0)>>3;
 //        leds_mask = alt_read_word(fpga_leds);
 //        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
 //            // rotate leds
@@ -180,17 +180,41 @@ void task_print_PIO() {
 	double max = 2048;
 
     for( ;; ){
-    	PIO_0 = alt_read_word(fpga_pio_0);
-    	PIO_1 = alt_read_word(fpga_pio_1);
-    	PIO_2 = alt_read_word(fpga_pio_2);
-    	PIO_3 = alt_read_word(fpga_pio_3);
-    	printf("PIO_0 : %d\t,PIO_1 : %d\t,PIO_2 : %d\t,PIO_3 : %d\n",PIO_0,PIO_1,PIO_2,PIO_3);
-
-    	speed_FL = 2*M_PI*PIO_0/(max*T*ratio);
-    	speed_FR = 2*M_PI*PIO_1/(max*T*ratio);
-    	speed_RL = 2*M_PI*PIO_2/(max*T*ratio);
-    	speed_RR = 2*M_PI*PIO_3/(max*T*ratio);
-    	printf("speed_FL : %f\t,speed_FR : %f\t,speed_RL : %f\t,speed_RR : %f\n",speed_FL,speed_FR,speed_RL,speed_RR);
+    	speed_FL = get_speed(0);
+    	speed_FR = get_speed(1);
+    	speed_RL = get_speed(2);
+    	speed_RR = get_speed(3);
+    	printf("speed_FL : %lf\t,speed_FR : %lf\t,speed_RL : %lf\t,speed_RR : %lf\n",speed_FL,speed_FR,speed_RL,speed_RR);
     	TSKsleep(OS_MS_TO_TICK(250));
     }
+}
+
+double get_speed(int choice){
+	uint32_t PIO;
+	double pio_double;
+	double speed;
+	double ratio = 5.8 * 4;
+	double T = 1.0/2000;
+	double max = 2048;
+	switch (choice) {
+		case 0:
+			PIO = alt_read_word(fpga_pio_0);
+			break;
+		case 1:
+			PIO = alt_read_word(fpga_pio_1);
+			break;
+		case 2:
+			PIO = alt_read_word(fpga_pio_2);
+			break;
+		case 3:
+			PIO = alt_read_word(fpga_pio_3);
+			break;
+	}
+	if(PIO/4294967296.0>=0.5){
+		pio_double = -(4294967296.0 - PIO + 1);
+	} else {
+		pio_double = PIO;
+	}
+	speed = 2*M_PI*pio_double/(max*T*ratio);
+	return speed;
 }

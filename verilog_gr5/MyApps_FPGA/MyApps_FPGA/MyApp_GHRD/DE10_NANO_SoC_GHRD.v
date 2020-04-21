@@ -117,7 +117,7 @@ wire                fpga_clk_50;
 
 // connection of internal logics
 
-assign LED[7: 1] = fpga_led_internal;
+assign LED[7: 0] = fpga_led_internal;
 assign fpga_clk_50 = FPGA_CLK1_50;
 assign stm_hw_events = {{15{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
 
@@ -134,30 +134,44 @@ assign GPIO_1[15] = spi_cs ? 1'bz : spi_miso;  	// MISO = pin 18 = GPIO_13 (DE0-
 // F - front | R - rear
 // L - left  | R - Right
 wire quadA_FL, quadB_FL, quadA_RL, quadB_RL, quadA_FR, quadB_FR, quadA_RR, quadB_RR;
-assign quadA_FL = GPIO_0[17];
-assign quadB_FL = GPIO_0[19];
-assign quadA_RL = GPIO_0[13];
-assign quadB_RL = GPIO_0[15];
-assign quadA_FR = GPIO_0[21];
-assign quadB_FR = GPIO_0[23];
-assign quadA_RR = GPIO_0[11];
-assign quadB_RR = GPIO_0[9];
+assign quadA_FL = GPIO_0[19];
+assign quadB_FL = GPIO_0[21];
+assign quadA_RL = GPIO_0[15];
+assign quadB_RL = GPIO_0[17];
+assign quadA_FR = GPIO_0[23];
+assign quadB_FR = GPIO_0[25];
+assign quadA_RR = GPIO_0[13];
+assign quadB_RR = GPIO_0[11];
+
+
 // Clocks
-wire PLL_CLOCK;
-my_pll pll_clock(CLOCK_50, PLL_CLOCK);
+reg [25: 0] counter1;
+reg clock_reduced;
+always @(posedge fpga_clk_50) begin
+    if (counter1 >= 24999) begin
+        counter1 <= 0;
+        clock_reduced <= ~clock_reduced;
+    end
+    else
+        counter1 <= counter1 + 1'b1;
+end
+
+
+//wire PLL_CLOCK;
+//my_pll pll_clock(fpga_clk_50, PLL_CLOCK);
 
 
 wire [31:0] count_FL, count_RL, count_FR, count_RR;
-quad encoder_FL(CLOCK_50, 1'b0, quadA_FL, quadB_FL, count_FL);
-quad encoder_RL(CLOCK_50, 1'b0, quadA_RL, quadB_RL, count_RL);
-quad encoder_FR(CLOCK_50, 1'b0, quadA_FR, quadB_FR, count_FR);
-quad encoder_RR(CLOCK_50, 1'b0, quadA_RR, quadB_RR, count_RR);
+quad encoder_FL(fpga_clk_50, 1'b0, quadA_FL, quadB_FL, count_FL);
+quad encoder_RL(fpga_clk_50, 1'b0, quadA_RL, quadB_RL, count_RL);
+quad encoder_FR(fpga_clk_50, 1'b0, quadA_FR, quadB_FR, count_FR);
+quad encoder_RR(fpga_clk_50, 1'b0, quadA_RR, quadB_RR, count_RR);
 
 wire [31:0] speed_FL, speed_RL, speed_FR, speed_RR;
-speed speed_counter_FL(PLL_CLOCK, count_FL, speed_FL);
-speed speed_counter_RL(PLL_CLOCK, count_RL, speed_RL);
-speed speed_counter_FR(PLL_CLOCK, count_FR, speed_FR);
-speed speed_counter_RR(PLL_CLOCK, count_RR, speed_RR);
+speed speed_counter_FL(clock_reduced, count_FL, speed_FL);
+speed speed_counter_RL(clock_reduced, count_RL, speed_RL);
+speed speed_counter_FR(clock_reduced, count_FR, speed_FR);
+speed speed_counter_RR(clock_reduced, count_RR, speed_RR);
 
 
 //=======================================================
@@ -256,10 +270,10 @@ soc_system u0(
                .hps_0_f2h_stm_hw_events_stm_hwevents(stm_hw_events),        //  hps_0_f2h_stm_hw_events.stm_hwevents
                .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //  hps_0_f2h_warm_reset_req.reset_n
 					
-					.pio_2_external_connection_export(speed_RR),         //           pio_2_external_connection.export
-					.pio_3_external_connection_export(speed_RL),         //           pio_3_external_connection.export
-					.pio_1_external_connection_export(speed_FR),         //           pio_1_external_connection.export
-					.pio_0_external_connection_export(speed_FL)          //           pio_0_external_connection.export
+					.pio_2_external_connection_export(speed_RL),         		//           pio_2_external_connection.export
+					.pio_3_external_connection_export(speed_RR),         		//           pio_3_external_connection.export
+					.pio_1_external_connection_export(speed_FR),         		//           pio_1_external_connection.export
+					.pio_0_external_connection_export(speed_FL<<2)          	//           pio_0_external_connection.export
            );
 
 // Debounce logic to clean out glitches within 1ms
@@ -323,7 +337,7 @@ always @(posedge fpga_clk_50) begin
         counter <= counter + 1'b1;
 end
 
-assign LED[0] = led_level;
+//assign LED[0] = led_level;
 
 
 endmodule
