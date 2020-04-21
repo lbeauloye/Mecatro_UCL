@@ -270,10 +270,10 @@ soc_system u0(
                .hps_0_f2h_stm_hw_events_stm_hwevents(stm_hw_events),        //  hps_0_f2h_stm_hw_events.stm_hwevents
                .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //  hps_0_f2h_warm_reset_req.reset_n
 					
-					.pio_2_external_connection_export(speed_RR),         //           pio_2_external_connection.export
-					.pio_3_external_connection_export(speed_RL),         //           pio_3_external_connection.export
-					.pio_1_external_connection_export(speed_FR),         //           pio_1_external_connection.export
-					.pio_0_external_connection_export(speed_FL)          //           pio_0_external_connection.export
+					.pio_2_external_connection_export(speed_RL),         		//           pio_2_external_connection.export
+					.pio_3_external_connection_export(speed_RR),         		//           pio_3_external_connection.export
+					.pio_1_external_connection_export(speed_FR),         		//           pio_1_external_connection.export
+					.pio_0_external_connection_export(speed_FL<<2)          	//           pio_0_external_connection.export
            );
 
 // Debounce logic to clean out glitches within 1ms
