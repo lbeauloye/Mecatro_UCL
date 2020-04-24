@@ -77,9 +77,9 @@ TSK_t *Task;
 	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
 	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
     
-	Task = TSKcreate("App CAN", 0, 8192, &Task_LOW_LEVEL, 0);
-    TSKsetCore(Task, 1);
-    TSKresume(Task);
+//	Task = TSKcreate("App CAN", 0, 8192, &Task_LOW_LEVEL, 0);
+//    TSKsetCore(Task, 1);
+//    TSKresume(Task);
 
 //    Task = TSKcreate("Task Mid level", 0, 8192, &Task_MID_LEVEL, 0);
 //	TSKsetCore(Task, 1);

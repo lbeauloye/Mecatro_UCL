@@ -100,6 +100,9 @@
     void *fpga_pio_1 = ALT_LWFPGASLVS_ADDR + PIO_1_BASE;
     void *fpga_pio_2 = ALT_LWFPGASLVS_ADDR + PIO_2_BASE;
     void *fpga_pio_3 = ALT_LWFPGASLVS_ADDR + PIO_3_BASE;
+    void *fpga_x_pos = ALT_LWFPGASLVS_ADDR + X_POS_BASE;
+    void *fpga_y_pos = ALT_LWFPGASLVS_ADDR + Y_POS_BASE;
+    void *fpga_theta = ALT_LWFPGASLVS_ADDR + THETA_BASE;
 
 #else
     extern void *fpga_leds;
@@ -109,6 +112,9 @@
     extern void *fpga_pio_1;
     extern void *fpga_pio_2;
     extern void *fpga_pio_3;
+    extern void *fpga_x_pos;
+    extern void *fpga_y_pos;
+    extern void *fpga_theta;
 #endif
 
 /* ------------------------------------------------------------------------------------------------ */

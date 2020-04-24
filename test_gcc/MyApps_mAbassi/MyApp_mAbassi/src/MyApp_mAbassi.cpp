@@ -73,6 +73,7 @@ void Task_HPS_Led(void)
         }
         toogle_hps_led();
         
+
         TSKsleep(OS_MS_TO_TICK(500));
 	}
 }
@@ -87,6 +88,7 @@ void Task_FPGA_Led(void)
 
 	for( ;; )
 	{
+		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
         leds_mask = alt_read_word(fpga_leds);
         if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
             // rotate leds

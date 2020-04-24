@@ -117,19 +117,9 @@ wire                fpga_clk_50;
 
 // connection of internal logics
 
-assign LED[7: 0] = fpga_led_internal;
+//assign LED[7: 0] = fpga_led_internal;
 assign fpga_clk_50 = FPGA_CLK1_50;
 assign stm_hw_events = {{15{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
-
-// SPI with RaspberryPI
-
-wire 			spi_clk, spi_cs, spi_mosi, spi_miso;
-
-assign spi_clk  		= GPIO_1[13];			// SCLK = pin 16 = GPIO_11 (DE0-Nano ) = GPIO_13 for DE10-Nano
-assign spi_cs   		= GPIO_1[11];			// CE0  = pin 14 = GPIO_9  (DE0-Nano ) = GPIO_11 for DE10-Nano
-assign spi_mosi     	= GPIO_1[17];			// MOSI = pin 20 = GPIO_15 (DE0-Nano ) = GPIO_17 for DE10-Nano
-	
-assign GPIO_1[15] = spi_cs ? 1'bz : spi_miso;  	// MISO = pin 18 = GPIO_13 (DE0-Nano ) = GPIO_15 for DE10-Nano
 
 // F - front | R - rear
 // L - left  | R - Right
@@ -273,8 +263,11 @@ soc_system u0(
 					.pio_2_external_connection_export(speed_RL),         		//           pio_2_external_connection.export
 					.pio_3_external_connection_export(speed_RR),         		//           pio_3_external_connection.export
 					.pio_1_external_connection_export(speed_FR),         		//           pio_1_external_connection.export
-					.pio_0_external_connection_export(speed_FL<<2)          	//           pio_0_external_connection.export
-           );
+					.pio_0_external_connection_export(speed_FL<<2),          	//           pio_0_external_connection.export
+					.x_pos_external_connection_export(x_pos),         //           x_pos_external_connection.export
+					.y_pos_external_connection_export(y_pos),         //           y_pos_external_connection.export
+					.theta_external_connection_export(theta) 
+);
 
 // Debounce logic to clean out glitches within 1ms
 debounce debounce_inst(
@@ -326,18 +319,38 @@ defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
 
 // Alive LED0
 
-reg [25: 0] counter;
-reg led_level;
-always @(posedge fpga_clk_50) begin
-    if (counter >= 24999999) begin
-        counter <= 0;
-        led_level <= ~led_level;
-    end
-    else
-        counter <= counter + 1'b1;
-end
+//reg [25: 0] counter;
+//reg led_level;
+//always @(posedge fpga_clk_50) begin
+//    if (counter >= 24999999) begin
+//        counter <= 0;
+//        led_level <= ~led_level;
+//    end
+//    else
+//        counter <= counter + 1'b1;
+//end
 
 //assign LED[0] = led_level;
 
+// SPI with RaspberryPI
+
+wire 			spi_clk, spi_cs, spi_mosi, SPI_MISO;//spi_miso;
+
+assign spi_clk  		= GPIO_1[13];			// SCLK = pin 16 = GPIO_11 (DE0-Nano ) = GPIO_13 for DE10-Nano
+assign spi_cs   		= GPIO_1[11];			// CE0  = pin 14 = GPIO_9  (DE0-Nano ) = GPIO_11 for DE10-Nano
+assign spi_mosi     	= GPIO_1[17];			// MOSI = pin 20 = GPIO_15 (DE0-Nano ) = GPIO_17 for DE10-Nano
+	
+//assign GPIO_1[15] = spi_cs ? 1'bz : spi_miso;  	// MISO = pin 18 = GPIO_13 (DE0-Nano ) = GPIO_15 for DE10-Nano
+
+wire [31:0] x_pos, y_pos, theta;
+
+spi_slave my_spi(fpga_clk_50,
+	spi_clk,
+	spi_cs,
+	spi_mosi,
+	SPI_MISO,
+	x_pos, y_pos, theta);
+
+assign LED = x_pos[7:0];
 
 endmodule
