@@ -35,6 +35,8 @@ CPP_SRC   += motor_card.cpp
 
 CPP_SRC   += middle_level.cpp
 
+CPP_SRC   += path_planning.cpp
+
 
 CPP_SRC += test.cpp
 CPP_SRC   += MyDriver_CAN.cpp
@@ -67,6 +69,7 @@ CPP_INC   += ../inc/hps_0.h
 
 CPP_INC += ../inc/motor/motor_card.h
 CPP_INC += ../inc/motor/middle_level.h
+CPP_INC += ../inc/motor/path_planning.h
 
 CPP_INC += ../inc/test.h
 
