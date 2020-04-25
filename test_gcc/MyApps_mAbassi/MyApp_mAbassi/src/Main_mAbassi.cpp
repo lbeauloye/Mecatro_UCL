@@ -24,6 +24,7 @@ extern void Task_FPGA_Button(void);
 extern void Task_CAN(void);
 extern void Task_LOW_LEVEL(void);
 extern void Task_MID_LEVEL(void);
+extern void Task_HIGH_LEVEL(void);
 
 /* ------------------------------------------------------------------------------------------------ */
 
@@ -69,11 +70,15 @@ TSK_t *Task;
 /* ------------------------------------------------ */
 /* Application set-up								*/
     
-	Task = TSKcreate("Task FPGA Led", 3, 8192, &Task_FPGA_Led, 0);
-	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
-	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
+//	Task = TSKcreate("Task FPGA Led", 3, 8192, &Task_FPGA_Led, 0);
+//	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
+//	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
+//
+//	Task = TSKcreate("Task FPGA Button", 3, 8192, &Task_FPGA_Button, 0);
+//	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
+//	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
 
-	Task = TSKcreate("Task FPGA Button", 3, 8192, &Task_FPGA_Button, 0);
+	Task = TSKcreate("Task High Level", 1, 8192, &Task_HIGH_LEVEL, 0);
 	TSKsetCore(Task, 1);							/* Create new task, will always run on core #1	*/
 	TSKresume(Task);								/* when BMP (G_OS_MP_TYPE == 4 or 5)			*/
     

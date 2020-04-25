@@ -18,6 +18,8 @@
 #include "motor/motor_card.h"
 #include "motor/middle_level.h"
 
+#include "motor/path_planning.h"
+
 /* ------------------------------------------------------------------------------------------------ */
 /* Define                                                                                           */
 
@@ -126,6 +128,7 @@ void Task_FPGA_Button(void);
 void Task_CAN(void);
 void Task_LOW_LEVEL(void);
 void Task_MID_LEVEL(void);
+void Task_HIGH_LEVEL(void);
 
 void spi_CallbackInterrupt (uint32_t icciar, void *context);
 void button_CallbackInterrupt (uint32_t icciar, void *context);
@@ -144,6 +147,8 @@ double get_speed(int choice);
 #ifdef __cplusplus
 
 static motor_card **motors = (motor_card **) calloc(4, sizeof(motor_card));
+
+static PathPlanning *path_plan;
 //static motor_card motors [4];
 
 #endif
