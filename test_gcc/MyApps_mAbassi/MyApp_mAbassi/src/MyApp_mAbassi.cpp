@@ -147,60 +147,60 @@ void Task_FPGA_Led(void)
     uint32_t leds_mask;
 
     alt_write_word(fpga_leds, 0x01);
-
-//    List *path;
-//    Node *node;
-//    Node *start_path;
-    path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
-
-    	MTXLOCK_STDIO();
-        path_plan->IMAX = 199;
-        path_plan->JMAX = 299;
-
-        path_plan->nbrx_nodes = 200;
-        path_plan->nbry_nodes = 300;
-
-        path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
-        for(int i = 0; i< path_plan->nbrx_nodes; i++){
-            path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
-        }
-        path_plan->last_t = 0.0;
-        path_plan->path_found = 0;
-
-        path_plan->recompute = 1;
-
-        mapping(path_plan);
-
-    	int i_start = 100 + (int)floor((0.8)/0.01);
-    	int j_start = 150 + (int)floor((0.1)/0.01);
-    	int i_goal = 100 + (int)floor((0.8)/0.01);
-    	int j_goal = 150 + (int)floor((1.3)/0.01);
-    	path_plan->start = &(path_plan->Grid[i_start][j_start]);
-    	path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
-
-    	printf("coucou \n");
-
-    	List *path = Astarsearch(path_plan);
-    	if(path){
-    		path_plan->path_found = 1;
-    //		path_plan->path = path;
-    //		path_plan->current = Pop(&path_plan->path);
-    //		path_plan->current = Pop(&path_plan->path);
-    //		path_plan->start_path = 1;
-    		Node *start_path = Pop(&path);
-    		printf("%d, %d \n", start_path->i, start_path->j);
-    		while (path){
-    			Node *node = Pop(&path);
-    			printf("%d, %d \n", node->i, node->j);
-    		}
-    		//path_plan->last_t = inputs->t;
-    	}
-    	else{
-    		path_plan->path_found = 0;
-    	}
-
-    	printf("path found : %d \n", path_plan->path_found);
-    	MTXUNLOCK_STDIO();
+//
+////    List *path;
+////    Node *node;
+////    Node *start_path;
+//    path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
+//
+//    	MTXLOCK_STDIO();
+//        path_plan->IMAX = 199;
+//        path_plan->JMAX = 299;
+//
+//        path_plan->nbrx_nodes = 200;
+//        path_plan->nbry_nodes = 300;
+//
+//        path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
+//        for(int i = 0; i< path_plan->nbrx_nodes; i++){
+//            path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
+//        }
+//        path_plan->last_t = 0.0;
+//        path_plan->path_found = 0;
+//
+//        path_plan->recompute = 1;
+//
+//        mapping(path_plan);
+//
+//    	int i_start = 100 + (int)floor((0.8)/0.01);
+//    	int j_start = 150 + (int)floor((0.1)/0.01);
+//    	int i_goal = 100 + (int)floor((0.8)/0.01);
+//    	int j_goal = 150 + (int)floor((1.3)/0.01);
+//    	path_plan->start = &(path_plan->Grid[i_start][j_start]);
+//    	path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
+//
+//    	printf("coucou \n");
+//
+//    	List *path = Astarsearch(path_plan);
+//    	if(path){
+//    		path_plan->path_found = 1;
+//    //		path_plan->path = path;
+//    //		path_plan->current = Pop(&path_plan->path);
+//    //		path_plan->current = Pop(&path_plan->path);
+//    //		path_plan->start_path = 1;
+//    		Node *start_path = Pop(&path);
+//    		printf("%d, %d \n", start_path->i, start_path->j);
+//    		while (path){
+//    			Node *node = Pop(&path);
+//    			printf("%d, %d \n", node->i, node->j);
+//    		}
+//    		//path_plan->last_t = inputs->t;
+//    	}
+//    	else{
+//    		path_plan->path_found = 0;
+//    	}
+//
+//    	printf("path found : %d \n", path_plan->path_found);
+//    	MTXUNLOCK_STDIO();
 
 	for( ;; )
 	{
@@ -396,6 +396,23 @@ void button_CallbackInterrupt (uint32_t icciar, void *context)
 
 /* ------------------------------------------------------------------------------------------------ */
 
+void actions_CallbackInterrupt (uint32_t icciar, void *context)
+{
+    printf("actions : %d \n",alt_read_word(fpga_actions));
+
+    // Clear the interruptmask of PIO core
+    alt_write_word(fpga_actions + PIOinterruptmask, 0x0);
+
+    // Enable the interruptmask and edge register of PIO core for new interrupt
+    alt_write_word(fpga_actions + PIOinterruptmask, 0xFF);
+    alt_write_word(fpga_actions + PIOedgecapture, 0xFF);
+
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+
 void setup_Interrupt( void )
 {
     // IRQ from Key0 and Key1
@@ -405,6 +422,14 @@ void setup_Interrupt( void )
     // Enable interruptmask and edgecapture of PIO core for buttons 0 and 1
     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
     alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
+
+    // IRQ from Key0 and Key1
+	OSisrInstall(GPT_ACTIONS_IRQ, (void *) &actions_CallbackInterrupt);
+	GICenable(GPT_ACTIONS_IRQ, 128, 1);
+
+	// Enable interruptmask and edgecapture of PIO core for actions
+	alt_write_word(fpga_actions + PIOinterruptmask, 0xFF);
+	alt_write_word(fpga_actions + PIOedgecapture, 0xFF);
 
     // Initialize TXDATA to something (for testing purpose)
     alt_write_word(fpga_spi + SPI_TXDATA, 0x0103070F);

@@ -55,6 +55,8 @@
 // IRQ for the 2 buttons
 #define GPT_BUTTON_IRQ   ALT_INT_INTERRUPT_F2S_FPGA_IRQ0 + BUTTON_PIO_IRQ
 #define GPT_SPI_IRQ      ALT_INT_INTERRUPT_F2S_FPGA_IRQ0 + SPI_RASPBERRYPI_IRQ
+#define GPT_ACTIONS_IRQ  ALT_INT_INTERRUPT_F2S_FPGA_IRQ0 + ACTIONS_PIO_IRQ
+
 
 // PIO Registers
 #define PIOdirection        1*4
@@ -105,6 +107,7 @@
     void *fpga_x_pos = ALT_LWFPGASLVS_ADDR + X_POS_BASE;
     void *fpga_y_pos = ALT_LWFPGASLVS_ADDR + Y_POS_BASE;
     void *fpga_theta = ALT_LWFPGASLVS_ADDR + THETA_BASE;
+    void *fpga_actions = ALT_LWFPGASLVS_ADDR + ACTIONS_PIO_BASE;
 
 #else
     extern void *fpga_leds;
@@ -117,6 +120,7 @@
     extern void *fpga_x_pos;
     extern void *fpga_y_pos;
     extern void *fpga_theta;
+    extern void *fpga_actions;
 #endif
 
 /* ------------------------------------------------------------------------------------------------ */
@@ -132,6 +136,7 @@ void Task_HIGH_LEVEL(void);
 
 void spi_CallbackInterrupt (uint32_t icciar, void *context);
 void button_CallbackInterrupt (uint32_t icciar, void *context);
+void actions_CallbackInterrupt (uint32_t icciar, void *context);
 void setup_Interrupt( void );
 void setup_hps_gpio( void );
 void toogle_hps_led( void );

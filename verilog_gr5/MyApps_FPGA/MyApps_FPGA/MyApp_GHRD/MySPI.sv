@@ -12,7 +12,8 @@ module spi_slave(
 
 //	input  logic [31:0]	speed_FL, speed_RL, speed_FR, speed_RR,
 //	output logic [31:0]	data_out
-	output logic [31:0] x_pos, y_pos, theta
+	output logic [31:0] 	x_pos, y_pos, theta, 
+	output logic [7:0]  	actions
 	
 );
 
@@ -32,11 +33,13 @@ module spi_slave(
 			x_pos <= mosiRAM[4'h1];
 			y_pos <= mosiRAM[4'h2];
 			theta <= mosiRAM[4'h3];
+			actions <= mosiRAM[4'h4];
 		end
 		else begin
 			x_pos <= x_pos;
 			y_pos <= y_pos;
 			theta <= theta;
+			actions <= actions;
 		end
 	end
 	

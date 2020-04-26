@@ -31,7 +31,7 @@
 #define SYSID_QSYS_SPAN 8
 #define SYSID_QSYS_END 0x1007
 #define SYSID_QSYS_ID 2899645186
-#define SYSID_QSYS_TIMESTAMP 1587736139
+#define SYSID_QSYS_TIMESTAMP 1587912900
 
 /*
  * Macros for device 'jtag_uart', class 'altera_avalon_jtag_uart'
@@ -319,6 +319,31 @@
 #define THETA_HAS_TRI 0
 #define THETA_IRQ_TYPE NONE
 #define THETA_RESET_VALUE 0
+
+/*
+ * Macros for device 'actions_pio', class 'altera_avalon_pio'
+ * The macros are prefixed with 'ACTIONS_PIO_'.
+ * The prefix is the slave descriptor.
+ */
+#define ACTIONS_PIO_COMPONENT_TYPE altera_avalon_pio
+#define ACTIONS_PIO_COMPONENT_NAME actions_pio
+#define ACTIONS_PIO_BASE 0x18000
+#define ACTIONS_PIO_SPAN 16
+#define ACTIONS_PIO_END 0x1800f
+#define ACTIONS_PIO_IRQ 4
+#define ACTIONS_PIO_BIT_CLEARING_EDGE_REGISTER 1
+#define ACTIONS_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ACTIONS_PIO_CAPTURE 1
+#define ACTIONS_PIO_DATA_WIDTH 8
+#define ACTIONS_PIO_DO_TEST_BENCH_WIRING 0
+#define ACTIONS_PIO_DRIVEN_SIM_VALUE 0
+#define ACTIONS_PIO_EDGE_TYPE ANY
+#define ACTIONS_PIO_FREQ 50000000
+#define ACTIONS_PIO_HAS_IN 1
+#define ACTIONS_PIO_HAS_OUT 0
+#define ACTIONS_PIO_HAS_TRI 0
+#define ACTIONS_PIO_IRQ_TYPE EDGE
+#define ACTIONS_PIO_RESET_VALUE 0
 
 /*
  * Macros for device 'ILC', class 'interrupt_latency_counter'
