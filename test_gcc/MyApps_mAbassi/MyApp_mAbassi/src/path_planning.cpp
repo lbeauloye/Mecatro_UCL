@@ -363,7 +363,7 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
     }
     path_plan->nbr_nodes_path = count_node;
     // to display cost
-    //printf("g : %f \n", goal->g);
+//    printf("g : %f \n", goal->g);
     return path;
     
 }
@@ -444,7 +444,8 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
                     Grid[i_child][j_child].g = Grid[i][j].g + weight;
                     Grid[i_child][j_child].f = Grid[i_child][j_child].g;
                     free(OpenList);
-                    return findPath(path_plan, Grid, start, goal);
+                    return NULL;//findPath(path_plan, Grid, start, goal);
+//                    break;
                 }
 
 

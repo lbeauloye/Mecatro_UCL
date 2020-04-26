@@ -43,26 +43,26 @@ void Task_HPS_Led(void)
 	motors[2] = new motor_card(0x408,1);//RL
 	motors[0] = new motor_card(0x408,2);//FL
 
-	path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
-
-	MTXLOCK_STDIO();
-    path_plan->IMAX = 199;
-    path_plan->JMAX = 299;
-
-    path_plan->nbrx_nodes = 200;
-    path_plan->nbry_nodes = 300;
-
-    path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
-    for(int i = 0; i< path_plan->nbrx_nodes; i++){
-        path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
-    }
-    path_plan->last_t = 0.0;
-    path_plan->path_found = 0;
-
-    path_plan->recompute = 1;
-
-    mapping(path_plan);
-
+//	path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
+//
+//	MTXLOCK_STDIO();
+//    path_plan->IMAX = 199;
+//    path_plan->JMAX = 299;
+//
+//    path_plan->nbrx_nodes = 200;
+//    path_plan->nbry_nodes = 300;
+//
+//    path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
+//    for(int i = 0; i< path_plan->nbrx_nodes; i++){
+//        path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
+//    }
+//    path_plan->last_t = 0.0;
+//    path_plan->path_found = 0;
+//
+//    path_plan->recompute = 1;
+//
+//    mapping(path_plan);
+//
 //	int i_start = 100 + (int)floor((0.8)/0.01);
 //	int j_start = 150 + (int)floor((0.1)/0.01);
 //	int i_goal = 100 + (int)floor((0.8)/0.01);
@@ -92,7 +92,7 @@ void Task_HPS_Led(void)
 //	}
 //
 //	printf("path found : %d \n", path_plan->path_found);
-	MTXUNLOCK_STDIO();
+//	MTXUNLOCK_STDIO();
 
 	/*
 
@@ -148,8 +148,107 @@ void Task_FPGA_Led(void)
 
     alt_write_word(fpga_leds, 0x01);
 
+//    List *path;
+//    Node *node;
+//    Node *start_path;
+    path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
+
+    	MTXLOCK_STDIO();
+        path_plan->IMAX = 199;
+        path_plan->JMAX = 299;
+
+        path_plan->nbrx_nodes = 200;
+        path_plan->nbry_nodes = 300;
+
+        path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
+        for(int i = 0; i< path_plan->nbrx_nodes; i++){
+            path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
+        }
+        path_plan->last_t = 0.0;
+        path_plan->path_found = 0;
+
+        path_plan->recompute = 1;
+
+        mapping(path_plan);
+
+    	int i_start = 100 + (int)floor((0.8)/0.01);
+    	int j_start = 150 + (int)floor((0.1)/0.01);
+    	int i_goal = 100 + (int)floor((0.8)/0.01);
+    	int j_goal = 150 + (int)floor((1.3)/0.01);
+    	path_plan->start = &(path_plan->Grid[i_start][j_start]);
+    	path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
+
+    	printf("coucou \n");
+
+    	List *path = Astarsearch(path_plan);
+    	if(path){
+    		path_plan->path_found = 1;
+    //		path_plan->path = path;
+    //		path_plan->current = Pop(&path_plan->path);
+    //		path_plan->current = Pop(&path_plan->path);
+    //		path_plan->start_path = 1;
+    		Node *start_path = Pop(&path);
+    		printf("%d, %d \n", start_path->i, start_path->j);
+    		while (path){
+    			Node *node = Pop(&path);
+    			printf("%d, %d \n", node->i, node->j);
+    		}
+    		//path_plan->last_t = inputs->t;
+    	}
+    	else{
+    		path_plan->path_found = 0;
+    	}
+
+    	printf("path found : %d \n", path_plan->path_found);
+    	MTXUNLOCK_STDIO();
+
 	for( ;; )
 	{
+//        if(path_plan->recompute == 1){
+//
+//        			MTXLOCK_STDIO();
+//        			printf("coucou \n");
+//        			int i_start = 100 + (int) alt_read_word(fpga_x_pos);
+//        			int j_start = 150 + (int) alt_read_word(fpga_y_pos);
+//        			int i_goal = 100 + (int)floor((0.8)/0.01);
+//        			int j_goal = 150 + (int)floor((1.3)/0.01);
+//        			path_plan->start = &(path_plan->Grid[i_start][j_start]);
+//        			path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
+//
+//        			printf("coucou \n");
+//
+//        			path = Astarsearch(path_plan);
+//        			if(path){
+//        				path_plan->path_found = 1;
+//        //				path_plan->path = path;
+//        //				path_plan->current = Pop(&path_plan->path);
+//        //				path_plan->current = Pop(&path_plan->path);
+//        //				path_plan->start_path = 1;
+//        				start_path = Pop(&path);
+//        				printf("%d, %d \n", start_path->i, start_path->j);
+//        				while (path){
+//        					node = Pop(&path);
+//        					printf("%d, %d \n", node->i, node->j);
+//        				}
+//        				//path_plan->last_t = inputs->t;
+//        			}
+//        			else{
+//        				path_plan->path_found = 0;
+//        			}
+//
+//        			printf("path found : %d \n", path_plan->path_found);
+//        			path_plan->recompute = 0;
+//
+//        //			for(int i = 0; i< path_plan->nbrx_nodes; i++){
+//        //				        free(path_plan->Grid[i]);
+//        //				    }
+//        //				    free(path_plan->Grid);
+//        //					free(path_plan);
+//        			MTXUNLOCK_STDIO();
+////        			printf("cucu\n");
+////
+//        		}
+
 		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
         leds_mask = alt_read_word(fpga_leds);
         if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
@@ -160,7 +259,8 @@ void Task_FPGA_Led(void)
             leds_mask = 0x1;
         }
         alt_write_word(fpga_leds, leds_mask);
-        
+		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
+
         TSKsleep(OS_MS_TO_TICK(250));
 	}
 }
@@ -194,16 +294,16 @@ void Task_HIGH_LEVEL(void)
 			List *path = Astarsearch(path_plan);
 			if(path){
 				path_plan->path_found = 1;
-		//		path_plan->path = path;
-		//		path_plan->current = Pop(&path_plan->path);
-		//		path_plan->current = Pop(&path_plan->path);
-		//		path_plan->start_path = 1;
-//				Node *start_path = Pop(&path);
-//				printf("%d, %d \n", start_path->i, start_path->j);
-//				while (path){
-//					Node *node = Pop(&path);
-//					printf("%d, %d \n", node->i, node->j);
-//				}
+//				path_plan->path = path;
+//				path_plan->current = Pop(&path_plan->path);
+//				path_plan->current = Pop(&path_plan->path);
+//				path_plan->start_path = 1;
+				Node *start_path = Pop(&path);
+				printf("%d, %d \n", start_path->i, start_path->j);
+				while (path){
+					Node *node = Pop(&path);
+					printf("%d, %d \n", node->i, node->j);
+				}
 				//path_plan->last_t = inputs->t;
 			}
 			else{
@@ -211,7 +311,7 @@ void Task_HIGH_LEVEL(void)
 			}
 
 			printf("path found : %d \n", path_plan->path_found);
-			path_plan->recompute = 0;
+			//path_plan->recompute = 0;
 
 //			for(int i = 0; i< path_plan->nbrx_nodes; i++){
 //				        free(path_plan->Grid[i]);
@@ -219,8 +319,9 @@ void Task_HIGH_LEVEL(void)
 //				    free(path_plan->Grid);
 //					free(path_plan);
 			MTXUNLOCK_STDIO();
+			printf("cucu\n");
 		}
-
+		printf("cucu\n");
 //		}
 //        leds_mask = alt_read_word(fpga_leds);
 //        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
@@ -233,6 +334,7 @@ void Task_HIGH_LEVEL(void)
 //        alt_write_word(fpga_leds, leds_mask);
 
         TSKsleep(OS_MS_TO_TICK(250));
+        printf("cucu\n");
 	}
 }
 
