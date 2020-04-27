@@ -10,7 +10,7 @@ module spi_slave(
 	input  logic 		SPI_MOSI,
 	output logic 		SPI_MISO,
 
-//	input  logic [31:0]	speed_FL, speed_RL, speed_FR, speed_RR,
+	input  logic [31:0]	to_pi, //speed_FL, speed_RL, speed_FR, speed_RR,
 //	output logic [31:0]	data_out
 	output logic [31:0] 	x_pos, y_pos, theta, 
 	output logic [7:0]  	actions
@@ -48,14 +48,14 @@ module spi_slave(
 	logic [31:0] misoRAM_read;		// Data to be sent to the RPi
 
 	assign misoRAM_read = misoRAM[SPI_reg[3:0]];
-//	always_ff @(posedge clk) begin
-//		// wheel data
-//		//misoRAM[4'h0] <= {speed_FL[15:0], speed_RL[15:0]};
-//
-//		// laser data
-//		//misoRAM[4'h1] <= {speed_FR[15:0],  speed_RR[15:0]};
-//
-//	end
+	always_ff @(posedge clk) begin
+		// from HPS data
+		misoRAM[4'h0] <= to_pi[31:0];
+
+		// laser data
+		//misoRAM[4'h1] <= {speed_FR[15:0],  speed_RR[15:0]};
+
+	end
 
 	
 //---SPI Sysnchronization -------------------------------------

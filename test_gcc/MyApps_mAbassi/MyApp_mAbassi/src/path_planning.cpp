@@ -389,10 +389,8 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
         return NULL;
 
     printf("i : %d, j : %d \n", goal->i, goal->j);
-
     if(! isInMap(path_plan, goal->i,goal->j))
         return NULL;
-
     List *OpenList = list_create(start);
 
 
@@ -414,6 +412,7 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
 
     int PossibleChildren[8][2] = {{-1, 0},{1,0},{0,-1},{0,1}, {-1,-1},{-1,1},{1,-1}, {1,1}};
     int node_open = 1;
+
 
     double g, h, f, weight;
     while(node_open != 0){
@@ -444,7 +443,7 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
                     Grid[i_child][j_child].g = Grid[i][j].g + weight;
                     Grid[i_child][j_child].f = Grid[i_child][j_child].g;
                     free(OpenList);
-                    return NULL;//findPath(path_plan, Grid, start, goal);
+                    return findPath(path_plan, Grid, start, goal);
 //                    break;
                 }
 

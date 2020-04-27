@@ -108,6 +108,7 @@
     void *fpga_y_pos = ALT_LWFPGASLVS_ADDR + Y_POS_BASE;
     void *fpga_theta = ALT_LWFPGASLVS_ADDR + THETA_BASE;
     void *fpga_actions = ALT_LWFPGASLVS_ADDR + ACTIONS_PIO_BASE;
+    void *fpga_to_pi = ALT_LWFPGASLVS_ADDR + TO_PI_BASE;
 
 #else
     extern void *fpga_leds;
@@ -121,6 +122,7 @@
     extern void *fpga_y_pos;
     extern void *fpga_theta;
     extern void *fpga_actions;
+    extern void *fpga_to_pi;
 #endif
 
 /* ------------------------------------------------------------------------------------------------ */

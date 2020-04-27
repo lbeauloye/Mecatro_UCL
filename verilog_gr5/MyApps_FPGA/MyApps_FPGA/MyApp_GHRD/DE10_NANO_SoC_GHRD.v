@@ -249,7 +249,7 @@ soc_system u0(
                .dipsw_pio_external_connection_export(SW),                   
                .button_pio_external_connection_export(fpga_debounced_buttons),
                                                                 
-               .spi_raspberrypi_external_connection_MISO(spi_miso),
+               .spi_raspberrypi_external_connection_MISO(SPI_MISO),
                .spi_raspberrypi_external_connection_MOSI(spi_mosi),
                .spi_raspberrypi_external_connection_SCLK(spi_clk),
                .spi_raspberrypi_external_connection_SS_n(spi_cs),           
@@ -260,14 +260,16 @@ soc_system u0(
                .hps_0_f2h_stm_hw_events_stm_hwevents(stm_hw_events),        //  hps_0_f2h_stm_hw_events.stm_hwevents
                .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //  hps_0_f2h_warm_reset_req.reset_n
 					
-					.pio_2_external_connection_export(speed_RL),         		//           pio_2_external_connection.export
-					.pio_3_external_connection_export(speed_RR),         		//           pio_3_external_connection.export
-					.pio_1_external_connection_export(speed_FR),         		//           pio_1_external_connection.export
+					.pio_2_external_connection_export(speed_RL),         			//           pio_2_external_connection.export
+					.pio_3_external_connection_export(speed_RR),         			//           pio_3_external_connection.export
+					.pio_1_external_connection_export(speed_FR),         			//           pio_1_external_connection.export
 					.pio_0_external_connection_export(speed_FL<<2),          	//           pio_0_external_connection.export
-					.x_pos_external_connection_export(x_pos),         //           x_pos_external_connection.export
-					.y_pos_external_connection_export(y_pos),         //           y_pos_external_connection.export
-					.theta_external_connection_export(theta),
-					.actions_pio_external_connection_export(actions)    //     actions_pio_external_connection.export
+					.x_pos_external_connection_export(x_pos),         				//           x_pos_external_connection.export
+					.y_pos_external_connection_export(y_pos),         				//           y_pos_external_connection.export
+					.theta_external_connection_export(theta),							//           theta_external_connection.export
+					.actions_pio_external_connection_export(actions),    			//     		 actions_pio_external_connection.export
+					.to_pi_external_connection_export(to_pi)          				//       	 to_pi_external_connection.export
+
 );
 
 // Debounce logic to clean out glitches within 1ms
@@ -335,24 +337,26 @@ defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
 
 // SPI with RaspberryPI
 
-wire 			spi_clk, spi_cs, spi_mosi, SPI_MISO;//spi_miso;
+wire 			spi_clk, spi_cs, spi_mosi, spi_miso, SPI_MISO;
 
 assign spi_clk  		= GPIO_1[13];			// SCLK = pin 16 = GPIO_11 (DE0-Nano ) = GPIO_13 for DE10-Nano
 assign spi_cs   		= GPIO_1[11];			// CE0  = pin 14 = GPIO_9  (DE0-Nano ) = GPIO_11 for DE10-Nano
 assign spi_mosi     	= GPIO_1[17];			// MOSI = pin 20 = GPIO_15 (DE0-Nano ) = GPIO_17 for DE10-Nano
 	
-//assign GPIO_1[15] = spi_cs ? 1'bz : spi_miso;  	// MISO = pin 18 = GPIO_13 (DE0-Nano ) = GPIO_15 for DE10-Nano
+assign GPIO_1[15] = spi_cs ? 1'bz : spi_miso;  	// MISO = pin 18 = GPIO_13 (DE0-Nano ) = GPIO_15 for DE10-Nano
 
 wire [31:0] x_pos, y_pos, theta;
 wire [7:0] actions;
+wire [31:0] to_pi;
 
 spi_slave my_spi(fpga_clk_50,
 	spi_clk,
 	spi_cs,
 	spi_mosi,
-	SPI_MISO,
+	spi_miso,
+	to_pi,
 	x_pos, y_pos, theta, actions);
 
-assign LED = actions;
+assign LED = to_pi;
 
 endmodule

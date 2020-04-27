@@ -31,7 +31,7 @@
 #define SYSID_QSYS_SPAN 8
 #define SYSID_QSYS_END 0x1007
 #define SYSID_QSYS_ID 2899645186
-#define SYSID_QSYS_TIMESTAMP 1587912900
+#define SYSID_QSYS_TIMESTAMP 1587980641
 
 /*
  * Macros for device 'jtag_uart', class 'altera_avalon_jtag_uart'
@@ -344,6 +344,30 @@
 #define ACTIONS_PIO_HAS_TRI 0
 #define ACTIONS_PIO_IRQ_TYPE EDGE
 #define ACTIONS_PIO_RESET_VALUE 0
+
+/*
+ * Macros for device 'to_pi', class 'altera_avalon_pio'
+ * The macros are prefixed with 'TO_PI_'.
+ * The prefix is the slave descriptor.
+ */
+#define TO_PI_COMPONENT_TYPE altera_avalon_pio
+#define TO_PI_COMPONENT_NAME to_pi
+#define TO_PI_BASE 0x19000
+#define TO_PI_SPAN 16
+#define TO_PI_END 0x1900f
+#define TO_PI_BIT_CLEARING_EDGE_REGISTER 0
+#define TO_PI_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define TO_PI_CAPTURE 0
+#define TO_PI_DATA_WIDTH 32
+#define TO_PI_DO_TEST_BENCH_WIRING 0
+#define TO_PI_DRIVEN_SIM_VALUE 0
+#define TO_PI_EDGE_TYPE NONE
+#define TO_PI_FREQ 50000000
+#define TO_PI_HAS_IN 0
+#define TO_PI_HAS_OUT 1
+#define TO_PI_HAS_TRI 0
+#define TO_PI_IRQ_TYPE NONE
+#define TO_PI_RESET_VALUE 0
 
 /*
  * Macros for device 'ILC', class 'interrupt_latency_counter'
