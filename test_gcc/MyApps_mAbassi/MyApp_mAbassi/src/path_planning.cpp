@@ -383,12 +383,13 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
 
 
 
-    printf("i : %d, j : %d \n", start->i, start->j);
+
+//    printf("i : %d, j : %d \n", start->i, start->j);
 
     if(! isInMap(path_plan, start->i,start->j))
         return NULL;
 
-    printf("i : %d, j : %d \n", goal->i, goal->j);
+//    printf("i : %d, j : %d \n", goal->i, goal->j);
     if(! isInMap(path_plan, goal->i,goal->j))
         return NULL;
     List *OpenList = list_create(start);
@@ -397,8 +398,15 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
     int ClosedList[nbrx_nodes][nbry_nodes] ;
     for (int i = 0; i < nbrx_nodes; i++)
     {
-        for (int j = 0; j < nbry_nodes; j++)
-            ClosedList[i][j] = 0;
+        for (int j = 0; j < nbry_nodes; j++){
+				ClosedList[i][j] = 0;
+				Grid[i][j].f = W_MAX;
+				Grid[i][j].g = W_MAX;
+				Grid[i][j].h = W_MAX;
+				Grid[i][j].parent_x = -1;
+				Grid[i][j].parent_y = -1;
+
+        }
     }
 
     int i_start = start->i;
@@ -421,24 +429,24 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
         int i = current->i;
         int j = current->j;
 
-        //printf("i : %d, j : %d \n", i, j);
+//        printf("i : %d, j : %d \n", i, j);
 
         ClosedList[i][j] = 1;
 
         for(int k = 0; k<8 ;k++){
             int i_child = i + PossibleChildren[k][0];
             int j_child = j + PossibleChildren[k][1];
-
+//            printf("i : %d, j : %d \n", i_child, j_child);
             if(isInMap(path_plan,i_child,j_child)){
 
                 if(isGoal(i_child,j_child, goal)){
                     Grid[i_child][j_child].parent_x = i;
                     Grid[i_child][j_child].parent_y = j;
                     if(k > 3){
-						weight = sqrt(2.0) * 0.01;
+						weight = sqrt(2.0) * 0.1;
 					}
 					else{
-						weight = 1.0 * 0.01;
+						weight = 1.0 * 0.1;
 					}
                     Grid[i_child][j_child].g = Grid[i][j].g + weight;
                     Grid[i_child][j_child].f = Grid[i_child][j_child].g;
@@ -450,13 +458,13 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
 
                 else if((ClosedList[i_child][j_child] != 1) && (! isObstacle(&Grid[i_child][j_child]))){
                     if(k > 3){
-                        weight = sqrt(2.0) * 0.01;
+                        weight = sqrt(2.0) * 0.1;
                     }
                     else{
-                        weight = 1.0 * 0.01;
+                        weight = 1.0 * 0.1;
                     }
                     g = Grid[i][j].g + weight;
-                    h = h_function_manh(goal, &Grid[i_child][j_child]);
+                    h = h_function_eucl(goal, &Grid[i_child][j_child]);
                     f  = g + h;
                     if((Grid[i_child][j_child].f == W_MAX) || (f < Grid[i_child][j_child].f)){
                         Grid[i_child][j_child].f = f;
@@ -465,6 +473,7 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
                         Grid[i_child][j_child].parent_x = i;
                         Grid[i_child][j_child].parent_y = j;
                         //                        OpenList = list_append(OpenList, &Grid[i_child][j_child]);
+
                         list_append_lowest_f(&OpenList, &Grid[i_child][j_child]);
                         //                        Push(&OpenList, &Grid[i_child][j_child]);
                         node_open = node_open + 1;

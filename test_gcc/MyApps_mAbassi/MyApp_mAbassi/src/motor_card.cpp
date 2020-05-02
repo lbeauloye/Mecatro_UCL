@@ -136,6 +136,10 @@ void motor_card::set_old_speed(double speed){
     //printf("Previous speed = %f \n",speed);
 }
 
+int motor_card::get_speed_command(){
+	return (int)this->speed_command;
+}
+
 void motor_card::set_deltaT(double deltaT){
 	this->deltaT=deltaT;
 }
@@ -143,7 +147,7 @@ void motor_card::set_deltaT(double deltaT){
 void motor_card::set_speed(){
     // Error on speed
 //	printf("wheel speed : %f \n",this->wheel_speed);
-//	printf("speed : %f \n",this->speed_command);
+	printf("speed : %f \n",this->speed_command);
 
     double err_w = (this->speed_command - this->wheel_speed)* this->gearbox;
 
@@ -159,7 +163,7 @@ void motor_card::set_speed(){
     this->saturation = - v;
 
     // Limit on current + adding back emf
-    v = limit(v, this->limitI) + this->khpi * this->wheel_speed * this->gearbox; // ajout this->gearbox
+    v = limit(v, this->limitI) + this->khpi * this->wheel_speed; // ajout this->gearbox
     // Compute saturation
     this->saturation += v;
 
@@ -183,6 +187,8 @@ double limit(double val, double limit){
 	}
 	return val;
 }
+
+
 
 /*
 string int_to_hex(int a){

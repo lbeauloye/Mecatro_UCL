@@ -43,25 +43,27 @@ void Task_HPS_Led(void)
 	motors[2] = new motor_card(0x408,1);//RL
 	motors[0] = new motor_card(0x408,2);//FL
 
-	path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
-
-	MTXLOCK_STDIO();
-    path_plan->IMAX = 199;
-    path_plan->JMAX = 299;
-
-    path_plan->nbrx_nodes = 200;
-    path_plan->nbry_nodes = 300;
-
-    path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
-    for(int i = 0; i< path_plan->nbrx_nodes; i++){
-        path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
-    }
-    path_plan->last_t = 0.0;
-    path_plan->path_found = 0;
-
-    path_plan->recompute = 1;
-
-    mapping(path_plan);
+//	path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
+//
+//	MTXLOCK_STDIO();
+//    path_plan->IMAX = 199;
+//    path_plan->JMAX = 299;
+//
+//    path_plan->nbrx_nodes = 20;
+//    path_plan->nbry_nodes = 30;
+//
+//    path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
+//    for(int i = 0; i< path_plan->nbrx_nodes; i++){
+//        path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
+//    }
+//    path_plan->last_t = 0.0;
+//    path_plan->path_found = 0;
+//
+//    path_plan->recompute = 1;
+//
+//    mapping(path_plan);
+//
+//    printf("value : %d\n",path_plan->Grid[i_start][j_start].i);
 //
 //	int i_start = 100 + (int)floor((0.8)/0.01);
 //	int j_start = 150 + (int)floor((0.1)/0.01);
@@ -92,7 +94,7 @@ void Task_HPS_Led(void)
 //	}
 //
 //	printf("path found : %d \n", path_plan->path_found);
-	MTXUNLOCK_STDIO();
+//	MTXUNLOCK_STDIO();
 
 	/*
 
@@ -249,8 +251,7 @@ void Task_FPGA_Led(void)
 ////
 //        		}
 
-		alt_write_word(fpga_to_pi, 18);
-//		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
+		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
         leds_mask = alt_read_word(fpga_leds);
         if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
             // rotate leds
@@ -260,7 +261,7 @@ void Task_FPGA_Led(void)
             leds_mask = 0x1;
         }
         alt_write_word(fpga_leds, leds_mask);
-//		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
+		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
 
         TSKsleep(OS_MS_TO_TICK(250));
 	}
@@ -271,49 +272,77 @@ void Task_HIGH_LEVEL(void)
 {
     //uint32_t leds_mask;
 
-//    alt_write_word(fpga_x_pos, 80);
-//    alt_write_word(fpga_y_pos, 10);
+    //alt_write_word(fpga_x_pos, 80);
+    //alt_write_word(fpga_y_pos, 10);
+    double dif_x, dif_y;
+    speed_x = 0.0;
+    speed_y = 0.0;
+    path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
+
+    double xsi_in[3];
+	double speed[4];
+	double xsi[3];
+	double b = 0.3;
+
+	MTXLOCK_STDIO();
+	path_plan->IMAX = 199;
+	path_plan->JMAX = 299;
+
+	path_plan->nbrx_nodes = 20;
+	path_plan->nbry_nodes = 30;
+
+	path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
+	for(int i = 0; i< path_plan->nbrx_nodes; i++){
+		path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
+	}
+	path_plan->last_t = 0.0;
+	path_plan->path_found = 0;
+
+	path_plan->recompute = 1;
+
+	mapping(path_plan);
+
+	printf("value : %d\n",path_plan->Grid[10][15].i);
+	MTXUNLOCK_STDIO();
 
 	for( ;; )
 	{
-		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
+		//printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
+
 
 		if(path_plan->recompute == 1){
 
 			MTXLOCK_STDIO();
-//			printf("coucou \n");
-			int i_start = 100 + (int) alt_read_word(fpga_x_pos);
-			int j_start = 150 + (int) alt_read_word(fpga_y_pos);
-			int i_goal = 100 + (int)floor((0.8)/0.01);
-			int j_goal = 150 + (int)floor((1.3)/0.01);
+			int i_start = 10 + (int) alt_read_word(fpga_x_pos);
+			int j_start = 15 + (int) alt_read_word(fpga_y_pos);
+			int i_goal = 10 + (int)floor((0.5)/0.1);
+			int j_goal = 15 + (int)floor((1.2)/0.1);
 			path_plan->start = &(path_plan->Grid[i_start][j_start]);
 			path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
 
-			printf("coucou1 \n");
+
 
 			List *path = Astarsearch(path_plan);
-
-			printf("coucou2 \n");
-
 			if(path){
 				path_plan->path_found = 1;
-//				path_plan->path = path;
-//				path_plan->current = Pop(&path_plan->path);
-//				path_plan->current = Pop(&path_plan->path);
-//				path_plan->start_path = 1;
-				Node *start_path = Pop(&path);
-				printf("%d, %d \n", start_path->i, start_path->j);
-				while (path){
-					Node *node = Pop(&path);
-					printf("%d, %d \n", node->i, node->j);
-				}
+				path_plan->path = path;
+				path_plan->current = Pop(&path_plan->path);
+				path_plan->current = Pop(&path_plan->path);
+				path_plan->start_path = 1;
+
+//				Node *start_path = Pop(&path);
+//				printf("%d, %d \n", start_path->i, start_path->j);
+//				while (path){
+//					Node *node = Pop(&path);
+//					printf("%d, %d \n", node->i, node->j);
+//				}
 				//path_plan->last_t = inputs->t;
 			}
 			else{
 				path_plan->path_found = 0;
 			}
 
-			printf("path found : %d \n", path_plan->path_found);
+//			printf("path found : %d \n", path_plan->path_found);
 			path_plan->recompute = 0;
 
 //			for(int i = 0; i< path_plan->nbrx_nodes; i++){
@@ -322,9 +351,69 @@ void Task_HIGH_LEVEL(void)
 //				    free(path_plan->Grid);
 //					free(path_plan);
 			MTXUNLOCK_STDIO();
-			printf("cucu\n");
 		}
-//		printf("cucu\n");
+
+		if(path_plan->nbr_nodes_path > 0){
+				dif_x = alt_read_word(fpga_x_pos) - path_plan->current->position_x*10;
+				dif_y = alt_read_word(fpga_y_pos) - path_plan->current->position_y*10;
+
+				printf("posss_x : %f, posss_y : %f\n",dif_x,dif_y);
+
+				printf("pos_x : %f, pos_y : %f\n",path_plan->current->position_x*10,path_plan->current->position_y*10);
+		        if(fabs(dif_x) <= 1 && fabs(dif_y) <= 1){
+
+		            // if opponent on the path -> recompute
+		            // if last node
+		            if(path_plan->nbr_nodes_path == 1){
+		                path_plan->nbr_nodes_path -= 1;
+		            }
+		            // if too far from position -> recompute
+
+		            else{
+		                path_plan->current = Pop(&path_plan->path);
+		                path_plan->nbr_nodes_path -= 1;
+		            }
+		        }
+
+		        if(dif_x>0){
+					speed_x = b;
+				}
+				else if(dif_x<0){
+					speed_x = -b;
+				}
+				else{
+					speed_x = 0.0;
+				}
+		        if(dif_y>0){
+					speed_y = b;
+				}
+				else if(dif_y<0){
+					speed_y = -b;
+				}
+				else{
+					speed_y = 0.0;
+				}
+
+		    }
+		    else{
+		        printf("On goal \n");
+		        speed_x = 0.0;
+		        speed_y = 0.0;
+		    }
+
+
+//		printf("v_x : %f, v_y: %f\n",speed_x, speed_y);
+		xsi_in[0] = speed_x;
+		xsi_in[1] = speed_y;
+		xsi_in[2] = 0.0;
+		compute_local_velocities(xsi_in, 0.0 , xsi);
+		compute_motor_velocities(xsi, speed);
+		for(int i = 0; i<4 ; i++){
+	//		printf("speed [%d]: %f\t",i,speed[i]);
+			motors[i]->set_command(speed[i]);
+		}
+
+
 //		}
 //        leds_mask = alt_read_word(fpga_leds);
 //        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
@@ -336,7 +425,8 @@ void Task_HIGH_LEVEL(void)
 //        }
 //        alt_write_word(fpga_leds, leds_mask);
 
-        TSKsleep(OS_MS_TO_TICK(250));
+//        TSKsleep(OS_MS_TO_TICK(250));
+//		  TSKselfSusp();
 //        printf("cucu\n");
 	}
 }
@@ -426,13 +516,13 @@ void setup_Interrupt( void )
     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
     alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
 
-    // IRQ from Key0 and Key1
-	OSisrInstall(GPT_ACTIONS_IRQ, (void *) &actions_CallbackInterrupt);
-	GICenable(GPT_ACTIONS_IRQ, 128, 1);
-
-	// Enable interruptmask and edgecapture of PIO core for actions
-	alt_write_word(fpga_actions + PIOinterruptmask, 0xFF);
-	alt_write_word(fpga_actions + PIOedgecapture, 0xFF);
+//    // IRQ from Key0 and Key1
+//	OSisrInstall(GPT_ACTIONS_IRQ, (void *) &actions_CallbackInterrupt);
+//	GICenable(GPT_ACTIONS_IRQ, 128, 1);
+//
+//	// Enable interruptmask and edgecapture of PIO core for actions
+//	alt_write_word(fpga_actions + PIOinterruptmask, 0xFF);
+//	alt_write_word(fpga_actions + PIOedgecapture, 0xFF);
 
     // Initialize TXDATA to something (for testing purpose)
     alt_write_word(fpga_spi + SPI_TXDATA, 0x0103070F);
@@ -510,7 +600,7 @@ void Task_LOW_LEVEL(void)
 //    for(i = 0; i<4 ; i++){
 //    	motors[i]->set_command(30);
 //    }
-    double xsi_in[3] = {0.0, 0.0, 2.0};
+    double xsi_in[3] = {0.0, 0.0, 0.0};
 	double speed[4];
 	double xsi[3];
 	compute_local_velocities(xsi_in, 0.0 , xsi);
@@ -537,7 +627,7 @@ void Task_LOW_LEVEL(void)
 //	motors[2]->set_voltage(10);
 //	motors[3]->set_voltage(20);
 
-    double kp = 0.03; //0.035;
+    double kp = 0.005; //0.035;
     double ki = 0.01;
 
     motors[0]->set_kp(kp);
@@ -553,24 +643,58 @@ void Task_LOW_LEVEL(void)
     double Tick1 = G_OStimCnt;
     double Tick2 = G_OStimCnt;
     double Tick3 = G_OStimCnt;
-
+    counter = 0;
+    double a = 10;
     for( ;; )
     {
     	printf("speed_0 : %f,\tspeed_1 : %f,\tspeed_2 : %f,\tspeed_3 : %f,\t \n", get_speed(0),get_speed(1),get_speed(2),get_speed(3));
+    	alt_write_word(fpga_to_pi, motors[3]->get_speed_command());
+//    	printf("SPEED : %d \n",motors[3]->get_speed_command());
+    	printf("speed_x : %f, \t speed_y : %f\t\n", speed_x, speed_y);
+//    	for(int j = 0; j<4 ; j++){
+//    	//		printf("speed [%d]: %f\t",i,speed[i]);
+//    		if (counter == 200){
+//        		if (j==1)
+//        			motors[j]->set_command(motors[j]->get_speed_command()-a);
+//        		else
+//        			motors[j]->set_command(motors[j]->get_speed_command()+a);
+//    		}
+//    		else if(counter == 400){
+//    			if (j==1)
+//					motors[j]->set_command(motors[j]->get_speed_command()+a/2);
+//				else
+//					motors[j]->set_command(motors[j]->get_speed_command()-a/2);
+//    		}
+//    		else if (counter == 800){
+//    			if (j==1)
+//					motors[j]->set_command(motors[j]->get_speed_command()+a/2);
+//				else
+//    			if(j==3){
+//					counter = 0;
+//				}
+//    		}
+//    	}
+//    	counter++;
+//		printf("counter : %d\n", counter);
+
 
     	motors[0]->set_old_speed(get_speed(0));
+    	printf("G_OS : %d\n",G_OStimCnt);
+    	printf("OS_MS_TO_TICK : %d \n",OS_MS_TO_TICK(4));
+    	printf("OS_TIMER : %f \n", OS_TIMER_US*(G_OStimCnt-Tick0));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick0))/1000000;
 		motors[0]->set_deltaT(time);
 		motors[0]->set_speed();
+		printf("time : %f \n",time);
 		Tick0 = G_OStimCnt;
-		TSKsleep(OS_MS_TO_TICK(4));
+//		TSKsleep(OS_\MS_TO_TICK(4));
 
     	motors[1]->set_old_speed(get_speed(1));
     	time = (OS_TIMER_US*(G_OStimCnt-Tick1))/1000000;
     	motors[1]->set_deltaT(time);
     	motors[1]->set_speed();
     	Tick1 = G_OStimCnt;
-		TSKsleep(OS_MS_TO_TICK(4));
+//		TSKsleep(OS_MS_TO_TICK(4));
 
 
     	motors[2]->set_old_speed(get_speed(2));
@@ -578,7 +702,7 @@ void Task_LOW_LEVEL(void)
 		motors[2]->set_deltaT(time);
 		motors[2]->set_speed();
 		Tick2 = G_OStimCnt;
-		TSKsleep(OS_MS_TO_TICK(4));
+//		TSKsleep(OS_MS_TO_TICK(4));
 
 		motors[3]->set_old_speed(get_speed(3));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick3))/1000000;

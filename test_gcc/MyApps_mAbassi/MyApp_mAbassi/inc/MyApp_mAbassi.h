@@ -149,6 +149,8 @@ double get_speed(int choice);
 //}
 //#endif
 
+static double speed_x, speed_y;
+static int counter;
 
 
 #ifdef __cplusplus
