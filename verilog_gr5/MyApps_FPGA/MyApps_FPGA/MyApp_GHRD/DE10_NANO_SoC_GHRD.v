@@ -268,8 +268,9 @@ soc_system u0(
 					.y_pos_external_connection_export(y_pos),         				//           y_pos_external_connection.export
 					.theta_external_connection_export(theta),							//           theta_external_connection.export
 					.actions_pio_external_connection_export(actions),    			//     		 actions_pio_external_connection.export
-					.to_pi_external_connection_export(to_pi)          				//       	 to_pi_external_connection.export
-
+					.to_pi_external_connection_export(to_pi),         				//       	 to_pi_external_connection.export
+					.adv_x_external_connection_export(adv_x),         				//           adv_x_external_connection.export
+					.adv_y_external_connection_export(adv_y)          				//           adv_y_external_connection.export
 );
 
 // Debounce logic to clean out glitches within 1ms
@@ -345,7 +346,7 @@ assign spi_mosi     	= GPIO_1[17];			// MOSI = pin 20 = GPIO_15 (DE0-Nano ) = GP
 	
 assign GPIO_1[15] = spi_cs ? 1'bz : spi_miso;  	// MISO = pin 18 = GPIO_13 (DE0-Nano ) = GPIO_15 for DE10-Nano
 
-wire [31:0] x_pos, y_pos, theta;
+wire [31:0] x_pos, y_pos, theta, adv_x, adv_y;
 wire [7:0] actions;
 wire [31:0] to_pi;
 
@@ -355,7 +356,7 @@ spi_slave my_spi(fpga_clk_50,
 	spi_mosi,
 	spi_miso,
 	to_pi, speed_FR, speed_RR,
-	x_pos, y_pos, theta, actions);
+	x_pos, y_pos, adv_x, adv_y, theta, actions);
 
 assign LED = to_pi;
 

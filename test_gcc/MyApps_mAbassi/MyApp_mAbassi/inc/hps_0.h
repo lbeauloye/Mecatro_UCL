@@ -31,7 +31,7 @@
 #define SYSID_QSYS_SPAN 8
 #define SYSID_QSYS_END 0x1007
 #define SYSID_QSYS_ID 2899645186
-#define SYSID_QSYS_TIMESTAMP 1587980641
+#define SYSID_QSYS_TIMESTAMP 1588675444
 
 /*
  * Macros for device 'jtag_uart', class 'altera_avalon_jtag_uart'
@@ -368,6 +368,54 @@
 #define TO_PI_HAS_TRI 0
 #define TO_PI_IRQ_TYPE NONE
 #define TO_PI_RESET_VALUE 0
+
+/*
+ * Macros for device 'adv_x', class 'altera_avalon_pio'
+ * The macros are prefixed with 'ADV_X_'.
+ * The prefix is the slave descriptor.
+ */
+#define ADV_X_COMPONENT_TYPE altera_avalon_pio
+#define ADV_X_COMPONENT_NAME adv_x
+#define ADV_X_BASE 0x21000
+#define ADV_X_SPAN 16
+#define ADV_X_END 0x2100f
+#define ADV_X_BIT_CLEARING_EDGE_REGISTER 0
+#define ADV_X_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ADV_X_CAPTURE 0
+#define ADV_X_DATA_WIDTH 32
+#define ADV_X_DO_TEST_BENCH_WIRING 0
+#define ADV_X_DRIVEN_SIM_VALUE 0
+#define ADV_X_EDGE_TYPE NONE
+#define ADV_X_FREQ 50000000
+#define ADV_X_HAS_IN 1
+#define ADV_X_HAS_OUT 0
+#define ADV_X_HAS_TRI 0
+#define ADV_X_IRQ_TYPE NONE
+#define ADV_X_RESET_VALUE 0
+
+/*
+ * Macros for device 'adv_y', class 'altera_avalon_pio'
+ * The macros are prefixed with 'ADV_Y_'.
+ * The prefix is the slave descriptor.
+ */
+#define ADV_Y_COMPONENT_TYPE altera_avalon_pio
+#define ADV_Y_COMPONENT_NAME adv_y
+#define ADV_Y_BASE 0x22000
+#define ADV_Y_SPAN 16
+#define ADV_Y_END 0x2200f
+#define ADV_Y_BIT_CLEARING_EDGE_REGISTER 0
+#define ADV_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ADV_Y_CAPTURE 0
+#define ADV_Y_DATA_WIDTH 32
+#define ADV_Y_DO_TEST_BENCH_WIRING 0
+#define ADV_Y_DRIVEN_SIM_VALUE 0
+#define ADV_Y_EDGE_TYPE NONE
+#define ADV_Y_FREQ 50000000
+#define ADV_Y_HAS_IN 1
+#define ADV_Y_HAS_OUT 0
+#define ADV_Y_HAS_TRI 0
+#define ADV_Y_IRQ_TYPE NONE
+#define ADV_Y_RESET_VALUE 0
 
 /*
  * Macros for device 'ILC', class 'interrupt_latency_counter'

@@ -276,7 +276,8 @@ void Task_FPGA_Led(void)
 //        		}
 
 		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",get_neg(alt_read_word(fpga_x_pos)),get_neg(alt_read_word(fpga_y_pos)),get_neg(alt_read_word(fpga_theta)));
-//
+
+		printf("adv_x : %d,\t adv_y : %d \n",get_neg(alt_read_word(fpga_adv_x)),get_neg(alt_read_word(fpga_adv_y)));
 //        leds_mask = alt_read_word(fpga_leds);
 //        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
 //            // rotate leds
@@ -942,7 +943,7 @@ double get_speed(int choice){
 			break;
 	}
 	if(PIO/4294967296.0>=0.5){
-		pio_double = -(4294967296.0 - PIO + 1);
+		pio_double = -(4294967296.0 - PIO + 1); // LE PLUS 1 EST NECESSAIRE ICI???
 	} else {
 		pio_double = PIO;
 	}
@@ -953,7 +954,7 @@ double get_speed(int choice){
 int get_neg(int uns){
 	int negat;
 	if(uns/65536.0>=0.5){
-		negat = -(65536 - uns + 1);
+		negat = -(65536 - uns);
 	} else {
 		negat = uns;
 	}
