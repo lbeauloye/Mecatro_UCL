@@ -43,6 +43,29 @@ void Task_HPS_Led(void)
 	motors[2] = new motor_card(0x408,1);//RL
 	motors[0] = new motor_card(0x408,2);//FL
 
+//    path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
+//
+//	MTXLOCK_STDIO();
+//	path_plan->IMAX = 199;
+//	path_plan->JMAX = 299;
+//
+//	path_plan->nbrx_nodes = 8;
+//	path_plan->nbry_nodes = 17;
+//
+//	path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
+//	for(int i = 0; i< path_plan->nbrx_nodes; i++){
+//		path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
+//	}
+//	path_plan->last_t = 0.0;
+//	path_plan->path_found = 0;
+//
+//	path_plan->recompute = 1;
+//
+//	mapping(path_plan);
+//
+////	printf("value : %d\n",path_plan->Grid[4][8].i);
+//	MTXUNLOCK_STDIO();
+
 //	path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
 //
 //	MTXLOCK_STDIO();
@@ -106,6 +129,7 @@ void Task_HPS_Led(void)
 
 	*/
 
+
     MBX_t    *PrtMbx;
     intptr_t PtrMsg;
     SEM_t    *PtrSem = SEMopen("SemSetup");
@@ -121,7 +145,7 @@ void Task_HPS_Led(void)
     printf("\n\nDE10-Nano - MyApp_mAbassi\n\n");
     printf("Task_HPS_Led running on core #%d\n\n", COREgetID());
 
-    printf("salut salut %d\n",Test_func(5));
+//    printf("salut salut %d\n",Test_func(5));
 
 
     MTXUNLOCK_STDIO();
@@ -251,17 +275,18 @@ void Task_FPGA_Led(void)
 ////
 //        		}
 
-		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
-        leds_mask = alt_read_word(fpga_leds);
-        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
-            // rotate leds
-            leds_mask <<= 1;
-        } else {
-            // reset leds
-            leds_mask = 0x1;
-        }
-        alt_write_word(fpga_leds, leds_mask);
-		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
+		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",get_neg(alt_read_word(fpga_x_pos)),get_neg(alt_read_word(fpga_y_pos)),get_neg(alt_read_word(fpga_theta)));
+//
+//        leds_mask = alt_read_word(fpga_leds);
+//        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
+//            // rotate leds
+//            leds_mask <<= 1;
+//        } else {
+//            // reset leds
+//            leds_mask = 0x1;
+//        }
+//        alt_write_word(fpga_leds, leds_mask);
+//		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
 
         TSKsleep(OS_MS_TO_TICK(250));
 	}
@@ -282,14 +307,14 @@ void Task_HIGH_LEVEL(void)
     double xsi_in[3];
 	double speed[4];
 	double xsi[3];
-	double b = 0.3;
-
+	double b = 0.1;
+//
 	MTXLOCK_STDIO();
 	path_plan->IMAX = 199;
 	path_plan->JMAX = 299;
 
-	path_plan->nbrx_nodes = 20;
-	path_plan->nbry_nodes = 30;
+	path_plan->nbrx_nodes = 8;
+	path_plan->nbry_nodes = 17;
 
 	path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
 	for(int i = 0; i< path_plan->nbrx_nodes; i++){
@@ -301,24 +326,29 @@ void Task_HIGH_LEVEL(void)
 	path_plan->recompute = 1;
 
 	mapping(path_plan);
-
-	printf("value : %d\n",path_plan->Grid[10][15].i);
+//
+////	printf("value : %d\n",path_plan->Grid[4][8].i);
 	MTXUNLOCK_STDIO();
 
 	for( ;; )
 	{
 		//printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
 
+		printf("path_plan->recompute : %d\n",path_plan->recompute);
 
 		if(path_plan->recompute == 1){
-
 			MTXLOCK_STDIO();
-			int i_start = 10 + (int) alt_read_word(fpga_x_pos);
-			int j_start = 15 + (int) alt_read_word(fpga_y_pos);
-			int i_goal = 10 + (int)floor((0.5)/0.1);
-			int j_goal = 15 + (int)floor((1.2)/0.1);
+			int i_start = 4 + (int) get_neg(alt_read_word(fpga_x_pos))/10.0;
+			int j_start = 8 + (int) get_neg(alt_read_word(fpga_y_pos))/10.0;
+			int i_goal = 4 + (int)floor((0.1)/0.1);
+			int j_goal = 8 + (int)floor((0.1)/0.1);
+
+			printf("i_start : %d,\tj_start : %d,\ti_goal : %d,\tj_goal : %d\n",i_start,j_start,i_goal,j_goal);
+
+
 			path_plan->start = &(path_plan->Grid[i_start][j_start]);
 			path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
+
 
 
 
@@ -342,7 +372,7 @@ void Task_HIGH_LEVEL(void)
 				path_plan->path_found = 0;
 			}
 
-//			printf("path found : %d \n", path_plan->path_found);
+			printf("path found : %d \n", path_plan->path_found);
 			path_plan->recompute = 0;
 
 //			for(int i = 0; i< path_plan->nbrx_nodes; i++){
@@ -352,15 +382,15 @@ void Task_HIGH_LEVEL(void)
 //					free(path_plan);
 			MTXUNLOCK_STDIO();
 		}
+		printf("x_pos : %f,\t y_pos : %f\n",get_neg(alt_read_word(fpga_x_pos))/10.0,get_neg(alt_read_word(fpga_y_pos))/10.0);
 
 		if(path_plan->nbr_nodes_path > 0){
-				dif_x = alt_read_word(fpga_x_pos) - path_plan->current->position_x*10;
-				dif_y = alt_read_word(fpga_y_pos) - path_plan->current->position_y*10;
+				dif_x = get_neg(alt_read_word(fpga_x_pos))/10.0 - path_plan->current->position_x*10;
+				dif_y = get_neg(alt_read_word(fpga_y_pos))/10.0 - path_plan->current->position_y*10;
 
-				printf("posss_x : %f, posss_y : %f\n",dif_x,dif_y);
-
+				printf("dif_x : %f, dif_y : %f\n",dif_x,dif_y);
 				printf("pos_x : %f, pos_y : %f\n",path_plan->current->position_x*10,path_plan->current->position_y*10);
-		        if(fabs(dif_x) <= 1 && fabs(dif_y) <= 1){
+		        if(fabs(dif_x) <= 0.1 && fabs(dif_y) <= 0.1){
 
 		            // if opponent on the path -> recompute
 		            // if last node
@@ -375,20 +405,21 @@ void Task_HIGH_LEVEL(void)
 		            }
 		        }
 
-		        if(dif_x>0){
-					speed_x = b;
-				}
-				else if(dif_x<0){
+
+		        if(dif_x>0.1){
 					speed_x = -b;
+				}
+				else if(dif_x<-0.1){
+					speed_x = b;
 				}
 				else{
 					speed_x = 0.0;
 				}
-		        if(dif_y>0){
-					speed_y = b;
-				}
-				else if(dif_y<0){
+		        if(dif_y>0.1){
 					speed_y = -b;
+				}
+				else if(dif_y<-0.1){
+					speed_y = b;
 				}
 				else{
 					speed_y = 0.0;
@@ -649,6 +680,8 @@ void Task_LOW_LEVEL(void)
     {
     	printf("speed_0 : %f,\tspeed_1 : %f,\tspeed_2 : %f,\tspeed_3 : %f,\t \n", get_speed(0),get_speed(1),get_speed(2),get_speed(3));
     	alt_write_word(fpga_to_pi, motors[3]->get_speed_command());
+//    	printf("%f \t %f \n",motors[0]->get_speed_command_double(),get_speed(0));
+
 //    	printf("SPEED : %d \n",motors[3]->get_speed_command());
     	printf("speed_x : %f, \t speed_y : %f\t\n", speed_x, speed_y);
 //    	for(int j = 0; j<4 ; j++){
@@ -659,16 +692,17 @@ void Task_LOW_LEVEL(void)
 //        		else
 //        			motors[j]->set_command(motors[j]->get_speed_command()+a);
 //    		}
-//    		else if(counter == 400){
+//    		else if(counter == 800){
 //    			if (j==1)
-//					motors[j]->set_command(motors[j]->get_speed_command()+a/2);
+//					motors[j]->set_command(motors[j]->get_speed_command()+a);
 //				else
-//					motors[j]->set_command(motors[j]->get_speed_command()-a/2);
+//					motors[j]->set_command(motors[j]->get_speed_command()-a);
 //    		}
-//    		else if (counter == 800){
-//    			if (j==1)
-//					motors[j]->set_command(motors[j]->get_speed_command()+a/2);
-//				else
+//    		else if (counter == 1200){
+////    			if (j==1)
+////					motors[j]->set_command(motors[j]->get_speed_command()+a/2);
+////				else
+////					motors[j]->set_command(motors[j]->get_speed_command()-a/2);
 //    			if(j==3){
 //					counter = 0;
 //				}
@@ -679,9 +713,9 @@ void Task_LOW_LEVEL(void)
 
 
     	motors[0]->set_old_speed(get_speed(0));
-    	printf("G_OS : %d\n",G_OStimCnt);
-    	printf("OS_MS_TO_TICK : %d \n",OS_MS_TO_TICK(4));
-    	printf("OS_TIMER : %f \n", OS_TIMER_US*(G_OStimCnt-Tick0));
+//    	printf("G_OS : %d\n",G_OStimCnt);
+//    	printf("OS_MS_TO_TICK : %d \n",OS_MS_TO_TICK(4));
+//    	printf("OS_TIMER : %f \n", OS_TIMER_US*(G_OStimCnt-Tick0));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick0))/1000000;
 		motors[0]->set_deltaT(time);
 		motors[0]->set_speed();
@@ -914,4 +948,14 @@ double get_speed(int choice){
 	}
 	speed = 2*M_PI*pio_double/(max*T*ratio);
 	return speed;
+}
+
+int get_neg(int uns){
+	int negat;
+	if(uns/65536.0>=0.5){
+		negat = -(65536 - uns + 1);
+	} else {
+		negat = uns;
+	}
+	return negat;
 }

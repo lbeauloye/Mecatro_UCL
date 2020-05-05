@@ -144,6 +144,8 @@ void setup_hps_gpio( void );
 void toogle_hps_led( void );
 
 double get_speed(int choice);
+int get_neg(int uns);
+
 
 //#ifdef __cplusplus
 //}

@@ -44,6 +44,7 @@ class motor_card{
     void set_command(double speed);
     void set_old_speed(double speed);
     int get_speed_command();
+    double get_speed_command_double();
     void set_kp(double kp);
     void set_ki(double ki);
     void set_brake(int state);

@@ -140,6 +140,10 @@ int motor_card::get_speed_command(){
 	return (int)this->speed_command;
 }
 
+double motor_card::get_speed_command_double(){
+	return this->speed_command;
+}
+
 void motor_card::set_deltaT(double deltaT){
 	this->deltaT=deltaT;
 }

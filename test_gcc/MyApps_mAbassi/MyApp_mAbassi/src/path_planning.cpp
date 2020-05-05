@@ -767,8 +767,8 @@ List *Astarsearch(PathPlanning *path_plan, double* speed)
 
 void mapping(PathPlanning *path_plan)
 {
-    double x_length = 2;
-    double y_length = 3;
+    double x_length = 0.8;
+    double y_length = 1.7;
     int nbrx_nodes = path_plan->nbrx_nodes;
     int nbry_nodes = path_plan->nbry_nodes;
     Node **Grid = path_plan->Grid;
@@ -779,8 +779,8 @@ void mapping(PathPlanning *path_plan)
     int j;
     for(i=0; i < nbrx_nodes; i++){
         for(j=0; j < nbry_nodes; j++){
-            Grid[i][j].position_x = -1.0 + i*dx;
-            Grid[i][j].position_y = -1.5 + j*dy;
+            Grid[i][j].position_x = -0.4 + i*dx;
+            Grid[i][j].position_y = -0.8 + j*dy;
             Grid[i][j].i = i;
             Grid[i][j].j = j;
             Grid[i][j].f = W_MAX;

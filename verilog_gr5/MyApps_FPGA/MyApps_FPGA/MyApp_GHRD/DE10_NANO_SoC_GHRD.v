@@ -354,7 +354,7 @@ spi_slave my_spi(fpga_clk_50,
 	spi_cs,
 	spi_mosi,
 	spi_miso,
-	to_pi,
+	to_pi, speed_FR, speed_RR,
 	x_pos, y_pos, theta, actions);
 
 assign LED = to_pi;

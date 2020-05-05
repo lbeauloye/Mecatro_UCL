@@ -31,7 +31,7 @@
 #define SYSID_QSYS_SPAN 8
 #define SYSID_QSYS_END 0x1007
 #define SYSID_QSYS_ID 2899645186
-#define SYSID_QSYS_TIMESTAMP 1587308934
+#define SYSID_QSYS_TIMESTAMP 1587980641
 
 /*
  * Macros for device 'jtag_uart', class 'altera_avalon_jtag_uart'
@@ -247,6 +247,127 @@
 #define PIO_3_HAS_TRI 0
 #define PIO_3_IRQ_TYPE NONE
 #define PIO_3_RESET_VALUE 0
+
+/*
+ * Macros for device 'x_pos', class 'altera_avalon_pio'
+ * The macros are prefixed with 'X_POS_'.
+ * The prefix is the slave descriptor.
+ */
+#define X_POS_COMPONENT_TYPE altera_avalon_pio
+#define X_POS_COMPONENT_NAME x_pos
+#define X_POS_BASE 0x15000
+#define X_POS_SPAN 16
+#define X_POS_END 0x1500f
+#define X_POS_BIT_CLEARING_EDGE_REGISTER 0
+#define X_POS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define X_POS_CAPTURE 0
+#define X_POS_DATA_WIDTH 32
+#define X_POS_DO_TEST_BENCH_WIRING 0
+#define X_POS_DRIVEN_SIM_VALUE 0
+#define X_POS_EDGE_TYPE NONE
+#define X_POS_FREQ 50000000
+#define X_POS_HAS_IN 1
+#define X_POS_HAS_OUT 0
+#define X_POS_HAS_TRI 0
+#define X_POS_IRQ_TYPE NONE
+#define X_POS_RESET_VALUE 0
+
+/*
+ * Macros for device 'y_pos', class 'altera_avalon_pio'
+ * The macros are prefixed with 'Y_POS_'.
+ * The prefix is the slave descriptor.
+ */
+#define Y_POS_COMPONENT_TYPE altera_avalon_pio
+#define Y_POS_COMPONENT_NAME y_pos
+#define Y_POS_BASE 0x16000
+#define Y_POS_SPAN 16
+#define Y_POS_END 0x1600f
+#define Y_POS_BIT_CLEARING_EDGE_REGISTER 0
+#define Y_POS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define Y_POS_CAPTURE 0
+#define Y_POS_DATA_WIDTH 32
+#define Y_POS_DO_TEST_BENCH_WIRING 0
+#define Y_POS_DRIVEN_SIM_VALUE 0
+#define Y_POS_EDGE_TYPE NONE
+#define Y_POS_FREQ 50000000
+#define Y_POS_HAS_IN 1
+#define Y_POS_HAS_OUT 0
+#define Y_POS_HAS_TRI 0
+#define Y_POS_IRQ_TYPE NONE
+#define Y_POS_RESET_VALUE 0
+
+/*
+ * Macros for device 'theta', class 'altera_avalon_pio'
+ * The macros are prefixed with 'THETA_'.
+ * The prefix is the slave descriptor.
+ */
+#define THETA_COMPONENT_TYPE altera_avalon_pio
+#define THETA_COMPONENT_NAME theta
+#define THETA_BASE 0x17000
+#define THETA_SPAN 16
+#define THETA_END 0x1700f
+#define THETA_BIT_CLEARING_EDGE_REGISTER 0
+#define THETA_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define THETA_CAPTURE 0
+#define THETA_DATA_WIDTH 32
+#define THETA_DO_TEST_BENCH_WIRING 0
+#define THETA_DRIVEN_SIM_VALUE 0
+#define THETA_EDGE_TYPE NONE
+#define THETA_FREQ 50000000
+#define THETA_HAS_IN 1
+#define THETA_HAS_OUT 0
+#define THETA_HAS_TRI 0
+#define THETA_IRQ_TYPE NONE
+#define THETA_RESET_VALUE 0
+
+/*
+ * Macros for device 'actions_pio', class 'altera_avalon_pio'
+ * The macros are prefixed with 'ACTIONS_PIO_'.
+ * The prefix is the slave descriptor.
+ */
+#define ACTIONS_PIO_COMPONENT_TYPE altera_avalon_pio
+#define ACTIONS_PIO_COMPONENT_NAME actions_pio
+#define ACTIONS_PIO_BASE 0x18000
+#define ACTIONS_PIO_SPAN 16
+#define ACTIONS_PIO_END 0x1800f
+#define ACTIONS_PIO_IRQ 4
+#define ACTIONS_PIO_BIT_CLEARING_EDGE_REGISTER 1
+#define ACTIONS_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ACTIONS_PIO_CAPTURE 1
+#define ACTIONS_PIO_DATA_WIDTH 8
+#define ACTIONS_PIO_DO_TEST_BENCH_WIRING 0
+#define ACTIONS_PIO_DRIVEN_SIM_VALUE 0
+#define ACTIONS_PIO_EDGE_TYPE ANY
+#define ACTIONS_PIO_FREQ 50000000
+#define ACTIONS_PIO_HAS_IN 1
+#define ACTIONS_PIO_HAS_OUT 0
+#define ACTIONS_PIO_HAS_TRI 0
+#define ACTIONS_PIO_IRQ_TYPE EDGE
+#define ACTIONS_PIO_RESET_VALUE 0
+
+/*
+ * Macros for device 'to_pi', class 'altera_avalon_pio'
+ * The macros are prefixed with 'TO_PI_'.
+ * The prefix is the slave descriptor.
+ */
+#define TO_PI_COMPONENT_TYPE altera_avalon_pio
+#define TO_PI_COMPONENT_NAME to_pi
+#define TO_PI_BASE 0x19000
+#define TO_PI_SPAN 16
+#define TO_PI_END 0x1900f
+#define TO_PI_BIT_CLEARING_EDGE_REGISTER 0
+#define TO_PI_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define TO_PI_CAPTURE 0
+#define TO_PI_DATA_WIDTH 32
+#define TO_PI_DO_TEST_BENCH_WIRING 0
+#define TO_PI_DRIVEN_SIM_VALUE 0
+#define TO_PI_EDGE_TYPE NONE
+#define TO_PI_FREQ 50000000
+#define TO_PI_HAS_IN 0
+#define TO_PI_HAS_OUT 1
+#define TO_PI_HAS_TRI 0
+#define TO_PI_IRQ_TYPE NONE
+#define TO_PI_RESET_VALUE 0
 
 /*
  * Macros for device 'ILC', class 'interrupt_latency_counter'
