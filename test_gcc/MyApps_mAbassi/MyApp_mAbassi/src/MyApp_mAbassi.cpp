@@ -19,6 +19,7 @@
 #include <unistd.h>
 
 
+#define OPP 1
 
 /*
 static void* memAllocate(CanardInstance* const ins, const size_t amount)
@@ -301,6 +302,10 @@ void Task_HIGH_LEVEL(void)
     //alt_write_word(fpga_x_pos, 80);
     //alt_write_word(fpga_y_pos, 10);
     double dif_x, dif_y;
+
+    //CHANGES HERE
+    int targets[3][2] = {{1,1},{7,1},{1,16}}; //list of target's index
+
     speed_x = 0.0;
     speed_y = 0.0;
     path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
@@ -324,9 +329,29 @@ void Task_HIGH_LEVEL(void)
 	path_plan->last_t = 0.0;
 	path_plan->path_found = 0;
 
+	//CHANGES HERE
+	for(int i = 0; i < 3; i++){
+		path_plan->target_list[i][0] = targets[i][0];
+		path_plan->target_list[i][1] = targets[i][1];
+	}
+	//nbr of target visited
+	path_plan->target_cnt = 0;
+
 	path_plan->recompute = 1;
 
 	mapping(path_plan);
+
+	//CHANGES HERE FOR OPPONENT
+	#if OPP
+		path_plan->opp_index = (int**)  malloc(sizeof(int *) * 9);
+	    for(int i = 0; i<9; i++){
+	        path_plan->opp_index[i] = (int *)malloc(2 * sizeof(int));
+	    }
+	    int opp_x = 0; //alt_read_word..
+	    int opp_y = 0; //alt_read_word..
+	    addOpponent(path_plan, opp_x, opp_y);
+	    path_plan->move_opp = 0;
+	#endif
 //
 ////	printf("value : %d\n",path_plan->Grid[4][8].i);
 	MTXUNLOCK_STDIO();
@@ -341,8 +366,10 @@ void Task_HIGH_LEVEL(void)
 			MTXLOCK_STDIO();
 			int i_start = 4 + (int) get_neg(alt_read_word(fpga_x_pos))/10.0;
 			int j_start = 8 + (int) get_neg(alt_read_word(fpga_y_pos))/10.0;
-			int i_goal = 4 + (int)floor((0.1)/0.1);
-			int j_goal = 8 + (int)floor((0.1)/0.1);
+
+			//CHANGES HERE
+			int i_goal = path_plan->target_list[path_plan->target_cnt][0];//4 + (int)floor((0.1)/0.1);
+			int j_goal = path_plan->target_list[path_plan->target_cnt][1];//8 + (int)floor((0.1)/0.1);
 
 			printf("i_start : %d,\tj_start : %d,\ti_goal : %d,\tj_goal : %d\n",i_start,j_start,i_goal,j_goal);
 
@@ -406,6 +433,10 @@ void Task_HIGH_LEVEL(void)
 		            }
 		        }
 
+		        //CHANGES HERE
+		        else if(fabs(dif_x) >= 2 || fabs(dif_y) >= 2) //change tolerance here if recompute too muchh
+		        	path_plan->recompute = 0;
+
 
 		        if(dif_x>0.1){
 					speed_x = -b;
@@ -429,8 +460,17 @@ void Task_HIGH_LEVEL(void)
 		    }
 		    else{
 		        printf("On goal \n");
+
+
 		        speed_x = 0.0;
 		        speed_y = 0.0;
+
+
+		        //CHANGES HERE
+		        if(path_plan->target_cnt < 2){
+		        	path_plan->target_cnt++;
+		        	printf("Target changed \n");
+		        }
 		    }
 
 
@@ -445,6 +485,19 @@ void Task_HIGH_LEVEL(void)
 			motors[i]->set_command(speed[i]);
 		}
 
+
+		//CHANGES HERE
+		#if OPP
+			if(path_plan->move_opp){ //temporary condition TO CHANGE when opp moves
+			 //opp_x = alt_read_word ..
+			 //opp_y = alt_read_word..
+			 moveOpponent(path_plan, opp_x, opp_y);
+			 if(isNewObstacle(path_plan->path))
+			 	 path_plan->recompute = 1;
+
+			}
+
+		#endif
 
 //		}
 //        leds_mask = alt_read_word(fpga_leds);
@@ -752,6 +805,9 @@ void Task_LOW_LEVEL(void)
 //    	}
 //    	for(i = 0; i<4 ; i++)
 //    	    	motors[i]->set_speed();
+
+		//CHANGES HERE
+		path_plan->move_opp = 1;
 
     	TSKsleep(OS_MS_TO_TICK(10));
 //        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {

@@ -52,6 +52,11 @@ typedef struct PathPlanning
     double last_t;
     double *position_x_node;///< not used
     double *position_y_node;///< not used
+    double *opp_pos;
+    int target_list[3][2];
+    int target_cnt;
+    int **opp_index;
+    int move_opp;
     Node *start;///< Start node
     Node *goal;///< goal node
     Node *current;
@@ -91,9 +96,11 @@ int isGoal(int i, int j, Node *goal);
 
 int isNewObstacle(List *list);
 
-//void addOpponent(CtrlStruct *cvs);
+void addOpponent(PathPlanning *path_plan, int opp_x, int opp_y);
 
-//void moveOpponent(CtrlStruct *cvs);
+void moveOpponent(PathPlanning *path_plan, int opp_x, int opp_y);
+
+double bounded(double value, double min_value, double max_value);
 
 //int diffDriveCompute(PathPlanning *path_plan, Node **Grid, double Left, double Right,  double prevL, double prevR, double& dt, double ds, double& theta, double& x, double& y, double& cost,double dx1, double dy1);
 

@@ -135,77 +135,82 @@ int isInMap(PathPlanning *path_plan, int i, int j){
     return (i >= 0 && j >= 0) && (i<path_plan->IMAX && j<path_plan->JMAX) ;
 }
 
-///*
-// * Add a circle representing the opponent on the Grid
-// *
-// */
-//void addOpponent(CtrlStruct *cvs){
-//    OpponentsPosition* opp_pos = cvs->opp_pos;
-//    for(int m = 0; m< opp_pos->nb_opp; m++){
-//        int i_opp = 100 + (int) round(opp_pos->x[m]/0.01);
-//        int j_opp = 150 + (int) round(opp_pos->y[m]/0.01);
-//
-//        int count = 1;
-//        int index_i, index_j;
-//        opp_pos->opp_index[0][0] = i_opp;
-//        opp_pos->opp_index[0][1] = j_opp;
-//        cvs->path_plan->Grid[i_opp][j_opp].status = 2;
-//
-//        for (int i = -36 + i_opp; i <= 36 + i_opp ; i++){
-//            for (int j = -36 + j_opp ; j <= 36 + j_opp ; j++){
-//                if(36*36 >= (i-i_opp)*(i-i_opp) + (j-j_opp)*(j-j_opp))
-//                {
-//                    if( i != i_opp || j != j_opp){
-//                        index_i = (int) bounded(i, 0, 199);
-//                        index_j = (int) bounded(j, 0, 299);
-//                        opp_pos->opp_index[count][0] = index_i;
-//                        opp_pos->opp_index[count][1] = index_j;
-//                        if(cvs->path_plan->Grid[index_i][index_j].status == 0){
-//                            cvs->path_plan->Grid[index_i][index_j].status = 2;}
-//                        count ++;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+/*
+ * Add a circle representing the opponent on the Grid
+ *
+ */
+void addOpponent(PathPlanning *path_plan, int opp_x, int opp_y){
+    int **opp_index = path_plan->opp_index;
+	int i_opp = 4 + (int) round(opp_x/0.1);
+	int j_opp = 8 + (int) round(opp_y/0.1);
+
+	int count = 1;
+	int index_i, index_j;
+	opp_index[0][0] = i_opp;
+	opp_index[0][1] = j_opp;
+	path_plan->Grid[i_opp][j_opp].status = 2;
+
+	for (int i = -1 + i_opp; i <= 1 + i_opp ; i++){
+		for (int j = -1 + j_opp ; j <= 1 + j_opp ; j++){
+			if( i != i_opp || j != j_opp){
+				index_i = (int) bounded(i, 0, path_plan->IMAX);
+				index_j = (int) bounded(j, 0, path_plan->JMAX);
+				opp_index[count][0] = index_i;
+				opp_index[count][1] = index_j;
+				if(path_plan->Grid[index_i][index_j].status == 0){
+					path_plan->Grid[index_i][index_j].status = 2;}
+				count ++;
+			}
+		}
+	}
+}
 
 /*
  * Move the circle corresponding to the opponent on the Grid
  *
  */
-//void moveOpponent(CtrlStruct *cvs){
-//
-//    OpponentsPosition* opp_pos = cvs->opp_pos;
-//    for(int m = 0; m< opp_pos->nb_opp; m++){
-//        int i_opp = (int) bounded(100 + (int) round(opp_pos->x[m]/0.01), 0, 199);
-//        int j_opp = (int) bounded(150 + (int) round(opp_pos->y[m]/0.01), 0, 299);
-//        int value;
-//        int delta_i = i_opp - opp_pos->opp_index[0][0] ;
-//        int delta_j = j_opp - opp_pos->opp_index[0][1] ;
-//
-//        if(cvs->path_plan->Grid[opp_pos->opp_index[0][0]][opp_pos->opp_index[0][1]].status == 2){
-//            cvs->path_plan->Grid[opp_pos->opp_index[0][0]][opp_pos->opp_index[0][1]].status = 0;}
-//        if(cvs->path_plan->Grid[i_opp][j_opp].status == 0){
-//            cvs->path_plan->Grid[i_opp][j_opp].status = 2;}
-//
-//        opp_pos->opp_index[0][0] = i_opp;
-//        opp_pos->opp_index[0][1] = j_opp;
-//
-//        for(int i = 1; i <4053 ;i++){
-//            // Erase previous position
-//            if(cvs->path_plan->Grid[opp_pos->opp_index[i][0]][opp_pos->opp_index[i][1]].status == 2){
-//                cvs->path_plan->Grid[opp_pos->opp_index[i][0]][opp_pos->opp_index[i][1]].status = 0;}
-//
-//            value = delta_i + opp_pos->opp_index[i][0];
-//            opp_pos->opp_index[i][0] =  (int) bounded(value, 0, 199);
-//            value = delta_j + opp_pos->opp_index[i][1];
-//            opp_pos->opp_index[i][1] =  (int) bounded(value, 0, 299);
-//            if(cvs->path_plan->Grid[opp_pos->opp_index[i][0]][opp_pos->opp_index[i][1]].status == 0){
-//                cvs->path_plan->Grid[opp_pos->opp_index[i][0]][opp_pos->opp_index[i][1]].status = 2;}
-//        }
-//    }
-//}
+void moveOpponent(PathPlanning *path_plan, int opp_x, int opp_y){
+
+	int **opp_index = path_plan->opp_index;
+	int i_opp = (int) bounded(4 + (int) round(opp_x/0.1), 0, path_plan->IMAX);
+	int j_opp = (int) bounded(8 + (int) round(opp_y/0.1), 0, path_plan->JMAX);
+	int value;
+	int delta_i = i_opp - opp_index[0][0] ;
+	int delta_j = j_opp -opp_index[0][1] ;
+
+	if(path_plan->Grid[opp_index[0][0]][opp_index[0][1]].status == 2){
+		path_plan->Grid[opp_index[0][0]][opp_index[0][1]].status = 0;}
+	if(path_plan->Grid[i_opp][j_opp].status == 0){
+		path_plan->Grid[i_opp][j_opp].status = 2;}
+
+	opp_index[0][0] = i_opp;
+	opp_index[0][1] = j_opp;
+
+	for(int i = 1; i <9 ;i++){
+		// Erase previous position
+		if(path_plan->Grid[opp_index[i][0]][opp_index[i][1]].status == 2){
+			path_plan->Grid[opp_index[i][0]][opp_index[i][1]].status = 0;}
+
+		value = delta_i + opp_index[i][0];
+		opp_index[i][0] =  (int) bounded(value, 0, path_plan->IMAX);
+		value = delta_j + opp_index[i][1];
+		opp_index[i][1] =  (int) bounded(value, 0, path_plan->JMAX);
+		if(path_plan->Grid[opp_index[i][0]][opp_index[i][1]].status == 0){
+			path_plan->Grid[opp_index[i][0]][opp_index[i][1]].status = 2;}
+	}
+}
+
+
+double bounded(double value, double min_value, double max_value)
+{
+	double out = 0.0;
+
+	if (value > 0) 	{out = fmin(max_value,value);}
+	else			{out = fmax(min_value,value);}
+
+	return out;
+}
+
 
 /*
  * Create a linked list
