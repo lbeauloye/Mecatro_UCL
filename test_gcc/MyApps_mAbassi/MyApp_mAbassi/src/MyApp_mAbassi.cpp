@@ -19,40 +19,26 @@
 #include <unistd.h>
 
 
-#define OPP 0
+#define OPP 0 //Set to 1 when there is an opponent to detect
 
-/*
-static void* memAllocate(CanardInstance* const ins, const size_t amount)
-{
-    (void) ins;
-    return o1heapAllocate(malloc, amount);
-}
-
-static void memFree(CanardInstance* const ins, void* const pointer)
-{
-    (void) ins;
-    o1heapFree(free, pointer);
-}
-*/
-/* ------------------------------------------------------------------------------------------------ */
 
 
 void Task_HPS_Led(void)
 {
+	// Creation of the objects motors
 	motors[1] = new motor_card(0x708,1);//FR
 	motors[3] = new motor_card(0x708,2);//RR
 	motors[2] = new motor_card(0x408,1);//RL
 	motors[0] = new motor_card(0x408,2);//FL
 
 	flag = 0;
-	base_opp_x = get_neg(alt_read_word(fpga_adv_x));
-	base_opp_y = get_neg(alt_read_word(fpga_adv_y));
 
-
+	// Initialization of Mailbox  and semaphore
     MBX_t    *PrtMbx;
     intptr_t PtrMsg;
     SEM_t    *PtrSem = SEMopen("SemSetup");
     
+    //Initialization of the motors
     for(int i = 0; i<4 ; i++)
         	motors[i]->init();
     setup_hps_gpio();               // This is the Adam&Eve Task and we have first to setup everything
@@ -63,10 +49,6 @@ void Task_HPS_Led(void)
     MTXLOCK_STDIO();
     printf("\n\nDE10-Nano - MyApp_mAbassi\n\n");
     printf("Task_HPS_Led running on core #%d\n\n", COREgetID());
-
-//    printf("salut salut %d\n",Test_func(5));
-
-
     MTXUNLOCK_STDIO();
     
     PrtMbx = MBXopen("MyMailbox", 128);
@@ -79,67 +61,59 @@ void Task_HPS_Led(void)
             MTXUNLOCK_STDIO();
         }
         toogle_hps_led();
-        
-
         TSKsleep(OS_MS_TO_TICK(500));
 	}
 }
 
 /* ------------------------------------------------------------------------------------------------ */
 
-void Task_FPGA_Led(void)
+void Task_FPGA_Led(void) // Task where we could perform a certain action
 {
     SEM_t    *PtrSem;
 	PtrSem = SEMopen("MySemaphoreTarget");
 
 	for( ;; )
 	{
-
-//		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",get_neg(alt_read_word(fpga_x_pos)),get_neg(alt_read_word(fpga_y_pos)),get_neg(alt_read_word(fpga_theta)));
-//
-//		printf("adv_x : %d,\t adv_y : %d \n",get_neg(alt_read_word(fpga_adv_x)),get_neg(alt_read_word(fpga_adv_y)));
-
 		SEMwait(PtrSem, -1);            // -1 = Infinite blocking
+		//Start if semaphore activated in the High Level Task
 		SEMreset(PtrSem);
 		MTXLOCK_STDIO();
 		printf("Action On Target here\n");  // The Keys O and 1 seem to be inverted somewhere...
-		path_plan->recompute=1;
+		path_plan->recompute=1; // Path needs to be recomputed
 		MTXUNLOCK_STDIO();
         TSKsleep(OS_MS_TO_TICK(250));
 	}
 }
 
+/* ------------------------------------------------------------------------------------------------ */
 
 void Task_HIGH_LEVEL(void)
 {
-    //uint32_t leds_mask;
 	double theta;
+	// Semaphore initialization
 	SEM_t    *PtrSem;
 	PtrSem = SEMopen("MySemaphoreTarget");
-
-    //alt_write_word(fpga_x_pos, 80);
-    //alt_write_word(fpga_y_pos, 10);
-    double dif_x, dif_y;
-
-//    //CHANGES HERE
-    int targets[3][2] = {{5,4},{5,9},{6,9}}; //list of target's index
+    double dif_x, dif_y; // difference between position and target node
+    int targets[3][2] = {{5,4},{5,9},{6,9}}; // list of target's index
 
     speed_x = 0.0;
     speed_y = 0.0;
+    // Memory allocation for the path planning
     path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
 
-    double xsi_in[3];
-	double speed[4];
-	double xsi[3];
-	double b = 0.4*1.5;
+    double xsi_in[3]; // input of middle level
+	double speed[4]; // speed of the wheels
+	double xsi[3]; // output of the middle level
+	double b = 0.4*1.5; // Speed of the robot in m/s
 
 	MTXLOCK_STDIO();
 	path_plan->IMAX = 199;
 	path_plan->JMAX = 299;
 
-	path_plan->nbrx_nodes = 8;
-	path_plan->nbry_nodes = 17;
+	path_plan->nbrx_nodes = 8; // Map is 80cm wide, so 1 node every 10 cm
+	path_plan->nbry_nodes = 17;// Map is 170cm long, so 1 node every 10 cm
 
+	// Memory allocation for the grid of nodes to follow
 	path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
 	for(int i = 0; i< path_plan->nbrx_nodes; i++){
 		path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
@@ -147,119 +121,99 @@ void Task_HIGH_LEVEL(void)
 	path_plan->last_t = 0.0;
 	path_plan->path_found = 0;
 
-	//CHANGES HERE
+	// Fill the list of the targets for the path
 	for(int i = 0; i < 3; i++){
 		path_plan->target_list[i][0] = targets[i][0];
 		path_plan->target_list[i][1] = targets[i][1];
 	}
-	//nbr of target visited
+
+	// Number of target visited
 	path_plan->target_cnt = 0;
 
 	path_plan->recompute = 1;
 
 	mapping(path_plan);
 
-	//CHANGES HERE FOR OPPONENT
+	//Opponent detection/initialization
 	#if OPP
 		path_plan->opp_index = (int**)  malloc(sizeof(int *) * 9);
 	    for(int i = 0; i<9; i++){
 	        path_plan->opp_index[i] = (int *)malloc(2 * sizeof(int));
 	    }
+	    // Position of the opponent seen by the Lidar
 	    int opp_x = get_neg(alt_read_word(fpga_adv_x));
 	    int opp_y = get_neg(alt_read_word(fpga_adv_y));
 
-	    addOpponent(path_plan, opp_x, opp_y);
+	    addOpponent(path_plan, opp_x, opp_y); // Add opponent on the map
 	    path_plan->move_opp = 0;
 	#endif
-//
-////	printf("value : %d\n",path_plan->Grid[4][8].i);
 	MTXUNLOCK_STDIO();
 
 	int counter1=0;
 	for( ;; )
 	{
-		//printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
-
 		printf("path_plan->recompute : %d\n",path_plan->recompute);
 
 		if(path_plan->recompute == 1){
 			MTXLOCK_STDIO();
+			// Initial position of the robot on the map
 			int i_start = 4 + (int) round(get_neg(alt_read_word(fpga_x_pos))/10.0);
 			int j_start = 8 + (int) round(get_neg(alt_read_word(fpga_y_pos))/10.0);
 
-			//CHANGES HERE
+			// Goal position of the robot on the map
 			int i_goal = path_plan->target_list[path_plan->target_cnt][0];//4 + (int)floor((0.1)/0.1);
 			int j_goal = path_plan->target_list[path_plan->target_cnt][1];//8 + (int)floor((0.1)/0.1);
 
-		    printf("i_start : %d,\tj_start : %d,\ti_goal : %d,\tj_goal : %d\n",i_start,j_start,i_goal,j_goal);
-
+			// Start and goal initialization of the robot for the A* algorithm
 			path_plan->start = &(path_plan->Grid[i_start][j_start]);
 			path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
 
+			// Computation of the path
 			List *path = Astarsearch(path_plan);
 			if(path){
+				// If path found, modification of some parameters
 				View(path);
 				path_plan->path_found = 1;
 				path_plan->path = path;
 				path_plan->current = Pop(&path_plan->path);
 				path_plan->current = Pop(&path_plan->path);
 				path_plan->start_path = 1;
-
-//				Node *start_path = Pop(&path);
-//				printf("%d, %d \n", start_path->i, start_path->j);
-//				while (path){
-//					Node *node = Pop(&path);
-//					printf("%d, %d \n", node->i, node->j);
-//				}
-				//path_plan->last_t = inputs->t;
 			}
 			else{
+				// If path not found, modification of path_found parameter
 				path_plan->path_found = 0;
 			}
 
 			printf("path found : %d \n", path_plan->path_found);
 			path_plan->recompute = 0;
-
-//			for(int i = 0; i< path_plan->nbrx_nodes; i++){
-//				        free(path_plan->Grid[i]);
-//				    }
-//				    free(path_plan->Grid);
-//					free(path_plan);
 			MTXUNLOCK_STDIO();
 		}
-		printf("x_pos : %f,\t y_pos : %f\n",get_neg(alt_read_word(fpga_x_pos))/10.0,get_neg(alt_read_word(fpga_y_pos))/10.0);
 
 		if(path_plan->nbr_nodes_path > 0){
+			// If not on goal, update position and pop part of the list
 				dif_x = round(get_neg(alt_read_word(fpga_x_pos))/10.0) - path_plan->current->position_x*10;
 				dif_y = round(get_neg(alt_read_word(fpga_y_pos))/10.0) - path_plan->current->position_y*10;
 		    	alt_write_word(fpga_to_pi, (path_plan->current->i <<8) + path_plan->current->j);
-		    	printf("%d\n",(path_plan->current->i <<8) + path_plan->current->j);
-
 				printf("dif_x : %f, dif_y : %f\n",dif_x,dif_y);
 				printf("pos_x : %f, pos_y : %f\n",path_plan->current->position_x*10,path_plan->current->position_y*10);
 		        if(fabs(dif_x) <= 0.1 && fabs(dif_y) <= 0.1){
-
 		            // if opponent on the path -> recompute
 		            // if last node
 		            if(path_plan->nbr_nodes_path == 1){
 		                path_plan->nbr_nodes_path -= 1;
 		            }
 		            // if too far from position -> recompute
-
 		            else{
 		                path_plan->current = Pop(&path_plan->path);
 		                path_plan->nbr_nodes_path -= 1;
 		            }
 		        }
 
-		        //CHANGES HERE
-		        else if(fabs(dif_x) >= 2 || fabs(dif_y) >= 2){ //change tolerance here if recompute too muchh
+		        else if(fabs(dif_x) >= 2 || fabs(dif_y) >= 2){ // change tolerance here if recompute too much
 		        	path_plan->recompute = 1;
-		        	printf("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\n");
 		        }
 
-//		        theta = atan2(dif_y,dif_x);
-
+		        // Evaluation of the speed in the x and y direction in function of the difference between the actual and target position
 		        if(dif_x>0.1){
 					speed_x = -b;
 				}
@@ -281,48 +235,32 @@ void Task_HIGH_LEVEL(void)
 
 		    }
 		    else{
+		    	// If on goal : STOP
 		        printf("On goal \n");
-
-
 		        speed_x = 0.0;
 		        speed_y = 0.0;
-
-
-		        //CHANGES HERE
-//		        if(path_plan->target_cnt < 2){
-////		        	path_plan->recompute = 1;
-//		        	path_plan->target_cnt++;
-//		        	printf("Target changed \n");
-//		        	SEMpost(PtrSem);
-//		        }
 		    }
 		if(speed_x != 0.0 && speed_y != 0.0){
+			// Reduce the diagonal speed
 			speed_x = speed_x/2;
 			speed_y = speed_y/2;
 		}
-//		if(counter1==3000){
-//			xsi_in[0] = b;//speed_x;
-//			xsi_in[1] = 0.0;//speed_y;
-//			xsi_in[2] = 0.0;
-//		}
-//		else{
-//		printf("v_x : %f, v_y: %f\n",speed_x, speed_y);
-		xsi_in[0] = -b/sqrt(2);//speed_x;
-		xsi_in[1] = -b/sqrt(2);//speed_y;
+		// Set the input of the Middle-Level
+		xsi_in[0] = speed_x;
+		xsi_in[1] = speed_y;
 		xsi_in[2] = 0.0;
-//		counter1++;
-//		}
 
-		compute_local_velocities(xsi_in, 0.0 , xsi);
-		compute_motor_velocities(xsi, speed);
+		compute_local_velocities(xsi_in, 0.0 , xsi); // Middle-level
+		compute_motor_velocities(xsi, speed);		 // Middle-level
 		for(int i = 0; i<4 ; i++){
+			// Set the speed command on each wheel
 			printf("speed [%d]: %f\t",i,speed[i]);
 			motors[i]->set_command(speed[i]);
 		}
 
 
-		//CHANGES HERE
 		#if OPP
+			// Update of the position of the opponent
 			if(fabs(opp_x-get_neg(alt_read_word(fpga_adv_x)))>=10){ //temporary condition TO CHANGE when opp moves
 				if(flag==0){
 			 opp_x = get_neg(alt_read_word(fpga_adv_x));
@@ -335,38 +273,14 @@ void Task_HIGH_LEVEL(void)
 			path_plan->move_opp = 0;
 			}
 		#endif
-
 	}
-}
-
-/* ------------------------------------------------------------------------------------------------ */
-
-void Task_FPGA_Button(void)
-{
-    MBX_t    *PrtMbx;
-    intptr_t  PtrMsg = (intptr_t) NULL;
-    SEM_t    *PtrSem;
-    
-    PrtMbx = MBXopen("MyMailbox", 128);
-    PtrSem = SEMopen("MySemaphore");
-    
-    for( ;; )
-    {
-        SEMwait(PtrSem, -1);            // -1 = Infinite blocking
-        SEMreset(PtrSem);
-        MTXLOCK_STDIO();
-        printf("Receive IRQ from Button %d and send message (Core = %d)\n", (int) alt_read_word(fpga_buttons) - 1, COREgetID());  // The Keys O and 1 seem to be inverted somewhere...
-        MTXUNLOCK_STDIO();
-        
-        MBXput(PrtMbx, PtrMsg, -1);     // -1 = Infinite blocking
-    }
 }
 
 /* ------------------------------------------------------------------------------------------------ */
 
 void spi_CallbackInterrupt (uint32_t icciar, void *context)
 {
-    // Do something
+    // Interrupt from the SPI
     MTXLOCK_STDIO();
     printf("INFO: IRQ from SPI : %08x (status = %x)\r\n",
         (unsigned int) alt_read_word(fpga_spi + SPI_RXDATA),
@@ -424,14 +338,6 @@ void setup_Interrupt( void )
     alt_write_word(fpga_buttons + PIOinterruptmask, 0x3);
     alt_write_word(fpga_buttons + PIOedgecapture, 0x3);
 
-//    // IRQ from Key0 and Key1
-//	OSisrInstall(GPT_ACTIONS_IRQ, (void *) &actions_CallbackInterrupt);
-//	GICenable(GPT_ACTIONS_IRQ, 128, 1);
-//
-//	// Enable interruptmask and edgecapture of PIO core for actions
-//	alt_write_word(fpga_actions + PIOinterruptmask, 0xFF);
-//	alt_write_word(fpga_actions + PIOedgecapture, 0xFF);
-
     // Initialize TXDATA to something (for testing purpose)
     alt_write_word(fpga_spi + SPI_TXDATA, 0x0103070F);
     alt_write_word(fpga_spi + SPI_EOP_VALUE, 0x55AA55AA);
@@ -472,38 +378,40 @@ void Task_LOW_LEVEL(void)
 
     int i;
 
-
     SEMwait(SEMopen("SemSetup"), -1);
 
     DE0_SELECT_LT_SPI();
 
     CAN_init();
 
+    // Initialization of input and output for Middle-Level
     double xsi_in[3] = {0.0, 0.0, 0.0};
 	double speed[4];
 	double xsi[3];
-	compute_local_velocities(xsi_in, 0.0 , xsi);
-	compute_motor_velocities(xsi, speed);
+	compute_local_velocities(xsi_in, 0.0 , xsi); // Middle-level
+	compute_motor_velocities(xsi, speed);	 	 // Middle-level
 	for(i = 0; i<4 ; i++){
-//		printf("speed [%d]: %f\t",i,speed[i]);
+		// Set speed command for each wheel
 	    motors[i]->set_command(speed[i]);
 	}
-//	printf("\n");
 
+	// Initialization of the motor card
     motors[1]->ctrl_motor(0);
     motors[0]->ctrl_motor(0);
-
     motors[1]->ctrl_motor(1);
     motors[0]->ctrl_motor(1);
+
+    // Motor Brake
     motors[0]->set_brake(0);
     motors[1]->set_brake(0);
     motors[2]->set_brake(0);
     motors[3]->set_brake(0);
 
-
+    // Gains
     double kp = 0.03;//0.03;//128;//128; //0.035; //0.005; //0.08
     double ki = 0.1;//0.1;//53;//53; //0.01 //0.3
 
+    // Set gains for each motor
     motors[0]->set_kp(kp);
     motors[0]->set_ki(ki);
     motors[1]->set_kp(kp);
@@ -512,163 +420,57 @@ void Task_LOW_LEVEL(void)
     motors[2]->set_ki(ki);
     motors[3]->set_kp(kp);
     motors[3]->set_ki(ki);
+
+    // Time settings
     double time;
     double Tick0 = G_OStimCnt;
     double Tick1 = G_OStimCnt;
     double Tick2 = G_OStimCnt;
     double Tick3 = G_OStimCnt;
     counter = 0;
-    double a = 5;
     for( ;; )
     {
     	printf("speed_0 : %f,\tspeed_1 : %f,\tspeed_2 : %f,\tspeed_3 : %f,\t \n", get_speed(0),get_speed(1),get_speed(2),get_speed(3));
-//    	alt_write_word(fpga_to_pi, motors[3]->get_speed_command());
-    	printf("%f \t %f \n",motors[1]->get_speed_command_double(),get_speed(1));
-
-//    	printf("SPEED : %d \n",motors[3]->get_speed_command());
     	printf("speed_x : %f, \t speed_y : %f\t\n", speed_x, speed_y);
-//    	for(int j = 0; j<4 ; j++){
-//    	//		printf("speed [%d]: %f\t",i,speed[i]);
-//    		if (counter == 200){
-//        		motors[j]->set_command(motors[j]->get_speed_command()+a);
-//    		}
-//    		else if(counter == 300){
-//    			motors[j]->set_command(motors[j]->get_speed_command()-a);
-//    			if(j==3){
-//					counter = 0;
-//				}
-//    		}
-////    		else if (counter == 350){
-////				motors[j]->set_command(motors[j]->get_speed_command()-a/4);
-////    			if(j==3){
-////					counter = 0;
-////				}
-////    		}
-//    	}
-    	//counter++;
-//		printf("counter : %d\n", counter);
 
-
+    	// Motor 0 : Set previous speed, calculate and set time for the integral and set speed
     	motors[0]->set_old_speed(get_speed(0));
-//    	printf("G_OS : %d\n",G_OStimCnt);
-//    	printf("OS_MS_TO_TICK : %d \n",OS_MS_TO_TICK(4));
-//    	printf("OS_TIMER : %f \n", OS_TIMER_US*(G_OStimCnt-Tick0));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick0))/1000000;
 		motors[0]->set_deltaT(time);
-//		motors[0]->set_voltage(20);
 		motors[0]->set_speed();
-		printf("time : %f \n",time);
 		Tick0 = G_OStimCnt;
-//		TSKsleep(OS_\MS_TO_TICK(4));
 
+    	// Motor 1 : Set previous speed, calculate and set time for the integral and set speed
     	motors[1]->set_old_speed(-get_speed(1));
     	time = (OS_TIMER_US*(G_OStimCnt-Tick1))/1000000;
     	motors[1]->set_deltaT(time);
-//    	motors[1]->set_voltage(20);
     	motors[1]->set_speed();
     	Tick1 = G_OStimCnt;
-//		TSKsleep(OS_MS_TO_TICK(4));
 
-
+    	// Motor 2 : Set previous speed, calculate and set time for the integral and set speed
     	motors[2]->set_old_speed(get_speed(2));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick2))/1000000;
 		motors[2]->set_deltaT(time);
-//		motors[2]->set_voltage(20);
 		motors[2]->set_speed();
 		Tick2 = G_OStimCnt;
-//		TSKsleep(OS_MS_TO_TICK(4));
 
+    	// Motor 3 : Set previous speed, calculate and set time for the integral and set speed
 		motors[3]->set_old_speed(get_speed(3));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick3))/1000000;
 		motors[3]->set_deltaT(time);
-//		motors[3]->set_voltage(20);
 		motors[3]->set_speed();
 		Tick3 = G_OStimCnt;
 
-		//CHANGES HERE
 		path_plan->move_opp = 1;
 
     	TSKsleep(OS_MS_TO_TICK(10));
-
-
-    }
-
-}
-
-void Task_MID_LEVEL(void){
-
-
-	double xsi_in[3] = {1.0, 0.0, 0.0};
-	double speed[4];
-	double xsi[3];
-	int i;
-
-
-	for( ;; )
-	{
-		compute_local_velocities(xsi_in, 0.0 , xsi);
-		compute_motor_velocities(xsi, speed);
-		for(i = 0; i<4 ; i++){
-		   motors[i]->set_command(speed[i]);
-		}
-		TSKsleep(OS_MS_TO_TICK(100));
-	}
-
-}
-
-void Task_CAN(void)
-{
-    uint32_t tx_Identifier, rx_Identifier;
-    uint8_t  tx_Data[8],    rx_Data[8];
-    uint8_t  tx_Length,     rx_Length;
-    uint8_t  tx_FrameType;
-    
-    int i;
-    
-
-    SEMwait(SEMopen("SemSetup"), -1);
-
-    DE0_SELECT_LT_SPI();
-
-    CAN_init();
-
-
-    tx_Identifier = 0x708;//0xabc;
-	tx_Length     = 3;//8;
-	tx_FrameType  = MCP2515_TX_STD_FRAME;
-	tx_Data[0] = 0x1E;
-	tx_Data[1] = 0x40;
-	tx_Data[2] = 0x40;
-	CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-
-
-
-
-
-    for( ;; )
-    {
-    	tx_Identifier = 0x408;//0xabc;
-		tx_Length     = 3;//8;
-		tx_FrameType  = MCP2515_TX_STD_FRAME;
-		tx_Data[0] = 0x1E;
-		tx_Data[1] = 0x40;
-		tx_Data[2] = 0x40;
-		CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-    	TSKsleep(OS_SEC_TO_TICK(1));
-    	tx_Identifier = 0x408;//0xabc;
-		tx_Length     = 3;//8;
-		tx_FrameType  = MCP2515_TX_STD_FRAME;
-		tx_Data[0] = 0x1E;
-		tx_Data[1] = 0x40;
-		tx_Data[2] = 0x00;
-		CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-    	TSKsleep(OS_SEC_TO_TICK(1));
-
     }
 
 }
 
 
+// Input : Number of tics from the odometer in 1/2k sec
+// Output : Speed of the wheel
 double get_speed(int choice){
 	uint32_t PIO;
 	double pio_double;
@@ -691,7 +493,7 @@ double get_speed(int choice){
 			break;
 	}
 	if(PIO/4294967296.0>=0.5){
-		pio_double = -(4294967296.0 - PIO); // LE PLUS 1 EST NECESSAIRE ICI???
+		pio_double = -(4294967296.0 - PIO);
 	} else {
 		pio_double = PIO;
 	}
@@ -699,6 +501,9 @@ double get_speed(int choice){
 	return speed;
 }
 
+
+// Input : One's complement integer
+// Output : integer
 int get_neg(int uns){
 	int negat;
 	if(uns/65536.0>=0.5){

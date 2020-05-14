@@ -116,8 +116,6 @@ wire     [27: 0]    stm_hw_events;
 wire                fpga_clk_50;
 
 // connection of internal logics
-
-//assign LED[7: 0] = fpga_led_internal;
 assign fpga_clk_50 = FPGA_CLK1_50;
 assign stm_hw_events = {{15{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
 
@@ -134,7 +132,7 @@ assign quadA_RR = GPIO_0[13];
 assign quadB_RR = GPIO_0[11];
 
 
-// Clocks
+// Clock reduced to 2kHz
 reg [25: 0] counter1;
 reg clock_reduced;
 always @(posedge fpga_clk_50) begin
@@ -145,11 +143,6 @@ always @(posedge fpga_clk_50) begin
     else
         counter1 <= counter1 + 1'b1;
 end
-
-
-//wire PLL_CLOCK;
-//my_pll pll_clock(fpga_clk_50, PLL_CLOCK);
-
 
 wire [31:0] count_FL, count_RL, count_FR, count_RR;
 quad encoder_FL(fpga_clk_50, 1'b0, quadA_FL, quadB_FL, count_FL);
@@ -320,23 +313,6 @@ altera_edge_detector pulse_debug_reset(
 defparam pulse_debug_reset.PULSE_EXT = 32;
 defparam pulse_debug_reset.EDGE_TYPE = 1;
 defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
-
-// Alive LED0
-
-//reg [25: 0] counter;
-//reg led_level;
-//always @(posedge fpga_clk_50) begin
-//    if (counter >= 24999999) begin
-//        counter <= 0;
-//        led_level <= ~led_level;
-//    end
-//    else
-//        counter <= counter + 1'b1;
-//end
-
-//assign LED[0] = led_level;
-
-// SPI with RaspberryPI
 
 wire 			spi_clk, spi_cs, spi_mosi, spi_miso, SPI_MISO;
 

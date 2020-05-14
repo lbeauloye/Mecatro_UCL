@@ -151,21 +151,14 @@ void toogle_hps_led( void );
 double get_speed(int choice);
 int get_neg(int uns);
 
-
-//#ifdef __cplusplus
-//}
-//#endif
-
-static double speed_x, speed_y;
-static int counter, flag,base_opp_x,base_opp_y;
+static double speed_x, speed_y; // x and y speed of the robot
+static int counter, flag,base_opp_x,base_opp_y; // counter, flag and oppenent base position
 
 
 #ifdef __cplusplus
 
-static motor_card **motors = (motor_card **) calloc(4, sizeof(motor_card));
-
-static PathPlanning *path_plan;
-//static motor_card motors [4];
+static motor_card **motors = (motor_card **) calloc(4, sizeof(motor_card)); // motor_card object
+static PathPlanning *path_plan; // path object
 
 #endif
 
