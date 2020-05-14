@@ -1,5 +1,6 @@
 #include "../inc/motor/motor_card.h"
 #include "MyDriver_CAN.h"
+#include <math.h>
 //using namespace std;
 
 motor_card::motor_card(uint32_t id, int type){
@@ -75,7 +76,7 @@ void motor_card::set_voltage(double v){
 		CAN_sendMsg(this->id, tx_Data, 3,  MCP2515_TX_STD_FRAME);
     }
   
-    if(volt >= 127 && volt <= 128){
+    if((volt >= 127 && volt <= 128)){// || (fabs(this->speed_command)<=0.1)){
     	this->set_brake(1);
     }
     else{
@@ -123,12 +124,13 @@ void motor_card::init(){
 
     this->khpi = 0.0234;
     this->deltaT = 0.04;
-    this->limitI = 2.82 * 100;
-    this->limitV = 0.97*24;
+    this->limitI = 1.16;
+    this->limitV = 0.97*12.0;
     this->gearbox = 5.8;
 
     this->error_integ = 0;
     this->saturation = 0;
+    this->R = 2.32;
 }
 
 void motor_card::set_old_speed(double speed){
@@ -147,6 +149,37 @@ double motor_card::get_speed_command_double(){
 void motor_card::set_deltaT(double deltaT){
 	this->deltaT=deltaT;
 }
+/*
+void motor_card::set_speed(){
+    // Error on speed
+//	printf("wheel speed : %f \n",this->wheel_speed);
+	printf("speed : %f \n",this->speed_command);
+
+    double err_w = (this->speed_command - this->wheel_speed)* this->gearbox;
+
+    // Kp
+    double v = err_w * this->kp;
+    // Ki - saturation
+    this->error_integ += err_w * this->deltaT * this->ki + this->saturation * this->alpha;
+
+    // Adding Ki
+    v += this->error_integ;
+
+    // Reset saturation
+    this->saturation = - v;
+
+    // Limit on current + adding back emf
+    v = limit(v, this->limitI) + this->khpi * this->wheel_speed;//
+    // Compute saturation
+    this->saturation += v;
+
+    // Limit on Voltage
+    v = limit(v, this->limitV);
+
+    printf("Voltage sent %f \n", v);
+    this->set_voltage(100 * v / this->limitV);
+}
+*/
 
 void motor_card::set_speed(){
     // Error on speed
@@ -158,21 +191,31 @@ void motor_card::set_speed(){
     // Kp
     double v = err_w * this->kp;
     // Ki - saturation
-    this->error_integ += err_w * this->ki * this->deltaT + this->saturation * this->alpha;
+//    this->error_integ += err_w * this->ki * this->deltaT ;//+ this->saturation * this->alpha;
 
     // Adding Ki
-    v += this->error_integ;
+    v += this->error_integ * this->ki;// * this->deltaT ;//this->error_integ;
 
     // Reset saturation
-    this->saturation = - v;
+//    this->saturation = - v;
 
     // Limit on current + adding back emf
-    v = limit(v, this->limitI) + this->khpi * this->wheel_speed; // ajout this->gearbox
+    v = v + this->khpi * this->wheel_speed*this->gearbox; // ajout this->gearbox     limit(v, this->limitI)
     // Compute saturation
-    this->saturation += v;
+//    this->saturation += v;
 
+    double V_such_as_Imax_l = 12.0; //this->R*this->limitI + this->khpi*this->speed_command*this->gearbox;
+
+    if(my_limiter(v, V_such_as_Imax_l)){
+        printf("saturated %f and limit is %f \n", v, V_such_as_Imax_l);
+        this->error_integ = 0.0; //err_w * this->deltaT;
+//    	this->error_integ = 0;
+    }
+     else{
+    	 this->error_integ += err_w * this->deltaT;
+     }
     // Limit on Voltage
-    v = limit(v, this->limitV);
+//    v = limit(v, this->limitV);
 
     printf("Voltage sent %f \n", v);
     this->set_voltage(100 * v / this->limitV);
@@ -300,3 +343,27 @@ string int_to_hex(int a){
     return str;
 }
 */
+
+int my_limiter(double &value_to_limit, double max_value) {
+
+	double min_value = -max_value;
+
+	if (value_to_limit < min_value) {
+
+		value_to_limit = min_value;
+
+		return 1;
+
+	}
+
+	if (value_to_limit > max_value) {
+
+		value_to_limit = max_value;
+
+		return 1;
+
+	}
+
+	return 0;
+
+}

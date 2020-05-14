@@ -157,7 +157,7 @@ int get_neg(int uns);
 //#endif
 
 static double speed_x, speed_y;
-static int counter;
+static int counter, flag,base_opp_x,base_opp_y;
 
 
 #ifdef __cplusplus

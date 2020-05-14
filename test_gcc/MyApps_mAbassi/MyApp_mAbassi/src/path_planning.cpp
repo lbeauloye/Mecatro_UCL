@@ -141,8 +141,8 @@ int isInMap(PathPlanning *path_plan, int i, int j){
  */
 void addOpponent(PathPlanning *path_plan, int opp_x, int opp_y){
     int **opp_index = path_plan->opp_index;
-	int i_opp = 4 + (int) round(opp_x/0.1);
-	int j_opp = 8 + (int) round(opp_y/0.1);
+	int i_opp = (int) bounded(4 + (int) round(opp_x/10), 0, path_plan->IMAX);
+	int j_opp = (int) bounded(8 + (int) round(opp_y/10), 0, path_plan->JMAX);
 
 	int count = 1;
 	int index_i, index_j;
@@ -172,8 +172,8 @@ void addOpponent(PathPlanning *path_plan, int opp_x, int opp_y){
 void moveOpponent(PathPlanning *path_plan, int opp_x, int opp_y){
 
 	int **opp_index = path_plan->opp_index;
-	int i_opp = (int) bounded(4 + (int) round(opp_x/0.1), 0, path_plan->IMAX);
-	int j_opp = (int) bounded(8 + (int) round(opp_y/0.1), 0, path_plan->JMAX);
+	int i_opp = (int) bounded(4 + (int) round(opp_x/10), 0, path_plan->IMAX);
+	int j_opp = (int) bounded(8 + (int) round(opp_y/10), 0, path_plan->JMAX);
 	int value;
 	int delta_i = i_opp - opp_index[0][0] ;
 	int delta_j = j_opp -opp_index[0][1] ;
@@ -313,7 +313,7 @@ void View(List *p)
 {
     while(p)
     {
-        printf("%f\n",p->node->f);
+        printf("%d,\t %d\n",p->node->i,p->node->j);
         p = p->next;
     }
 }
@@ -423,7 +423,7 @@ List *findPath(PathPlanning *path_plan, Node **Grid, Node *start, Node *goal){
     Grid[i_start][j_start].parent_x = i_start;
     Grid[i_start][j_start].parent_y = j_start;
 
-    int PossibleChildren[8][2] = {{-1, 0},{1,0},{0,-1},{0,1}, {-1,-1},{-1,1},{1,-1}, {1,1}};
+    int PossibleChildren[8][2] = {{-1, 0},{1,0},{0,-1},{0,1},{-1,-1},{-1,1},{1,-1}, {1,1}};
     int node_open = 1;
 
 

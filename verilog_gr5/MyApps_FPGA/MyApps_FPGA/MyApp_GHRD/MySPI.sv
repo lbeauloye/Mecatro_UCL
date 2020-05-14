@@ -10,7 +10,7 @@ module spi_slave(
 	input  logic 		SPI_MOSI,
 	output logic 		SPI_MISO,
 
-	input  logic [31:0]	to_pi, speed_FR, speed_RR,
+	input  logic [31:0]	to_pi, speed_FR, speed_RR, speed_FL, speed_RL,
 //	output logic [31:0]	data_out
 	output logic [31:0] 	x_pos, y_pos, adv_x, adv_y, theta, 
 	output logic [7:0]  	actions
@@ -54,6 +54,7 @@ module spi_slave(
 		// from HPS data
 		misoRAM[4'h0] <= to_pi[31:0];
 		misoRAM[4'h1] <= {speed_FR[15:0],  speed_RR[15:0]};
+		misoRAM[4'h2] <= {speed_FL[15:0],  speed_RL[15:0]};
 
 		// laser data
 		//misoRAM[4'h1] <= {speed_FR[15:0],  speed_RR[15:0]};

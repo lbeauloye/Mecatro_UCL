@@ -73,6 +73,10 @@ class motor_card{
     double deltaT;
     double limitV;
     double limitI;
+    double R;
 };
+
+int my_limiter(double &value_to_limit, double max_value);
+
 
 #endif

@@ -8,7 +8,7 @@
  *  It is a simple rotation matrix of argument (theta).
  */
 void compute_local_velocities(double *xsi_inertial, double theta, double *xsi) {
-    double X_dot = xsi_inertial[0];
+    double X_dot = -xsi_inertial[0];
     double Y_dot = xsi_inertial[1];
 //    printf("X_dot : %f\t",X_dot);
 //    printf("Y_dot : %f\t\n",Y_dot);
@@ -26,7 +26,7 @@ void compute_local_velocities(double *xsi_inertial, double theta, double *xsi) {
  *  Robot parameters are specified in the .h file, to be modified accordingly.
  */
 void compute_motor_velocities(double *xsi, double *w) {
-    w[1] = -(-xsi[0]*33.333333334 + xsi[1]*33.333333334 + xsi[2]*13.4667); //- du à la roue en sens inverse
+    w[1] = (-xsi[0]*33.333333334 + xsi[1]*33.333333334 + xsi[2]*13.4667); //- du à la roue en sens inverse
     w[0] =  xsi[0]*33.333333334 + xsi[1]*33.333333334 - xsi[2]*13.4667;
     w[2] = -xsi[0]*33.333333334 + xsi[1]*33.333333334 - xsi[2]*13.4667;
     w[3] =  xsi[0]*33.333333334 + xsi[1]*33.333333334 + xsi[2]*13.4667;

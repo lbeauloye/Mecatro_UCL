@@ -19,7 +19,7 @@
 #include <unistd.h>
 
 
-#define OPP 1
+#define OPP 0
 
 /*
 static void* memAllocate(CanardInstance* const ins, const size_t amount)
@@ -44,91 +44,9 @@ void Task_HPS_Led(void)
 	motors[2] = new motor_card(0x408,1);//RL
 	motors[0] = new motor_card(0x408,2);//FL
 
-//    path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
-//
-//	MTXLOCK_STDIO();
-//	path_plan->IMAX = 199;
-//	path_plan->JMAX = 299;
-//
-//	path_plan->nbrx_nodes = 8;
-//	path_plan->nbry_nodes = 17;
-//
-//	path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
-//	for(int i = 0; i< path_plan->nbrx_nodes; i++){
-//		path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
-//	}
-//	path_plan->last_t = 0.0;
-//	path_plan->path_found = 0;
-//
-//	path_plan->recompute = 1;
-//
-//	mapping(path_plan);
-//
-////	printf("value : %d\n",path_plan->Grid[4][8].i);
-//	MTXUNLOCK_STDIO();
-
-//	path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
-//
-//	MTXLOCK_STDIO();
-//    path_plan->IMAX = 199;
-//    path_plan->JMAX = 299;
-//
-//    path_plan->nbrx_nodes = 20;
-//    path_plan->nbry_nodes = 30;
-//
-//    path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
-//    for(int i = 0; i< path_plan->nbrx_nodes; i++){
-//        path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
-//    }
-//    path_plan->last_t = 0.0;
-//    path_plan->path_found = 0;
-//
-//    path_plan->recompute = 1;
-//
-//    mapping(path_plan);
-//
-//    printf("value : %d\n",path_plan->Grid[i_start][j_start].i);
-//
-//	int i_start = 100 + (int)floor((0.8)/0.01);
-//	int j_start = 150 + (int)floor((0.1)/0.01);
-//	int i_goal = 100 + (int)floor((0.8)/0.01);
-//	int j_goal = 150 + (int)floor((1.3)/0.01);
-//	path_plan->start = &(path_plan->Grid[i_start][j_start]);
-//	path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
-//
-//	printf("coucou \n");
-//
-//	List *path = Astarsearch(path_plan);
-//	if(path){
-//		path_plan->path_found = 1;
-////		path_plan->path = path;
-////		path_plan->current = Pop(&path_plan->path);
-////		path_plan->current = Pop(&path_plan->path);
-////		path_plan->start_path = 1;
-//		Node *start_path = Pop(&path);
-//		printf("%d, %d \n", start_path->i, start_path->j);
-//		while (path){
-//			Node *node = Pop(&path);
-//			printf("%d, %d \n", node->i, node->j);
-//		}
-//		//path_plan->last_t = inputs->t;
-//	}
-//	else{
-//		path_plan->path_found = 0;
-//	}
-//
-//	printf("path found : %d \n", path_plan->path_found);
-//	MTXUNLOCK_STDIO();
-
-	/*
-
-	for(int i = 0; i< path_plan->nbrx_nodes; i++){
-	        free(path_plan->Grid[i]);
-	    }
-	    free(path_plan->Grid);
-		free(path_plan);
-
-	*/
+	flag = 0;
+	base_opp_x = get_neg(alt_read_word(fpga_adv_x));
+	base_opp_y = get_neg(alt_read_word(fpga_adv_y));
 
 
     MBX_t    *PrtMbx;
@@ -171,125 +89,22 @@ void Task_HPS_Led(void)
 
 void Task_FPGA_Led(void)
 {
-    uint32_t leds_mask;
-
-    alt_write_word(fpga_leds, 0x01);
-//
-////    List *path;
-////    Node *node;
-////    Node *start_path;
-//    path_plan = (PathPlanning*) malloc(sizeof(PathPlanning));
-//
-//    	MTXLOCK_STDIO();
-//        path_plan->IMAX = 199;
-//        path_plan->JMAX = 299;
-//
-//        path_plan->nbrx_nodes = 200;
-//        path_plan->nbry_nodes = 300;
-//
-//        path_plan->Grid = (Node **)malloc(path_plan->nbrx_nodes * sizeof(Node *));
-//        for(int i = 0; i< path_plan->nbrx_nodes; i++){
-//            path_plan->Grid[i] = (Node *)malloc(path_plan->nbry_nodes * sizeof(Node));
-//        }
-//        path_plan->last_t = 0.0;
-//        path_plan->path_found = 0;
-//
-//        path_plan->recompute = 1;
-//
-//        mapping(path_plan);
-//
-//    	int i_start = 100 + (int)floor((0.8)/0.01);
-//    	int j_start = 150 + (int)floor((0.1)/0.01);
-//    	int i_goal = 100 + (int)floor((0.8)/0.01);
-//    	int j_goal = 150 + (int)floor((1.3)/0.01);
-//    	path_plan->start = &(path_plan->Grid[i_start][j_start]);
-//    	path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
-//
-//    	printf("coucou \n");
-//
-//    	List *path = Astarsearch(path_plan);
-//    	if(path){
-//    		path_plan->path_found = 1;
-//    //		path_plan->path = path;
-//    //		path_plan->current = Pop(&path_plan->path);
-//    //		path_plan->current = Pop(&path_plan->path);
-//    //		path_plan->start_path = 1;
-//    		Node *start_path = Pop(&path);
-//    		printf("%d, %d \n", start_path->i, start_path->j);
-//    		while (path){
-//    			Node *node = Pop(&path);
-//    			printf("%d, %d \n", node->i, node->j);
-//    		}
-//    		//path_plan->last_t = inputs->t;
-//    	}
-//    	else{
-//    		path_plan->path_found = 0;
-//    	}
-//
-//    	printf("path found : %d \n", path_plan->path_found);
-//    	MTXUNLOCK_STDIO();
+    SEM_t    *PtrSem;
+	PtrSem = SEMopen("MySemaphoreTarget");
 
 	for( ;; )
 	{
-//        if(path_plan->recompute == 1){
-//
-//        			MTXLOCK_STDIO();
-//        			printf("coucou \n");
-//        			int i_start = 100 + (int) alt_read_word(fpga_x_pos);
-//        			int j_start = 150 + (int) alt_read_word(fpga_y_pos);
-//        			int i_goal = 100 + (int)floor((0.8)/0.01);
-//        			int j_goal = 150 + (int)floor((1.3)/0.01);
-//        			path_plan->start = &(path_plan->Grid[i_start][j_start]);
-//        			path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
-//
-//        			printf("coucou \n");
-//
-//        			path = Astarsearch(path_plan);
-//        			if(path){
-//        				path_plan->path_found = 1;
-//        //				path_plan->path = path;
-//        //				path_plan->current = Pop(&path_plan->path);
-//        //				path_plan->current = Pop(&path_plan->path);
-//        //				path_plan->start_path = 1;
-//        				start_path = Pop(&path);
-//        				printf("%d, %d \n", start_path->i, start_path->j);
-//        				while (path){
-//        					node = Pop(&path);
-//        					printf("%d, %d \n", node->i, node->j);
-//        				}
-//        				//path_plan->last_t = inputs->t;
-//        			}
-//        			else{
-//        				path_plan->path_found = 0;
-//        			}
-//
-//        			printf("path found : %d \n", path_plan->path_found);
-//        			path_plan->recompute = 0;
-//
-//        //			for(int i = 0; i< path_plan->nbrx_nodes; i++){
-//        //				        free(path_plan->Grid[i]);
-//        //				    }
-//        //				    free(path_plan->Grid);
-//        //					free(path_plan);
-//        			MTXUNLOCK_STDIO();
-////        			printf("cucu\n");
-////
-//        		}
 
-		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",get_neg(alt_read_word(fpga_x_pos)),get_neg(alt_read_word(fpga_y_pos)),get_neg(alt_read_word(fpga_theta)));
+//		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",get_neg(alt_read_word(fpga_x_pos)),get_neg(alt_read_word(fpga_y_pos)),get_neg(alt_read_word(fpga_theta)));
+//
+//		printf("adv_x : %d,\t adv_y : %d \n",get_neg(alt_read_word(fpga_adv_x)),get_neg(alt_read_word(fpga_adv_y)));
 
-		printf("adv_x : %d,\t adv_y : %d \n",get_neg(alt_read_word(fpga_adv_x)),get_neg(alt_read_word(fpga_adv_y)));
-//        leds_mask = alt_read_word(fpga_leds);
-//        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
-//            // rotate leds
-//            leds_mask <<= 1;
-//        } else {
-//            // reset leds
-//            leds_mask = 0x1;
-//        }
-//        alt_write_word(fpga_leds, leds_mask);
-//		printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
-
+		SEMwait(PtrSem, -1);            // -1 = Infinite blocking
+		SEMreset(PtrSem);
+		MTXLOCK_STDIO();
+		printf("Action On Target here\n");  // The Keys O and 1 seem to be inverted somewhere...
+		path_plan->recompute=1;
+		MTXUNLOCK_STDIO();
         TSKsleep(OS_MS_TO_TICK(250));
 	}
 }
@@ -298,13 +113,16 @@ void Task_FPGA_Led(void)
 void Task_HIGH_LEVEL(void)
 {
     //uint32_t leds_mask;
+	double theta;
+	SEM_t    *PtrSem;
+	PtrSem = SEMopen("MySemaphoreTarget");
 
     //alt_write_word(fpga_x_pos, 80);
     //alt_write_word(fpga_y_pos, 10);
     double dif_x, dif_y;
 
-    //CHANGES HERE
-    int targets[3][2] = {{1,1},{7,1},{1,16}}; //list of target's index
+//    //CHANGES HERE
+    int targets[3][2] = {{5,4},{5,9},{6,9}}; //list of target's index
 
     speed_x = 0.0;
     speed_y = 0.0;
@@ -313,8 +131,8 @@ void Task_HIGH_LEVEL(void)
     double xsi_in[3];
 	double speed[4];
 	double xsi[3];
-	double b = 0.1;
-//
+	double b = 0.4*1.5;
+
 	MTXLOCK_STDIO();
 	path_plan->IMAX = 199;
 	path_plan->JMAX = 299;
@@ -347,8 +165,9 @@ void Task_HIGH_LEVEL(void)
 	    for(int i = 0; i<9; i++){
 	        path_plan->opp_index[i] = (int *)malloc(2 * sizeof(int));
 	    }
-	    int opp_x = 0; //alt_read_word..
-	    int opp_y = 0; //alt_read_word..
+	    int opp_x = get_neg(alt_read_word(fpga_adv_x));
+	    int opp_y = get_neg(alt_read_word(fpga_adv_y));
+
 	    addOpponent(path_plan, opp_x, opp_y);
 	    path_plan->move_opp = 0;
 	#endif
@@ -356,6 +175,7 @@ void Task_HIGH_LEVEL(void)
 ////	printf("value : %d\n",path_plan->Grid[4][8].i);
 	MTXUNLOCK_STDIO();
 
+	int counter1=0;
 	for( ;; )
 	{
 		//printf("x_pos : %d,\t y_pos : %d,\t theta : %d\n",alt_read_word(fpga_x_pos),alt_read_word(fpga_y_pos),alt_read_word(fpga_theta));
@@ -364,24 +184,21 @@ void Task_HIGH_LEVEL(void)
 
 		if(path_plan->recompute == 1){
 			MTXLOCK_STDIO();
-			int i_start = 4 + (int) get_neg(alt_read_word(fpga_x_pos))/10.0;
-			int j_start = 8 + (int) get_neg(alt_read_word(fpga_y_pos))/10.0;
+			int i_start = 4 + (int) round(get_neg(alt_read_word(fpga_x_pos))/10.0);
+			int j_start = 8 + (int) round(get_neg(alt_read_word(fpga_y_pos))/10.0);
 
 			//CHANGES HERE
 			int i_goal = path_plan->target_list[path_plan->target_cnt][0];//4 + (int)floor((0.1)/0.1);
 			int j_goal = path_plan->target_list[path_plan->target_cnt][1];//8 + (int)floor((0.1)/0.1);
 
-			printf("i_start : %d,\tj_start : %d,\ti_goal : %d,\tj_goal : %d\n",i_start,j_start,i_goal,j_goal);
-
+		    printf("i_start : %d,\tj_start : %d,\ti_goal : %d,\tj_goal : %d\n",i_start,j_start,i_goal,j_goal);
 
 			path_plan->start = &(path_plan->Grid[i_start][j_start]);
 			path_plan->goal = &(path_plan->Grid[i_goal][j_goal]);
 
-
-
-
 			List *path = Astarsearch(path_plan);
 			if(path){
+				View(path);
 				path_plan->path_found = 1;
 				path_plan->path = path;
 				path_plan->current = Pop(&path_plan->path);
@@ -413,8 +230,10 @@ void Task_HIGH_LEVEL(void)
 		printf("x_pos : %f,\t y_pos : %f\n",get_neg(alt_read_word(fpga_x_pos))/10.0,get_neg(alt_read_word(fpga_y_pos))/10.0);
 
 		if(path_plan->nbr_nodes_path > 0){
-				dif_x = get_neg(alt_read_word(fpga_x_pos))/10.0 - path_plan->current->position_x*10;
-				dif_y = get_neg(alt_read_word(fpga_y_pos))/10.0 - path_plan->current->position_y*10;
+				dif_x = round(get_neg(alt_read_word(fpga_x_pos))/10.0) - path_plan->current->position_x*10;
+				dif_y = round(get_neg(alt_read_word(fpga_y_pos))/10.0) - path_plan->current->position_y*10;
+		    	alt_write_word(fpga_to_pi, (path_plan->current->i <<8) + path_plan->current->j);
+		    	printf("%d\n",(path_plan->current->i <<8) + path_plan->current->j);
 
 				printf("dif_x : %f, dif_y : %f\n",dif_x,dif_y);
 				printf("pos_x : %f, pos_y : %f\n",path_plan->current->position_x*10,path_plan->current->position_y*10);
@@ -434,9 +253,12 @@ void Task_HIGH_LEVEL(void)
 		        }
 
 		        //CHANGES HERE
-		        else if(fabs(dif_x) >= 2 || fabs(dif_y) >= 2) //change tolerance here if recompute too muchh
-		        	path_plan->recompute = 0;
+		        else if(fabs(dif_x) >= 2 || fabs(dif_y) >= 2){ //change tolerance here if recompute too muchh
+		        	path_plan->recompute = 1;
+		        	printf("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\n");
+		        }
 
+//		        theta = atan2(dif_y,dif_x);
 
 		        if(dif_x>0.1){
 					speed_x = -b;
@@ -467,52 +289,53 @@ void Task_HIGH_LEVEL(void)
 
 
 		        //CHANGES HERE
-		        if(path_plan->target_cnt < 2){
-		        	path_plan->target_cnt++;
-		        	printf("Target changed \n");
-		        }
+//		        if(path_plan->target_cnt < 2){
+////		        	path_plan->recompute = 1;
+//		        	path_plan->target_cnt++;
+//		        	printf("Target changed \n");
+//		        	SEMpost(PtrSem);
+//		        }
 		    }
-
-
+		if(speed_x != 0.0 && speed_y != 0.0){
+			speed_x = speed_x/2;
+			speed_y = speed_y/2;
+		}
+//		if(counter1==3000){
+//			xsi_in[0] = b;//speed_x;
+//			xsi_in[1] = 0.0;//speed_y;
+//			xsi_in[2] = 0.0;
+//		}
+//		else{
 //		printf("v_x : %f, v_y: %f\n",speed_x, speed_y);
-		xsi_in[0] = speed_x;
-		xsi_in[1] = speed_y;
+		xsi_in[0] = -b/sqrt(2);//speed_x;
+		xsi_in[1] = -b/sqrt(2);//speed_y;
 		xsi_in[2] = 0.0;
+//		counter1++;
+//		}
+
 		compute_local_velocities(xsi_in, 0.0 , xsi);
 		compute_motor_velocities(xsi, speed);
 		for(int i = 0; i<4 ; i++){
-	//		printf("speed [%d]: %f\t",i,speed[i]);
+			printf("speed [%d]: %f\t",i,speed[i]);
 			motors[i]->set_command(speed[i]);
 		}
 
 
 		//CHANGES HERE
 		#if OPP
-			if(path_plan->move_opp){ //temporary condition TO CHANGE when opp moves
-			 //opp_x = alt_read_word ..
-			 //opp_y = alt_read_word..
+			if(fabs(opp_x-get_neg(alt_read_word(fpga_adv_x)))>=10){ //temporary condition TO CHANGE when opp moves
+				if(flag==0){
+			 opp_x = get_neg(alt_read_word(fpga_adv_x));
+			 opp_y = get_neg(alt_read_word(fpga_adv_y));
 			 moveOpponent(path_plan, opp_x, opp_y);
+			 flag=1;
+				}
 			 if(isNewObstacle(path_plan->path))
 			 	 path_plan->recompute = 1;
-
+			path_plan->move_opp = 0;
 			}
-
 		#endif
 
-//		}
-//        leds_mask = alt_read_word(fpga_leds);
-//        if (leds_mask != (0x01 << (LED_PIO_DATA_WIDTH - 1))) {
-//            // rotate leds
-//            leds_mask <<= 1;
-//        } else {
-//            // reset leds
-//            leds_mask = 0x1;
-//        }
-//        alt_write_word(fpga_leds, leds_mask);
-
-//        TSKsleep(OS_MS_TO_TICK(250));
-//		  TSKselfSusp();
-//        printf("cucu\n");
 	}
 }
 
@@ -646,10 +469,6 @@ void toogle_hps_led()
 
 void Task_LOW_LEVEL(void)
 {
-//    uint32_t tx_Identifier, rx_Identifier;
-//    uint8_t  tx_Data[8],    rx_Data[8];
-//    uint8_t  tx_Length ,     rx_Length;
-//    uint8_t  tx_FrameType;
 
     int i;
 
@@ -660,31 +479,6 @@ void Task_LOW_LEVEL(void)
 
     CAN_init();
 
-   // CAN_debug();
-
-//    CanardInstance ins = canardInit(&malloc, &free);
-//    ins.mtu_bytes = CANARD_MTU_CAN_CLASSIC;  // Defaults to 64 (CAN FD); here we select Classic CAN.
-//    ins.node_id   = 42;                      // Defaults to anonymous; can be set up later at any point.
-
-
-//    tx_Identifier = 0x708;//0xabc;
-//    tx_Length     = 3;//8;
-//    tx_FrameType  = MCP2515_TX_STD_FRAME;
-//    tx_Data[0] = 0x1E;
-//    tx_Data[1] = 0x30;
-//    tx_Data[2] = 0x00;
-//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-//
-//    tx_Identifier = 0x708;//0xabc;
-//    tx_Length     = 3;//8;
-//    tx_FrameType  = MCP2515_TX_STD_FRAME;
-//    tx_Data[0] = 0x25;
-//    tx_Data[1] = 0xFF;
-//    tx_Data[2] = (128*20/100 + 128) >> 2;
-//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-//    for(i = 0; i<4 ; i++){
-//    	motors[i]->set_command(30);
-//    }
     double xsi_in[3] = {0.0, 0.0, 0.0};
 	double speed[4];
 	double xsi[3];
@@ -705,15 +499,10 @@ void Task_LOW_LEVEL(void)
     motors[1]->set_brake(0);
     motors[2]->set_brake(0);
     motors[3]->set_brake(0);
-//    printf("coucou \n");
-//    double speed;
-// 	motors[1]->set_voltage(30);
-//	motors[0]->set_voltage(0);
-//	motors[2]->set_voltage(10);
-//	motors[3]->set_voltage(20);
 
-    double kp = 0.005; //0.035;
-    double ki = 0.01;
+
+    double kp = 0.03;//0.03;//128;//128; //0.035; //0.005; //0.08
+    double ki = 0.1;//0.1;//53;//53; //0.01 //0.3
 
     motors[0]->set_kp(kp);
     motors[0]->set_ki(ki);
@@ -729,40 +518,34 @@ void Task_LOW_LEVEL(void)
     double Tick2 = G_OStimCnt;
     double Tick3 = G_OStimCnt;
     counter = 0;
-    double a = 10;
+    double a = 5;
     for( ;; )
     {
     	printf("speed_0 : %f,\tspeed_1 : %f,\tspeed_2 : %f,\tspeed_3 : %f,\t \n", get_speed(0),get_speed(1),get_speed(2),get_speed(3));
-    	alt_write_word(fpga_to_pi, motors[3]->get_speed_command());
-//    	printf("%f \t %f \n",motors[0]->get_speed_command_double(),get_speed(0));
+//    	alt_write_word(fpga_to_pi, motors[3]->get_speed_command());
+    	printf("%f \t %f \n",motors[1]->get_speed_command_double(),get_speed(1));
 
 //    	printf("SPEED : %d \n",motors[3]->get_speed_command());
     	printf("speed_x : %f, \t speed_y : %f\t\n", speed_x, speed_y);
 //    	for(int j = 0; j<4 ; j++){
 //    	//		printf("speed [%d]: %f\t",i,speed[i]);
 //    		if (counter == 200){
-//        		if (j==1)
-//        			motors[j]->set_command(motors[j]->get_speed_command()-a);
-//        		else
-//        			motors[j]->set_command(motors[j]->get_speed_command()+a);
+//        		motors[j]->set_command(motors[j]->get_speed_command()+a);
 //    		}
-//    		else if(counter == 800){
-//    			if (j==1)
-//					motors[j]->set_command(motors[j]->get_speed_command()+a);
-//				else
-//					motors[j]->set_command(motors[j]->get_speed_command()-a);
-//    		}
-//    		else if (counter == 1200){
-////    			if (j==1)
-////					motors[j]->set_command(motors[j]->get_speed_command()+a/2);
-////				else
-////					motors[j]->set_command(motors[j]->get_speed_command()-a/2);
+//    		else if(counter == 300){
+//    			motors[j]->set_command(motors[j]->get_speed_command()-a);
 //    			if(j==3){
 //					counter = 0;
 //				}
 //    		}
+////    		else if (counter == 350){
+////				motors[j]->set_command(motors[j]->get_speed_command()-a/4);
+////    			if(j==3){
+////					counter = 0;
+////				}
+////    		}
 //    	}
-//    	counter++;
+    	//counter++;
 //		printf("counter : %d\n", counter);
 
 
@@ -772,14 +555,16 @@ void Task_LOW_LEVEL(void)
 //    	printf("OS_TIMER : %f \n", OS_TIMER_US*(G_OStimCnt-Tick0));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick0))/1000000;
 		motors[0]->set_deltaT(time);
+//		motors[0]->set_voltage(20);
 		motors[0]->set_speed();
 		printf("time : %f \n",time);
 		Tick0 = G_OStimCnt;
 //		TSKsleep(OS_\MS_TO_TICK(4));
 
-    	motors[1]->set_old_speed(get_speed(1));
+    	motors[1]->set_old_speed(-get_speed(1));
     	time = (OS_TIMER_US*(G_OStimCnt-Tick1))/1000000;
     	motors[1]->set_deltaT(time);
+//    	motors[1]->set_voltage(20);
     	motors[1]->set_speed();
     	Tick1 = G_OStimCnt;
 //		TSKsleep(OS_MS_TO_TICK(4));
@@ -788,6 +573,7 @@ void Task_LOW_LEVEL(void)
     	motors[2]->set_old_speed(get_speed(2));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick2))/1000000;
 		motors[2]->set_deltaT(time);
+//		motors[2]->set_voltage(20);
 		motors[2]->set_speed();
 		Tick2 = G_OStimCnt;
 //		TSKsleep(OS_MS_TO_TICK(4));
@@ -795,33 +581,15 @@ void Task_LOW_LEVEL(void)
 		motors[3]->set_old_speed(get_speed(3));
 		time = (OS_TIMER_US*(G_OStimCnt-Tick3))/1000000;
 		motors[3]->set_deltaT(time);
+//		motors[3]->set_voltage(20);
 		motors[3]->set_speed();
 		Tick3 = G_OStimCnt;
-
-//    	for(i = 0; i<4 ; i++){
-//    		speed = get_speed(i);
-//    		printf("speed" )
-//    	    motors[i]->set_old_speed(speed);
-//    	}
-//    	for(i = 0; i<4 ; i++)
-//    	    	motors[i]->set_speed();
 
 		//CHANGES HERE
 		path_plan->move_opp = 1;
 
     	TSKsleep(OS_MS_TO_TICK(10));
-//        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
-//            MTXLOCK_STDIO();
-//            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
-//            for(i=0; i<rx_Length; i++) printf("%02x ", rx_Data[i]);
-//            printf("\n");
-//            MTXUNLOCK_STDIO();
-//
-//            // Send a response
-//            //for(i=0; i<tx_Length; i++)
-//            //    tx_Data[i]++;
-//            //CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-//        }
+
 
     }
 
@@ -864,12 +632,6 @@ void Task_CAN(void)
 
     CAN_init();
 
-   // CAN_debug();
-
-//    CanardInstance ins = canardInit(&malloc, &free);
-//    ins.mtu_bytes = CANARD_MTU_CAN_CLASSIC;  // Defaults to 64 (CAN FD); here we select Classic CAN.
-//    ins.node_id   = 42;                      // Defaults to anonymous; can be set up later at any point.
-
 
     tx_Identifier = 0x708;//0xabc;
 	tx_Length     = 3;//8;
@@ -878,64 +640,6 @@ void Task_CAN(void)
 	tx_Data[1] = 0x40;
 	tx_Data[2] = 0x40;
 	CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-
-//    tx_Identifier = 0x708;//0xabc;
-//    tx_Length     = 3;//8;
-//    tx_FrameType  = MCP2515_TX_STD_FRAME;
-//    tx_Data[0] = 0x1E;
-//    tx_Data[1] = 0x30;
-//    tx_Data[2] = 0x00;
-//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-//
-//    tx_Identifier = 0x708;//0xabc;
-//    tx_Length     = 3;//8;
-//    tx_FrameType  = MCP2515_TX_STD_FRAME;
-//    tx_Data[0] = 0x25;
-//    tx_Data[1] = 0xFF;
-//    tx_Data[2] = (128*20/100 + 128) >> 2;
-//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-
-
-    //for(i=0; i<tx_Length; i++)
-    //    tx_Data[i] = i;
-
-//    MTXLOCK_STDIO();
-//    printf("youpitou maboi\n");
-//    MTXUNLOCK_STDIO();
-
-//    CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-//
-//    static uint8_t my_message_transfer_id;  // Must be static or heap-allocated to retain state between calls.
-//    const CanardTransfer transfer = {
-//        .timestamp_usec = 0,      // Zero if transmission deadline is not limited.
-//        .priority       = CanardPriorityNominal,
-//        .transfer_kind  = CanardTransferKindMessage,
-//        .port_id        = 1234,                       // This is the subject-ID.
-//        .remote_node_id = CANARD_NODE_ID_UNSET,       // Messages cannot be unicast, so use UNSET.
-//        .transfer_id    = my_message_transfer_id,
-//        .payload_size   = 47,
-//        .payload        = "\x2D\x00" "Sancho, it strikes me thou art in great fear.",
-//    };
-//    ++my_message_transfer_id;  // The transfer-ID shall be incremented after every transmission on this subject.
-//    int32_t result = canardTxPush(&ins, &transfer);
-//    if (result < 0)
-//    {
-//        // An error has occurred: either an argument is invalid or we've ran out of memory.
-//        // It is possible to statically prove that an out-of-memory will never occur for a given application if the
-//        // heap is sized correctly; for background, refer to the Robson's Proof and the documentation for O1Heap.
-//        abort();
-//    }
-//
-//    for( ;; )
-//    {
-//        for (const CanardFrame* txf = NULL; (txf = canardTxPeek(&ins)) != NULL;)  // Look at the top of the TX queue.
-//        {
-//            CAN_sendMsg(txf->extended_can_id, txf->payload, txf->payload_size, tx_FrameType);
-//            canardTxPop(&ins);                         // Remove the frame from the queue after it's transmitted.
-//            ins.memory_free(&ins, (CanardFrame*)txf);  // Deallocate the dynamic memory afterwards.
-//        }
-//    }
-
 
 
 
@@ -960,18 +664,6 @@ void Task_CAN(void)
 		CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
     	TSKsleep(OS_SEC_TO_TICK(1));
 
-//        if (CAN_readMsg(&rx_Identifier, rx_Data, &rx_Length)) {
-//            MTXLOCK_STDIO();
-//            printf("Receive Can message from %x of %d bytes : ", (unsigned int) rx_Identifier, (unsigned int) rx_Length);
-//            for(i=0; i<rx_Length; i++) printf("%02x ", rx_Data[i]);
-//            printf("\n");
-//            MTXUNLOCK_STDIO();
-//
-//            // Send a response
-//            //for(i=0; i<tx_Length; i++)
-//            //    tx_Data[i]++;
-//            //CAN_sendMsg(tx_Identifier, tx_Data, tx_Length, tx_FrameType);
-//        }
     }
 
 }
@@ -999,7 +691,7 @@ double get_speed(int choice){
 			break;
 	}
 	if(PIO/4294967296.0>=0.5){
-		pio_double = -(4294967296.0 - PIO + 1); // LE PLUS 1 EST NECESSAIRE ICI???
+		pio_double = -(4294967296.0 - PIO); // LE PLUS 1 EST NECESSAIRE ICI???
 	} else {
 		pio_double = PIO;
 	}
